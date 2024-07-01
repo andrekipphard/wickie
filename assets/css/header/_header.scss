@@ -1,0 +1,12 @@
+.header-mobile{
+    display:none;
+}
+@include media-breakpoint-down(lg) {
+    .header-mobile {
+        display: block;
+    }
+
+    .header-desktop {
+        display: none;
+    }
+}

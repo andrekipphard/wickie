@@ -1,4 +1,21 @@
-$primary: #ff7bac;
-$secundary: #ff7bac;
+// wickie colors
+$light-green: #93E100;
+$green: #78E87D;
+$turquoise: #5FF3DC;
+$lighter-blue: #00E3FF;
+$light-blue: #19B8DF;
+$blue: #00A6FF;
+$dark-blue: #002A3F;
+
+$primary: #002A3F;
+$secondary: #93E100;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
+@import "./header/header";
+@import "./footer/footer";
+@import "./components/hero";
+
+h1 {
+    font-size: 88px;
+    font-weight: 600;
+}

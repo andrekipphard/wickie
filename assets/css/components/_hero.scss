@@ -1,0 +1,32 @@
+.hero {
+    background: linear-gradient(123deg,#93E100 0,#78E87D 19%,#5FF3DC 44%,#00E3FF 57%,#19B8DF 72%,#00A6FF 100%) no-repeat padding-box;
+    padding-top: 10rem;
+    color: #FFFFFF;
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        span {
+            margin-bottom: 40px;
+            font-size: 20px;
+        }
+
+        .cta {
+            margin-bottom: 100px;
+        }
+
+        .images {
+            margin-bottom: -15rem;
+
+            img {
+                border-radius: 20px;
+            }
+        }
+    }
+}
