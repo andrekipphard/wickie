@@ -1,5 +1,45 @@
+.site-header{
+    background-color: #FFFFFF;
+}
+
 .header-mobile{
     display:none;
+}
+
+.header-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+
+    .left {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+
+        .logo {
+            img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+        .btn-link {
+            font-size: 18px;
+            font-weight: normal;
+        }
+    }
 }
 @include media-breakpoint-down(lg) {
     .header-mobile {

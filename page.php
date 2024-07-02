@@ -16,19 +16,11 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-		<section class="hero">
-			<div class="container">
-				<h1>One app, all things money</h1>
-				<span>Open a free account in minutes right from your phone and make your money go further.</span>
-				<div class="cta">
-					<button type="button" class="btn btn-white">Open Account</button>
-					<button type="button" class="btn btn-link">Learn more</button>
-				</div>
-				<div class="images">
-					<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/hero/home3-1.jpg">
-				</div>
-			</div>
-		</section>
+		<?php get_template_part( 'template-parts/components/hero' );?>
+		<?php get_template_part( 'template-parts/components/features' );?>
+		<?php get_template_part( 'template-parts/components/services' );?>
+		<?php get_template_part( 'template-parts/components/steps' );?>
+		<?php get_template_part( 'template-parts/components/content-card' );?>
 		<?php if (have_rows('content')):?>
 			<?php while( have_rows('content')): the_row(); 
 
