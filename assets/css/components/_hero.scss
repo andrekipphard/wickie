@@ -47,25 +47,7 @@
         .cta {
             margin-bottom: 100px;
             display: flex;
-            gap: 40px;
-
-            .btn-link {
-                color: #FFFFFF;
-
-                i {
-                    background-color: #FFFFFF;
-                    color: $primary;
-                }
-            }
-
-            .btn-link:hover {
-                color: #FFFFFF99;
-
-                i {
-                    background-color: #FFFFFF;
-                    color: $primary;
-                }
-            }
+            gap: 20px;
         }
 
         .images {

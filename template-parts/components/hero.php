@@ -5,12 +5,12 @@
             <span>Open a free account in minutes right from your phone and make your money go further.</span>
             <div class="cta">
                 <button type="button" class="btn btn-white">
-                    Open account
-                    <i class="bi bi-arrow-right"></i>
+                    <i class="bi bi-apple"></i>
+                    App Store
                 </button>
-                <button type="button" class="btn btn-link">
-                    Learn more
-                    <i class="bi bi-chevron-right"></i>
+                <button type="button" class="btn btn-white">
+                    <i class="bi bi-google-play"></i>
+                    Google Play
                 </button>
             </div>
         </div>

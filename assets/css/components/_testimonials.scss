@@ -1,0 +1,76 @@
+.testimonials {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    .container {
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 50px;
+
+            .subline {
+                display: flex;
+                gap: 10px;
+                font-size: 17px;
+                margin-bottom: 20px;
+
+                .highlight {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        #testimonial-slider {
+            .carousel-inner {
+                .carousel-item {
+                    padding-right: 60px;
+                    padding-left: 60px;
+                    .carousel-content {
+                        background-color: $primary;
+                        border-radius: 20px;
+                        padding: 100px;
+                        box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
+                        color: #FFFFFF;
+                        text-align: center;
+    
+                        span {
+                            font-size: 28px;
+                        }
+    
+                        .testimonial-author {
+                            margin-top: 40px;
+
+                            span {
+                                font-size: 15px;
+                            }
+                            img {
+                                border-radius: 50px;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+            .carousel-control-prev,
+            .carousel-control-next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 40px;
+                height: 40px;
+                font-size: 15px;
+                background-color: $secondary;
+                border-radius: 50px;
+                color: #FFFFFF;
+                opacity: 1;
+            }
+            .carousel-control-prev {
+                padding: 5px 10px 5px 5px
+            }
+            .carousel-control-next {
+                padding: 5px 5px 5px 10px
+            }
+        }
+    }
+}

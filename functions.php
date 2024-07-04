@@ -139,10 +139,7 @@ add_action( 'widgets_init', 'wickie_widgets_init' );
  */
 function wickie_scripts() {
 	wp_enqueue_style( 'wickie-style', get_template_directory_uri(). '/assets/css/main.css', array(), _S_VERSION );
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri(). '/assets/js/bootstrap.bundle.min.js', array('jquery'), _S_VERSION );
-
-    // Enqueue navigation script
-    wp_enqueue_script( 'wickie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri(). '/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', array('jquery'), _S_VERSION );
 
     // Enqueue comment-reply script if applicable
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

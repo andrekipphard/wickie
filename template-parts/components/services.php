@@ -2,7 +2,7 @@
     <div class="container">
         <div class="title">
             <h2>Popular Services</h2>
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-secondary">
                 Show all services
                 <i class="bi bi-arrow-right"></i>
             </button>

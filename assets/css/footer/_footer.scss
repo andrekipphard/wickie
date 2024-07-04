@@ -1,0 +1,99 @@
+.site-footer {
+    background-color: #000000;
+    margin-top: -112px;
+    .footer {
+        padding-top: 7rem;
+        padding-bottom: 40px;
+        display: flex;
+        gap: 50px;
+
+        .company-info {
+            display: flex;
+            flex: 0 0 25%;
+            flex-direction: column;
+            gap: 20px;
+
+            img {
+                width: 100px;
+            }
+
+            span {
+                color: #FFFFFF99;
+                font-size: 17px;
+            }
+            .social-icons {
+                display: flex;
+                gap: 20px;
+                a {
+                    color: #FFFFFF;
+
+                    &:hover {
+                        color: $secondary;
+                    }
+                }
+                i {
+                    font-size: 30px;
+                }
+            }
+            .app-links {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .btn-outline {
+                    justify-content: center;
+                }
+            }
+        }
+        .navigation-links {
+            flex: 0 0 75%;
+            color:#FFFFFF;
+            display: flex;
+            align-items: flex-start;
+            gap:20px;
+
+            .navigation-links-menu {
+                flex-basis: calc(33.333% - 13.33px);
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            ul > li {
+                margin-bottom: 40px;
+            }
+            ul > li > ul > li {
+                margin-bottom: 5px;
+            }
+
+            .navigation-group ul .navigation-item span {
+                color: #ffffff99;
+                margin-bottom: 10px;
+                font-size: 17px;
+                font-weight: normal;
+
+                &:hover {
+                    color:#FFFFFF;
+                }
+            }
+
+            .navigation-group > .navigation-item > a {
+                font-weight: bold;
+                color: #ffffff;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+
+            
+        }
+    }
+    .copyright {
+        border-top: 1px solid #FFFFFF99;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        color: #FFFFFF99;
+        text-align: center;
+    }
+}
