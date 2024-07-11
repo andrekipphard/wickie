@@ -18,20 +18,18 @@
 					<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/header/w-logo.svg">
 					<span>We are a bank. A fully-fledged, bona fide bank. A business bank created and backed by business people.</span>
 					<div class="social-icons">
-						<a href=""><i class="bi bi-facebook"></i></a>
-						<a href=""><i class="bi bi-instagram"></i></a>
-						<a href=""><i class="bi bi-telegram"></i></a>
-						<a href=""><i class="bi bi-twitter-x"></i></a>
+						<a href="https://www.facebook.com/share/6L6QbQSPC8DzC7ym/"><i class="bi bi-facebook"></i></a>
+						<a href="https://www.instagram.com/wickie.io/?hl=de"><i class="bi bi-instagram"></i></a>
+						<a href="https://www.linkedin.com/company/greatidee-uab"><i class="bi bi-linkedin"></i></a>
+						<a href="https://twitter.com/wickie_io"><i class="bi bi-twitter-x"></i></a>
 					</div>
 					<div class="app-links">
-						<button type="button" class="btn btn-outline">
-							<i class="bi bi-apple"></i>
-							App Store
-						</button>
-						<button type="button" class="btn btn-outline">
-							<i class="bi bi-google-play"></i>
-							Google Play
-						</button>
+						<a href="#">
+							<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/app-store.png">
+						</a>
+						<a href="#">
+							<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/google-play-store.png">
+						</a>
 					</div>
 				</div>
 				<div class="navigation-links">

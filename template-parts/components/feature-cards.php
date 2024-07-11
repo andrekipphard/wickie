@@ -5,9 +5,9 @@
                 <span class="highlight">
                     Mobile Banking
                 </span>
-                <span>It’s easier as ever!</span>
+                <span>It’s Easier Than Ever!</span>
             </div>
-            <h2>Personal and business banking, at your fingertips</h2>
+            <h2>Personal and Business Banking, At Your Fingertips</h2>
         </div>
         <div class="content-boxes">
             <a class="content-box" href="#">
@@ -24,7 +24,7 @@
             <a class="content-box" href="#">
                 <div class="content">
                     <h3 class="title">Manage</h3>
-                    <span>Explore the power of simpler and smarter banking online.</span>
+                    <span>Take control of your finances with intuitive management tools.</span>
                     <button type="button" class="btn btn-link">
                         Learn more
                         <i class="bi bi-chevron-right"></i>
@@ -35,7 +35,7 @@
             <a class="content-box" href="#">
                 <div class="content">
                     <h3 class="title">Save</h3>
-                    <span>Explore the power of simpler and smarter banking online.</span>
+                    <span>Effortlessly build your savings with automated features.</span>
                     <button type="button" class="btn btn-link">
                         Learn more
                         <i class="bi bi-chevron-right"></i>

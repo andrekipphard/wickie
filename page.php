@@ -18,6 +18,9 @@ get_header();
 	<main id="primary" class="site-main">
 		<?php get_template_part( 'template-parts/components/hero' );?>
 		<?php get_template_part( 'template-parts/components/feature-cards' );?>
+		<?php get_template_part( 'template-parts/components/credit-card' );?>
+		<?php get_template_part( 'template-parts/components/rewards' );?>
+		<?php get_template_part( 'template-parts/components/market' );?>
 		<?php get_template_part( 'template-parts/components/services' );?>
 		<?php get_template_part( 'template-parts/components/steps' );?>
 		<?php get_template_part( 'template-parts/components/content-card' );?>
@@ -136,7 +139,7 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-if (!have_rows('content')):
+// if (!have_rows('content')):
 	// get_sidebar();
-endif;
+// endif;
 get_footer();

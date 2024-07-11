@@ -1,5 +1,5 @@
 .site-footer {
-    background-color: #000000;
+    background-color: $primary;
     margin-top: -112px;
     .footer {
         padding-top: 7rem;
@@ -36,13 +36,15 @@
                 }
             }
             .app-links {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
+                a {
+                    flex-basis: calc(50% - 10px);
+                    img {
+                        width: 100%;
+                    }
 
-                .btn-outline {
-                    justify-content: center;
                 }
+                display: flex;
+                gap: 20px;
             }
         }
         .navigation-links {

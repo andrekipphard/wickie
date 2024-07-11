@@ -2,7 +2,7 @@
     <div class="container">
         <div class="title">
             <h2>Resources to keep you informed</h2>
-            <button type="button" class="btn btn-secondary">
+            <button type="button" class="btn btn-primary">
                 Read the blog
                 <i class="bi bi-arrow-right"></i>
             </button>

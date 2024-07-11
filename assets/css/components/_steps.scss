@@ -35,6 +35,10 @@
                     margin-top: 20px;
                     display: flex;
                     gap: 20px;
+
+                    .btn-white:hover {
+                        color: #FFFFFF;
+                    }
                 }
 
                 span {

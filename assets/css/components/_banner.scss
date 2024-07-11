@@ -23,8 +23,17 @@
                 font-size: 17px;
             }
 
-            .btn-white {
+            .btn-primary {
                 margin-top: 20px;
+                i {
+                    margin-right: 10px;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                    color: #FFFFFF;
+                    border: 1px solid #FFFFFF;
+                }
             }
         }
 

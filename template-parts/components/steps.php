@@ -9,11 +9,11 @@
                 <div class="content">
                     <span>Download the app from the Apple App Store or the Google Play Store</span>
                     <div class="cta">
-                        <button type="button" class="btn btn-outline">
+                        <button type="button" class="btn btn-white">
                             <i class="bi bi-apple"></i>
                             App Store
                         </button>
-                        <button type="button" class="btn btn-outline">
+                        <button type="button" class="btn btn-white">
                             <i class="bi bi-google-play"></i>
                             Google Play
                         </button>

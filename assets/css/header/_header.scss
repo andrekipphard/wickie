@@ -15,6 +15,31 @@
     padding-bottom: 20px;
     font-size: 18px;
 
+    h6 {
+        display: flex;
+        
+        i {
+            margin-right: 10px;
+        }
+    }
+    .btn {
+        display: flex;
+        
+        i {
+            margin-right: 5px;
+            background-color: transparent;
+            font-size: 20px;
+            color: #000000;
+        }
+
+        &:hover {
+            i {
+                background-color: transparent;
+                color: $secondary;
+            }
+        }
+    }
+
     .left {
         display: flex;
         flex-direction: row;
@@ -34,6 +59,11 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        gap: 20px;
+
+        img {
+            width: 125px;
+        }
         
         .btn-link {
             font-size: 18px;
@@ -50,3 +80,98 @@
         display: none;
     }
 }
+/* Ensure the header-desktop container is positioned relatively */
+.header-desktop {
+    position: relative;
+}
+
+.nav-item .dropdown-menu {
+    display: none;
+    position: absolute;
+}
+
+.nav-item:hover .dropdown-menu,
+.nav-item:focus-within .dropdown-menu,
+.nav-item .dropdown-menu:hover {
+    display: block;
+}
+
+/* Mega menu styling */
+.mega-menu, .normal-menu {
+    left: 0;
+    right: 0;
+    padding: 40px;
+    position: absolute;
+    z-index: 1000;
+    background-color: white; /* Set background color */
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
+}
+
+/* Flexbox for columns in mega menu */
+.mega-menu .row,
+.normal-menu .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mega-menu h6,
+.normal-menu h6 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.mega-menu  ul,
+.normal-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mega-menu ul li,
+.normal-menu ul li {
+    margin-bottom: 0.5rem;
+}
+
+.mega-menu  ul li a,
+.normal-menu ul li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.mega-menu ul li a:hover,
+.normal-menu ul li a:hover {
+    color: $secondary;
+}
+/* Optional: Adjust dropdown menu positioning */
+.mega-menu-dropdown {
+    position: static;
+}
+
+.dropdown-menu {
+    margin-top: 0;
+    border: 0;
+    left: 0;
+    right: 0;
+    padding-top: 40px;
+    background-color: transparent;
+}
+
+.nav-item:hover .nav-link {
+    color: $secondary;
+}
+
+.dropdown-item {
+    padding-left:0px;
+}
+
+.dropdown-item:hover {
+    background-color: transparent;
+}
+
+.normal-menu {
+    width: fit-content;
+}
+
+
+
+
