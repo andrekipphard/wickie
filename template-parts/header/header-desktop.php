@@ -1,8 +1,11 @@
+<?php
+    $logo = get_field( 'header_logo', 'options' )
+?>
 <div class="container header-desktop">
     <div class="left">
         <div class="logo">
             <a href="/">
-                <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/header/w-logo.svg">
+                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($logo, 'large'); ?>">
             </a>
         </div>
         <div class="navigation">
@@ -85,13 +88,18 @@
     </div>
     <div class="right">
         <button type="button" class="btn btn-link"><i class="bi bi-globe"></i>En</button>
-        <button type="button" class="btn btn-link">
-            <i class="bi bi-apple"></i>
-            App Store
-        </button>
-        <button type="button" class="btn btn-link">
-            <i class="bi bi-google-play"></i>
-            Google Play
-        </button>
+        <?php if( have_rows('header_cta', 'options')):?>
+            <?php while( have_rows('header_cta', 'options') ): the_row();
+            $headerButtonUrl = get_sub_field('header_button_url');
+            $headerButtonIcon = get_sub_field('header_button_icon');
+            $headerButtonText = get_sub_field('header_button_text');?>
+                <a href="<?=$headerButtonUrl;?>">
+                    <button type="button" class="btn btn-link">
+                        <i class="bi bi-<?=$headerButtonIcon;?>"></i>
+                        <?=$headerButtonText;?>
+                    </button>
+                </a>
+            <?php endwhile;?>
+        <?php endif;?>
     </div>
 </div>

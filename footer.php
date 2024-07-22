@@ -10,27 +10,38 @@
  */
 
 ?>
+<?php
+    $logo = get_field( 'footer_logo', 'options' );
+	$companyInformation = get_field( 'footer_company_information', 'options' );
+	$copyright = get_field( 'footer_copyright', 'options' );
+?>
 
 	<footer id="colophon" class="site-footer">
 		<div class="container">
 			<div class="footer">
 				<div class="company-info">
-					<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/header/w-logo.svg">
-					<span>We are a bank. A fully-fledged, bona fide bank. A business bank created and backed by business people.</span>
-					<div class="social-icons">
-						<a href="https://www.facebook.com/share/6L6QbQSPC8DzC7ym/"><i class="bi bi-facebook"></i></a>
-						<a href="https://www.instagram.com/wickie.io/?hl=de"><i class="bi bi-instagram"></i></a>
-						<a href="https://www.linkedin.com/company/greatidee-uab"><i class="bi bi-linkedin"></i></a>
-						<a href="https://twitter.com/wickie_io"><i class="bi bi-twitter-x"></i></a>
-					</div>
-					<div class="app-links">
-						<a href="#">
-							<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/app-store.png">
-						</a>
-						<a href="#">
-							<img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/google-play-store.png">
-						</a>
-					</div>
+					<img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($logo, 'large'); ?>">
+					<span><?=$companyInformation;?></span>
+					<?php if( have_rows('footer_social_icon', 'options')):?>
+						<div class="social-icons">
+							<?php while( have_rows('footer_social_icon', 'options') ): the_row();
+							$socialIconUrl = get_sub_field('footer_social_icon_url');
+							$socialIcon = get_sub_field('footer_social_icon');?>
+									<a href="<?=$socialIconUrl;?>"><i class="bi bi-<?=$socialIcon;?>"></i></a>
+							<?php endwhile;?>
+						</div>
+					<?php endif;?>
+					<?php if( have_rows('footer_app_link', 'options')):?>
+						<div class="app-links">
+							<?php while( have_rows('footer_app_link', 'options') ): the_row();
+							$appLinkUrl = get_sub_field('footer_app_link_url');
+							$appLinkImage = get_sub_field('footer_app_link_image');?>
+								<a href="<?=$appLinkUrl;?>">
+									<img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($appLinkImage, 'large'); ?>">
+								</a>
+							<?php endwhile;?>
+						</div>
+					<?php endif;?>
 				</div>
 				<div class="navigation-links">
 					<div class="navigation-links-menu">
@@ -107,7 +118,7 @@
 			</div>
 
 			<div class="copyright">
-				2024 © greatidee uab
+				<?=$copyright;?>
 			</div>
 		</div>
 	</footer><!-- #colophon -->

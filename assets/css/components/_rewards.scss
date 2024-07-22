@@ -7,7 +7,7 @@
 
         .content-wrapper {
             box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
-            background: linear-gradient(to left, #93E100, #00A6FF);
+            background: linear-gradient(to right, #93E100, #00A6FF);
             display: flex;
             border-radius: 20px;
             flex-basis: calc(40% - 25px);
@@ -19,6 +19,14 @@
                 align-items: center;
                 width: 100%;
 
+                .btn-link {
+                    color: #FFFFFF;
+
+                    i {
+                        background-color: #FFFFFF;
+                        color: $primary;
+                    }
+                }
 
             }
     
@@ -87,16 +95,17 @@
             flex-direction: column;
         }
 
+
         .content-wrapper:hover {
 
             .subline {
 
                 .btn-link {
-                    color: #FFFFFF;
+                    color: $secondary;
 
                     i {
-                        background-color: #FFFFFF;
-                        color: $primary;
+                        background-color: $secondary;
+                        color: #FFFFFF;
                     }
                 }
             }

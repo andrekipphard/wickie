@@ -12132,7 +12132,6 @@ textarea.form-control-lg {
 
 .site-footer {
   background-color: #002A3F;
-  margin-top: -112px;
 }
 .site-footer .footer {
   padding-top: 7rem;
@@ -12449,6 +12448,12 @@ textarea.form-control-lg {
   padding-top: 7rem;
   padding-bottom: 2rem;
 }
+.content-card.content-card-list {
+  padding-bottom: 7rem;
+}
+.content-card.content-card-list .container .content-wrapper {
+  background: #002A3F !important;
+}
 .content-card .container .content-wrapper {
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
   background: linear-gradient(to right, #93E100, #00A6FF);
@@ -12475,6 +12480,46 @@ textarea.form-control-lg {
 }
 .content-card .container .content-wrapper .content .btn-primary i {
   margin-left: 10px;
+}
+.content-card .container .content-wrapper .content ul {
+  counter-reset: item;
+  margin-left: 0;
+  padding-left: 0;
+}
+.content-card .container .content-wrapper .content li {
+  display: block;
+  margin-bottom: 0.5em;
+  margin-left: 2em;
+}
+.content-card .container .content-wrapper .content li::before {
+  display: inline-block;
+  content: counter(item) " ";
+  counter-increment: item;
+  width: 2em;
+  margin-left: -2em;
+}
+.content-card .container .content-wrapper .content .list-group-numbered {
+  padding-left: 0;
+}
+.content-card .container .content-wrapper .content .list-group-numbered .list-group-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.content-card .container .content-wrapper .content .list-group-numbered .list-group-item::before {
+  text-align: center;
+  margin-right: 20px;
+  font-size: 20px;
+  background-color: #93E100;
+  border-radius: 50px;
+  padding: 0.25rem 0.5rem;
+  color: #FFFFFF;
+}
+.content-card .container .content-wrapper .content .list-group-numbered .list-group-item:nth-child(3)::before {
+  padding: 0.25rem 0.85rem;
+}
+.content-card .container .content-wrapper .content .list-group-numbered .list-group-item .list-group-item-content span {
+  color: rgba(255, 255, 255, 0.6);
 }
 .content-card .container .content-wrapper .image {
   flex: 0 0 60%;
@@ -12519,54 +12564,6 @@ textarea.form-control-lg {
   font-size: 20px;
 }
 
-.content-card.content-card-list {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-}
-.content-card.content-card-list .container .content-wrapper {
-  background: #002A3F !important;
-}
-.content-card.content-card-list .container .content-wrapper .content ul {
-  counter-reset: item;
-  margin-left: 0;
-  padding-left: 0;
-}
-.content-card.content-card-list .container .content-wrapper .content li {
-  display: block;
-  margin-bottom: 0.5em;
-  margin-left: 2em;
-}
-.content-card.content-card-list .container .content-wrapper .content li::before {
-  display: inline-block;
-  content: counter(item) " ";
-  counter-increment: item;
-  width: 2em;
-  margin-left: -2em;
-}
-.content-card.content-card-list .container .content-wrapper .content .list-group-numbered {
-  padding-left: 0;
-}
-.content-card.content-card-list .container .content-wrapper .content .list-group-numbered .list-group-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-.content-card.content-card-list .container .content-wrapper .content .list-group-numbered .list-group-item::before {
-  text-align: center;
-  margin-right: 20px;
-  font-size: 20px;
-  background-color: #93E100;
-  border-radius: 50px;
-  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
-  color: #FFFFFF;
-}
-.content-card.content-card-list .container .content-wrapper .content .list-group-numbered .list-group-item:nth-child(3)::before {
-  padding: 0.25rem 0.85rem 0.25rem 0.85rem;
-}
-.content-card.content-card-list .container .content-wrapper .content .list-group-numbered .list-group-item .list-group-item-content span {
-  color: rgba(255, 255, 255, 0.6);
-}
-
 .pricing {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -12579,7 +12576,7 @@ textarea.form-control-lg {
 }
 .pricing .pricing-wrapper .pricing-boxes {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 30px;
 }
 .pricing .pricing-wrapper .pricing-boxes .pricing-box {
@@ -12587,6 +12584,7 @@ textarea.form-control-lg {
   border-radius: 20px;
   padding: 40px;
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
+  flex: 0 0 50%;
 }
 .pricing .pricing-wrapper .pricing-boxes .pricing-box .highlight {
   font-size: 13px;
@@ -12695,6 +12693,10 @@ textarea.form-control-lg {
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
 }
+.banner .banner-wrapper .content .cta {
+  display: flex;
+  gap: 20px;
+}
 .banner .banner-wrapper .images {
   flex: 0 0 50%;
   display: flex;
@@ -12711,6 +12713,32 @@ textarea.form-control-lg {
   position: absolute;
   top: -100px;
   left: -100px;
+}
+
+.banner-two-buttons {
+  margin-top: 7rem;
+  background: linear-gradient(to right, #93E100, #00A6FF);
+}
+.banner-two-buttons .banner-two-buttons-wrapper {
+  display: flex;
+  gap: 40px;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content {
+  padding-right: 100px;
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start;
+  color: #FFFFFF;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content span {
+  font-size: 17px;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content .cta {
+  display: flex;
+  gap: 20px;
 }
 
 .testimonials {
@@ -12827,40 +12855,13 @@ textarea.form-control-lg {
   margin-top: 50px;
 }
 
-.banner-two-buttons {
-  margin-top: 7rem;
-  margin-bottom: 7rem;
-  background: linear-gradient(to right, #93E100, #00A6FF);
-}
-.banner-two-buttons .banner-two-buttons-wrapper {
-  display: flex;
-  gap: 40px;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content {
-  padding-right: 100px;
-  flex: 0 0 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  align-items: flex-start;
-  color: #FFFFFF;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content span {
-  font-size: 17px;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content .cta {
-  display: flex;
-  gap: 20px;
-}
-
 .credit-card {
   padding-top: 7rem;
   padding-bottom: 50px;
 }
 .credit-card .container .content-wrapper {
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
-  background: linear-gradient(to left, #93E100, #00A6FF);
+  background: linear-gradient(to right, #93E100, #00A6FF);
   display: flex;
   border-radius: 20px;
 }
@@ -12908,7 +12909,7 @@ textarea.form-control-lg {
 }
 .rewards .container .content-wrapper {
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
-  background: linear-gradient(to left, #93E100, #00A6FF);
+  background: linear-gradient(to right, #93E100, #00A6FF);
   display: flex;
   border-radius: 20px;
   flex-basis: calc(40% - 25px);
@@ -12919,6 +12920,13 @@ textarea.form-control-lg {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+.rewards .container .content-wrapper .subline .btn-link {
+  color: #FFFFFF;
+}
+.rewards .container .content-wrapper .subline .btn-link i {
+  background-color: #FFFFFF;
+  color: #002A3F;
 }
 .rewards .container .content-wrapper .content {
   flex: 0 0 50%;
@@ -12975,11 +12983,11 @@ textarea.form-control-lg {
   flex-direction: column;
 }
 .rewards .container .content-wrapper:hover .subline .btn-link {
-  color: #FFFFFF;
+  color: #93E100;
 }
 .rewards .container .content-wrapper:hover .subline .btn-link i {
-  background-color: #FFFFFF;
-  color: #002A3F;
+  background-color: #93E100;
+  color: #FFFFFF;
 }
 
 .market {
@@ -13024,6 +13032,7 @@ textarea.form-control-lg {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: flex-end;
 }
 .market .container .content-wrapper .market-values .market-value .value img {
   background-color: #b4f6cb;

@@ -1,35 +1,48 @@
+<?php
+    $highlightTextLeft = get_sub_field('highlight_text_left');
+    $headlineLeft = get_sub_field('headline_left');
+    $textLeft = get_sub_field('text_left');
+    $buttonTextLeft = get_sub_field('button_text_left');
+    $imageLeft = get_sub_field('image_left');
+    $buttonUrlLeft = get_sub_field('button_url_left');
+    $highlightTextRight = get_sub_field('highlight_text_right');
+    $headlineRight = get_sub_field('headline_right');
+    $buttonTextRight = get_sub_field('button_text_right');
+    $imageRight = get_sub_field('image_right');
+    $buttonUrlRight = get_sub_field('button_url_right');
+?>
 <section class="rewards">
     <div class="container">
-        <a class="content-wrapper cryptoback" href="#">
+        <a class="content-wrapper cryptoback" href="<?= $buttonUrlLeft; ?>">
             <div class="content">
                 <span class="highlight">
-                    Cryptoback
+                    <?= $highlightTextLeft; ?>
                 </span>
-                <h2>Up to 8% Cryptoback rewards</h2>
-                <span>Earn up to 8% Cryptoback rewards every time you use your Wickie card. Enjoy 0% foreign exchange fees globally.</span>
+                <h2><?= $headlineLeft; ?></h2>
+                <span><?= $textLeft; ?></span>
                 <button type="button" class="btn btn-primary">
-                    Learn more
+                    <?= $buttonTextLeft; ?>
                     <i class="bi bi-arrow-right"></i>
                 </button>
             </div>
-            <div class="image" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/rewards/cryptoback.png');">
+            <div class="image" style="background-image: url('<?= wp_get_attachment_image_url($imageLeft, 'large');?>;">
             </div>
         </a>
-        <a class="content-wrapper token" href="#">
+        <a class="content-wrapper token" href="<?= $buttonUrlRight; ?>">
             <div class="content">
                 <div class="subline">
                     <span class="highlight">
-                        Wickie Token
+                        <?= $highlightTextRight; ?>
                     </span>
                     <button type="button" class="btn btn-link">
-                        Learn more
+                        <?= $buttonTextRight; ?>
                         <i class="bi bi-chevron-right"></i>
                     </button>
                 </div>
-                <h2>Exclusive Crypto rewards and benefits</h2>
+                <h2><?= $headlineRight; ?></h2>
             </div>
             <div class="image">
-                <img loading="lazy" decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/rewards/token.png">
+                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageRight, 'large');?>">
             </div>
         </a>
     </div>

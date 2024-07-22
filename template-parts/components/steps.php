@@ -1,50 +1,49 @@
+<?php
+    $headline = get_sub_field('headline');
+    $highlightBoxText = get_sub_field('highlight_box_text');
+    $highlightBoxIcon = get_sub_field('highlight_box_icon');
+?>
 <section class="steps">
     <div class="container">
-        <h2>How to get started?</h2>
+        <h2><?= $headline; ?></h2>
         <div class="content-boxes">
             <div class="content-box highlighted">
                 <div class="icon">
-                    <i class="bi bi-download"></i>
+                    <i class="bi bi-<?= $highlightBoxIcon; ?>"></i>
                 </div>
                 <div class="content">
-                    <span>Download the app from the Apple App Store or the Google Play Store</span>
-                    <div class="cta">
-                        <button type="button" class="btn btn-white">
-                            <i class="bi bi-apple"></i>
-                            App Store
-                        </button>
-                        <button type="button" class="btn btn-white">
-                            <i class="bi bi-google-play"></i>
-                            Google Play
-                        </button>
+                    <span><?= $highlightBoxText; ?></span>
+                    <?php if( have_rows('cta')):?>
+                        <div class="cta">
+                            <?php while( have_rows('cta') ): the_row();
+                            $buttonUrl = get_sub_field('button_url');
+                            $buttonIcon = get_sub_field('button_icon');
+                            $buttonText = get_sub_field('button_text');?>
+                                <a href="<?=$buttonUrl;?>">
+                                    <button type="button" class="btn btn-white">
+                                        <i class="bi bi-<?= $buttonIcon; ?>"></i>
+                                        <?= $buttonText; ?>
+                                    </button>
+                                </a>
+                            <?php endwhile;?>
+                        </div>
+                    <?php endif;?>
+                </div>
+            </div>
+            <?php if( have_rows('content_box')):?>
+                <?php while( have_rows('content_box') ): the_row();
+                $contentBoxIcon = get_sub_field('content_box_icon');
+                $contentBoxText = get_sub_field('content_box_text');?>
+                    <div class="content-box">
+                        <div class="icon">
+                            <i class="bi bi-<?= $contentBoxIcon; ?>"></i>
+                        </div>
+                        <div class="content">
+                            <span><?= $contentBoxText; ?></span>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="content-box">
-                <div class="icon">
-                    <i class="bi bi-phone"></i>
-                </div>
-                <div class="content">
-                    <span>Enter your phone number and the verification code we’ll send you, enter code in your application</span>
-                </div>
-            </div>
-            <div class="content-box">
-                <div class="icon">
-                    <i class="bi bi-person"></i>
-                </div>
-                <div class="content">
-                    <span>Create an account by telling us who you are, enter your name and date of birth for registration</span>
-                </div>
-            </div>
-            <div class="content-box">
-                <div class="icon">
-                    <i class="bi bi-person-vcard"></i>
-                </div>
-                <div class="content">
-                    <span>Verify who you are by recording a short selfie video and taking a photo of your ID to Cyberbank app. Enjoy mobile banking!</span>
-                </div>
-            </div>
+                <?php endwhile;?>
+            <?php endif; ?>
         </div>
     </div>
-    
 </section>

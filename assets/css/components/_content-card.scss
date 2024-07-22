@@ -2,13 +2,23 @@
     padding-top: 7rem;
     padding-bottom: 2rem;
 
+    &.content-card-list {
+        padding-bottom: 7rem;
+
+        .container {
+            .content-wrapper {
+                background: $primary !important;
+            }
+        }
+    }
+
     .container {
         .content-wrapper {
-            box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
+            box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
             background: linear-gradient(to right, #93E100, #00A6FF);
             display: flex;
             border-radius: 20px;
-    
+
             .content {
                 flex: 0 0 40%;
                 padding: 40px;
@@ -23,7 +33,7 @@
                     display: flex;
                     gap: 20px;
                 }
-                
+
                 span {
                     font-size: 17px;
                     margin-bottom: 20px;
@@ -34,8 +44,60 @@
                         margin-left: 10px;
                     }
                 }
+
+                ul {
+                    counter-reset: item;
+                    margin-left: 0;
+                    padding-left: 0;
+                }
+
+                li {
+                    display: block;
+                    margin-bottom: 0.5em;
+                    margin-left: 2em;
+                }
+
+                li::before {
+                    display: inline-block;
+                    content: counter(item) " ";
+                    counter-increment: item;
+                    width: 2em;
+                    margin-left: -2em;
+                }
+
+                .list-group-numbered {
+                    padding-left: 0;
+
+                    .list-group-item {
+                        display: flex;
+                        align-items: flex-start;
+                        margin-bottom: 20px;
+
+                        &::before {
+                            text-align: center;
+                            margin-right: 20px;
+                            font-size: 20px;
+                            background-color: $secondary;
+                            border-radius: 50px;
+                            padding: 0.25rem 0.5rem;
+                            color: #FFFFFF;
+                        }
+
+                        &:nth-child(3) {
+                            &::before {
+                                padding: 0.25rem 0.85rem;
+                            }
+                        }
+
+                        .list-group-item-content {
+                            span {
+                                color: #FFFFFF99;
+                            }
+                        }
+                    }
+                }
             }
-    
+
             .image {
                 flex: 0 0 60%;
                 display: flex;

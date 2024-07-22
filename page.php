@@ -24,7 +24,51 @@ get_header();
 					
 					get_template_part( 'template-parts/components/'. get_row_layout() );
 
-				elseif( get_row_layout() == '' ): 
+				elseif( get_row_layout() == 'feature_cards' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'credit_card' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'rewards' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'market' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'services' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'steps' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'content_card' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'feature_boxes' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'pricing' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'banner' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'testimonials' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'blog_posts' ): 
 
 					get_template_part( 'template-parts/components/'. get_row_layout() );
 				
