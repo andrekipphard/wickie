@@ -1,0 +1,36 @@
+.faq {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    .container {
+        .title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .accordion {
+            .accordion-item, .accordion-button {
+                background-color: transparent;
+                border: 0;
+            }
+            .accordion-item {
+                border-bottom: 1px solid #E0E0E7;
+            }
+            .accordion-button:not(.collapsed) {
+                box-shadow: none;
+            }
+            .accordion-button::after {
+                background-color: $secondary;
+                border-radius: 50px;
+                color: #FFFFFF;
+                content: "\f286";
+                font-family: bootstrap-icons;
+                font-size: 15px;
+                background-image: none;
+                padding-left: 3px;
+            }
+            .accordion-button {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+}

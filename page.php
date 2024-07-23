@@ -40,7 +40,7 @@ get_header();
 
 					get_template_part( 'template-parts/components/'. get_row_layout() );
 
-				elseif( get_row_layout() == 'services' ): 
+				elseif( get_row_layout() == 'popular_services' ): 
 
 					get_template_part( 'template-parts/components/'. get_row_layout() );
 
@@ -69,6 +69,34 @@ get_header();
 					get_template_part( 'template-parts/components/'. get_row_layout() );
 
 				elseif( get_row_layout() == 'blog_posts' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'hero_single' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'services' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'banner_boxed' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'image_content' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'icon_boxes' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'faq' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'get_started' ): 
 
 					get_template_part( 'template-parts/components/'. get_row_layout() );
 				

@@ -1,0 +1,30 @@
+.icon-boxes {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    .container {
+        .title {
+            gap:20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .icon-boxes-wrapper {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 50px;
+
+            .icon-box {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                flex-basis: calc(33.333% - 26.66px);
+
+                i {
+                    color: $secondary;
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}

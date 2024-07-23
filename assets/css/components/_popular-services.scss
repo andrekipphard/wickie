@@ -1,0 +1,43 @@
+.popular-services {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+    .content-boxes {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        .content-box {
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
+            flex-basis: calc(25% - 15px);
+
+            img {
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+            }
+    
+            .content {
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .text {
+                    .title {
+                        margin-top: 10px;
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}

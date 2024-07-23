@@ -1,0 +1,26 @@
+.image-content {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    .container {
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+        .image {
+            img {
+                border-radius: 50px;
+            }
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            .cta {
+                margin-top: 20px;
+                display: flex;
+                gap: 40px;
+                align-items: center;
+            }
+        }
+    }
+}
