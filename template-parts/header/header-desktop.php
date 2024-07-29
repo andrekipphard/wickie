@@ -1,8 +1,9 @@
 <?php
-    $headerLogo = get_field( 'header_logo', 'options' );
-    $headerLogoTransparentBackground = get_field( 'header_logo_transparent_background', 'options' );
+    $headerLogo = get_field('header_logo', 'options');
+    $headerLogoTransparentBackground = get_field('header_logo_transparent_background', 'options');
 ?>
-<div class="container header-desktop">
+
+<div class="header-desktop">
     <div class="left">
         <div class="logo">
             <?php if (is_front_page()): ?>
@@ -13,100 +14,125 @@
                 <a href="/">
                     <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($headerLogo, 'large'); ?>">
                 </a>
-            <?php endif;?>
+            <?php endif; ?>
         </div>
+    </div>
+    <div class="middle">
         <div class="navigation">
-            <ul class="nav">
-                <li class="nav-item dropdown mega-menu-dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button">
-                        Products
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="productsDropdown">
-                        <div class="row mega-menu">
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                    <h6><i class="bi bi-cash-coin"></i>Earn and Borrow</h6>
-                                        <ul>
-                                            <li><a class="dropdown-item" href="#">Wickie DUO</a></li>
-                                            <li><a class="dropdown-item" href="#">Wickie Credit</a></li>
-                                            <li><a class="dropdown-item" href="#">X-Accounts</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <h6><i class="bi bi-gift"></i>Rewards</h6>
-                                        <ul>
-                                            <li><a class="dropdown-item" href="#">Cryptoback Rewards</a></li>
-                                            <li><a class="dropdown-item" href="#">X-tras</a></li>
-                                            <li><a class="dropdown-item" href="#">Refer a friend</a></li>
-                                            <li><a class="dropdown-item" href="#">Mastercard Offers</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <h6><i class="bi bi-graph-up"></i>Invest and Trade</h6>
-                                        <ul>
-                                            <li><a class="dropdown-item" href="#">Wickie Multiply</a></li>
-                                            <li><a class="dropdown-item" href="#">Cryptocurrencies</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <h6><i class="bi bi-credit-card"></i>Card and Banking</h6>
-                                        <ul>
-                                            <li><a class="dropdown-item" href="#">Wickie Card</a></li>
-                                        </ul>
+            <?php if (have_rows('menu_item', 'options')): ?>
+                <ul class="nav">
+                    <?php
+                    $menuItemIndex = 0; // Initialize the index variable
+                    while (have_rows('menu_item', 'options')): the_row();
+                        $menuItemName = get_sub_field('menu_item_name');
+                        $menuItemUrl = get_sub_field('menu_item_url');
+                        $megaMenu = get_sub_field('mega_menu');
+                    ?>
+                        <li class="nav-item <?php if (have_rows('sub_menu_item')): ?>dropdown<?php endif; ?><?php if ($megaMenu == 'Yes' && have_rows('sub_menu_item')): ?> mega-menu-dropdown<?php endif; ?>">
+                            <a class="nav-link<?php if (have_rows('sub_menu_item')): ?> dropdown-toggle<?php endif; ?>" href="<?= $menuItemUrl; ?>"<?php if (have_rows('sub_menu_item')): ?> id="menuItem<?= $menuItemIndex; ?>Dropdown" role="button"<?php endif; ?>>
+                                <?= $menuItemName; ?>
+                            </a>
+                            <?php if (have_rows('sub_menu_item')): ?>
+                                <div class="dropdown-menu" aria-labelledby="menuItem<?= $menuItemIndex; ?>Dropdown">
+                                    <div class="row<?php if ($megaMenu == 'Yes'): ?> mega-menu<?php endif; ?><?php if ($megaMenu == 'No'): ?> normal-menu<?php endif; ?>">
+                                        <div class="col">
+                                            <?php if ($megaMenu == 'Yes' && have_rows('sub_menu_item')): ?>
+                                                <div class="row">
+                                                    <?php while (have_rows('sub_menu_item')): the_row();
+                                                        $subMenuItemName = get_sub_field('sub_menu_item_name');
+                                                        $subMenuItemUrl = get_sub_field('sub_menu_item_url');
+                                                        $subMenuItemIcon = get_sub_field('sub_menu_item_icon');
+                                                    ?>
+                                                        <div class="col-lg-3 mega-menu-col">
+                                                            <a href="<?= $subMenuItemUrl; ?>">
+                                                                <h6><?php if ($subMenuItemIcon): ?><i class="bi bi-<?= $subMenuItemIcon; ?>"></i><?php endif; ?><?= $subMenuItemName; ?></h6>
+                                                            </a>
+                                                            <?php if (have_rows('sub_sub_menu_item')): ?>
+                                                                <ul>
+                                                                <?php while (have_rows('sub_sub_menu_item')): the_row(); // Correct loop and function
+                                                                    $subSubMenuItemName = get_sub_field('sub_sub_menu_item_name');
+                                                                    $subSubMenuItemUrl = get_sub_field('sub_sub_menu_item_url');
+                                                                ?>
+                                                                    <li><a class="dropdown-item" href="<?= $subSubMenuItemUrl; ?>"><?= $subSubMenuItemName; ?></a></li>
+                                                                <?php endwhile; ?>
+                                                                </ul>
+                                                            <?php endif; ?>
+                                                        </div>
+                                                    <?php endwhile; ?>
+                                                </div>
+                                            <?php endif; ?>
+                                            <?php if ($megaMenu == 'No' && have_rows('sub_menu_item')): ?>
+                                                <ul>
+                                                    <?php while (have_rows('sub_menu_item')): the_row();
+                                                        $subMenuItemName = get_sub_field('sub_menu_item_name');
+                                                        $subMenuItemUrl = get_sub_field('sub_menu_item_url');
+                                                    ?>
+                                                        <li><a class="dropdown-item" href="<?= $subMenuItemUrl; ?>"><?= $subMenuItemName; ?></a></li>
+                                                    <?php endwhile; ?>
+                                                </ul>
+                                            <?php endif; ?>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <h6 class="mt-3"><i class="bi bi-diagram-3"></i>Ecosystem</h6>
-                                        <ul>
-                                            <li><a class="dropdown-item" href="#">Whitepaper</a></li>
-                                            <li><a class="dropdown-item" href="#">Security</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="helpDropdown" role="button">
-                        Help
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="helpDropdown">
-                        <div class="row normal-menu">
-                            <div class="col">
-                                <ul>
-                                    <li><a class="dropdown-item" href="#">Help Hub</a></li>
-                                    <li><a class="dropdown-item" href="#">Create Ticket</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Company</a>
-                </li>
-            </ul>
+                            <?php endif; ?>
+                        </li>
+                    <?php
+                    $menuItemIndex++;
+                    endwhile;
+                    ?>
+                </ul>
+            <?php endif; ?>
         </div>
     </div>
     <div class="right">
+        <button type="button" class="btn btn-link search-icon" id="searchIcon">
+            <i class="bi bi-search"></i>
+        </button>
+        <div class="search-modal" id="searchModal">
+            <div class="search-modal-content">
+                <span class="close">&times;</span>
+                <?php get_search_form(); ?>
+            </div>
+        </div>
         <button type="button" class="btn btn-link"><i class="bi bi-globe"></i>En</button>
-        <?php if( have_rows('header_cta', 'options')):?>
-            <?php while( have_rows('header_cta', 'options') ): the_row();
-            $headerButtonUrl = get_sub_field('header_button_url');
-            $headerButtonIcon = get_sub_field('header_button_icon');
-            $headerButtonText = get_sub_field('header_button_text');?>
-                <a href="<?=$headerButtonUrl;?>">
+        <?php if (have_rows('header_cta', 'options')): ?>
+            <?php while (have_rows('header_cta', 'options')): the_row();
+                $headerButtonUrl = get_sub_field('header_button_url');
+                $headerButtonIcon = get_sub_field('header_button_icon');
+                $headerButtonText = get_sub_field('header_button_text');
+            ?>
+                <a href="<?= $headerButtonUrl; ?>">
                     <button type="button" class="btn btn-link">
-                        <i class="bi bi-<?=$headerButtonIcon;?>"></i>
-                        <?=$headerButtonText;?>
+                        <i class="bi bi-<?= $headerButtonIcon; ?>"></i>
+                        <?= $headerButtonText; ?>
                     </button>
                 </a>
-            <?php endwhile;?>
-        <?php endif;?>
+            <?php endwhile; ?>
+        <?php endif; ?>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var modal = document.getElementById('searchModal');
+        var btn = document.getElementById('searchIcon');
+        var span = modal.querySelector('.close');
+
+        // Open modal on button click
+        btn.onclick = function() {
+            modal.style.display = 'flex'; // Use flex to center content
+        }
+
+        // Close modal on close button click
+        span.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside of the modal content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    });
+</script>

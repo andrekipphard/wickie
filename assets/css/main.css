@@ -11975,6 +11975,8 @@ textarea.form-control-lg {
 }
 
 .header-desktop {
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11982,6 +11984,18 @@ textarea.form-control-lg {
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 18px;
+}
+.header-desktop .mega-menu-col {
+  margin-bottom: 40px;
+}
+.header-desktop .mega-menu-col a:hover {
+  color: #93E100;
+}
+.header-desktop .middle {
+  position: relative;
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
 }
 .header-desktop .nav-item:hover .nav-link {
   color: #93E100;
@@ -12012,6 +12026,7 @@ textarea.form-control-lg {
   flex-direction: row;
   align-items: center;
   gap: 40px;
+  flex: 0 0 25%;
 }
 .header-desktop .left .logo img {
   width: 150px;
@@ -12020,9 +12035,10 @@ textarea.form-control-lg {
 .header-desktop .right {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   gap: 20px;
+  flex: 0 0 25%;
 }
 .header-desktop .right img {
   width: 125px;
@@ -12068,8 +12084,11 @@ textarea.form-control-lg {
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
 }
 
+.mega-menu {
+  padding-bottom: 0;
+}
+
 /* Flexbox for columns in mega menu */
-.mega-menu .row,
 .normal-menu .row {
   display: flex;
   justify-content: space-between;
@@ -12091,6 +12110,10 @@ textarea.form-control-lg {
 .mega-menu ul li,
 .normal-menu ul li {
   margin-bottom: 0.5rem;
+}
+.mega-menu ul li:last-child,
+.normal-menu ul li:last-child {
+  margin-bottom: 0;
 }
 
 .mega-menu ul li a,
@@ -12160,6 +12183,106 @@ textarea.form-control-lg {
   color: #000;
 }
 
+/* Styling for the search icon */
+.search-icon {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333; /* Adjust color as needed */
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.search-icon:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+/* Modal styling */
+.search-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Make sure it is on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+  justify-content: center;
+  align-items: center;
+}
+
+.search-modal-content {
+  background-color: #fff;
+  margin: 10% auto; /* 10% from top and centered */
+  padding: 50px;
+  border: 1px solid #888;
+  width: 90%; /* Full width for smaller screens */
+  max-width: 500px; /* Max width for larger screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Close button */
+.search-modal-content .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.search-modal-content .close:hover,
+.search-modal-content .close:focus {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Search form inside modal */
+.search-modal-content form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-modal-content .search-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-size: 16px;
+}
+
+.search-modal-content .search-submit {
+  padding: 10px 20px;
+  background-color: #002A3F;
+  color: #fff;
+  border: none;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-modal-content .search-submit:hover {
+  background-color: #93E100;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .search-modal-content {
+    width: 95%;
+  }
+}
 .site-footer {
   background-color: #002A3F;
 }
@@ -12256,7 +12379,7 @@ textarea.form-control-lg {
   left: 0;
   width: 100%;
   height: 70%;
-  background: linear-gradient(123deg, #93E100 0%, #78E87D 19%, #5FF3DC 44%, #00E3FF 57%, #19B8DF 72%, #00A6FF 100%);
+  background: linear-gradient(to right, #93E100, #00A6FF);
   z-index: -1;
 }
 
