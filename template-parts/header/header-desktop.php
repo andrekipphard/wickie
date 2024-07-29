@@ -1,12 +1,19 @@
 <?php
-    $logo = get_field( 'header_logo', 'options' )
+    $headerLogo = get_field( 'header_logo', 'options' );
+    $headerLogoTransparentBackground = get_field( 'header_logo_transparent_background', 'options' );
 ?>
 <div class="container header-desktop">
     <div class="left">
         <div class="logo">
-            <a href="/">
-                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($logo, 'large'); ?>">
-            </a>
+            <?php if (is_front_page()): ?>
+                <a href="/">
+                    <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($headerLogoTransparentBackground, 'large'); ?>">
+                </a>
+            <?php else: ?>
+                <a href="/">
+                    <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($headerLogo, 'large'); ?>">
+                </a>
+            <?php endif;?>
         </div>
         <div class="navigation">
             <ul class="nav">

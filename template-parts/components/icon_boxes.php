@@ -3,13 +3,16 @@
     $highlightText = get_sub_field('highlight_text');
     $subline = get_sub_field('subline');
     $alignHeadline = get_sub_field('align_headline');
+    $icon_with_background_color = get_sub_field('icon_with_background_color');
 ?>
 <section class="icon-boxes">
     <div class="container">
         <div class="title" <?php if($alignHeadline == 'Center'):?>style="align-items: center;"<?php endif;?><?php if($alignHeadline == 'Right'):?>style="align-items: end;"<?php endif;?>>
-            <span class="highlight">
-                <?= $highlightText; ?>
-            </span>
+            <?php if($highlightText):?>
+                <span class="highlight">
+                    <?= $highlightText; ?>
+                </span>
+            <?php endif;?>
             <h2><?= $headline; ?></h2>
             <span><?= $subline; ?></span>
         </div>
@@ -20,8 +23,12 @@
                 $iconBoxIcon = get_sub_field('icon_box_icon');
                 $iconBoxHeadline = get_sub_field('icon_box_headline');
                 $iconBoxText = get_sub_field('icon_box_text');?>
-                    <div class="icon-box" <?php if($alignIconBox == 'Center'):?>style="text-align:center"<?php endif;?><?php if($alignIconBox == 'Right'):?>style="text-align:right"<?php endif;?>>
-                        <i class="bi bi-<?= $iconBoxIcon; ?>"></i>
+                    <div class="icon-box" 
+                        <?php if($alignIconBox == 'Center'):?>style="text-align:center"<?php endif;?><?php if($alignIconBox == 'Right'):?>style="text-align:end"<?php endif;?>
+                    >
+                        <i class="bi bi-<?= $iconBoxIcon; ?>"
+                            <?php if($icon_with_background_color == 'Yes'):?>style="color: #FFFFFF; background-color: #002A3F; border-radius: 20px; width: fit-content; padding-left: 15px; padding-right: 15px; padding-top: 3px; align-self: <?php if($alignIconBox == 'Center'):?>center;<?php endif;?><?php if($alignIconBox == 'Right'):?>end;<?php endif;?>"<?php endif;?>
+                        ></i>
                         <h3><?= $iconBoxHeadline; ?></h3>
                         <span><?= $iconBoxText; ?></span>
                     </div>

@@ -30,7 +30,7 @@
                     <?php while( have_rows('image') ): the_row();
                     $image = get_sub_field('image');
                     $overlay = get_sub_field('overlay');?>
-                        <img class="<?= $overlay == 'Ja' ? 'overlay' : ''; ?>" loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large');?>">
+                        <img class="<?= $overlay == 'Yes' ? 'overlay' : ''; ?>" loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large');?>">
                     <?php endwhile;?>
                 </div>
             <?php endif;?>
