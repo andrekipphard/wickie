@@ -11983,6 +11983,9 @@ textarea.form-control-lg {
   padding-bottom: 20px;
   font-size: 18px;
 }
+.header-desktop .nav-item:hover .nav-link {
+  color: #93E100;
+}
 .header-desktop h6, .header-desktop .h6 {
   display: flex;
 }
@@ -11991,6 +11994,8 @@ textarea.form-control-lg {
 }
 .header-desktop .btn {
   display: flex;
+  padding-right: 10px;
+  border-radius: 20px;
 }
 .header-desktop .btn i {
   margin-right: 5px;
@@ -12113,10 +12118,6 @@ textarea.form-control-lg {
   background-color: transparent;
 }
 
-.nav-item:hover .nav-link {
-  color: #93E100;
-}
-
 .dropdown-item {
   padding-left: 0px;
 }
@@ -12128,6 +12129,35 @@ textarea.form-control-lg {
 .normal-menu {
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.home .site-header {
+  background-color: transparent;
+}
+.home .header-desktop .nav-item .nav-link {
+  color: #FFFFFF;
+  border-radius: 20px;
+}
+.home .header-desktop .nav-item:hover .nav-link {
+  box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
+  background-color: #FFFFFF;
+  color: #000;
+  border-radius: 20px;
+}
+.home .header-desktop .btn {
+  color: #FFFFFF;
+}
+.home .header-desktop .btn i {
+  color: #FFFFFF;
+}
+.home .header-desktop .btn:hover {
+  box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
+  background-color: #FFFFFF;
+  color: #000;
+  border-radius: 20px;
+}
+.home .header-desktop .btn:hover i {
+  color: #000;
 }
 
 .site-footer {

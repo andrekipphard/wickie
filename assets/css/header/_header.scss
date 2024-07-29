@@ -15,6 +15,10 @@
     padding-bottom: 20px;
     font-size: 18px;
 
+    .nav-item:hover .nav-link {
+        color: $secondary;
+    }
+
     h6 {
         display: flex;
         
@@ -24,6 +28,8 @@
     }
     .btn {
         display: flex;
+        padding-right: 10px;
+        border-radius: 20px;
         
         i {
             margin-right: 5px;
@@ -156,10 +162,6 @@
     background-color: transparent;
 }
 
-.nav-item:hover .nav-link {
-    color: $secondary;
-}
-
 .dropdown-item {
     padding-left:0px;
 }
@@ -173,5 +175,43 @@
 }
 
 
+.home {
+    .site-header{
+        background-color: transparent;
+    }
 
+    .header-desktop {
+        .nav-item {
+            .nav-link {
+                color:#FFFFFF;
+                border-radius: 20px;
+            }
+        }
+    
+        .nav-item:hover .nav-link {
+            box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
+            background-color: #FFFFFF;
+            color: #000;
+            border-radius: 20px;
+        }
 
+        .btn {
+            color:#FFFFFF;
+
+            i {
+                color: #FFFFFF;
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
+                background-color: #FFFFFF;
+                color: #000;
+                border-radius: 20px;
+
+                i {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
