@@ -44,7 +44,7 @@
                 <a href="<?=$buttonOneUrl;?>">
                     <?php if($buttonTwoStyle == 'Link'):?>
                         <button type="button" class="btn btn-link">
-                            <?= $buttonOneText; ?>
+                            <?= $buttonTwoText; ?>
                             <i class="bi bi-chevron-right"></i>
                         </button>
                     <?php else:?>
