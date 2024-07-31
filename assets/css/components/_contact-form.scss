@@ -1,0 +1,82 @@
+.contact-form {
+    padding-top: 7rem;
+    padding-bottom: 14rem;
+    .container {
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
+        background-color: #FFFFFF;
+        display: flex;
+        gap: 40px;
+        .contact-form-img {
+            flex-basis: calc(50% - 20px);
+        }
+        .contact-form-form {
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            flex-basis: calc(50% - 20px);
+        }
+        .contact-form-container {
+            margin-top: 20px;
+            .form-group {
+                margin-bottom: 15px;
+            }
+            .form-group-inline {
+                display: flex;
+                justify-content: space-between;
+            }
+            .form-group-inline .form-group {
+                flex: 1;
+                margin-right: 10px;
+            }
+            .form-group-inline .form-group:last-child {
+                margin-right: 0; /* Remove margin from the last item */
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 20px;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
+            .submit-btn {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .submit-btn:hover {
+                background-color: #0056b3;
+            }
+            .success-message {
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+                border-radius: 5px;
+            }
+        }
+        .success-message {
+            background-color: $secondary;
+            color: #FFFFFF;
+            padding: 10px;
+            border-radius: 20px;
+            text-align: center;
+        }
+    }  
+}

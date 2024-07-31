@@ -21,6 +21,28 @@
                 gap: 40px;
                 align-items: center;
             }
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+                li {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+
+                    i {
+                        margin-right: 10px;
+                        color: $secondary;
+                        font-size: 24px;
+                        display: flex;
+                    }
+                }
+
+            }
         }
     }
 }

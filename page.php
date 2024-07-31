@@ -99,6 +99,22 @@ get_header();
 				elseif( get_row_layout() == 'get_started' ): 
 
 					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'credit_card_content' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'contact_info' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'contact_boxes' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'contact_form' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
 				
 				endif; 
 
