@@ -54,12 +54,23 @@
             gap:20px;
 
             .navigation-links-menu {
-                flex-basis: calc(33.333% - 13.33px);
+                flex: 1 0 100%;
+                .navigation-links-menu-ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    gap: 20px;
+
+                    .navigation-links-menu-ul-li {
+                        flex-basis: calc(25% - 15px);
+                    }
+                }
             }
             ul {
                 list-style: none;
                 padding: 0;
                 margin: 0;
+
             }
             ul > li {
                 margin-bottom: 40px;

@@ -45,74 +45,26 @@
 				</div>
 				<div class="navigation-links">
 					<div class="navigation-links-menu">
-						<ul class="navigation-group">
-							<li class="navigation-item">
-								<a href="#"><span>Account</span></a>
-								<ul class="navigation-group">
-									<li class="navigation-item"><a href="#"><span>ATM Services</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Beneficial Ownership</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Calculators</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Direct Deposit</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Fraud Prevention</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Overdraft Services</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Switch Kit</span></a></li>
-								</ul>
-							</li>
-							<li class="navigation-item">
-								<a href="#"><span>Card Services</span></a>
-								<ul class="navigation-group">
-									<li class="navigation-item"><a href="#"><span>Credit Cards</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Debit Cards</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Gift Cards</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Prepaid Cards</span></a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<div class="navigation-links-menu">
-						<ul class="navigation-group">
-							<li class="navigation-item">
-								<a href="#"><span>Online Services</span></a>
-								<ul class="navigation-group">
-									<li class="navigation-item"><a href="#"><span>Apply for a Loan</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Apply for a Mortgage</span></a></li>
-									<li class="navigation-item"><a href="#"><span>eStatements</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Make a Loan Payment</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Make an Appointmen</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Mobile App</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Mobile Deposit</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Online Banking</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Online Banking Guides</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Open an Account</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Rates</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Reorder Checks</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Text Banking</span></a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<div class="navigation-links-menu">
-						<ul class="navigation-group">
-							<li class="navigation-item">
-								<a href="#"><span>Information</span></a>
-								<ul class="navigation-group">
-									<li class="navigation-item"><a href="#"><span>Services</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Locations</span></a></li>
-									<li class="navigation-item"><a href="#"><span>News</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Products</span></a></li>
-									<li class="navigation-item"><a href="#"><span>Image Credits</span></a></li>
-								</ul>
-							</li>
-							<li class="navigation-item">
-								<a href="#"><span>Contact</span></a>
-								<ul class="navigation-group">
-									<li class="navigation-item"><span>Corporate Headquarters: 85 Broad Street, New York, NY 10004</span></li>
-									<li class="navigation-item"><a href="#"><span>Routing Number: 111923607</span></a></li>
-									<li class="navigation-item"><a href="#"><span>1-123-456-7890</span></a></li>
-									<li class="navigation-item"><a href="#"><span>example@ex.com</span></a></li>
-								</ul>
-							</li>
-						</ul>
+						<?php if( have_rows('footer_menu', 'options')):?>
+							<ul class="navigation-group navigation-links-menu-ul">
+								<?php while( have_rows('footer_menu', 'options') ): the_row();
+								$footerMenuName = get_sub_field('footer_menu_name');
+								$footerMenuUrl = get_sub_field('footer_menu_url');?>
+									<li class="navigation-item navigation-links-menu-ul-li">
+										<a href="<?=$footerMenuUrl;?>"><span><?=$footerMenuName;?></span></a>
+										<?php if( have_rows('footer_menu_item', 'options')):?>
+											<ul class="navigation-group">
+											<?php while( have_rows('footer_menu_item', 'options') ): the_row();
+											$footerMenuItemName = get_sub_field('footer_menu_item_name');
+											$footerMenuItemUrl = get_sub_field('footer_menu_item_url');?>
+													<li class="navigation-item"><a href="<?=$footerMenuItemUrl;?>"><span><?=$footerMenuItemName;?></span></a></li>
+												<?php endwhile;?>
+											</ul>
+										<?php endif;?>
+									</li>
+								<?php endwhile;?>
+							</ul>
+						<?php endif;?>
 					</div>
 				</div>	
 			</div>

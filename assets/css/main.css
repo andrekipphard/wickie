@@ -12336,7 +12336,16 @@ textarea.form-control-lg {
   gap: 20px;
 }
 .site-footer .footer .navigation-links .navigation-links-menu {
-  flex-basis: calc(33.333% - 13.33px);
+  flex: 1 0 100%;
+}
+.site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+}
+.site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li {
+  flex-basis: calc(25% - 15px);
 }
 .site-footer .footer .navigation-links ul {
   list-style: none;
