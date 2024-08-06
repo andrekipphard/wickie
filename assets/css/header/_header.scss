@@ -3,13 +3,13 @@
 }
 
 .header-mobile{
-    display:none;
+    display:block;
 }
 
 .header-desktop {
     padding-left: 20px;
     padding-right: 20px;
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -91,18 +91,22 @@
         }
         
         .btn-link {
-            font-size: 18px;
+            font-size: 0px;
             font-weight: normal;
+
+            @media (min-width: 1950px) {
+                font-size: 18px;
+            }
         }
     }
 }
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-up(lg) {
     .header-mobile {
-        display: block;
+        display: none;
     }
 
     .header-desktop {
-        display: none;
+        display: flex;
     }
 }
 /* Ensure the header-desktop container is positioned relatively */
