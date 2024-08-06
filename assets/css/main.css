@@ -13767,12 +13767,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
-  font-size: 88px;
+  font-size: 24px;
   font-weight: 600;
 }
 
 h2, .h2 {
-  font-size: 56px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -13932,4 +13932,55 @@ h2, .h2 {
   background-color: #ffffff;
   color: #000000;
   padding: 5px;
+}
+
+@media (min-width: 576px) {
+  h1, .h1 {
+    font-size: 36px;
+    font-weight: 600;
+  }
+  h2, .h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+@media (min-width: 768px) {
+  h1, .h1 {
+    font-size: 49px;
+    font-weight: 600;
+  }
+  h2, .h2 {
+    font-size: 31px;
+    font-weight: 600;
+  }
+}
+@media (min-width: 992px) {
+  h1, .h1 {
+    font-size: 63px;
+    font-weight: 600;
+  }
+  h2, .h2 {
+    font-size: 40px;
+    font-weight: 600;
+  }
+}
+@media (min-width: 1200px) {
+  h1, .h1 {
+    font-size: 75px;
+    font-weight: 600;
+  }
+  h2, .h2 {
+    font-size: 48px;
+    font-weight: 600;
+  }
+}
+@media (min-width: 1400px) {
+  h1, .h1 {
+    font-size: 88px;
+    font-weight: 600;
+  }
+  h2, .h2 {
+    font-size: 56px;
+    font-weight: 600;
+  }
 }/*# sourceMappingURL=main.css.map */

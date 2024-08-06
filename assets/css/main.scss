@@ -73,12 +73,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
 }
 h1 {
-    font-size: 88px;
+    font-size: 24px;
     font-weight: 600;
 }
 
 h2 {
-    font-size: 56px;
+    font-size: 16px;
     font-weight: 600; 
 }
 
@@ -242,4 +242,60 @@ h2 {
     background-color: #ffffff;
     color: #000000;
     padding: 5px;
+}
+
+@include media-breakpoint-up(sm) {
+    h1 {
+        font-size: 36px;
+        font-weight: 600;
+    }
+    
+    h2 {
+        font-size: 24px;
+        font-weight: 600; 
+    }
+}
+@include media-breakpoint-up(md) {
+    h1 {
+        font-size: 49px;
+        font-weight: 600;
+    }
+    
+    h2 {
+        font-size: 31px;
+        font-weight: 600; 
+    }
+}
+@include media-breakpoint-up(lg) {
+    h1 {
+        font-size: 63px;
+        font-weight: 600;
+    }
+    
+    h2 {
+        font-size: 40px;
+        font-weight: 600; 
+    }
+}
+@include media-breakpoint-up(xl) {
+    h1 {
+        font-size: 75px;
+        font-weight: 600;
+    }
+    
+    h2 {
+        font-size: 48px;
+        font-weight: 600; 
+    }
+}
+@include media-breakpoint-up(xxl) {
+    h1 {
+        font-size: 88px;
+        font-weight: 600;
+    }
+    
+    h2 {
+        font-size: 56px;
+        font-weight: 600; 
+    }
 }
