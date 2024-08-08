@@ -2,8 +2,6 @@
     $headline = get_sub_field('headline');
     $buttonText = get_sub_field('button_text');
     $buttonUrl = get_sub_field('button_url');
-    $numberOfPosts = get_sub_field('number_of_posts');
-    $excerptLength = 20;
 ?>
 <section class="blog-posts">
     <div class="container">
@@ -18,33 +16,25 @@
         </div>
         <div class="blog-posts-wrapper">
             <?php
-            $recent_posts = new WP_Query(array(
-                'posts_per_page' => (int)$numberOfPosts,
-                'post_status' => 'publish'
-            ));
-
-            if ($recent_posts->have_posts()) :
-                while ($recent_posts->have_posts()) : $recent_posts->the_post();
-                    $post_id = get_the_ID();
-                    $post_title = get_the_title();
-                    $post_excerpt = wp_trim_words(get_the_excerpt(), $excerptLength);
-                    $post_date = get_the_date('F j, Y');
-                    $post_url = get_permalink();
-                    $post_image_url = get_the_post_thumbnail_url($post_id, 'large');
-                    $categories = get_the_category();
-                    $category_names = wp_list_pluck($categories, 'name');
-                    $category_list = implode(', ', $category_names);
+            if( have_rows('blog_post')):
+                while( have_rows('blog_post') ): the_row();
+                $blogPostUrl = get_sub_field('blog_post_url');
+                $blogPostTitle = get_sub_field('blog_post_title');
+                $blogPostImageUrl = get_sub_field('blog_post_image_url');
+                $blogPostCategory = get_sub_field('blog_post_category');
+                $blogPostDate = get_sub_field('blog_post_date');
+                $blogPostExcerpt = get_sub_field('blog_post_excerpt');
             ?>
-                <a class="blog-post" href="<?= esc_url($post_url); ?>">
-                    <img class="w-100" loading="lazy" decoding="async" src="<?= esc_url($post_image_url); ?>" alt="<?= esc_attr($post_title); ?>">
+                <a class="blog-post" href="<?= $blogPostUrl ?>" target="_blank">
+                    <img class="w-100" loading="lazy" decoding="async" src="<?= $blogPostImageUrl ?>" alt="<?= $blogPostTitle ?>">
                     <div class="content">
                         <div class="text">
                             <div class="blog-post-info">
-                                <span class="highlight"><?= esc_html($category_list); ?></span>
-                                <span><?= esc_html($post_date); ?></span>
+                                <span class="highlight"><?= $blogPostCategory ?></span>
+                                <span><?= $blogPostDate ?></span>
                             </div>
-                            <h3 class="title"><?= esc_html($post_title); ?></h3>
-                            <span><?= esc_html($post_excerpt); ?></span>
+                            <h3 class="title"><?= $blogPostTitle ?></h3>
+                            <span><?= $blogPostExcerpt?></span>
                         </div>
                         <button type="button" class="btn btn-link">
                             Read more
@@ -54,9 +44,6 @@
                 </a>
             <?php
                 endwhile;
-                wp_reset_postdata();
-            else :
-                echo '<p>No posts found.</p>';
             endif;
             ?>
         </div>

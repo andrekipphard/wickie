@@ -2,8 +2,9 @@
     $headline = get_sub_field('headline');
     $text = get_sub_field('text');
     $layout = get_sub_field('layout');
+    $padding = get_sub_field('padding');
 ?>
-<section class="<?= $layout == 'Single Image' ? 'banner-two-buttons' : 'banner'; ?>">
+<section class="<?= $layout == 'Single Image' ? 'banner-two-buttons' : 'banner'; ?>"<?php if($padding == 'Yes'):?> style="padding-top: 7rem; padding-bottom: 7rem"<?php endif;?>>
     <div class="container">
         <div class="<?= $layout == 'Single Image' ? 'banner-two-buttons-wrapper' : 'banner-wrapper'; ?>">
             <div class="content">

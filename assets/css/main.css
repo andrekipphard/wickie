@@ -12438,6 +12438,7 @@ textarea.form-control-lg {
   flex-direction: column;
 }
 .hero .container .content {
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12924,6 +12925,7 @@ textarea.form-control-lg {
   font-size: 17px;
 }
 .banner-two-buttons .banner-two-buttons-wrapper .content .cta {
+  margin-top: 20px;
   display: flex;
   gap: 20px;
 }
@@ -12972,6 +12974,8 @@ textarea.form-control-lg {
 .testimonials .container #testimonial-slider .carousel-inner .carousel-item .carousel-content .testimonial-author img {
   border-radius: 50px;
   margin-right: 20px;
+  width: 50px;
+  height: 50px;
 }
 .testimonials .container #testimonial-slider .carousel-control-prev,
 .testimonials .container #testimonial-slider .carousel-control-next {
@@ -13081,7 +13085,7 @@ textarea.form-control-lg {
   background-position: left;
   background-repeat: no-repeat;
 }
-.credit-card .container .content-wrapper:hover .btn-primary {
+.credit-card .container .content-wrapper:hover .btn-white {
   background-color: transparent;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
@@ -13236,6 +13240,7 @@ textarea.form-control-lg {
 }
 .hero-single .container .content-image {
   display: flex;
+  gap: 20px;
 }
 .hero-single .container .content-image .content {
   display: flex;
@@ -13286,8 +13291,8 @@ textarea.form-control-lg {
 }
 .hero-single .container .cta.contact-button a .btn-link i {
   background-color: #93E100;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-right: 12px;
+  padding-left: 12px;
   font-size: 36px;
   margin-right: 20px;
 }
