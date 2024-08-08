@@ -13388,10 +13388,17 @@ textarea.form-control-lg {
   flex-direction: row;
   gap: 100px;
 }
+.image-content .container .image {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
 .image-content .container .image img {
   border-radius: 50px;
+  width: 100%;
 }
 .image-content .container .content {
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13430,6 +13437,9 @@ textarea.form-control-lg {
   gap: 20px;
   display: flex;
   flex-direction: column;
+}
+.icon-boxes .container .title .subline {
+  text-align: center;
 }
 .icon-boxes .container .icon-boxes-wrapper {
   display: flex;

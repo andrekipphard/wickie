@@ -15,7 +15,7 @@
                 </span>
             <?php endif;?>
             <h2><?= $headline; ?></h2>
-            <?php if($subline):?><span><?= $subline; ?></span><?php endif;?>
+            <?php if($subline):?><span class="subline"><?= $subline; ?></span><?php endif;?>
         </div>
         <?php if( have_rows('icon_box')):?>
             <div class="icon-boxes-wrapper<?php if($subline):?> has-subline<?php endif;?>">
