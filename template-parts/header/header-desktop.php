@@ -35,9 +35,9 @@
                             <?php if (have_rows('sub_menu_item')): ?>
                                 <div class="dropdown-menu" aria-labelledby="menuItem<?= $menuItemIndex; ?>Dropdown">
                                     <div class="row<?php if ($megaMenu == 'Yes'): ?> mega-menu<?php endif; ?><?php if ($megaMenu == 'No'): ?> normal-menu<?php endif; ?>">
-                                        <div class="col">
+                                        <div class="col d-flex justify-content-center">
                                             <?php if ($megaMenu == 'Yes' && have_rows('sub_menu_item')): ?>
-                                                <div class="row">
+                                                <div class="row container">
                                                     <?php while (have_rows('sub_menu_item')): the_row();
                                                         $subMenuItemName = get_sub_field('sub_menu_item_name');
                                                         $subMenuItemUrl = get_sub_field('sub_menu_item_url');
@@ -85,9 +85,7 @@
         </div>
     </div>
     <div class="right">
-        <button type="button" class="btn btn-link search-icon" id="searchIcon">
-            <i class="bi bi-search"></i>
-        </button>
+    <?php get_search_form(); ?>
         <div class="search-modal" id="searchModal">
             <div class="search-modal-content">
                 <span class="close">&times;</span>
@@ -135,4 +133,45 @@
             }
         }
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    var header = document.querySelector('.header-desktop');
+    var navItems = document.querySelectorAll('.nav-item.dropdown');
+    var overlay = document.querySelector('.overlay'); // Select the overlay element
+
+    navItems.forEach(function(navItem) {
+        navItem.addEventListener('mouseenter', function() {
+            header.style.backgroundColor = '#000'; // Change header to black
+            overlay.style.opacity = '1'; // Show overlay
+            overlay.style.visibility = 'visible'; // Ensure it's visible
+        });
+
+        navItem.addEventListener('mouseleave', function() {
+            header.style.backgroundColor = ''; // Reset header color
+            overlay.style.opacity = '0'; // Hide overlay
+            overlay.style.visibility = 'hidden'; // Ensure it's hidden
+        });
+    });
+
+    // Existing modal script
+    var modal = document.getElementById('searchModal');
+    var btn = document.getElementById('searchIcon');
+    var span = modal.querySelector('.close');
+
+    btn.onclick = function() {
+        modal.style.display = 'flex';
+    }
+
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+});
+
+
 </script>

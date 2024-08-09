@@ -11985,6 +11985,9 @@ textarea.form-control-lg {
   padding-bottom: 20px;
   font-size: 18px;
 }
+.header-desktop h6, .header-desktop .h6 {
+  font-size: 1.25rem;
+}
 .header-desktop .mega-menu-col {
   margin-bottom: 40px;
 }
@@ -11992,8 +11995,7 @@ textarea.form-control-lg {
   color: #93E100;
 }
 .header-desktop .middle {
-  position: relative;
-  flex: 0 0 50%;
+  flex: 0 0 20%;
   display: flex;
   justify-content: center;
 }
@@ -12026,7 +12028,7 @@ textarea.form-control-lg {
   flex-direction: row;
   align-items: center;
   gap: 40px;
-  flex: 0 0 25%;
+  flex: 0 0 40%;
 }
 .header-desktop .left .logo img {
   width: 150px;
@@ -12038,7 +12040,7 @@ textarea.form-control-lg {
   justify-content: flex-end;
   align-items: center;
   gap: 20px;
-  flex: 0 0 25%;
+  flex: 0 0 40%;
 }
 .header-desktop .right img {
   width: 125px;
@@ -12049,7 +12051,7 @@ textarea.form-control-lg {
 }
 @media (min-width: 1950px) {
   .header-desktop .right .btn-link {
-    font-size: 18px;
+    font-size: 1.3rem;
   }
 }
 
@@ -12069,6 +12071,7 @@ textarea.form-control-lg {
 .nav-item .dropdown-menu {
   display: none;
   position: absolute;
+  padding-top: 20px;
 }
 
 .nav-item:hover .dropdown-menu,
@@ -12084,13 +12087,18 @@ textarea.form-control-lg {
   padding: 40px;
   position: absolute;
   z-index: 1000;
-  background-color: white; /* Set background color */
+  background-color: #000000; /* Set background color */
+  color: #ffffff;
   border-radius: 20px;
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
+}
+.mega-menu h6, .mega-menu .h6, .normal-menu h6, .normal-menu .h6 {
+  color: #ffffff;
 }
 
 .mega-menu {
   padding-bottom: 0;
+  margin-right: 0;
 }
 
 /* Flexbox for columns in mega menu */
@@ -12123,7 +12131,7 @@ textarea.form-control-lg {
 
 .mega-menu ul li a,
 .normal-menu ul li a {
-  color: #000;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
 }
 
@@ -12142,12 +12150,12 @@ textarea.form-control-lg {
   border: 0;
   left: 0;
   right: 0;
-  padding-top: 40px;
   background-color: transparent;
 }
 
 .dropdown-item {
   padding-left: 0px;
+  font-size: 1rem;
 }
 
 .dropdown-item:hover {
@@ -12165,6 +12173,7 @@ textarea.form-control-lg {
 .home .header-desktop .nav-item .nav-link {
   color: #FFFFFF;
   border-radius: 20px;
+  font-size: 1.3rem;
 }
 .home .header-desktop .nav-item:hover .nav-link {
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
@@ -12251,23 +12260,24 @@ textarea.form-control-lg {
 }
 
 /* Search form inside modal */
-.search-modal-content form {
+.search-modal-content form, .search-form {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 
-.search-modal-content .search-field {
+.search-modal-content .search-field, .search-form .search-field {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   font-size: 16px;
+  margin-top: 1px;
 }
 
-.search-modal-content .search-submit {
+.search-modal-content .search-submit, .search-form .search-submit {
   padding: 10px 20px;
   background-color: #002A3F;
   color: #fff;
@@ -12278,7 +12288,7 @@ textarea.form-control-lg {
   transition: background-color 0.3s;
 }
 
-.search-modal-content .search-submit:hover {
+.search-modal-content .search-submit:hover, .search-form .search-submit:hover {
   background-color: #93E100;
 }
 
@@ -12288,6 +12298,25 @@ textarea.form-control-lg {
     width: 95%;
   }
 }
+/* Overlay styles */
+.overlay {
+  position: fixed; /* Make it cover the entire screen */
+  top: 6.7rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially not visible */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+  z-index: 999; /* Make sure it appears above everything else */
+}
+
+/* Header transition */
+.header-desktop {
+  transition: background-color 0.3s ease;
+}
+
 .site-footer {
   background-color: #002A3F;
 }
