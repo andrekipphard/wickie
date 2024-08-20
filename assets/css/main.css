@@ -12020,6 +12020,7 @@ textarea.form-control-lg {
 .header-desktop .btn {
   display: flex;
   border-radius: 20px;
+  padding-right: 10px;
 }
 .header-desktop .btn i {
   margin-right: 5px;
