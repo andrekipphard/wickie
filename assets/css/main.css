@@ -12007,6 +12007,10 @@ textarea.form-control-lg {
 .header-desktop .middle {
   flex: 0 0 50%;
   display: flex;
+  width: 100%;
+}
+.header-desktop .middle .navigation {
+  width: 100%;
 }
 .header-desktop .nav-item:hover .nav-link {
   color: #93E100;
@@ -12156,6 +12160,7 @@ textarea.form-control-lg {
 /* Optional: Adjust dropdown menu positioning */
 .mega-menu-dropdown {
   position: static;
+  width: 13%;
 }
 
 .dropdown-menu {
