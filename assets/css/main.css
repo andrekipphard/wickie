@@ -11975,6 +11975,7 @@ textarea.form-control-lg {
 }
 
 .header-desktop {
+  width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   display: none;
@@ -11985,8 +11986,17 @@ textarea.form-control-lg {
   padding-bottom: 20px;
   font-size: 18px;
 }
-.header-desktop h6, .header-desktop .h6 {
-  font-size: 1.25rem;
+.header-desktop .nav-item h6, .header-desktop .nav-item .h6 {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.header-desktop .nav-item h6 i, .header-desktop .nav-item .h6 i {
+  margin-right: 10px;
+}
+.header-desktop .nav-item i {
+  margin-right: 5px;
+  font-size: 2.5rem;
 }
 .header-desktop .mega-menu-col {
   margin-bottom: 40px;
@@ -11995,9 +12005,8 @@ textarea.form-control-lg {
   color: #93E100;
 }
 .header-desktop .middle {
-  flex: 0 0 20%;
+  flex: 0 0 50%;
   display: flex;
-  justify-content: center;
 }
 .header-desktop .nav-item:hover .nav-link {
   color: #93E100;
@@ -12010,7 +12019,6 @@ textarea.form-control-lg {
 }
 .header-desktop .btn {
   display: flex;
-  padding-right: 10px;
   border-radius: 20px;
 }
 .header-desktop .btn i {
@@ -12028,7 +12036,7 @@ textarea.form-control-lg {
   flex-direction: row;
   align-items: center;
   gap: 40px;
-  flex: 0 0 40%;
+  flex: 0 0 auto;
 }
 .header-desktop .left .logo img {
   width: 150px;
@@ -12081,15 +12089,18 @@ textarea.form-control-lg {
 }
 
 /* Mega menu styling */
+.normal-menu {
+  border-radius: 20px;
+}
+
 .mega-menu, .normal-menu {
   left: 0;
   right: 0;
   padding: 40px;
   position: absolute;
   z-index: 1000;
-  background-color: #000000; /* Set background color */
+  background-color: #002A3F; /* Set background color */
   color: #ffffff;
-  border-radius: 20px;
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
 }
 .mega-menu h6, .mega-menu .h6, .normal-menu h6, .normal-menu .h6 {
@@ -12099,6 +12110,7 @@ textarea.form-control-lg {
 .mega-menu {
   padding-bottom: 0;
   margin-right: 0;
+  box-shadow: none;
 }
 
 /* Flexbox for columns in mega menu */
@@ -12155,7 +12167,7 @@ textarea.form-control-lg {
 
 .dropdown-item {
   padding-left: 0px;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .dropdown-item:hover {
@@ -12174,6 +12186,12 @@ textarea.form-control-lg {
   color: #FFFFFF;
   border-radius: 20px;
   font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+}
+.home .header-desktop .nav-item .nav-link i {
+  margin-right: 5px;
+  font-size: 2.5rem;
 }
 .home .header-desktop .nav-item:hover .nav-link {
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
@@ -12305,16 +12323,53 @@ textarea.form-control-lg {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  background-color: rgba(0, 42, 63, 0.4941176471); /* Semi-transparent black */
   opacity: 0; /* Initially hidden */
   visibility: hidden; /* Initially not visible */
   transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
-  z-index: 999; /* Make sure it appears above everything else */
+  z-index: 1; /* Make sure it appears above everything else */
 }
 
 /* Header transition */
 .header-desktop {
   transition: background-color 0.3s ease;
+}
+
+.home .header-desktop.sticky .nav-item:hover .nav-link {
+  box-shadow: none;
+  background-color: transparent;
+}
+.home .header-desktop.sticky .nav-item:hover .nav-link .bi-list {
+  color: #93E100;
+}
+
+.header-desktop.sticky {
+  position: fixed;
+  z-index: 999;
+}
+.header-desktop.sticky .nav-item .bi-list {
+  color: #002A3F;
+}
+.header-desktop.sticky .btn {
+  color: #002A3F;
+}
+.header-desktop.sticky .btn i {
+  color: #002A3F;
+}
+.header-desktop.sticky .btn:hover {
+  box-shadow: none;
+  color: #93E100;
+}
+.header-desktop.sticky .btn:hover i {
+  color: #93E100;
+}
+
+.header-desktop .btn.white-text {
+  color: white !important;
+}
+
+.header-desktop .btn.white-text i {
+  color: white !important;
 }
 
 .site-footer {
@@ -12483,6 +12538,26 @@ textarea.form-control-lg {
   margin-bottom: 100px;
   display: flex;
   gap: 20px;
+}
+.hero .container .cta a {
+  display: flex;
+}
+.hero .container .cta a .btn-white i {
+  margin-left: 10px;
+}
+.hero .container .cta a .btn-link {
+  color: #FFFFFF;
+}
+.hero .container .cta a .btn-link i {
+  background-color: #FFFFFF;
+  color: #002A3F;
+}
+.hero .container .cta a:hover .btn-link {
+  color: #93E100;
+}
+.hero .container .cta a:hover .btn-link i {
+  background-color: #93E100;
+  color: #FFFFFF;
 }
 .hero .container .images {
   position: relative;

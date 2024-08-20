@@ -26,11 +26,12 @@
                     while (have_rows('menu_item', 'options')): the_row();
                         $menuItemName = get_sub_field('menu_item_name');
                         $menuItemUrl = get_sub_field('menu_item_url');
+                        $menuItemIcon = get_sub_field('menu_item_icon');
                         $megaMenu = get_sub_field('mega_menu');
                     ?>
                         <li class="nav-item <?php if (have_rows('sub_menu_item')): ?>dropdown<?php endif; ?><?php if ($megaMenu == 'Yes' && have_rows('sub_menu_item')): ?> mega-menu-dropdown<?php endif; ?>">
-                            <a class="nav-link<?php if (have_rows('sub_menu_item')): ?> dropdown-toggle<?php endif; ?>" href="<?= $menuItemUrl; ?>"<?php if (have_rows('sub_menu_item')): ?> id="menuItem<?= $menuItemIndex; ?>Dropdown" role="button"<?php endif; ?>>
-                                <?= $menuItemName; ?>
+                            <a class="nav-link<?php if (have_rows('sub_menu_item')): ?><?php endif; ?>" href="<?= $menuItemUrl; ?>"<?php if (have_rows('sub_menu_item')): ?> id="menuItem<?= $menuItemIndex; ?>Dropdown" role="button"<?php endif; ?>>
+                                <i class="bi bi-<?= $menuItemIcon; ?>"></i><?= $menuItemName; ?>
                             </a>
                             <?php if (have_rows('sub_menu_item')): ?>
                                 <div class="dropdown-menu" aria-labelledby="menuItem<?= $menuItemIndex; ?>Dropdown">
@@ -69,11 +70,17 @@
                                                     ?>
                                                         <li><a class="dropdown-item" href="<?= $subMenuItemUrl; ?>"><?= $subMenuItemName; ?></a></li>
                                                     <?php endwhile; ?>
+                                                    
                                                 </ul>
+                                                
                                             <?php endif; ?>
+                                            
                                         </div>
+                                        
                                     </div>
+                                    
                                 </div>
+                                
                             <?php endif; ?>
                         </li>
                     <?php
@@ -85,7 +92,9 @@
         </div>
     </div>
     <div class="right">
-    <?php get_search_form(); ?>
+        <button type="button" class="btn btn-link search-icon" id="searchIcon">
+            <i class="bi bi-search"></i>
+        </button>
         <div class="search-modal" id="searchModal">
             <div class="search-modal-content">
                 <span class="close">&times;</span>
@@ -111,67 +120,92 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var modal = document.getElementById('searchModal');
-        var btn = document.getElementById('searchIcon');
-        var span = modal.querySelector('.close');
-
-        // Open modal on button click
-        btn.onclick = function() {
-            modal.style.display = 'flex'; // Use flex to center content
-        }
-
-        // Close modal on close button click
-        span.onclick = function() {
-            modal.style.display = 'none';
-        }
-
-        // Close modal when clicking outside of the modal content
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     var header = document.querySelector('.header-desktop');
-    var navItems = document.querySelectorAll('.nav-item.dropdown');
-    var overlay = document.querySelector('.overlay'); // Select the overlay element
-
-    navItems.forEach(function(navItem) {
-        navItem.addEventListener('mouseenter', function() {
-            header.style.backgroundColor = '#000'; // Change header to black
-            overlay.style.opacity = '1'; // Show overlay
-            overlay.style.visibility = 'visible'; // Ensure it's visible
-        });
-
-        navItem.addEventListener('mouseleave', function() {
-            header.style.backgroundColor = ''; // Reset header color
-            overlay.style.opacity = '0'; // Hide overlay
-            overlay.style.visibility = 'hidden'; // Ensure it's hidden
-        });
-    });
-
-    // Existing modal script
+    var logo = document.querySelector('.header-desktop .logo img');
     var modal = document.getElementById('searchModal');
     var btn = document.getElementById('searchIcon');
     var span = modal.querySelector('.close');
+    var overlay = document.querySelector('.overlay');
+    var navItems = document.querySelectorAll('.nav-item.dropdown');
+    var body = document.body; // Access the body element to check the page type
+    var buttons = document.querySelectorAll('.header-desktop .right .btn');
 
+    // Logo sources
+    var lightLogoSrc = "<?= wp_get_attachment_image_url($headerLogoTransparentBackground, 'large'); ?>";
+    var darkLogoSrc = "<?= wp_get_attachment_image_url($headerLogo, 'large'); ?>";
+
+    var scrollOffset = 100; // Adjust when the header becomes sticky
+
+    function updateHeaderState() {
+        var isSticky = window.scrollY > scrollOffset;
+        var isFrontPage = body.classList.contains('home'); // WordPress adds 'home' class for the front page
+
+        // Determine logo source based on page type and sticky state
+        if (isSticky) {
+            header.classList.add('sticky');
+            header.style.backgroundColor = '#FFFFFF';
+            logo.src = darkLogoSrc; // Dark logo for sticky header
+        } else {
+            header.classList.remove('sticky');
+            header.style.backgroundColor = 'transparent';
+            logo.src = isFrontPage ? lightLogoSrc : darkLogoSrc; // Light logo for front page, dark for others
+        }
+    }
+
+    // Scroll event listener to handle sticky header
+    window.addEventListener('scroll', updateHeaderState);
+
+    // Navbar dropdown hover events
+    navItems.forEach(function(navItem) {
+        navItem.addEventListener('mouseenter', function() {
+            header.style.backgroundColor = '#002A3F'; // Change header to blue
+            logo.src = lightLogoSrc; // Use light logo when hovering
+            overlay.style.opacity = '1'; // Show overlay
+            overlay.style.visibility = 'visible'; // Ensure it's visible
+
+            // Add class to change button text and icon color to white
+            buttons.forEach(function(button) {
+                button.classList.add('white-text');
+            });
+        });
+
+        navItem.addEventListener('mouseleave', function() {
+            overlay.style.opacity = '0'; // Hide overlay
+            overlay.style.visibility = 'hidden'; // Ensure it's hidden
+
+            // Restore header state based on scroll position
+            updateHeaderState();
+
+            // Remove class to restore button text and icon color
+            buttons.forEach(function(button) {
+                button.classList.remove('white-text');
+            });
+        });
+    });
+
+    // Modal open event
     btn.onclick = function() {
-        modal.style.display = 'flex';
-    }
+        modal.style.display = 'flex'; // Show modal
+        if (header.classList.contains('sticky')) {
+            logo.src = lightLogoSrc; // Use light logo when modal is open and header is sticky
+        }
+    };
 
+    // Modal close events
     span.onclick = function() {
-        modal.style.display = 'none';
-    }
+        modal.style.display = 'none'; // Hide modal
+        updateHeaderState(); // Restore header state after closing modal
+    };
 
     window.onclick = function(event) {
         if (event.target == modal) {
-            modal.style.display = 'none';
+            modal.style.display = 'none'; // Hide modal if clicking outside
+            updateHeaderState(); // Restore header state
         }
-    }
+    };
+
+    // Initialize header state on page load
+    updateHeaderState();
 });
-
-
 </script>

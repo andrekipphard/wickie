@@ -7,9 +7,22 @@
 }
 
 .header-desktop {
-    h6 {
-        font-size: 1.25rem;
+    width: 100%;
+    .nav-item {
+        h6 {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            i {
+                margin-right: 10px;
+            }
+        }
+        i {
+            margin-right: 5px;
+            font-size: 2.5rem;
+        }
     }
+
     padding-left: 20px;
     padding-right: 20px;
     display: none;
@@ -29,9 +42,8 @@
     }
 
     .middle {
-        flex: 0 0 20%;
+        flex: 0 0 50%;
         display: flex;
-        justify-content: center;
     }
 
     .nav-item:hover .nav-link {
@@ -47,7 +59,6 @@
     }
     .btn {
         display: flex;
-        padding-right: 10px;
         border-radius: 20px;
         
         i {
@@ -70,7 +81,7 @@
         flex-direction: row;
         align-items: center;
         gap: 40px;
-        flex: 0 0 40%;
+        flex: 0 0 auto;
 
         .logo {
             img {
@@ -129,15 +140,17 @@
 }
 
 /* Mega menu styling */
+.normal-menu {
+    border-radius: 20px;
+}
 .mega-menu, .normal-menu {
     left: 0;
     right: 0;
     padding: 40px;
     position: absolute;
     z-index: 1000;
-    background-color: #000000; /* Set background color */
+    background-color: #002A3F; /* Set background color */
     color: #ffffff;
-    border-radius: 20px;
     box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
 
     h6 {
@@ -148,6 +161,7 @@
 .mega-menu {
     padding-bottom: 0;
     margin-right: 0;
+    box-shadow: none;
 }
 
 /* Flexbox for columns in mega menu */
@@ -202,7 +216,7 @@
 
 .dropdown-item {
     padding-left:0px;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 .dropdown-item:hover {
@@ -212,8 +226,6 @@
 .normal-menu {
     width: fit-content;
 }
-
-
 .home {
     .site-header{
         background-color: transparent;
@@ -225,6 +237,13 @@
                 color:#FFFFFF;
                 border-radius: 20px;
                 font-size: 1.3rem;
+                display: flex;
+                align-items: center;
+
+                i {
+                    margin-right: 5px;
+                    font-size: 2.5rem;
+                }
             }
         }
     
@@ -365,14 +384,54 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    background-color: #002a3f7e; /* Semi-transparent black */
     opacity: 0; /* Initially hidden */
     visibility: hidden; /* Initially not visible */
     transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
-    z-index: 999; /* Make sure it appears above everything else */
+    z-index: 1; /* Make sure it appears above everything else */
 }
 
 /* Header transition */
 .header-desktop {
     transition: background-color 0.3s ease;
+}
+.home .header-desktop.sticky .nav-item:hover .nav-link {
+    box-shadow: none;
+    background-color: transparent;
+    .bi-list {
+        color: $secondary;
+    }
+}
+.header-desktop.sticky {
+    position: fixed;
+    z-index: 999;
+    .nav-item {
+        .bi-list {
+            color: $primary;
+        }
+    }
+
+    .btn {
+        i {
+            color: $primary;
+        }
+        color: $primary;
+
+        &:hover {
+            box-shadow: none;
+            color: $secondary;
+
+            i {
+                color: $secondary;
+            }
+        }
+    }
+}
+
+.header-desktop .btn.white-text {
+    color: white !important;
+}
+
+.header-desktop .btn.white-text i {
+    color: white !important;
 }

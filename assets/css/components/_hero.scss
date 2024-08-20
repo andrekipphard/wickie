@@ -61,6 +61,35 @@
             margin-bottom: 100px;
             display: flex;
             gap: 20px;
+
+            a {
+                display: flex;
+
+                .btn-white {
+                    i {
+                        margin-left: 10px;
+                    }
+                }
+
+                .btn-link {
+                    color: #FFFFFF;
+
+                    i {
+                        background-color: #FFFFFF;
+                        color: $primary;
+                    }
+                }
+                &:hover {
+                    .btn-link {
+                        color: $secondary;
+    
+                        i {
+                            background-color: $secondary;
+                            color: #FFFFFF;
+                        }
+                    }
+                }
+            }
         }
 
         .images {

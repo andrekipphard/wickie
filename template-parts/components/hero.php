@@ -17,11 +17,18 @@
                     <?php while( have_rows('cta') ): the_row();
                     $buttonUrl = get_sub_field('button_url');
                     $buttonIcon = get_sub_field('button_icon');
-                    $buttonText = get_sub_field('button_text');?>
+                    $buttonText = get_sub_field('button_text');
+                    $buttonType = get_sub_field('button_type');
+                    $buttonIconPosition = get_sub_field('button_icon_position');?>
                         <a href="<?=$buttonUrl;?>">
-                            <button type="button" class="btn btn-white">
+                            <button type="button" class="btn btn-<?= $buttonType; ?>">
+                            <?php if($buttonIconPosition == 'Left'):?>
                                 <i class="bi bi-<?= $buttonIcon; ?>"></i>
+                            <?php endif;?>
                                 <?= $buttonText; ?>
+                            <?php if($buttonIconPosition == 'Right'):?>
+                                <i class="bi bi-<?= $buttonIcon; ?>"></i>
+                            <?php endif;?>
                             </button>
                         </a>
                     <?php endwhile;?>
