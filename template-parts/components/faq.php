@@ -18,7 +18,6 @@
         <?php if (have_rows('faq_item')): ?>
             <div class="accordion" id="accordion-<?= $headlineId; ?>-<?= $uniqueId; ?>">
                 <?php 
-                $faqItemIndex = 0;
                 while (have_rows('faq_item')): the_row();
                     $faqItemQuestion = get_sub_field('faq_item_question');
                     $faqItemAnswer = get_sub_field('faq_item_answer');
@@ -27,19 +26,18 @@
                     $faqItemId = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $faqItemQuestion), '-'));
                 ?>
                     <div class="accordion-item">
-                        <h3 class="accordion-header" id="heading-<?= $faqItemId; ?>-<?= $uniqueId; ?>-<?= $faqItemIndex; ?>">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<?= $faqItemId; ?>-<?= $uniqueId; ?>-<?= $faqItemIndex; ?>" aria-expanded="false" aria-controls="collapse-<?= $faqItemId; ?>-<?= $uniqueId; ?>-<?= $faqItemIndex; ?>">
+                        <h3 class="accordion-header" id="heading-<?= $faqItemId; ?>-<?= $uniqueId; ?>">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<?= $faqItemId; ?>-<?= $uniqueId; ?>" aria-expanded="false" aria-controls="collapse-<?= $faqItemId; ?>-<?= $uniqueId; ?>">
                                 <?= $faqItemQuestion; ?>
                             </button>
                         </h3>
-                        <div id="collapse-<?= $faqItemId; ?>-<?= $uniqueId; ?>-<?= $faqItemIndex; ?>" class="accordion-collapse collapse" aria-labelledby="heading-<?= $faqItemId; ?>-<?= $uniqueId; ?>-<?= $faqItemIndex; ?>" data-bs-parent="#accordion-<?= $headlineId; ?>-<?= $uniqueId; ?>">
+                        <div id="collapse-<?= $faqItemId; ?>-<?= $uniqueId; ?>" class="accordion-collapse collapse" aria-labelledby="heading-<?= $faqItemId; ?>-<?= $uniqueId; ?>" data-bs-parent="#accordion-<?= $headlineId; ?>-<?= $uniqueId; ?>">
                             <div class="accordion-body">
                                 <?= $faqItemAnswer; ?>
                             </div>
                         </div>
                     </div>
                 <?php 
-                $faqItemIndex++; 
                 endwhile; ?>
             </div>
         <?php endif; ?>
