@@ -12336,11 +12336,11 @@ textarea.form-control-lg {
   transition: background-color 0.3s ease;
 }
 
-.home .header-desktop.sticky .nav-item:hover .nav-link {
+.header-desktop.sticky .nav-item:hover .nav-link {
   box-shadow: none;
   background-color: transparent;
 }
-.home .header-desktop.sticky .nav-item:hover .nav-link .bi-list {
+.header-desktop.sticky .nav-item:hover .nav-link .bi-list {
   color: #93E100;
 }
 
