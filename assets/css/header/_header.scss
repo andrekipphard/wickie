@@ -44,10 +44,6 @@
     .middle {
         flex: 0 0 50%;
         display: flex;
-        width: 100%;
-        .navigation {
-            width: 100%;
-        }
     }
 
     .nav-item:hover .nav-link {
@@ -209,7 +205,6 @@
 /* Optional: Adjust dropdown menu positioning */
 .mega-menu-dropdown {
     position: static;
-    width: 13%;
 }
 
 .dropdown-menu {
