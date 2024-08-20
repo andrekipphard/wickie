@@ -249,10 +249,7 @@
         }
     
         .nav-item:hover .nav-link {
-            box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
-            background-color: #FFFFFF;
-            color: #000;
-            border-radius: 20px;
+            color: $secondary;
         }
 
         .btn {
@@ -263,13 +260,10 @@
             }
 
             &:hover {
-                box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
-                background-color: #FFFFFF;
-                color: #000;
-                border-radius: 20px;
+                color: $secondary;
 
                 i {
-                    color: #000;
+                    color: $secondary;
                 }
             }
         }

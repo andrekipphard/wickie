@@ -12195,10 +12195,7 @@ textarea.form-control-lg {
   font-size: 2.5rem;
 }
 .home .header-desktop .nav-item:hover .nav-link {
-  box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
-  background-color: #FFFFFF;
-  color: #000;
-  border-radius: 20px;
+  color: #93E100;
 }
 .home .header-desktop .btn {
   color: #FFFFFF;
@@ -12207,13 +12204,10 @@ textarea.form-control-lg {
   color: #FFFFFF;
 }
 .home .header-desktop .btn:hover {
-  box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
-  background-color: #FFFFFF;
-  color: #000;
-  border-radius: 20px;
+  color: #93E100;
 }
 .home .header-desktop .btn:hover i {
-  color: #000;
+  color: #93E100;
 }
 
 /* Styling for the search icon */
