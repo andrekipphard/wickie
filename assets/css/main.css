@@ -12315,7 +12315,7 @@ textarea.form-control-lg {
 /* Overlay styles */
 .overlay {
   position: fixed; /* Make it cover the entire screen */
-  top: 6.7rem;
+  top: 9.28rem;
   left: 0;
   width: 100%;
   height: 100%;
@@ -12472,7 +12472,7 @@ textarea.form-control-lg {
   top: 0;
   left: 0;
   width: 100%;
-  height: 90%;
+  height: 100%;
   background: linear-gradient(to right, #93E100, #00A6FF);
   z-index: -1;
 }
@@ -12483,14 +12483,14 @@ textarea.form-control-lg {
 }
 @media (min-height: 1200px) {
   .hero::before {
-    height: 70%;
+    height: 85%;
   }
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  top: 90%;
+  top: 100%;
   left: 0;
   width: 100%;
   height: 50%;
@@ -12504,7 +12504,7 @@ textarea.form-control-lg {
 }
 @media (min-height: 1200px) {
   .hero::after {
-    top: 70%;
+    top: 85%;
   }
 }
 
@@ -12558,10 +12558,15 @@ textarea.form-control-lg {
 .hero .container .images {
   position: relative;
 }
+.hero .container .images .image {
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
 .hero .container .images .top-left {
   position: absolute;
   top: 160px;
   left: 0px;
+  transition: transform 0.15s ease-out;
 }
 .hero .container .images .bottom-left {
   left: 0px;
@@ -12572,11 +12577,13 @@ textarea.form-control-lg {
   position: absolute;
   top: 45px;
   right: 0px;
+  transition: transform 0.1s ease-out;
 }
 .hero .container .images .bottom-right {
   right: 0px;
   top: 230px;
   position: absolute;
+  transition: transform 0.25s ease-out;
 }
 .hero .container .images .center {
   display: flex;
@@ -13138,7 +13145,7 @@ textarea.form-control-lg {
 }
 .blog-posts .blog-posts-wrapper .blog-post .content .text .title {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -13165,6 +13172,9 @@ textarea.form-control-lg {
   align-items: flex-start;
   color: #FFFFFF;
   justify-content: center;
+}
+.credit-card .container .content-wrapper .content .btn i {
+  margin-left: 10px;
 }
 .credit-card .container .content-wrapper .content .highlight {
   display: flex;
@@ -13391,8 +13401,8 @@ textarea.form-control-lg {
 }
 .hero-single .container .cta.contact-button a .btn-link i {
   background-color: #93E100;
-  padding-right: 12px;
-  padding-left: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   font-size: 36px;
   margin-right: 20px;
 }
@@ -13595,6 +13605,7 @@ textarea.form-control-lg {
   font-size: 15px;
   background-image: none;
   padding-left: 3px;
+  padding-top: 1px;
 }
 .faq .container .accordion .accordion-button {
   font-size: 1.25rem;
@@ -13639,6 +13650,9 @@ textarea.form-control-lg {
 }
 .get-started .container .get-started-wrapper .right-box .right-box-icon {
   color: #FFFFFF;
+}
+.get-started .container .get-started-wrapper .right-box .btn i {
+  margin-left: 10px;
 }
 .get-started .container .get-started-wrapper .right-box:hover .btn {
   background-color: transparent;
@@ -13902,6 +13916,10 @@ a:hover .btn-primary {
   color: #002A3F;
 }
 
+.btn i {
+  display: flex;
+}
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: "Inter", sans-serif;
 }
@@ -13924,7 +13942,7 @@ h3, .h3 {
 
 .btn-primary {
   border-radius: 50px;
-  padding: 15px 40px;
+  padding: 20px 40px;
   font-size: 16px;
   font-weight: 600;
   display: flex;
@@ -13944,7 +13962,7 @@ h3, .h3 {
 
 .btn-secondary {
   border-radius: 50px;
-  padding: 15px 40px;
+  padding: 20px 40px;
   font-size: 16px;
   font-weight: 600;
   display: flex;
@@ -13966,7 +13984,7 @@ h3, .h3 {
 .btn-white {
   background-color: #FFFFFF;
   border-radius: 50px;
-  padding: 15px 40px;
+  padding: 20px 40px;
   font-size: 16px;
   font-weight: 600;
   display: flex;
@@ -13999,7 +14017,7 @@ h3, .h3 {
   background-color: #002A3F;
   color: #FFFFFF;
   border-radius: 100%;
-  padding: 2px 4px;
+  padding: 4px 4px;
   font-size: 12px;
 }
 
@@ -14014,7 +14032,7 @@ h3, .h3 {
 .btn-outline {
   background-color: transparent;
   border-radius: 50px;
-  padding: 15px 40px;
+  padding: 20px 40px;
   font-size: 16px;
   font-weight: 600;
   display: flex;
