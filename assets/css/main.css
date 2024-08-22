@@ -12315,7 +12315,7 @@ textarea.form-control-lg {
 /* Overlay styles */
 .overlay {
   position: fixed; /* Make it cover the entire screen */
-  top: 9.28rem;
+  top: 7.28rem;
   left: 0;
   width: 100%;
   height: 100%;
