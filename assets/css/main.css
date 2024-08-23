@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap");
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -12314,7 +12315,7 @@ textarea.form-control-lg {
 /* Overlay styles */
 .overlay {
   position: fixed; /* Make it cover the entire screen */
-  top: 6.7rem;
+  top: 7.28rem;
   left: 0;
   width: 100%;
   height: 100%;
@@ -12471,7 +12472,7 @@ textarea.form-control-lg {
   top: 0;
   left: 0;
   width: 100%;
-  height: 90%;
+  height: 100%;
   background: linear-gradient(to right, #93E100, #00A6FF);
   z-index: -1;
 }
@@ -12482,14 +12483,14 @@ textarea.form-control-lg {
 }
 @media (min-height: 1200px) {
   .hero::before {
-    height: 70%;
+    height: 85%;
   }
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  top: 90%;
+  top: 100%;
   left: 0;
   width: 100%;
   height: 50%;
@@ -12503,7 +12504,7 @@ textarea.form-control-lg {
 }
 @media (min-height: 1200px) {
   .hero::after {
-    top: 70%;
+    top: 85%;
   }
 }
 
@@ -12557,10 +12558,15 @@ textarea.form-control-lg {
 .hero .container .images {
   position: relative;
 }
+.hero .container .images .image {
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
 .hero .container .images .top-left {
   position: absolute;
   top: 160px;
   left: 0px;
+  transition: transform 0.15s ease-out;
 }
 .hero .container .images .bottom-left {
   left: 0px;
@@ -12571,11 +12577,13 @@ textarea.form-control-lg {
   position: absolute;
   top: 45px;
   right: 0px;
+  transition: transform 0.1s ease-out;
 }
 .hero .container .images .bottom-right {
   right: 0px;
   top: 230px;
   position: absolute;
+  transition: transform 0.25s ease-out;
 }
 .hero .container .images .center {
   display: flex;
@@ -13137,7 +13145,7 @@ textarea.form-control-lg {
 }
 .blog-posts .blog-posts-wrapper .blog-post .content .text .title {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -13164,6 +13172,9 @@ textarea.form-control-lg {
   align-items: flex-start;
   color: #FFFFFF;
   justify-content: center;
+}
+.credit-card .container .content-wrapper .content .btn i {
+  margin-left: 10px;
 }
 .credit-card .container .content-wrapper .content .highlight {
   display: flex;
@@ -13281,6 +13292,7 @@ textarea.form-control-lg {
 }
 
 .market {
+  padding-top: 7rem;
   padding-bottom: 7rem;
 }
 .market .container {
@@ -13390,8 +13402,8 @@ textarea.form-control-lg {
 }
 .hero-single .container .cta.contact-button a .btn-link i {
   background-color: #93E100;
-  padding-right: 12px;
-  padding-left: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   font-size: 36px;
   margin-right: 20px;
 }
@@ -13437,7 +13449,7 @@ textarea.form-control-lg {
   padding: 0;
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
 }
-.banner-boxed .container a {
+.banner-boxed .container .container-wrapper {
   color: #FFFFFF;
   padding: 7rem;
   display: flex;
@@ -13449,35 +13461,49 @@ textarea.form-control-lg {
   background-position: right bottom;
   border-radius: 20px;
 }
-.banner-boxed .container a .text {
+.banner-boxed .container .container-wrapper .text {
   text-align: center;
   padding-left: 5rem;
   padding-right: 5rem;
 }
-.banner-boxed .container a .subline {
+.banner-boxed .container .container-wrapper .subline {
   display: flex;
   gap: 10px;
   font-size: 17px;
 }
-.banner-boxed .container a .subline .highlight {
+.banner-boxed .container .container-wrapper .subline .highlight {
   display: flex;
   align-items: center;
 }
-.banner-boxed .container a h2, .banner-boxed .container a .h2 {
+.banner-boxed .container .container-wrapper h2, .banner-boxed .container .container-wrapper .h2 {
   text-align: center;
 }
-.banner-boxed .container a button {
+.banner-boxed .container .container-wrapper .buttons {
+  display: flex;
+  gap: 20px;
   margin-top: 20px;
 }
-.banner-boxed .container a button i {
+.banner-boxed .container .container-wrapper .buttons a {
+  display: flex;
+}
+.banner-boxed .container .container-wrapper .buttons a .btn-white i {
   margin-left: 10px;
 }
-.banner-boxed .container a:hover button {
-  background-color: transparent;
+.banner-boxed .container .container-wrapper .buttons a .btn-link {
   color: #FFFFFF;
-  border: 1px solid #FFFFFF;
 }
-.banner-boxed .container a .floating {
+.banner-boxed .container .container-wrapper .buttons a .btn-link i {
+  background-color: #FFFFFF;
+  color: #002A3F;
+}
+.banner-boxed .container .container-wrapper .buttons a:hover .btn-link {
+  color: #93E100;
+}
+.banner-boxed .container .container-wrapper .buttons a:hover .btn-link i {
+  background-color: #93E100;
+  color: #FFFFFF;
+}
+.banner-boxed .container .container-wrapper .floating {
   position: absolute;
   top: 40px;
   left: -100px;
@@ -13594,6 +13620,7 @@ textarea.form-control-lg {
   font-size: 15px;
   background-image: none;
   padding-left: 3px;
+  padding-top: 1px;
 }
 .faq .container .accordion .accordion-button {
   font-size: 1.25rem;
@@ -13638,6 +13665,9 @@ textarea.form-control-lg {
 }
 .get-started .container .get-started-wrapper .right-box .right-box-icon {
   color: #FFFFFF;
+}
+.get-started .container .get-started-wrapper .right-box .btn i {
+  margin-left: 10px;
 }
 .get-started .container .get-started-wrapper .right-box:hover .btn {
   background-color: transparent;
@@ -13879,7 +13909,7 @@ textarea.form-control-lg {
 
 body {
   background-color: #f5f5f7;
-  font-family: "Proxima Nova", sans-serif; /* Use Proxima Nova for text */
+  font-family: "Inter", sans-serif;
 }
 
 a {
@@ -13901,11 +13931,16 @@ a:hover .btn-primary {
   color: #002A3F;
 }
 
+.btn i {
+  display: flex;
+}
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 h1, .h1 {
+  letter-spacing: -3px;
   font-size: 24px;
   font-weight: 600;
 }
@@ -13913,11 +13948,16 @@ h1, .h1 {
 h2, .h2 {
   font-size: 16px;
   font-weight: 600;
+  letter-spacing: -2px;
+}
+
+h3, .h3 {
+  letter-spacing: -1px;
 }
 
 .btn-primary {
   border-radius: 50px;
-  padding: 15px 40px;
+  padding: 20px 40px;
   font-size: 16px;
   font-weight: 600;
   display: flex;
@@ -13937,7 +13977,7 @@ h2, .h2 {
 
 .btn-secondary {
   border-radius: 50px;
-  padding: 15px 40px;
+  padding: 20px 40px;
   font-size: 16px;
   font-weight: 600;
   display: flex;
@@ -13959,7 +13999,7 @@ h2, .h2 {
 .btn-white {
   background-color: #FFFFFF;
   border-radius: 50px;
-  padding: 15px 40px;
+  padding: 20px 40px;
   font-size: 16px;
   font-weight: 600;
   display: flex;
@@ -13992,7 +14032,7 @@ h2, .h2 {
   background-color: #002A3F;
   color: #FFFFFF;
   border-radius: 100%;
-  padding: 2px 4px;
+  padding: 4px 4px;
   font-size: 12px;
 }
 
@@ -14007,7 +14047,7 @@ h2, .h2 {
 .btn-outline {
   background-color: transparent;
   border-radius: 50px;
-  padding: 15px 40px;
+  padding: 20px 40px;
   font-size: 16px;
   font-weight: 600;
   display: flex;

@@ -9,9 +9,10 @@
 <section class="credit-card">
     <div class="container">
         <a class="content-wrapper" href="<?= $buttonUrl; ?>">
-            <div class="image" style="background-image: url('<?= wp_get_attachment_image_url($image, 'large');?>;">
+            <?php if($image):?><div class="image" style="background-image: url('<?= wp_get_attachment_image_url($image, 'large');?>;">
             </div>
-            <div class="content">
+            <?php endif;?>
+            <div class="content"<?php if(!$image):?> style="flex:100%;"<?php endif;?>>
                 <span class="highlight">
                     <?= $highlightText; ?>
                 </span>

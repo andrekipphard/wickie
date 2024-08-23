@@ -28,7 +28,7 @@
             <div class="image" style="background-image: url('<?= wp_get_attachment_image_url($imageLeft, 'large');?>;">
             </div>
         </a>
-        <a class="content-wrapper token" href="<?= $buttonUrlRight; ?>">
+        <?php if($buttonUrlRight):?><a class="content-wrapper token" href="<?= $buttonUrlRight; ?>">
             <div class="content">
                 <div class="subline">
                     <span class="highlight">
@@ -45,5 +45,11 @@
                 <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageRight, 'large');?>">
             </div>
         </a>
+        <?php endif;?>
+        <?php if(!$buttonUrlRight):?>
+            <div class="content" style="    display: flex;align-content: center;justify-content: center;align-items: center;">
+                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageRight, 'large');?>" style="width: 65%; height: auto;">
+            </div>
+        <?php endif;?>
     </div>
 </section>
