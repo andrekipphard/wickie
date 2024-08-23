@@ -1,8 +1,12 @@
 .site-footer {
     background-color: $primary;
+    .info-text {
+        color: #FFFFFF99;
+        font-size:10px;
+    }
     .footer {
         padding-top: 7rem;
-        padding-bottom: 40px;
+        
         display: flex;
         gap: 50px;
 
@@ -102,6 +106,7 @@
         }
     }
     .copyright {
+        margin-top: 40px;
         border-top: 1px solid #FFFFFF99;
         padding-top: 40px;
         padding-bottom: 40px;
