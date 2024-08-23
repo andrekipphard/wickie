@@ -15,6 +15,7 @@
     $logo = get_field('footer_logo', 'options');
     $companyInformation = get_field('footer_company_information', 'options');
     $copyright_template = get_field('footer_copyright', 'options');
+    $infoText = get_field('footer_info_text', 'options');
 
     // Get the current year
     $current_year = date('Y');
@@ -104,6 +105,7 @@
                 <?php endif; ?>
             </div>	
         </div>
+        <span class="info-text"><?= esc_html($infoText); ?></span>
 
         <?php if (isset($copyright) && !empty($copyright)): ?>
             <div class="copyright">
