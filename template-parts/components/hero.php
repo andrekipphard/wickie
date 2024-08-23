@@ -100,5 +100,4 @@ function animateImages() {
 }
 
 
-
 </script>
