@@ -13,11 +13,13 @@
     $headline = get_sub_field('headline');
     $text = get_sub_field('text');
     $image = get_sub_field('image');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
 ?>
-<section class="image-content">
+<section class="image-content"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>; <?php endif;?><?php if($textColor):?>color: <?= $textColor; ?>;<?php endif;?>">
     <div class="container">
         <div class="image" <?php if($layout == 'Image Left'):?>style="order:0"<?php endif;?><?php if($layout == 'Image Right'):?>style="order:1"<?php endif;?>>
-            <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>">
+            <?php if($image):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>"><?php endif;?>
         </div>
         <div class="content">
             <?php if($highlightText):?>
@@ -31,8 +33,9 @@
                 <ul>
                     <?php while( have_rows('list_item') ): the_row();
                     $list_item_icon = get_sub_field('list_item_icon');
-                    $list_item_text = get_sub_field('list_item_text');?>
-                        <li><i class="bi bi-<?= $list_item_icon; ?>"></i><span><?= $list_item_text; ?></span></li>
+                    $list_item_text = get_sub_field('list_item_text');
+                    $list_item_color = get_sub_field('list_item_color');?>
+                        <li><i <?php if($list_item_color):?> style="color: <?= $list_item_color; ?>;"<?php endif;?> class="bi bi-<?= $list_item_icon; ?>"></i><span><?= $list_item_text; ?></span></li>
                     <?php endwhile;?>
                 </ul>
             <?php endif;?>

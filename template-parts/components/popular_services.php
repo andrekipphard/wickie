@@ -42,10 +42,3 @@
         <?php endif;?>
     </div>
 </section>
-
-<script>
-// import function to register Swiper custom elements
-import { register } from '../../node_modules/swiper/element/bundle';
-// register Swiper custom elements
-register();
-</script>

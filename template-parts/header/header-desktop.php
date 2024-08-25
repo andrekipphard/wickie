@@ -8,11 +8,11 @@
         <div class="logo">
             <?php if (is_front_page()): ?>
                 <a href="/">
-                    <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($headerLogoTransparentBackground, 'large'); ?>">
+                    <?php if($headerLogoTransparentBackground):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($headerLogoTransparentBackground, 'large'); ?>"><?php endif;?>
                 </a>
             <?php else: ?>
                 <a href="/">
-                    <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($headerLogo, 'large'); ?>">
+                <?php if($headerLogo):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($headerLogo, 'large'); ?>"><?php endif;?>
                 </a>
             <?php endif; ?>
         </div>
@@ -30,9 +30,9 @@
                         $megaMenu = get_sub_field('mega_menu');
                     ?>
                         <li class="nav-item <?php if (have_rows('sub_menu_item')): ?>dropdown<?php endif; ?><?php if ($megaMenu == 'Yes' && have_rows('sub_menu_item')): ?> mega-menu-dropdown<?php endif; ?>">
-                            <a class="nav-link<?php if (have_rows('sub_menu_item')): ?><?php endif; ?>" href="<?= $menuItemUrl; ?>"<?php if (have_rows('sub_menu_item')): ?> id="menuItem<?= $menuItemIndex; ?>Dropdown" role="button"<?php endif; ?>>
+                            <div class="nav-link<?php if (have_rows('sub_menu_item')): ?><?php endif; ?>"<?php if (have_rows('sub_menu_item')): ?> id="menuItem<?= $menuItemIndex; ?>Dropdown" role="button"<?php endif; ?>>
                                 <i class="bi bi-<?= $menuItemIcon; ?>"></i><?= $menuItemName; ?>
-                            </a>
+                            </div>
                             <?php if (have_rows('sub_menu_item')): ?>
                                 <div class="dropdown-menu" aria-labelledby="menuItem<?= $menuItemIndex; ?>Dropdown">
                                     <div class="row<?php if ($megaMenu == 'Yes'): ?> mega-menu<?php endif; ?><?php if ($megaMenu == 'No'): ?> normal-menu<?php endif; ?>">
@@ -70,17 +70,11 @@
                                                     ?>
                                                         <li><a class="dropdown-item" href="<?= $subMenuItemUrl; ?>"><?= $subMenuItemName; ?></a></li>
                                                     <?php endwhile; ?>
-                                                    
                                                 </ul>
-                                                
                                             <?php endif; ?>
-                                            
                                         </div>
-                                        
                                     </div>
-                                    
                                 </div>
-                                
                             <?php endif; ?>
                         </li>
                     <?php
@@ -92,15 +86,7 @@
         </div>
     </div>
     <div class="right">
-        <button type="button" class="btn btn-link search-icon" id="searchIcon">
-            <i class="bi bi-search"></i>
-        </button>
-        <div class="search-modal" id="searchModal">
-            <div class="search-modal-content">
-                <span class="close">&times;</span>
-                <?php get_search_form(); ?>
-            </div>
-        </div>
+        <!-- Removed the search button and modal -->
         <button type="button" class="btn btn-link"><i class="bi bi-globe"></i>En</button>
         <?php if (have_rows('header_cta', 'options')): ?>
             <?php while (have_rows('header_cta', 'options')): the_row();
@@ -119,13 +105,11 @@
     </div>
 </div>
 
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var header = document.querySelector('.header-desktop');
     var logo = document.querySelector('.header-desktop .logo img');
-    var modal = document.getElementById('searchModal');
-    var btn = document.getElementById('searchIcon');
-    var span = modal.querySelector('.close');
     var overlay = document.querySelector('.overlay');
     var navItems = document.querySelectorAll('.nav-item.dropdown');
     var body = document.body; // Access the body element to check the page type
@@ -183,27 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-
-    // Modal open event
-    btn.onclick = function() {
-        modal.style.display = 'flex'; // Show modal
-        if (header.classList.contains('sticky')) {
-            logo.src = lightLogoSrc; // Use light logo when modal is open and header is sticky
-        }
-    };
-
-    // Modal close events
-    span.onclick = function() {
-        modal.style.display = 'none'; // Hide modal
-        updateHeaderState(); // Restore header state after closing modal
-    };
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none'; // Hide modal if clicking outside
-            updateHeaderState(); // Restore header state
-        }
-    };
 
     // Initialize header state on page load
     updateHeaderState();

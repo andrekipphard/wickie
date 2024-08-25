@@ -24,7 +24,7 @@
                         <div class="market-value">
                             <div class="currency">
                                 <div class="image">
-                                    <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($currencyImage, 'large');?>">
+                                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($currencyImage, 'large');?>">
                                 </div>
                                 <div class="name">
                                     <h3><?= $name; ?></h3>

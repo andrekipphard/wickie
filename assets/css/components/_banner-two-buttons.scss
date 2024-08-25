@@ -1,0 +1,36 @@
+.banner-two-buttons {
+    margin-top: 7rem;
+    background: linear-gradient(to right, #93E100, #00A6FF);
+
+    .banner-two-buttons-wrapper {
+        display: flex;
+        gap: 40px;
+
+        .content {
+            padding-right: 100px;
+            flex: 0 0 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            align-items: flex-start;
+            color: #FFFFFF;
+
+            span {
+                font-size: 17px;
+            }
+
+            .cta {
+                display: flex;
+                gap: 20px;
+            }
+        }
+        .images {
+            padding-top: 7rem;
+            display: flex;
+            img {
+                height: 700px;
+            }
+        }
+    }
+}

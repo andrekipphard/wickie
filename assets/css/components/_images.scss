@@ -1,0 +1,12 @@
+.swiper-slide {
+    height: 150px; /* Fixed height for all slides */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+.swiper-slide img {
+    height: 100%; /* Set the image height to fill the slide */
+    width: auto;  /* Width will adjust to maintain aspect ratio */
+    object-fit: contain; /* Maintain aspect ratio and fit the image within the slide */
+}

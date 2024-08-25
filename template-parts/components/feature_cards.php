@@ -31,7 +31,9 @@
                                 <i class="bi bi-chevron-right"></i>
                             </button>
                         </div>
-                        <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($contentBoxImage, 'large');?>">
+                        <div class="image">
+                            <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($contentBoxImage, 'large');?>">
+                        </div>
                     </a>
                 <?php endwhile;?>
             </div>

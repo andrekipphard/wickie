@@ -119,6 +119,10 @@ get_header();
 				elseif( get_row_layout() == 'headline_subline_text' ): 
 
 					get_template_part( 'template-parts/components/'. get_row_layout() );
+
+				elseif( get_row_layout() == 'images' ): 
+
+					get_template_part( 'template-parts/components/'. get_row_layout() );
 				
 				endif; 
 

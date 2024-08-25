@@ -17,7 +17,7 @@
                             <?= $serviceHighlightText; ?>
                         </span>
                         <h3><?= $serviceHeadline; ?></h3>
-                        <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($serviceImage, 'large'); ?>">
+                        <?php if($serviceImage):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($serviceImage, 'large'); ?>"><?php endif;?>
                         <button type="button" class="btn btn-link">
                             <?= $serviceButtonText; ?>
                             <i class="bi bi-chevron-right"></i>

@@ -19,6 +19,12 @@
                 color: #FFFFFF;
                 justify-content: center;
 
+                .btn {
+                    i {
+                        margin-left: 10px;
+                    }
+                }
+
                 .highlight {
                     display: flex;
                     align-items: center;
