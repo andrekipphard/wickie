@@ -32,7 +32,10 @@
                 $iconColor = get_sub_field('icon_color');
                 $iconColorBg = get_sub_field('icon_color_bg');?>
                     <div class="icon-box" 
-                        style="
+                    style="
+                            <?php if($alignIconBox == 'Center'):?>text-align:center;<?php endif;?><?php if($alignIconBox == 'Right'):?>text-align:end;<?php endif;?>
+                            <?php if($iconBoxesPerRow == '3'):?>flex-basis: calc(33.333% - 26.66px);<?php endif;?><?php if($iconBoxesPerRow == '4'):?>flex-basis: calc(25% - 30px);<?php endif;?>
+                        "
                     >
                     <?php if($iconOrImage == 'Image'):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>" style="width:100%; margin-bottom: 20px;"><?php endif;?>
                         <?php if($iconOrImage == 'Icon'):?><i class="bi bi-<?= $iconBoxIcon; ?>" <?php if($icon_with_background_color == 'No'):?>style="color: <?= $iconColor; ?>;"<?php endif;?>
