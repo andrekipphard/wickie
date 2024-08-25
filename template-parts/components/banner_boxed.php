@@ -39,7 +39,7 @@
                     <?php endwhile;?>
                 </div>
             <?php endif;?>
-            <img class="floating" loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($floatingImage, 'large'); ?>">
+            <?php if($floatingImage):?><img class="floating" loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($floatingImage, 'large'); ?>"><?php endif;?>
         </div>
     </div>
 </section>

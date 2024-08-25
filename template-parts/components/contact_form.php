@@ -12,7 +12,7 @@
 <section class="contact-form">
     <div class="container">
         <div class="contact-form-img">
-            <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>">
+        <?php if($image):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>"><?php endif;?>
         </div>
         <div class="contact-form-form">
             <span class="highlight"><?= $highlightText; ?></span>

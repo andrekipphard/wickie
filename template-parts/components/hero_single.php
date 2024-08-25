@@ -35,7 +35,7 @@
                 <?php endif;?>
             </div>
             <div class="image">
-                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>">
+                <?php if($image):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>"><?php endif;?>
             </div>
         </div>
         <?php if($buttonStyle == 'Multiple Buttons'):?>

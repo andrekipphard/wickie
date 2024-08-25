@@ -37,19 +37,19 @@
         </div>
         <div class="images">
             <div class="top-left image">
-                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageTopLeft, 'large');?>">
+                <?php if($imageTopLeft):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageTopLeft, 'large');?>"><?php endif;?>
             </div>
             <div class="bottom-left image">
-                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageBottomLeft, 'large');?>">
+            <?php if($imageBottomLeft):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageBottomLeft, 'large');?>"><?php endif;?>
             </div>
             <div class="top-right image">
-                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageTopRight, 'large');?>">
+            <?php if($imageTopRight):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageTopRight, 'large');?>"><?php endif;?>
             </div>
             <div class="bottom-right image">
-                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageBottomRight, 'large');?>">
+            <?php if($imageBottomRight):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageBottomRight, 'large');?>"><?php endif;?>
             </div>
             <div class="center">
-                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageCenter, 'large');?>">
+            <?php if($imageCenter):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageCenter, 'large');?>"><?php endif;?>
             </div>
         </div>
     </div>

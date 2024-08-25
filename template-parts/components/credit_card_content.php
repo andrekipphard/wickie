@@ -8,7 +8,7 @@
 <section class="credit-card-content" id="<?= $anchor; ?>">
     <div class="container">
         <div class="credit-card-image">
-            <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>">
+        <?php if($image):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>"><?php endif;?>
             <span class="features-title"><?= $featuresTitle; ?></span>
             <?php if( have_rows('feature')):?>
                 <div class="feature-wrapper">

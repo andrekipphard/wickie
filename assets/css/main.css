@@ -12568,7 +12568,7 @@ textarea.form-control-lg {
 }
 .hero .container .images .top-left {
   position: absolute;
-  top: 160px;
+  top: 20px;
   left: 0px;
   transition: transform 0.15s ease-out;
 }
@@ -12635,12 +12635,19 @@ textarea.form-control-lg {
   border-radius: 20px;
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
   flex-basis: calc(33.333% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .feature-cards .container .content-boxes .content-box .content {
   padding: 30px;
 }
 .feature-cards .container .content-boxes .content-box .content .title {
   font-size: 30px;
+}
+.feature-cards .container .content-boxes .content-box .image {
+  display: flex;
+  justify-content: center;
 }
 
 .popular-services {
@@ -12811,11 +12818,17 @@ textarea.form-control-lg {
   font-size: 20px;
   background-color: #93E100;
   border-radius: 50px;
-  padding: 0.25rem 0.5rem;
+  padding-right: 5px;
+  padding-left: 5px;
   color: #FFFFFF;
 }
+.content-card .container .content-wrapper .content .list-group-numbered .list-group-item:nth-child(2)::before {
+  padding-right: 0px;
+  padding-left: 0px;
+}
 .content-card .container .content-wrapper .content .list-group-numbered .list-group-item:nth-child(3)::before {
-  padding: 0.25rem 0.85rem;
+  padding-right: 8px;
+  padding-left: 8px;
 }
 .content-card .container .content-wrapper .content .list-group-numbered .list-group-item .list-group-item-content span {
   color: rgba(255, 255, 255, 0.6);
@@ -13589,6 +13602,12 @@ textarea.form-control-lg {
   flex-basis: calc(33.333% - 26.66px);
   margin-bottom: 20px;
 }
+.icon-boxes .container .icon-boxes-wrapper .icon-box img {
+  height: 50px; /* Set the image height to fill the slide */
+  width: auto; /* Width will adjust to maintain aspect ratio */
+  -o-object-fit: contain;
+     object-fit: contain; /* Maintain aspect ratio and fit the image within the slide */
+}
 .icon-boxes .container .icon-boxes-wrapper .icon-box i {
   color: #93E100;
   font-size: 3rem;
@@ -13909,6 +13928,53 @@ textarea.form-control-lg {
 }
 .headline-subline-text h2, .headline-subline-text .h2 {
   margin-bottom: 50px;
+}
+
+.swiper-slide {
+  height: 150px; /* Fixed height for all slides */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+.swiper-slide img {
+  height: 100%; /* Set the image height to fill the slide */
+  width: auto; /* Width will adjust to maintain aspect ratio */
+  -o-object-fit: contain;
+     object-fit: contain; /* Maintain aspect ratio and fit the image within the slide */
+}
+
+.banner-two-buttons {
+  margin-top: 7rem;
+  background: linear-gradient(to right, #93E100, #00A6FF);
+}
+.banner-two-buttons .banner-two-buttons-wrapper {
+  display: flex;
+  gap: 40px;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content {
+  padding-right: 100px;
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start;
+  color: #FFFFFF;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content span {
+  font-size: 17px;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content .cta {
+  display: flex;
+  gap: 20px;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .images {
+  padding-top: 7rem;
+  display: flex;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .images img {
+  height: 700px;
 }
 
 body {

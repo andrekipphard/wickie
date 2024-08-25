@@ -1,6 +1,5 @@
 .banner-two-buttons {
     margin-top: 7rem;
-    margin-bottom: 7rem;
     background: linear-gradient(to right, #93E100, #00A6FF);
 
     .banner-two-buttons-wrapper {
@@ -24,6 +23,13 @@
             .cta {
                 display: flex;
                 gap: 20px;
+            }
+        }
+        .images {
+            padding-top: 7rem;
+            display: flex;
+            img {
+                height: 700px;
             }
         }
     }

@@ -8,11 +8,11 @@
         <div class="logo">
             <?php if (is_front_page()): ?>
                 <a href="/">
-                    <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($headerLogoTransparentBackground, 'large'); ?>">
+                    <?php if($headerLogoTransparentBackground):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($headerLogoTransparentBackground, 'large'); ?>"><?php endif;?>
                 </a>
             <?php else: ?>
                 <a href="/">
-                    <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($headerLogo, 'large'); ?>">
+                <?php if($headerLogo):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($headerLogo, 'large'); ?>"><?php endif;?>
                 </a>
             <?php endif; ?>
         </div>
@@ -30,9 +30,9 @@
                         $megaMenu = get_sub_field('mega_menu');
                     ?>
                         <li class="nav-item <?php if (have_rows('sub_menu_item')): ?>dropdown<?php endif; ?><?php if ($megaMenu == 'Yes' && have_rows('sub_menu_item')): ?> mega-menu-dropdown<?php endif; ?>">
-                            <a class="nav-link<?php if (have_rows('sub_menu_item')): ?><?php endif; ?>" href="<?= $menuItemUrl; ?>"<?php if (have_rows('sub_menu_item')): ?> id="menuItem<?= $menuItemIndex; ?>Dropdown" role="button"<?php endif; ?>>
+                            <div class="nav-link<?php if (have_rows('sub_menu_item')): ?><?php endif; ?>"<?php if (have_rows('sub_menu_item')): ?> id="menuItem<?= $menuItemIndex; ?>Dropdown" role="button"<?php endif; ?>>
                                 <i class="bi bi-<?= $menuItemIcon; ?>"></i><?= $menuItemName; ?>
-                            </a>
+                            </div>
                             <?php if (have_rows('sub_menu_item')): ?>
                                 <div class="dropdown-menu" aria-labelledby="menuItem<?= $menuItemIndex; ?>Dropdown">
                                     <div class="row<?php if ($megaMenu == 'Yes'): ?> mega-menu<?php endif; ?><?php if ($megaMenu == 'No'): ?> normal-menu<?php endif; ?>">

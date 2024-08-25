@@ -25,6 +25,12 @@
                 flex-basis: calc(33.333% - 26.66px);
                 margin-bottom: 20px;
 
+                img {
+                    height: 50px; /* Set the image height to fill the slide */
+                    width: auto;  /* Width will adjust to maintain aspect ratio */
+                    object-fit: contain; /* Maintain aspect ratio and fit the image within the slide */
+                }
+
                 i {
                     color: $secondary;
                     font-size: 3rem;

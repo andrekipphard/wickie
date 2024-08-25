@@ -42,13 +42,13 @@
                 <h2><?= $headlineRight; ?></h2>
             </div>
             <div class="image">
-                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageRight, 'large');?>">
+            <?php if($imageRight):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageRight, 'large');?>"><?php endif;?>
             </div>
         </a>
         <?php endif;?>
         <?php if(!$buttonUrlRight):?>
             <div class="content" style="    display: flex;align-content: center;justify-content: center;align-items: center;">
-                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageRight, 'large');?>" style="width: 65%; height: auto;">
+            <?php if($imageRight):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageRight, 'large');?>" style="width: 65%; height: auto;"><?php endif;?>
             </div>
         <?php endif;?>
     </div>

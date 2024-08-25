@@ -15,7 +15,7 @@
                     <?= $highlightText; ?>
                 </span>
             <?php endif;?>
-            <h2><?= $headline; ?></h2>
+            <?php if($headline):?><h2><?= $headline; ?></h2><?php endif;?>
             <?php if($subline):?><span class="subline"><?= $subline; ?></span><?php endif;?>
         </div>
         <?php if( have_rows('icon_box')):?>
@@ -37,7 +37,7 @@
                         <?php if($iconOrImage == 'Icon'):?><i class="bi bi-<?= $iconBoxIcon; ?>"
                             <?php if($icon_with_background_color == 'Yes'):?>style="color: #FFFFFF; background-color: #93E100; border-radius: 20px; width: fit-content; padding-left: 15px; padding-right: 15px; padding-top: 3px; align-self: <?php if($alignIconBox == 'Center'):?>center;<?php endif;?><?php if($alignIconBox == 'Right'):?>end;<?php endif;?>"<?php endif;?>
                         ></i><?php endif;?>
-                        <h3><?= $iconBoxHeadline; ?></h3>
+                        <?php if($iconBoxHeadline):?><h3><?= $iconBoxHeadline; ?></h3><?php endif;?>
                         <span><?= $iconBoxText; ?></span>
                     </div>
                 <?php endwhile;?>
