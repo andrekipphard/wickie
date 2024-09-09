@@ -114,3 +114,30 @@
         text-align: center;
     }
 }
+.modal {
+    .modal-dialog {
+        max-width: 1000px;
+
+        .modal-content {
+            background-color: $primary;
+            color: #FFFFFF;
+            padding: 20px;
+            
+            .modal-header {
+                border-bottom: none;
+
+                button {
+                    display:none;
+                }
+
+                .modal-title {
+                    font-size: 25px;
+                    letter-spacing:normal;
+                }
+            }
+            .modal-footer {
+                border-top: none;
+            }
+        }
+    }
+}

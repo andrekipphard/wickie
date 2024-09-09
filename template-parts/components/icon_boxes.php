@@ -8,8 +8,21 @@
     $iconOrImage = get_sub_field('icon_or_image');
     $backgroundColor = get_sub_field('background_color');
     $textColor = get_sub_field('text_color');
+    $backgroundImage = get_sub_field('background_image');
+    $backgroundImageSize = get_sub_field('background_image_size');
+    $backgroundImagePosition = get_sub_field('background_image_position');
+    $backgroundImageRepeat = get_sub_field('background_image_repeat');
+    $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
 ?>
-<section class="icon-boxes"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>;"<?php endif;?>>
+<section class="icon-boxes"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>;<?php endif;?>    <?php if ($textColor): ?>
+        color: <?= $textColor; ?>;
+    <?php endif; ?>
+    <?php if ($backgroundImageUrl): ?>
+        background-image: url('<?= $backgroundImageUrl; ?>');
+        background-size: <?= $backgroundImageSize ? $backgroundImageSize : 'cover'; ?>;
+        background-repeat: <?= $backgroundImageRepeat ? $backgroundImageRepeat : 'no-repeat'; ?>;
+        background-position: <?= $backgroundImagePosition ? $backgroundImagePosition : 'center center'; ?>;
+    <?php endif; ?>">
     <div class="container">
         <div class="title" <?php if($alignHeadline == 'Center'):?>style="align-items: center;"<?php endif;?><?php if($alignHeadline == 'Right'):?>style="align-items: end;"<?php endif;?>>
             <?php if($highlightText):?>
@@ -32,7 +45,10 @@
                 $iconColor = get_sub_field('icon_color');
                 $iconColorBg = get_sub_field('icon_color_bg');?>
                     <div class="icon-box" 
-                        style="
+                                                style="
+                            <?php if($alignIconBox == 'Center'):?>text-align:center;<?php endif;?><?php if($alignIconBox == 'Right'):?>text-align:end;<?php endif;?>
+                            <?php if($iconBoxesPerRow == '3'):?>flex-basis: calc(33.333% - 26.66px);<?php endif;?><?php if($iconBoxesPerRow == '4'):?>flex-basis: calc(25% - 30px);<?php endif;?>
+                        "
                     >
                     <?php if($iconOrImage == 'Image'):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>" style="width:100%; margin-bottom: 20px;"><?php endif;?>
                         <?php if($iconOrImage == 'Icon'):?><i class="bi bi-<?= $iconBoxIcon; ?>" <?php if($icon_with_background_color == 'No'):?>style="color: <?= $iconColor; ?>;"<?php endif;?>

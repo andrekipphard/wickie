@@ -4,7 +4,7 @@
     $imageTopLeft = get_sub_field('image_top_left');
     $imageBottomLeft = get_sub_field('image_bottom_left');
     $imageTopRight = get_sub_field('image_top_right');
-    $imageBottomRight = get_sub_field('image_bottom_left');
+    $imageBottomRight = get_sub_field('image_bottom_right');
     $imageCenter = get_sub_field('image_center');
 ?>
 <section class="hero">

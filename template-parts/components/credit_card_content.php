@@ -1,5 +1,9 @@
 <?php
     $anchor = get_sub_field('anchor');
+    $mediaType = get_sub_field('media_type');
+    $video = get_sub_field('video');
+    $youtube = get_sub_field('youtube');
+    $lottie = get_sub_field('lottie');
     $image = get_sub_field('image');
     $featuresTitle = get_sub_field('features_title');
     $headline = get_sub_field('headline');
@@ -8,7 +12,22 @@
 <section class="credit-card-content" id="<?= $anchor; ?>">
     <div class="container">
         <div class="credit-card-image">
-        <?php if($image):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>"><?php endif;?>
+                <?php if($mediaType === 'Image'):?>
+                    <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>">
+                <?php endif;?>
+                <?php if($mediaType === 'Video'):?>
+                    <video controls autoplay muted preload="metadata" class="video">
+                        <source src="<?= $video; ?>" type="video/mp4">
+                    </video>
+                <?php endif;?>
+                <?php if($mediaType === 'Youtube'):?>
+                    <div class="iframe-container">
+                        <iframe src="<?= $youtube; ?>?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                <?php endif;?>
+                <?php if($mediaType === 'Lottie'):?>
+                    <?= $lottie; ?>
+            <?php endif;?>
             <span class="features-title"><?= $featuresTitle; ?></span>
             <?php if( have_rows('feature')):?>
                 <div class="feature-wrapper">

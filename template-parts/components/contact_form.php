@@ -1,6 +1,10 @@
 <?php
     $headline = get_sub_field('headline');
     $highlightText = get_sub_field('highlight_text');
+    $mediaType = get_sub_field('media_type');
+    $video = get_sub_field('video');
+    $youtube = get_sub_field('youtube');
+    $lottie = get_sub_field('lottie');
     $image = get_sub_field('image');
     $labelNameField = get_sub_field('label_name_field');
     $labelEmailField = get_sub_field('label_email_field');
@@ -12,7 +16,22 @@
 <section class="contact-form">
     <div class="container">
         <div class="contact-form-img">
-        <?php if($image):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>"><?php endif;?>
+            <?php if($mediaType === 'Image'):?>
+                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>">
+                <?php endif;?>
+                <?php if($mediaType === 'Video'):?>
+                    <video controls autoplay muted preload="metadata" class="video">
+                        <source src="<?= $video; ?>" type="video/mp4">
+                    </video>
+                <?php endif;?>
+                <?php if($mediaType === 'Youtube'):?>
+                    <div class="iframe-container">
+                        <iframe src="<?= $youtube; ?>?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                <?php endif;?>
+                <?php if($mediaType === 'Lottie'):?>
+                    <?= $lottie; ?>
+            <?php endif;?>
         </div>
         <div class="contact-form-form">
             <span class="highlight"><?= $highlightText; ?></span>

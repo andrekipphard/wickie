@@ -10,6 +10,9 @@
         gap: 40px;
         .contact-form-img {
             flex-basis: calc(50% - 20px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .contact-form-form {
             justify-content: center;

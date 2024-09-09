@@ -176,3 +176,19 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 require_once get_template_directory() . '/inc/acf.php';
+
+add_filter('acfe/flexible/thumbnail', 'dynamic_acf_layout_thumbnail', 10, 3);
+function dynamic_acf_layout_thumbnail($thumbnail, $field, $layout) {
+    
+    // Get the layout name (slug)
+    $layout_slug = $layout['name'];
+    
+    // Build the relative image path based on the layout name (e.g., 'hero_section' becomes '/wp-content/uploads/2024/09/hero_section.png')
+    $image_path = '/wp-content/uploads/2024/09/' . $layout_slug . '.png';
+    
+    // Construct the full image URL using home_url() and the relative path
+    $image_url = home_url() . $image_path;
+    
+    // Return the image URL
+    return $image_url;
+}

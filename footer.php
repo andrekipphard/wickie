@@ -16,15 +16,29 @@
     $companyInformation = get_field('footer_company_information', 'options');
     $copyright_template = get_field('footer_copyright', 'options');
     $infoText = get_field('footer_info_text', 'options');
+    $modalHeadline = get_field('modal_headline', 'options');
+    $modalText = get_field('modal_text', 'options');
+    $modalButtonText = get_field('modal_button_text', 'options');
 
     // Get the current year
     $current_year = date('Y');
 
     // Replace the {year} placeholder with the current year
     $copyright = str_replace('{year}', $current_year, $copyright_template);
+    $backgroundImage = get_field('background_image', 'options');
+    $backgroundImageSize = get_field('background_image_size', 'options');
+    $backgroundImagePosition = get_field('background_image_position', 'options');
+    $backgroundImageRepeat = get_field('background_image_repeat', 'options');
+    $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
 ?>
 
-<footer id="colophon" class="site-footer">
+<footer id="colophon" class="site-footer" style="
+    <?php if ($backgroundImageUrl): ?>
+        background-image: url('<?= $backgroundImageUrl; ?>');
+        background-size: <?= $backgroundImageSize ? $backgroundImageSize : 'cover'; ?>;
+        background-repeat: <?= $backgroundImageRepeat ? $backgroundImageRepeat : 'no-repeat'; ?>;
+        background-position: <?= $backgroundImagePosition ? $backgroundImagePosition : 'center center'; ?>;
+    <?php endif; ?>">
     <div class="container">
         <div class="footer">
             <div class="company-info">
@@ -119,5 +133,40 @@
 
 <?php wp_footer(); ?>
 <div class="overlay"></div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel"><?= esc_html($modalHeadline); ?></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <?= esc_html($modalText); ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-white" data-bs-dismiss="modal"><?= esc_html($modalButtonText); ?></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check if the modal has already been shown in this session
+        if (!localStorage.getItem('modalShown')) {
+            // Show the modal with specific options
+            var exampleModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+                backdrop: 'static', // Prevent closing when clicking outside the modal
+                keyboard: false // Prevent closing with the Escape key
+            });
+            exampleModal.show();
+
+            // Set a flag in localStorage to prevent it from showing again
+            localStorage.setItem('modalShown', 'true');
+        }
+    });
+</script>
+
 </body>
 </html>

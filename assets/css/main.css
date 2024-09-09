@@ -12470,6 +12470,28 @@ textarea.form-control-lg {
   text-align: center;
 }
 
+.modal .modal-dialog {
+  max-width: 1000px;
+}
+.modal .modal-dialog .modal-content {
+  background-color: #002A3F;
+  color: #FFFFFF;
+  padding: 20px;
+}
+.modal .modal-dialog .modal-content .modal-header {
+  border-bottom: none;
+}
+.modal .modal-dialog .modal-content .modal-header button {
+  display: none;
+}
+.modal .modal-dialog .modal-content .modal-header .modal-title {
+  font-size: 25px;
+  letter-spacing: normal;
+}
+.modal .modal-dialog .modal-content .modal-footer {
+  border-top: none;
+}
+
 .hero::before {
   content: "";
   position: absolute;
@@ -12758,7 +12780,7 @@ textarea.form-control-lg {
   padding-bottom: 7rem;
 }
 .content-card.content-card-list .container .content-wrapper {
-  background: #002A3F !important;
+  background: #002A3F;
 }
 .content-card .container .content-wrapper {
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
@@ -12775,6 +12797,16 @@ textarea.form-control-lg {
   align-items: flex-start;
   color: #FFFFFF;
   justify-content: center;
+}
+.content-card .container .content-wrapper .content .list-items .list-item {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.content-card .container .content-wrapper .content .list-items .list-item .list-item-icon i {
+  display: flex;
+  margin-top: 2px;
+  font-size: 1.75rem;
 }
 .content-card .container .content-wrapper .content .cta {
   display: flex;
@@ -12832,6 +12864,9 @@ textarea.form-control-lg {
 }
 .content-card .container .content-wrapper .content .list-group-numbered .list-group-item .list-group-item-content span {
   color: rgba(255, 255, 255, 0.6);
+}
+.content-card .container .content-wrapper .video {
+  padding: 40px;
 }
 .content-card .container .content-wrapper .image {
   flex: 0 0 60%;
@@ -13232,6 +13267,7 @@ textarea.form-control-lg {
   border-radius: 20px;
   flex-basis: calc(40% - 25px);
   padding: 40px;
+  justify-content: center;
 }
 .rewards .container .content-wrapper .subline {
   display: flex;
@@ -13853,6 +13889,9 @@ textarea.form-control-lg {
 }
 .contact-form .container .contact-form-img {
   flex-basis: calc(50% - 20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .contact-form .container .contact-form-form {
   justify-content: center;
@@ -14181,6 +14220,30 @@ h3, .h3 {
   background-color: #ffffff;
   color: #000000;
   padding: 5px;
+}
+
+.video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (9/16 * 100) */
+  height: 0;
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0; /* Remove the iframe border */
 }
 
 @media (min-width: 576px) {
