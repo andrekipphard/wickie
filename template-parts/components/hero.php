@@ -74,30 +74,30 @@ function animateImages() {
     const topRightImage = document.querySelector('.hero .images .top-right');
     const bottomRightImage = document.querySelector('.hero .images .bottom-right');
 
-    // Reduzierte Geschwindigkeiten
     const topLeftSpeed = 0.02;
     const bottomLeftSpeed = 0.015;
     const topRightSpeed = 0.02;
     const bottomRightSpeed = 0.015;
 
-    const topLeftOffsetX = (mouseX - window.innerWidth / 2) * topLeftSpeed;
-    const topLeftOffsetY = (mouseY - window.innerHeight / 2) * topLeftSpeed;
+    const topLeftOffsetX = Math.round((mouseX - window.innerWidth / 2) * topLeftSpeed);
+    const topLeftOffsetY = Math.round((mouseY - window.innerHeight / 2) * topLeftSpeed);
     topLeftImage.style.transform = `translate(${topLeftOffsetX}px, ${topLeftOffsetY}px)`;
 
-    const bottomLeftOffsetX = (mouseX - window.innerWidth / 2) * bottomLeftSpeed;
-    const bottomLeftOffsetY = (mouseY - window.innerHeight / 2) * bottomLeftSpeed;
+    const bottomLeftOffsetX = Math.round((mouseX - window.innerWidth / 2) * bottomLeftSpeed);
+    const bottomLeftOffsetY = Math.round((mouseY - window.innerHeight / 2) * bottomLeftSpeed);
     bottomLeftImage.style.transform = `translate(${bottomLeftOffsetX}px, ${bottomLeftOffsetY}px)`;
 
-    const topRightOffsetX = (mouseX - window.innerWidth / 2) * topRightSpeed;
-    const topRightOffsetY = (mouseY - window.innerHeight / 2) * topRightSpeed;
+    const topRightOffsetX = Math.round((mouseX - window.innerWidth / 2) * topRightSpeed);
+    const topRightOffsetY = Math.round((mouseY - window.innerHeight / 2) * topRightSpeed);
     topRightImage.style.transform = `translate(${topRightOffsetX}px, ${topRightOffsetY}px)`;
 
-    const bottomRightOffsetX = (mouseX - window.innerWidth / 2) * bottomRightSpeed;
-    const bottomRightOffsetY = (mouseY - window.innerHeight / 2) * bottomRightSpeed;
+    const bottomRightOffsetX = Math.round((mouseX - window.innerWidth / 2) * bottomRightSpeed);
+    const bottomRightOffsetY = Math.round((mouseY - window.innerHeight / 2) * bottomRightSpeed);
     bottomRightImage.style.transform = `translate(${bottomRightOffsetX}px, ${bottomRightOffsetY}px)`;
 
     isMoving = false;
 }
+
 
 
 </script>
