@@ -87,7 +87,7 @@
     </div>
     <div class="right">
         <!-- Removed the search button and modal -->
-        <button type="button" class="btn btn-link"><i class="bi bi-globe"></i>En</button>
+        <button type="button" class="btn btn-link"><div id="weglot_here"></div></button>
         <?php if (have_rows('header_cta', 'options')): ?>
             <?php while (have_rows('header_cta', 'options')): the_row();
                 $headerButtonUrl = get_sub_field('header_button_url');

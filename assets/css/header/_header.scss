@@ -430,3 +430,53 @@
 .header-desktop .btn.white-text i {
     color: white !important;
 }
+.country-selector.weglot-dropdown {
+    background-color: transparent;
+}
+.country-selector.weglot-dropdown .wgcurrent {
+    background-color: transparent;
+    border:none;
+}
+.country-selector.weglot-dropdown a, .country-selector.weglot-dropdown span {
+    font-size: 1.3rem;
+}
+.country-selector.weglot-dropdown .wgcurrent:after {
+    background: none;
+    content: "";
+    border: solid white;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 5.5px;
+    vertical-align: middle;
+    transform: rotate(43deg);
+    top: 10px;
+}
+
+.country-selector.weglot-dropdown input:checked ~ .wgcurrent:after {
+    transform: rotate(223deg);
+    top: 17px;
+}
+
+.country-selector.weglot-dropdown .wgcurrent a, .country-selector.weglot-dropdown .wgcurrent span{
+    padding-right: 40px;
+}
+
+.country-selector.weglot-dropdown ul {
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
+    border-radius: 20px;
+
+    li {
+        margin-bottom: 10px;
+        a {
+            font-size: 1rem;
+        }
+        a:hover {
+            color: $secondary;
+        }
+    }
+}
+.weglot-flags>a:before, .weglot-flags>span.wglanguage-name:before {
+    margin-top: -3px;
+}
