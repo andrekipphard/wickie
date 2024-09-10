@@ -13361,6 +13361,21 @@ textarea.form-control-lg {
   flex-direction: column;
   width: 100%;
 }
+.market .container .content-wrapper .currency-selector {
+  margin-top: 40px;
+}
+.market .container .content-wrapper .currency-selector #currency {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  line-height: 1.425 !important;
+  cursor: pointer;
+  padding: 3px 5px;
+  border-radius: 8px;
+  background-color: #EFF2F5;
+  border: none;
+}
 .market .container .content-wrapper .market-values {
   margin-top: 40px;
   display: flex;
