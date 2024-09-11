@@ -12631,16 +12631,10 @@ textarea.form-control-lg {
 .hero .container .images {
   position: relative;
 }
-.hero .container .images .image {
-  transition: transform 0.1s ease-out;
-  will-change: transform;
-  backface-visibility: hidden;
-}
 .hero .container .images .top-left {
   position: absolute;
   top: 20px;
   left: 0px;
-  transition: transform 0.15s ease-out;
 }
 .hero .container .images .bottom-left {
   left: 0px;
@@ -12651,13 +12645,11 @@ textarea.form-control-lg {
   position: absolute;
   top: 45px;
   right: 0px;
-  transition: transform 0.1s ease-out;
 }
 .hero .container .images .bottom-right {
   right: 0px;
   bottom: 20px;
   position: absolute;
-  transition: transform 0.25s ease-out;
 }
 .hero .container .images .center {
   display: flex;
