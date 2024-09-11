@@ -54,8 +54,9 @@
                                                                     $subSubMenuItemName = get_sub_field('sub_sub_menu_item_name');
                                                                     $subSubMenuItemUrl = get_sub_field('sub_sub_menu_item_url');
                                                                     $subSubMenuItemComingSoon = get_sub_field('sub_sub_menu_item_coming_soon');
+                                                                    $subSubMenuItemNewTab = get_sub_field('sub_sub_menu_item_new_tab');
                                                                 ?>
-                                                                    <?php if ($subSubMenuItemComingSoon === 'Nein'): ?><li><a class="dropdown-item" href="<?= $subSubMenuItemUrl; ?>"><?= $subSubMenuItemName; ?><?php if ($subSubMenuItemComingSoon === 'Ja'): ?>
+                                                                    <?php if ($subSubMenuItemComingSoon === 'Nein'): ?><li><a class="dropdown-item" href="<?= $subSubMenuItemUrl; ?>" <?php if ($subSubMenuItemNewTab === 'Ja'): ?> target="_blank"<?php endif;?>><?= $subSubMenuItemName; ?><?php if ($subSubMenuItemComingSoon === 'Ja'): ?>
                         <span class="coming-soon">
                             <span class="badge">
                                 <i class="bi bi-flag"></i>COMING SOON

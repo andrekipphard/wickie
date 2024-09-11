@@ -57,7 +57,7 @@
                             $socialIcon = get_sub_field('footer_social_icon');
                         ?>
                             <?php if ($socialIconUrl && $socialIcon): ?>
-                                <a href="<?= esc_url($socialIconUrl); ?>">
+                                <a href="<?= esc_url($socialIconUrl); ?>" target="_blank">
                                     <i class="bi bi-<?= esc_attr($socialIcon); ?>"></i>
                                 </a>
                             <?php endif; ?>
@@ -102,10 +102,11 @@
                                                 $footerMenuItemName = get_sub_field('footer_menu_item_name');
                                                 $footerMenuItemUrl = get_sub_field('footer_menu_item_url');
                                                 $footerMenuItemComingSoon = get_sub_field('footer_menu_item_coming_soon');
+                                                $footerMenuItemNewTab = get_sub_field('footer_menu_item_new_tab');
                                             ?>
                                                 <?php if ($footerMenuItemName && $footerMenuItemUrl): ?>
                                                     <?php if ($footerMenuItemComingSoon === 'Nein'): ?><li class="navigation-item">
-                                                        <a href="<?= esc_url($footerMenuItemUrl); ?>">
+                                                        <a href="<?= esc_url($footerMenuItemUrl); ?>"<?php if ($footerMenuItemNewTab === 'Ja'): ?> target="_blank"<?php endif;?>>
                                                             <span><?= esc_html($footerMenuItemName); ?></span><?php if ($footerMenuItemComingSoon === 'Ja'): ?>
                         <span class="coming-soon">
                             <span class="badge">

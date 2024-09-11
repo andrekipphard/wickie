@@ -12043,6 +12043,7 @@ textarea.form-control-lg {
 .header-desktop .left .logo img {
   width: 150px;
   height: auto;
+  margin-top: -15px;
 }
 .header-desktop .right {
   display: flex;
