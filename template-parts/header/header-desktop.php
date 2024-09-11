@@ -53,8 +53,15 @@
                                                                 <?php while (have_rows('sub_sub_menu_item')): the_row(); // Correct loop and function
                                                                     $subSubMenuItemName = get_sub_field('sub_sub_menu_item_name');
                                                                     $subSubMenuItemUrl = get_sub_field('sub_sub_menu_item_url');
+                                                                    $subSubMenuItemComingSoon = get_sub_field('sub_sub_menu_item_coming_soon');
                                                                 ?>
-                                                                    <li><a class="dropdown-item" href="<?= $subSubMenuItemUrl; ?>"><?= $subSubMenuItemName; ?></a></li>
+                                                                    <?php if ($subSubMenuItemComingSoon === 'Nein'): ?><li><a class="dropdown-item" href="<?= $subSubMenuItemUrl; ?>"><?= $subSubMenuItemName; ?><?php if ($subSubMenuItemComingSoon === 'Ja'): ?>
+                        <span class="coming-soon">
+                            <span class="badge">
+                                <i class="bi bi-flag"></i>COMING SOON
+                            </span>
+                        </span>
+                    <?php endif; ?></a></li><?php endif;?>
                                                                 <?php endwhile; ?>
                                                                 </ul>
                                                             <?php endif; ?>
@@ -87,7 +94,7 @@
     </div>
     <div class="right">
         <!-- Removed the search button and modal -->
-        <button type="button" class="btn btn-link"><i class="bi bi-globe"></i>En</button>
+        <button type="button" class="btn btn-link"><div id="weglot_here"></div></button>
         <?php if (have_rows('header_cta', 'options')): ?>
             <?php while (have_rows('header_cta', 'options')): the_row();
                 $headerButtonUrl = get_sub_field('header_button_url');
