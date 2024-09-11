@@ -11,125 +11,107 @@
             </div>
             <h2><?= $headline; ?></h2>
             <span><?= $text; ?></span>
-            <div class="market-values">
-                <div class="market-value">
-                    <div class="currency">
-                        <div class="image">
-                            <img id="btc-icon" loading="lazy" decoding="async" src="" alt="Bitcoin">
-                        </div>
-                        <div class="name">
-                            <h3>Bitcoin</h3>
-                            <span>BTC</span>
-                        </div>
-                    </div>
-                    <div class="value">
-                        <span><span id="btc-price">...</span> <span class="currency-label">USD</span></span>
-                        <canvas id="btc-chart" width="100" height="50"></canvas>
-                    </div>
-                </div>
-                <div class="market-value">
-                    <div class="currency">
-                        <div class="image">
-                            <img id="eth-icon" loading="lazy" decoding="async" src="" alt="Ethereum">
-                        </div>
-                        <div class="name">
-                            <h3>Ethereum</h3>
-                            <span>ETH</span>
-                        </div>
-                    </div>
-                    <div class="value">
-                        <span><span id="eth-price">...</span> <span class="currency-label">USD</span></span>
-                        <canvas id="eth-chart" width="100" height="50"></canvas>
-                    </div>
-                </div>
-                <div class="market-value">
-                    <div class="currency">
-                        <div class="image">
-                            <img id="sol-icon" loading="lazy" decoding="async" src="" alt="Solana">
-                        </div>
-                        <div class="name">
-                            <h3>Solana</h3>
-                            <span>SOL</span>
-                        </div>
-                    </div>
-                    <div class="value">
-                        <span><span id="sol-price">...</span> <span class="currency-label">USD</span></span>
-                        <canvas id="sol-chart" width="100" height="50"></canvas>
-                    </div>
-                </div>
-                <div class="market-value">
-                    <div class="currency">
-                        <div class="image">
-                            <img id="doge-icon" loading="lazy" decoding="async" src="" alt="Dogecoin">
-                        </div>
-                        <div class="name">
-                            <h3>Dogecoin</h3>
-                            <span>DOGE</span>
-                        </div>
-                    </div>
-                    <div class="value">
-                        <span><span id="doge-price">...</span> <span class="currency-label">USD</span></span>
-                        <canvas id="doge-chart" width="100" height="50"></canvas>
-                    </div>
-                </div>
-                <div class="market-value">
-                    <div class="currency">
-                        <div class="image">
-                            <img id="xrp-icon" loading="lazy" decoding="async" src="" alt="Ripple">
-                        </div>
-                        <div class="name">
-                            <h3>Ripple</h3>
-                            <span>XRP</span>
-                        </div>
-                    </div>
-                    <div class="value">
-                        <span><span id="xrp-price">...</span> <span class="currency-label">USD</span></span>
-                        <canvas id="xrp-chart" width="100" height="50"></canvas>
-                    </div>
-                </div>
-            </div>
+            <div id="market-values-container" class="market-values"></div>
+
+            <button class="btn btn-primary" id="show-more-button">Show More</button>
+
             <div class="currency-selector">
                 <select id="currency">
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                 </select>
             </div>
+
+
         </div>
     </div> 
 </section>
 
-
 <script>
-const coingeckoApiUrl = 'https://api.coingecko.com/api/v3/coins/';
+const cryptos = [
+    { name: 'Bitcoin', symbol: 'XBT', id: 'bitcoin', imageUrl: 'https://www.cryptocompare.com/media/37746251/btc.png' },
+    { name: 'Ethereum', symbol: 'ETH', id: 'ethereum', imageUrl: 'https://www.cryptocompare.com/media/37746238/eth.png' },
+    { name: 'Solana', symbol: 'SOL', id: 'solana', imageUrl: 'https://www.cryptocompare.com/media/37747734/sol.png' },
+    { name: 'Dogecoin', symbol: 'XDG', id: 'dogecoin', imageUrl: 'https://www.cryptocompare.com/media/37746339/doge.png' },
+    { name: 'Ripple', symbol: 'XRP', id: 'ripple', imageUrl: 'https://www.cryptocompare.com/media/38553096/xrp.png' },
+    { name: 'ApeCoin', symbol: 'APE', id: 'apecoin', imageUrl: 'https://www.cryptocompare.com/media/39838302/ape.png' },
+    { name: 'Avalanche', symbol: 'AVAX', id: 'avalanche', imageUrl: 'https://www.cryptocompare.com/media/43977160/avax.png' },
+    { name: 'Bitcoin Cash', symbol: 'BCH', id: 'bitcoincash', imageUrl: 'https://www.cryptocompare.com/media/37746245/bch.png' },
+    { name: 'Cardano', symbol: 'ADA', id: 'cardano', imageUrl: 'https://www.cryptocompare.com/media/37746235/ada.png' },
+    { name: 'Polkadot', symbol: 'DOT', id: 'polkadot', imageUrl: 'https://www.cryptocompare.com/media/39334571/dot.png' },
+    { name: 'EOS', symbol: 'EOS', id: 'eos', imageUrl: 'https://www.cryptocompare.com/media/40485146/eos.png' },
+    { name: 'Chainlink', symbol: 'LINK', id: 'chainlink', imageUrl: 'https://www.cryptocompare.com/media/37746242/link.png' },
+    { name: 'Litecoin', symbol: 'LTC', id: 'litecoin', imageUrl: 'https://www.cryptocompare.com/media/37746243/ltc.png' },
+    { name: 'Polygon', symbol: 'MATIC', id: 'matic', imageUrl: 'https://www.cryptocompare.com/media/37746047/matic.png' },
+    { name: 'TRON', symbol: 'TRX', id: 'tron', imageUrl: 'https://www.cryptocompare.com/media/37746879/trx.png' },
+    { name: 'Uniswap', symbol: 'UNI', id: 'uniswap', imageUrl: 'https://www.cryptocompare.com/media/37746885/uni.png' },
+    { name: 'USD Coin', symbol: 'USDC', id: 'usd-coin', imageUrl: 'https://www.cryptocompare.com/media/34835941/usdc.png' },
+    { name: 'Tether', symbol: 'USDT', id: 'tether', imageUrl: 'https://www.cryptocompare.com/media/37746338/usdt.png' },
+    { name: 'Stellar', symbol: 'XLM', id: 'stellar', imageUrl: 'https://www.cryptocompare.com/media/37746346/xlm.png' },
+    { name: 'Tezos', symbol: 'XTZ', id: 'tezos', imageUrl: 'https://www.cryptocompare.com/media/37747535/xtz.png' },
+    { name: 'DASH', symbol: 'DASH', id: 'dash', imageUrl: 'https://www.cryptocompare.com/media/37746893/dash.png' },
+    { name: 'DAI', symbol: 'DAI', id: 'dai', imageUrl: 'https://www.cryptocompare.com/media/37747610/dai.png' }
+];
 
-// Function to fetch and cache crypto icons from CoinGecko
+const itemsPerPage = 6;
+let currentPage = 0;
+
+// Function to dynamically generate HTML for crypto listings
+function generateMarketValuesHTML() {
+    const container = document.getElementById('market-values-container');
+
+    cryptos.forEach((crypto, index) => {
+        const cryptoHTML = `
+            <div class="market-value ${index >= itemsPerPage ? 'hidden' : ''}">
+                <div class="currency">
+                    <div class="image">
+                        <img id="${crypto.symbol.toLowerCase()}-icon" loading="lazy" decoding="async" src="${crypto.imageUrl}" alt="${crypto.name}">
+                    </div>
+                    <div class="name">
+                        <h3>${crypto.name}</h3>
+                        <span>${crypto.symbol}</span>
+                    </div>
+                </div>
+                <div class="value">
+                    <span><span id="${crypto.symbol.toLowerCase()}-price">...</span> <span class="currency-label">USD</span></span>
+                </div>
+            </div>
+        `;
+        container.innerHTML += cryptoHTML;
+    });
+}
+
+// Call the function to generate the HTML when page loads
+generateMarketValuesHTML();
+
+document.getElementById('show-more-button').addEventListener('click', function() {
+    const allMarketValues = document.querySelectorAll('.market-value');
+    currentPage++;
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    allMarketValues.forEach((element, index) => {
+        if (index >= startIndex && index < endIndex) {
+            element.classList.remove('hidden');
+        }
+    });
+
+    // Hide button if no more items to show
+    if (endIndex >= allMarketValues.length) {
+        this.style.display = 'none';
+    }
+});
+
+const cryptoCompareApiUrl = 'https://min-api.cryptocompare.com/data/all/coinlist';
+
+// Function to fetch and cache crypto icons from CryptoCompare (now using static URLs)
 async function fetchAndCacheCryptoIcons() {
-    const cryptoSymbols = {
-        BTC: 'bitcoin',
-        ETH: 'ethereum',
-        SOL: 'solana',
-        DOGE: 'dogecoin',
-        XRP: 'ripple'
-    };
-
+    // No need to fetch, using static URLs directly
     const cache = {};
 
-    for (const [symbol, id] of Object.entries(cryptoSymbols)) {
-        const cachedIcon = localStorage.getItem(id);
-        if (cachedIcon) {
-            cache[symbol] = cachedIcon;
-        } else {
-            try {
-                const response = await fetch(`${coingeckoApiUrl}${id}`);
-                const data = await response.json();
-                const imageUrl = data.image.large;
-                localStorage.setItem(id, imageUrl);
-                cache[symbol] = imageUrl;
-            } catch (error) {
-                console.error(`Error fetching icon for ${symbol}:`, error);
-            }
-        }
-    }
+    cryptos.forEach(crypto => {
+        cache[crypto.symbol] = crypto.imageUrl;
+    });
 
     return cache;
 }
@@ -146,7 +128,6 @@ async function updateCryptoIcons() {
     });
 }
 
-// Call this function when initializing or updating
 updateCryptoIcons();
 
 async function fetchWithRetry(url, retries = 5, delay = 1000) {
@@ -170,13 +151,14 @@ let krakenSocket = new WebSocket('wss://ws.kraken.com');
 let currentCurrency = "USD";
 
 function getSubscribeMessages(currency) {
-    return {
-        BTC: { event: "subscribe", pair: [`XBT/${currency}`], subscription: { name: "ticker" } },
-        ETH: { event: "subscribe", pair: [`ETH/${currency}`], subscription: { name: "ticker" } },
-        SOL: { event: "subscribe", pair: [`SOL/${currency}`], subscription: { name: "ticker" } },
-        DOGE: { event: "subscribe", pair: [`XDG/${currency}`], subscription: { name: "ticker" } },
-        XRP: { event: "subscribe", pair: [`XRP/${currency}`], subscription: { name: "ticker" } }
-    };
+    return cryptos.reduce((messages, crypto) => {
+        messages[crypto.symbol] = {
+            event: "subscribe",
+            pair: [`${crypto.symbol}/${currency}`],
+            subscription: { name: "ticker" }
+        };
+        return messages;
+    }, {});
 }
 
 function subscribeToCryptoPrices(currency) {
@@ -202,18 +184,11 @@ krakenSocket.onmessage = function(event) {
     const data = JSON.parse(event.data);
     if (data[1] && data[1].c) {
         const price = parseFloat(data[1].c[0]).toFixed(2);
-
-        if (data[3] === `XBT/${currentCurrency}`) {
-            document.getElementById('btc-price').innerText = price;
-        } else if (data[3] === `ETH/${currentCurrency}`) {
-            document.getElementById('eth-price').innerText = price;
-        } else if (data[3] === `SOL/${currentCurrency}`) {
-            document.getElementById('sol-price').innerText = price;
-        } else if (data[3] === `XDG/${currentCurrency}`) {
-            document.getElementById('doge-price').innerText = price;
-        } else if (data[3] === `XRP/${currentCurrency}`) {
-            document.getElementById('xrp-price').innerText = price;
-        }
+        cryptos.forEach(crypto => {
+            if (data[3] === `${crypto.symbol}/${currentCurrency}`) {
+                document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerText = price;
+            }
+        });
     }
 };
 
@@ -228,85 +203,4 @@ function updateCurrencyLabels(currency) {
         label.innerText = currency;
     });
 }
-
-async function fetchHistoricalData(cryptoId, currency, days) {
-    const url = `https://api.kraken.com/0/public/OHLC?pair=${cryptoId}&interval=1440`;
-    const data = await fetchWithRetry(url);
-
-    if (data.result) {
-        // Adjust the structure based on actual data
-        const pairs = Object.keys(data.result);
-        if (pairs.length > 0) {
-            const prices = data.result[pairs[0]].map(item => [item[0] * 1000, parseFloat(item[4])]);
-            return prices;
-        }
-    }
-    throw new Error('Unexpected data structure');
-}
-
-
-
-// Function to initialize a chart
-async function initCustomDecimalChart(cryptoId, canvasId, currency, days) {
-    try {
-        const prices = await fetchHistoricalData(cryptoId, currency, days);
-        
-        // Extract timestamps and prices
-        const timestamps = prices.map(price => new Date(price[0]).toLocaleDateString());
-        const priceData = prices.map(price => price[1]);
-
-        // Create Chart.js chart
-        const ctx = document.getElementById(canvasId).getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: timestamps,
-                datasets: [{
-                    label: `${cryptoId} Price`,
-                    data: priceData,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: '#4caf50',
-                    borderWidth: 1,
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: false,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: false }
-                },
-                scales: {
-                    x: { 
-                        display: false,
-                        grid: { display: false }
-                    },
-                    y: { 
-                        display: false,
-                        grid: { display: false },
-                        ticks: {
-                            callback: function(value) {
-                                return value.toFixed(8);
-                            }
-                        }
-                    }
-                },
-                elements: {
-                    point: { radius: 0 },
-                    line: { borderWidth: 2 }
-                }
-            }
-        });
-    } catch (error) {
-        console.error(`Error initializing chart for ${cryptoId}:`, error);
-    }
-}
-
-// Initialize charts with historical data
-initCustomDecimalChart('XBTUSD', 'btc-chart', 'usd', 7);
-initCustomDecimalChart('ETHUSD', 'eth-chart', 'usd', 7);
-initCustomDecimalChart('SOLUSD', 'sol-chart', 'usd', 7);
-initCustomDecimalChart('XDGUSD', 'doge-chart', 'usd', 7);
-initCustomDecimalChart('XRPUSD', 'xrp-chart', 'usd', 7);
-
 </script>

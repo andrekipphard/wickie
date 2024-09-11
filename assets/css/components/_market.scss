@@ -15,6 +15,12 @@
             flex-direction: column;
             width: 100%;
 
+            .btn-primary {
+                width: fit-content;
+                margin-top: 40px;
+                align-self: center;
+            }
+
             .currency-selector {
                 margin-top: 40px;
 
@@ -60,6 +66,7 @@
                         flex-direction: column;
                         gap: 20px;
                         align-items: flex-end;
+                        font-size: 1.25rem;
 
                         img {
                             background-color: #b4f6cb;
@@ -74,4 +81,8 @@
             }
         }
     }
+}
+
+.hidden {
+    display: none!important;
 }

@@ -23,7 +23,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 	<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 	<?php wp_head(); ?>

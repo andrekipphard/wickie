@@ -13404,6 +13404,12 @@ textarea.form-control-lg {
   flex-direction: column;
   width: 100%;
 }
+.market .container .content-wrapper .btn-primary {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 40px;
+  align-self: center;
+}
 .market .container .content-wrapper .currency-selector {
   margin-top: 40px;
 }
@@ -13446,6 +13452,7 @@ textarea.form-control-lg {
   flex-direction: column;
   gap: 20px;
   align-items: flex-end;
+  font-size: 1.25rem;
 }
 .market .container .content-wrapper .market-values .market-value .value img {
   background-color: #b4f6cb;
@@ -13454,6 +13461,10 @@ textarea.form-control-lg {
   padding-right: 20px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .hero-single {
