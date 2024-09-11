@@ -7,7 +7,7 @@
     <div class="container">
         <div class="title">
             <h2><?= esc_html($headline); ?></h2>
-            <a href="<?= esc_url($buttonUrl); ?>">
+            <a href="<?= esc_url($buttonUrl); ?>" target="_blank">
                 <button type="button" class="btn btn-primary">
                     <?= esc_html($buttonText); ?>
                     <i class="bi bi-arrow-right"></i>

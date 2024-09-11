@@ -12043,6 +12043,7 @@ textarea.form-control-lg {
 .header-desktop .left .logo img {
   width: 150px;
   height: auto;
+  margin-top: -15px;
 }
 .header-desktop .right {
   display: flex;
@@ -12368,6 +12369,52 @@ textarea.form-control-lg {
   color: white !important;
 }
 
+.country-selector.weglot-dropdown {
+  background-color: transparent;
+}
+
+.country-selector.weglot-dropdown .wgcurrent {
+  background-color: transparent;
+  border: none;
+}
+
+.country-selector.weglot-dropdown a, .country-selector.weglot-dropdown span {
+  font-size: 1.3rem;
+}
+
+.country-selector.weglot-dropdown .wgcurrent:after {
+  display: none;
+}
+
+.country-selector.weglot-dropdown input:checked ~ .wgcurrent:after {
+  transform: rotate(223deg);
+  top: 17px;
+}
+
+.country-selector.weglot-dropdown .wgcurrent a, .country-selector.weglot-dropdown .wgcurrent span {
+  padding-right: 40px;
+}
+
+.country-selector.weglot-dropdown ul {
+  padding: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
+  border-radius: 20px;
+}
+.country-selector.weglot-dropdown ul li {
+  margin-bottom: 10px;
+}
+.country-selector.weglot-dropdown ul li a {
+  font-size: 1rem;
+}
+.country-selector.weglot-dropdown ul li a:hover {
+  color: #93E100;
+}
+
+.weglot-flags > a:before, .weglot-flags > span.wglanguage-name:before {
+  margin-top: -3px;
+}
+
 .site-footer {
   background-color: #002A3F;
 }
@@ -12587,6 +12634,7 @@ textarea.form-control-lg {
 .hero .container .images .image {
   transition: transform 0.1s ease-out;
   will-change: transform;
+  backface-visibility: hidden;
 }
 .hero .container .images .top-left {
   position: absolute;
@@ -12596,7 +12644,7 @@ textarea.form-control-lg {
 }
 .hero .container .images .bottom-left {
   left: 0px;
-  top: 240px;
+  bottom: 0px;
   position: absolute;
 }
 .hero .container .images .top-right {
@@ -12607,7 +12655,7 @@ textarea.form-control-lg {
 }
 .hero .container .images .bottom-right {
   right: 0px;
-  top: 230px;
+  bottom: 20px;
   position: absolute;
   transition: transform 0.25s ease-out;
 }
@@ -12615,13 +12663,9 @@ textarea.form-control-lg {
   display: flex;
   justify-content: center;
 }
-.hero .container .images .center img {
-  width: 80%;
-}
 .hero .container .images img {
   border-radius: 20px;
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
-  width: 200px;
 }
 
 .feature-cards {
@@ -13361,6 +13405,27 @@ textarea.form-control-lg {
   flex-direction: column;
   width: 100%;
 }
+.market .container .content-wrapper .btn-primary {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 40px;
+  align-self: center;
+}
+.market .container .content-wrapper .currency-selector {
+  margin-top: 40px;
+}
+.market .container .content-wrapper .currency-selector #currency {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  line-height: 1.425 !important;
+  cursor: pointer;
+  padding: 3px 5px;
+  border-radius: 8px;
+  background-color: #EFF2F5;
+  border: none;
+}
 .market .container .content-wrapper .market-values {
   margin-top: 40px;
   display: flex;
@@ -13388,6 +13453,7 @@ textarea.form-control-lg {
   flex-direction: column;
   gap: 20px;
   align-items: flex-end;
+  font-size: 1.25rem;
 }
 .market .container .content-wrapper .market-values .market-value .value img {
   background-color: #b4f6cb;
@@ -13396,6 +13462,10 @@ textarea.form-control-lg {
   padding-right: 20px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .hero-single {
@@ -14244,6 +14314,28 @@ h3, .h3 {
   width: 100%;
   height: 100%;
   border: 0; /* Remove the iframe border */
+}
+
+.coming-soon {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.coming-soon .badge {
+  color: #93E100 !important;
+  padding: 0;
+  border-radius: 12px;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  display: flex;
+  align-items: center;
+}
+
+.coming-soon .badge i {
+  margin-right: 4px; /* Space between icon and text */
+  font-size: 15px;
 }
 
 @media (min-width: 576px) {

@@ -98,6 +98,7 @@
             .image {
                 transition: transform 0.1s ease-out;
                 will-change: transform;
+                backface-visibility: hidden;
             }
             
             .top-left {
@@ -109,7 +110,7 @@
 
             .bottom-left {
                 left: 0px;
-                top: 240px;
+                bottom: 0px;
                 position: absolute;
             }
 
@@ -122,7 +123,7 @@
 
             .bottom-right {
                 right: 0px;
-                top: 230px;
+                bottom: 20px;
                 position: absolute;
                 transition: transform 0.25s ease-out;
             }
@@ -130,15 +131,11 @@
             .center {
                 display: flex;
                 justify-content: center;
-                img {
-                    width: 80%;
-                }
             }
 
             img {
                 border-radius: 20px;
                 box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
-                width: 200px;
             }
         }
     }
