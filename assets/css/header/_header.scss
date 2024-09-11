@@ -441,15 +441,7 @@
     font-size: 1.3rem;
 }
 .country-selector.weglot-dropdown .wgcurrent:after {
-    background: none;
-    content: "";
-    border: solid white;
-    border-width: 0 1px 1px 0;
-    display: inline-block;
-    padding: 5.5px;
-    vertical-align: middle;
-    transform: rotate(43deg);
-    top: 10px;
+    display:none;
 }
 
 .country-selector.weglot-dropdown input:checked ~ .wgcurrent:after {

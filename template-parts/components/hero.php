@@ -37,16 +37,16 @@
         </div>
         <div class="images">
             <div class="top-left image">
-                <?php if($imageTopLeft):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageTopLeft, 'large');?>"><?php endif;?>
+                <?php if($imageTopLeft):?><img src="<?= wp_get_attachment_image_url($imageTopLeft, 'large');?>"><?php endif;?>
             </div>
             <div class="bottom-left image">
-            <?php if($imageBottomLeft):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageBottomLeft, 'large');?>"><?php endif;?>
+            <?php if($imageBottomLeft):?><img src="<?= wp_get_attachment_image_url($imageBottomLeft, 'large');?>"><?php endif;?>
             </div>
             <div class="top-right image">
-            <?php if($imageTopRight):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageTopRight, 'large');?>"><?php endif;?>
+            <?php if($imageTopRight):?><img src="<?= wp_get_attachment_image_url($imageTopRight, 'large');?>"><?php endif;?>
             </div>
             <div class="bottom-right image">
-            <?php if($imageBottomRight):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageBottomRight, 'large');?>"><?php endif;?>
+            <?php if($imageBottomRight):?><img src="<?= wp_get_attachment_image_url($imageBottomRight, 'large');?>"><?php endif;?>
             </div>
             <div class="center">
             <?php if($imageCenter):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageCenter, 'large');?>"><?php endif;?>
@@ -63,8 +63,8 @@ document.addEventListener('mousemove', (event) => {
     mouseX = event.clientX;
     mouseY = event.clientY;
     if (!isMoving) {
-        requestAnimationFrame(animateImages);
         isMoving = true;
+        requestAnimationFrame(animateImages);
     }
 });
 
@@ -81,22 +81,26 @@ function animateImages() {
 
     const topLeftOffsetX = Math.round((mouseX - window.innerWidth / 2) * topLeftSpeed);
     const topLeftOffsetY = Math.round((mouseY - window.innerHeight / 2) * topLeftSpeed);
-    topLeftImage.style.transform = `translate(${topLeftOffsetX}px, ${topLeftOffsetY}px)`;
+    topLeftImage.style.transform = `translate3d(${topLeftOffsetX}px, ${topLeftOffsetY}px, 0)`;
 
     const bottomLeftOffsetX = Math.round((mouseX - window.innerWidth / 2) * bottomLeftSpeed);
     const bottomLeftOffsetY = Math.round((mouseY - window.innerHeight / 2) * bottomLeftSpeed);
-    bottomLeftImage.style.transform = `translate(${bottomLeftOffsetX}px, ${bottomLeftOffsetY}px)`;
+    bottomLeftImage.style.transform = `translate3d(${bottomLeftOffsetX}px, ${bottomLeftOffsetY}px, 0)`;
 
     const topRightOffsetX = Math.round((mouseX - window.innerWidth / 2) * topRightSpeed);
     const topRightOffsetY = Math.round((mouseY - window.innerHeight / 2) * topRightSpeed);
-    topRightImage.style.transform = `translate(${topRightOffsetX}px, ${topRightOffsetY}px)`;
+    topRightImage.style.transform = `translate3d(${topRightOffsetX}px, ${topRightOffsetY}px, 0)`;
 
     const bottomRightOffsetX = Math.round((mouseX - window.innerWidth / 2) * bottomRightSpeed);
     const bottomRightOffsetY = Math.round((mouseY - window.innerHeight / 2) * bottomRightSpeed);
-    bottomRightImage.style.transform = `translate(${bottomRightOffsetX}px, ${bottomRightOffsetY}px)`;
+    bottomRightImage.style.transform = `translate3d(${bottomRightOffsetX}px, ${bottomRightOffsetY}px, 0)`;
 
-    isMoving = false;
+    // Call the next animation frame
+    requestAnimationFrame(() => {
+        isMoving = false; // Reset the moving state after the frame is rendered
+    });
 }
+
 
 
 

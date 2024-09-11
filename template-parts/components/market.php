@@ -97,6 +97,8 @@
         </div>
     </div> 
 </section>
+
+
 <script>
 const coingeckoApiUrl = 'https://api.coingecko.com/api/v3/coins/';
 
@@ -230,11 +232,8 @@ function updateCurrencyLabels(currency) {
 async function fetchHistoricalData(cryptoId, currency, days) {
     const url = `https://api.kraken.com/0/public/OHLC?pair=${cryptoId}&interval=1440`;
     const data = await fetchWithRetry(url);
-    console.log('Fetched Data:', data); // Log the fetched data
 
     if (data.result) {
-        console.log('Result:', data.result); // Log the result object
-
         // Adjust the structure based on actual data
         const pairs = Object.keys(data.result);
         if (pairs.length > 0) {
@@ -309,7 +308,5 @@ initCustomDecimalChart('ETHUSD', 'eth-chart', 'usd', 7);
 initCustomDecimalChart('SOLUSD', 'sol-chart', 'usd', 7);
 initCustomDecimalChart('XDGUSD', 'doge-chart', 'usd', 7);
 initCustomDecimalChart('XRPUSD', 'xrp-chart', 'usd', 7);
-
-
 
 </script>

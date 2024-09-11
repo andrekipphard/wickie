@@ -101,13 +101,20 @@
                                             <?php while (have_rows('footer_menu_item')): the_row(); 
                                                 $footerMenuItemName = get_sub_field('footer_menu_item_name');
                                                 $footerMenuItemUrl = get_sub_field('footer_menu_item_url');
+                                                $footerMenuItemComingSoon = get_sub_field('footer_menu_item_coming_soon');
                                             ?>
                                                 <?php if ($footerMenuItemName && $footerMenuItemUrl): ?>
-                                                    <li class="navigation-item">
+                                                    <?php if ($footerMenuItemComingSoon === 'Nein'): ?><li class="navigation-item">
                                                         <a href="<?= esc_url($footerMenuItemUrl); ?>">
-                                                            <span><?= esc_html($footerMenuItemName); ?></span>
+                                                            <span><?= esc_html($footerMenuItemName); ?></span><?php if ($footerMenuItemComingSoon === 'Ja'): ?>
+                        <span class="coming-soon">
+                            <span class="badge">
+                                <i class="bi bi-flag"></i>COMING SOON
+                            </span>
+                        </span>
+                    <?php endif; ?>
                                                         </a>
-                                                    </li>
+                                                    </li><?php endif;?>
                                                 <?php endif; ?>
                                             <?php endwhile; ?>
                                         </ul>
