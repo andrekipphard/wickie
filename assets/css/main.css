@@ -12043,6 +12043,7 @@ textarea.form-control-lg {
 .header-desktop .left .logo img {
   width: 150px;
   height: auto;
+  margin-top: -15px;
 }
 .header-desktop .right {
   display: flex;
@@ -12287,7 +12288,7 @@ textarea.form-control-lg {
   border: 1px solid #ccc;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 1px;
 }
 
@@ -12368,6 +12369,52 @@ textarea.form-control-lg {
   color: white !important;
 }
 
+.country-selector.weglot-dropdown {
+  background-color: transparent;
+}
+
+.country-selector.weglot-dropdown .wgcurrent {
+  background-color: transparent;
+  border: none;
+}
+
+.country-selector.weglot-dropdown a, .country-selector.weglot-dropdown span {
+  font-size: 1.3rem;
+}
+
+.country-selector.weglot-dropdown .wgcurrent:after {
+  display: none;
+}
+
+.country-selector.weglot-dropdown input:checked ~ .wgcurrent:after {
+  transform: rotate(223deg);
+  top: 17px;
+}
+
+.country-selector.weglot-dropdown .wgcurrent a, .country-selector.weglot-dropdown .wgcurrent span {
+  padding-right: 40px;
+}
+
+.country-selector.weglot-dropdown ul {
+  padding: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
+  border-radius: 20px;
+}
+.country-selector.weglot-dropdown ul li {
+  margin-bottom: 10px;
+}
+.country-selector.weglot-dropdown ul li a {
+  font-size: 1rem;
+}
+.country-selector.weglot-dropdown ul li a:hover {
+  color: #93E100;
+}
+
+.weglot-flags > a:before, .weglot-flags > span.wglanguage-name:before {
+  margin-top: -3px;
+}
+
 .site-footer {
   background-color: #002A3F;
 }
@@ -12391,7 +12438,7 @@ textarea.form-control-lg {
 }
 .site-footer .footer .company-info span {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 17px;
+  font-size: 18px;
 }
 .site-footer .footer .company-info .social-icons {
   display: flex;
@@ -12449,7 +12496,7 @@ textarea.form-control-lg {
 .site-footer .footer .navigation-links .navigation-group ul .navigation-item span {
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 10px;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: normal;
 }
 .site-footer .footer .navigation-links .navigation-group ul .navigation-item span:hover {
@@ -12584,44 +12631,33 @@ textarea.form-control-lg {
 .hero .container .images {
   position: relative;
 }
-.hero .container .images .image {
-  transition: transform 0.1s ease-out;
-  will-change: transform;
-}
 .hero .container .images .top-left {
   position: absolute;
   top: 20px;
   left: 0px;
-  transition: transform 0.15s ease-out;
 }
 .hero .container .images .bottom-left {
   left: 0px;
-  top: 240px;
+  bottom: 0px;
   position: absolute;
 }
 .hero .container .images .top-right {
   position: absolute;
   top: 45px;
   right: 0px;
-  transition: transform 0.1s ease-out;
 }
 .hero .container .images .bottom-right {
   right: 0px;
-  top: 230px;
+  bottom: 20px;
   position: absolute;
-  transition: transform 0.25s ease-out;
 }
 .hero .container .images .center {
   display: flex;
   justify-content: center;
 }
-.hero .container .images .center img {
-  width: 80%;
-}
 .hero .container .images img {
   border-radius: 20px;
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
-  width: 200px;
 }
 
 .feature-cards {
@@ -12640,7 +12676,7 @@ textarea.form-control-lg {
 .feature-cards .container .text .subline {
   display: flex;
   gap: 10px;
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 .feature-cards .container .text .subline .highlight {
@@ -12813,7 +12849,7 @@ textarea.form-control-lg {
   gap: 20px;
 }
 .content-card .container .content-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 .content-card .container .content-wrapper .content .btn-primary i {
@@ -13027,7 +13063,7 @@ textarea.form-control-lg {
   color: #FFFFFF;
 }
 .banner .banner-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
 }
 .banner .banner-wrapper .content .btn-primary {
   margin-top: 20px;
@@ -13081,7 +13117,7 @@ textarea.form-control-lg {
   color: #FFFFFF;
 }
 .banner-two-buttons .banner-two-buttons-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
 }
 .banner-two-buttons .banner-two-buttons-wrapper .content .cta {
   margin-top: 20px;
@@ -13102,7 +13138,7 @@ textarea.form-control-lg {
 .testimonials .container .text .subline {
   display: flex;
   gap: 10px;
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 .testimonials .container .text .subline .highlight {
@@ -13235,7 +13271,7 @@ textarea.form-control-lg {
   font-size: 13px;
 }
 .credit-card .container .content-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 .credit-card .container .content-wrapper .image {
@@ -13298,7 +13334,7 @@ textarea.form-control-lg {
   font-size: 13px;
 }
 .rewards .container .content-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 .rewards .container .content-wrapper .content .btn-primary i {
@@ -13353,7 +13389,7 @@ textarea.form-control-lg {
   gap: 50px;
 }
 .market .container .content-wrapper {
-  box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
+  box-shadow: 0px 0px 40px -15px rgba(45, 66, 117, 0.5);
   background: #FFFFFF;
   display: flex;
   border-radius: 20px;
@@ -13361,41 +13397,90 @@ textarea.form-control-lg {
   flex-direction: column;
   width: 100%;
 }
-.market .container .content-wrapper .market-values {
+.market .container .content-wrapper .controls {
   margin-top: 40px;
   display: flex;
   flex-direction: row;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.market .container .content-wrapper .market-values .market-value {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-basis: calc(50% - 20px);
   justify-content: space-between;
+  align-items: center;
 }
-.market .container .content-wrapper .market-values .market-value .currency {
+.market .container .content-wrapper .controls .selectors {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.market .container .content-wrapper .controls .selectors .currency-selector #currency, .market .container .content-wrapper .controls .selectors .currency-selector #timeframe, .market .container .content-wrapper .controls .selectors .timeframe-selector #currency, .market .container .content-wrapper .controls .selectors .timeframe-selector #timeframe {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  line-height: 1.425 !important;
+  cursor: pointer;
+  padding: 3px 5px;
+  border-radius: 8px;
+  background-color: #EFF2F5;
+  border: none;
+}
+.market .container .content-wrapper .market-table #market-values-table {
+  width: 100%;
+  margin-top: 40px;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+.market .container .content-wrapper .market-table #market-values-table th {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.market .container .content-wrapper .market-table #market-values-table #market-values-container {
+  /* Highlight effect on hover */
+}
+.market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value {
+  border-radius: 8px; /* Ensure rounded corners */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /* Style for price and change indicator */
+}
+.market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value td {
+  padding: 15px;
+  font-size: 1.25rem;
+}
+.market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-.market .container .content-wrapper .market-values .market-value .currency img {
-  height: 65px;
+.market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency h3, .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency .h3 {
+  margin-left: -1px;
 }
-.market .container .content-wrapper .market-values .market-value .value {
+.market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency img {
+  height: 65px !important;
+  width: auto !important;
+}
+.market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value #market-values-container .market-value td:nth-child(4) {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: flex-end;
+  align-items: center;
+  gap: 8px;
 }
-.market .container .content-wrapper .market-values .market-value .value img {
-  background-color: #b4f6cb;
-  border-radius: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+.market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value:not(:last-child) {
+  border-bottom: 1px solid #d3d3d3;
+}
+.market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Style for the change indicator */
+#market-values-container .market-value td:nth-child(4) {
+  font-size: 1.25rem; /* Adjust font size for price and change value */
+  text-align: left; /* Align to the left */
+}
+
+#market-values-container .market-value td:nth-child(4) span {
+  font-size: 0.9rem; /* Adjust font size for the change percentage */
 }
 
 .hero-single {
@@ -13522,7 +13607,7 @@ textarea.form-control-lg {
 .banner-boxed .container .container-wrapper .subline {
   display: flex;
   gap: 10px;
-  font-size: 17px;
+  font-size: 18px;
 }
 .banner-boxed .container .container-wrapper .subline .highlight {
   display: flex;
@@ -13928,7 +14013,7 @@ textarea.form-control-lg {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
-  font-size: 16px;
+  font-size: 18px;
   box-sizing: border-box;
 }
 .contact-form .container .contact-form-container .submit-btn {
@@ -14002,7 +14087,7 @@ textarea.form-control-lg {
   color: #FFFFFF;
 }
 .banner-two-buttons .banner-two-buttons-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
 }
 .banner-two-buttons .banner-two-buttons-wrapper .content .cta {
   display: flex;
@@ -14019,6 +14104,7 @@ textarea.form-control-lg {
 body {
   background-color: #f5f5f7;
   font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
 }
 
 a {
@@ -14244,6 +14330,28 @@ h3, .h3 {
   width: 100%;
   height: 100%;
   border: 0; /* Remove the iframe border */
+}
+
+.coming-soon {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.coming-soon .badge {
+  color: #93E100 !important;
+  padding: 0;
+  border-radius: 12px;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  display: flex;
+  align-items: center;
+}
+
+.coming-soon .badge i {
+  margin-right: 4px; /* Space between icon and text */
+  font-size: 15px;
 }
 
 @media (min-width: 576px) {

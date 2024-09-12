@@ -37,16 +37,16 @@
         </div>
         <div class="images">
             <div class="top-left image">
-                <?php if($imageTopLeft):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageTopLeft, 'large');?>"><?php endif;?>
+                <?php if($imageTopLeft):?><img src="<?= wp_get_attachment_image_url($imageTopLeft, 'large');?>"><?php endif;?>
             </div>
             <div class="bottom-left image">
-            <?php if($imageBottomLeft):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageBottomLeft, 'large');?>"><?php endif;?>
+            <?php if($imageBottomLeft):?><img src="<?= wp_get_attachment_image_url($imageBottomLeft, 'large');?>"><?php endif;?>
             </div>
             <div class="top-right image">
-            <?php if($imageTopRight):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageTopRight, 'large');?>"><?php endif;?>
+            <?php if($imageTopRight):?><img src="<?= wp_get_attachment_image_url($imageTopRight, 'large');?>"><?php endif;?>
             </div>
             <div class="bottom-right image">
-            <?php if($imageBottomRight):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageBottomRight, 'large');?>"><?php endif;?>
+            <?php if($imageBottomRight):?><img src="<?= wp_get_attachment_image_url($imageBottomRight, 'large');?>"><?php endif;?>
             </div>
             <div class="center">
             <?php if($imageCenter):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageCenter, 'large');?>"><?php endif;?>
@@ -54,50 +54,3 @@
         </div>
     </div>
 </section>
-<script>
-let mouseX = 0;
-let mouseY = 0;
-let isMoving = false;
-
-document.addEventListener('mousemove', (event) => {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
-    if (!isMoving) {
-        requestAnimationFrame(animateImages);
-        isMoving = true;
-    }
-});
-
-function animateImages() {
-    const topLeftImage = document.querySelector('.hero .images .top-left');
-    const bottomLeftImage = document.querySelector('.hero .images .bottom-left');
-    const topRightImage = document.querySelector('.hero .images .top-right');
-    const bottomRightImage = document.querySelector('.hero .images .bottom-right');
-
-    // Reduzierte Geschwindigkeiten
-    const topLeftSpeed = 0.02;
-    const bottomLeftSpeed = 0.015;
-    const topRightSpeed = 0.02;
-    const bottomRightSpeed = 0.015;
-
-    const topLeftOffsetX = (mouseX - window.innerWidth / 2) * topLeftSpeed;
-    const topLeftOffsetY = (mouseY - window.innerHeight / 2) * topLeftSpeed;
-    topLeftImage.style.transform = `translate(${topLeftOffsetX}px, ${topLeftOffsetY}px)`;
-
-    const bottomLeftOffsetX = (mouseX - window.innerWidth / 2) * bottomLeftSpeed;
-    const bottomLeftOffsetY = (mouseY - window.innerHeight / 2) * bottomLeftSpeed;
-    bottomLeftImage.style.transform = `translate(${bottomLeftOffsetX}px, ${bottomLeftOffsetY}px)`;
-
-    const topRightOffsetX = (mouseX - window.innerWidth / 2) * topRightSpeed;
-    const topRightOffsetY = (mouseY - window.innerHeight / 2) * topRightSpeed;
-    topRightImage.style.transform = `translate(${topRightOffsetX}px, ${topRightOffsetY}px)`;
-
-    const bottomRightOffsetX = (mouseX - window.innerWidth / 2) * bottomRightSpeed;
-    const bottomRightOffsetY = (mouseY - window.innerHeight / 2) * bottomRightSpeed;
-    bottomRightImage.style.transform = `translate(${bottomRightOffsetX}px, ${bottomRightOffsetY}px)`;
-
-    isMoving = false;
-}
-
-
-</script>

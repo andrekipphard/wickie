@@ -7,55 +7,114 @@
         gap: 50px;
 
         .content-wrapper {
-            box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
+            box-shadow: 0px 0px 40px -15px rgba(45, 66, 117, 0.5);
             background: #FFFFFF;
             display: flex;
             border-radius: 20px;
             padding: 40px;
             flex-direction: column;
             width: 100%;
-            
-            .market-values {
+
+            .controls {
                 margin-top: 40px;
                 display: flex;
                 flex-direction: row;
-                gap: 40px;
-                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
 
-                .market-value {
+                .selectors {
                     display: flex;
-                    align-items: center;
+                    flex-direction: row;
                     gap: 20px;
-                    flex-basis: calc(50% - 20px);
-                    justify-content: space-between;
 
-                    .currency {
-                        display: flex;
-                        align-items: center;
-                        gap: 20px;
-
-                        img {
-                            height: 65px;
+                    .currency-selector, .timeframe-selector {
+                        #currency, #timeframe {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 4px;
+                            line-height: 1.425 !important;
+                            cursor: pointer;
+                            padding: 3px 5px;
+                            border-radius: 8px;
+                            background-color: #EFF2F5;
+                            border: none;
                         }
                     }
+                }
+            }
 
-                    .value {
-                        display:flex;
-                        flex-direction: column;
-                        gap: 20px;
-                        align-items: flex-end;
+            .market-table {
+                #market-values-table {
+                    width: 100%;
+                    margin-top: 40px;
+                    border-collapse: separate;
+                    border-spacing: 0 15px;
 
-                        img {
-                            background-color: #b4f6cb;
-                            border-radius: 20px;
-                            padding-left: 20px;
-                            padding-right: 20px;
-                            padding-top: 5px;
-                            padding-bottom: 5px;
+                    th {
+                        padding-left: 15px;
+                        padding-right: 15px;
+                    }
+
+                    #market-values-container {
+                        .market-value {
+                            border-radius: 8px; /* Ensure rounded corners */
+                            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+                            overflow: hidden;
+                            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+                            td {
+                                padding: 15px;
+                                font-size: 1.25rem;
+                            }
+
+                            .currency {
+                                display: flex;
+                                align-items: center;
+                                gap: 20px;
+
+                                h3 {
+                                    margin-left: -1px;
+                                }
+
+                                img {
+                                    height: 65px !important;
+                                    width: auto !important;
+                                }
+                            }
+
+                            /* Style for price and change indicator */
+                            #market-values-container .market-value td:nth-child(4) {
+                                display: flex;
+                                align-items: center;
+                                gap: 8px;
+                            }
+                        }
+
+                        .market-value:not(:last-child) {
+                            border-bottom: 1px solid #d3d3d3;
+                        }
+
+                        /* Highlight effect on hover */
+                        .market-value:hover {
+                            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
                         }
                     }
                 }
             }
         }
     }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Style for the change indicator */
+#market-values-container .market-value td:nth-child(4) {
+    font-size: 1.25rem; /* Adjust font size for price and change value */
+    text-align: left; /* Align to the left */
+}
+
+#market-values-container .market-value td:nth-child(4) span {
+    font-size: 0.9rem; /* Adjust font size for the change percentage */
 }
