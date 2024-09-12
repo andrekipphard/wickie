@@ -12288,7 +12288,7 @@ textarea.form-control-lg {
   border: 1px solid #ccc;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 1px;
 }
 
@@ -12438,7 +12438,7 @@ textarea.form-control-lg {
 }
 .site-footer .footer .company-info span {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 17px;
+  font-size: 18px;
 }
 .site-footer .footer .company-info .social-icons {
   display: flex;
@@ -12496,7 +12496,7 @@ textarea.form-control-lg {
 .site-footer .footer .navigation-links .navigation-group ul .navigation-item span {
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 10px;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: normal;
 }
 .site-footer .footer .navigation-links .navigation-group ul .navigation-item span:hover {
@@ -12676,7 +12676,7 @@ textarea.form-control-lg {
 .feature-cards .container .text .subline {
   display: flex;
   gap: 10px;
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 .feature-cards .container .text .subline .highlight {
@@ -12849,7 +12849,7 @@ textarea.form-control-lg {
   gap: 20px;
 }
 .content-card .container .content-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 .content-card .container .content-wrapper .content .btn-primary i {
@@ -13063,7 +13063,7 @@ textarea.form-control-lg {
   color: #FFFFFF;
 }
 .banner .banner-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
 }
 .banner .banner-wrapper .content .btn-primary {
   margin-top: 20px;
@@ -13117,7 +13117,7 @@ textarea.form-control-lg {
   color: #FFFFFF;
 }
 .banner-two-buttons .banner-two-buttons-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
 }
 .banner-two-buttons .banner-two-buttons-wrapper .content .cta {
   margin-top: 20px;
@@ -13138,7 +13138,7 @@ textarea.form-control-lg {
 .testimonials .container .text .subline {
   display: flex;
   gap: 10px;
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 .testimonials .container .text .subline .highlight {
@@ -13271,7 +13271,7 @@ textarea.form-control-lg {
   font-size: 13px;
 }
 .credit-card .container .content-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 .credit-card .container .content-wrapper .image {
@@ -13334,7 +13334,7 @@ textarea.form-control-lg {
   font-size: 13px;
 }
 .rewards .container .content-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 .rewards .container .content-wrapper .content .btn-primary i {
@@ -13607,7 +13607,7 @@ textarea.form-control-lg {
 .banner-boxed .container .container-wrapper .subline {
   display: flex;
   gap: 10px;
-  font-size: 17px;
+  font-size: 18px;
 }
 .banner-boxed .container .container-wrapper .subline .highlight {
   display: flex;
@@ -14013,7 +14013,7 @@ textarea.form-control-lg {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 20px;
-  font-size: 16px;
+  font-size: 18px;
   box-sizing: border-box;
 }
 .contact-form .container .contact-form-container .submit-btn {
@@ -14087,7 +14087,7 @@ textarea.form-control-lg {
   color: #FFFFFF;
 }
 .banner-two-buttons .banner-two-buttons-wrapper .content span {
-  font-size: 17px;
+  font-size: 18px;
 }
 .banner-two-buttons .banner-two-buttons-wrapper .content .cta {
   display: flex;
@@ -14104,6 +14104,7 @@ textarea.form-control-lg {
 body {
   background-color: #f5f5f7;
   font-family: "Inter", sans-serif;
+  font-size: 1.125rem;
 }
 
 a {
