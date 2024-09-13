@@ -1,0 +1,111 @@
+.hero-new {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    position: relative; /* Make the section relative to position its children correctly */
+    overflow: hidden; /* Hide any overflowing content */
+    .video-wrapper {
+        position: absolute; /* Position video absolutely to allow layering */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1; /* Ensure video is below content */
+        overflow: hidden; /* Ensure video does not overflow its container */
+        /* Keep it the right aspect-ratio */
+        aspect-ratio: 16/9;
+        /* No clicking/hover effects */
+        pointer-events: none;
+        .background-video {
+            position: absolute; /* Position video absolutely within its container */
+            top: 50%;
+            left: 50%;
+            height: 100vw;
+            transform: translate(-50%, -50%); /* Center the video in the container */
+            z-index: -1; /* Ensure video is behind content */
+            width: 100vw;
+        }
+        /* Dark overlay for video */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+            z-index: 2; /* Ensure overlay is above the video */
+        }
+        
+    }
+    .container {
+        .content-image {
+            display: flex;
+            gap: 60px;
+            position: relative;
+            z-index: 2; /* Make sure content appears above the video */
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+                flex-basis: calc(45% - 30px);
+                .cta.images {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 40px;
+                    flex-wrap: wrap;
+
+                    .image {
+                        flex-basis: calc(25% - 30px);
+                    }
+                }   
+                .cta.multiple-buttons {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
+                    flex-wrap: wrap;
+                    a {
+                        .round {
+                            padding: 20px;
+                        }
+                        .btn {
+                            i {
+                                margin-right: 0px;
+                            }
+                            .margin-right {
+                                margin-right: 10px;
+                            }
+                            .margin-left {
+                                margin-left: 10px;
+                            }
+
+                        }
+                        .btn-white {
+                            justify-content: center;
+                        }
+                        &:hover {
+                            .btn-white {
+                                color:#ffffff;
+                                background-color: $secondary;
+                                border-color: $secondary;
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .image {
+                flex-basis: calc(55% - 30px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+                img {
+                    width: 100%;
+                    border-radius: 50px;
+                }
+            }
+        }
+     
+    }
+}

@@ -9,8 +9,24 @@
     $highlightText = get_sub_field('highlight_text');
     $text = get_sub_field('text');
     $buttonStyle = get_sub_field('button_style');
+    $backgroundImage = get_sub_field('background_image');
+    $backgroundImageSize = get_sub_field('background_image_size');
+    $backgroundImagePosition = get_sub_field('background_image_position');
+    $backgroundImageRepeat = get_sub_field('background_image_repeat');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
+    $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
 ?>
-<section class="hero-single">
+<section class="hero-single" style="
+    <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background-color: <?= $backgroundColor; ?>; <?php endif; ?>
+    <?php if ($backgroundImageUrl): ?>
+        background-image: url('<?= $backgroundImageUrl; ?>');
+        background-size: <?= $backgroundImageSize ?: 'cover'; ?>;
+        background-repeat: <?= $backgroundImageRepeat ?: 'no-repeat'; ?>;
+        background-position: <?= $backgroundImagePosition ?: 'center center'; ?>;
+    <?php endif; ?>
+">
     <div class="container">
         <div class="content-image">
             <div class="content">
