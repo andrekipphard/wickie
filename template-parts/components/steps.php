@@ -2,8 +2,13 @@
     $headline = get_sub_field('headline');
     $highlightBoxText = get_sub_field('highlight_box_text');
     $highlightBoxIcon = get_sub_field('highlight_box_icon');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
 ?>
-<section class="steps">
+<section class="steps" style="
+    <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
+    ">
     <div class="container">
         <h2><?= $headline; ?></h2>
         <div class="content-boxes">

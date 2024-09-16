@@ -8,8 +8,13 @@
     $rightHeadline = get_sub_field('right_headline');
     $rightButtonText = get_sub_field('right_button_text');
     $rightButtonUrl = get_sub_field('right_button_url');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
 ?>
-<section class="get-started">
+<section class="get-started" style="
+    <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
+    ">
     <div class="container">
         <h2><?= $headline; ?></h2>
         <div class="get-started-wrapper">

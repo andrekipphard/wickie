@@ -79,7 +79,7 @@ if (have_rows('margin')) {
 
 <section class="hero-new" style="
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
-    <?php if ($backgroundColor): ?> background-color: <?= $backgroundColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
     <?php if ($layout === 'Kein Background Video' && $backgroundImageUrl): ?>
         background-image: url('<?= $backgroundImageUrl; ?>');
         background-size: <?= $backgroundImageSize ?: 'cover'; ?>;

@@ -6,8 +6,13 @@
     $imageTopRight = get_sub_field('image_top_right');
     $imageBottomRight = get_sub_field('image_bottom_right');
     $imageCenter = get_sub_field('image_center');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
 ?>
-<section class="hero">
+<section class="hero" style="
+    <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
+    ">
     <div class="container">
         <div class="content">
             <h1><?= $headline; ?></h1>

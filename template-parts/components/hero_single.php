@@ -19,7 +19,7 @@
 ?>
 <section class="hero-single" style="
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
-    <?php if ($backgroundColor): ?> background-color: <?= $backgroundColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
     <?php if ($backgroundImageUrl): ?>
         background-image: url('<?= $backgroundImageUrl; ?>');
         background-size: <?= $backgroundImageSize ?: 'cover'; ?>;

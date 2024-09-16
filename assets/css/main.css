@@ -12986,6 +12986,30 @@ textarea.form-control-lg {
   margin-top: 40px;
   padding-left: 0;
 }
+.pricing .pricing-wrapper .pricing-boxes .pricing-box .list-group-numbered .coming-soon {
+  position: relative;
+  opacity: 0.5; /* Dim the list item */
+  pointer-events: none; /* Prevent interaction */
+  margin-left: 0;
+}
+.pricing .pricing-wrapper .pricing-boxes .pricing-box .list-group-numbered .coming-soon .coming-soon-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(128, 128, 128, 0.7); /* Semi-transparent grey background */
+  color: white;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
 .pricing .pricing-wrapper .pricing-boxes .pricing-box .list-group-numbered .list-group-item {
   display: flex;
   align-items: flex-start;
@@ -13647,6 +13671,39 @@ textarea.form-control-lg {
   left: -100px;
 }
 
+.banner-two-buttons {
+  margin-top: 7rem;
+  background: linear-gradient(to right, #93E100, #00A6FF);
+}
+.banner-two-buttons .banner-two-buttons-wrapper {
+  display: flex;
+  gap: 40px;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content {
+  padding-right: 100px;
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start;
+  color: #FFFFFF;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content span {
+  font-size: 18px;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content .cta {
+  display: flex;
+  gap: 20px;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .images {
+  padding-top: 7rem;
+  display: flex;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .images img {
+  height: 700px;
+}
+
 .image-content {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -13681,6 +13738,30 @@ textarea.form-control-lg {
 .image-content .container .content ul {
   list-style: none;
   padding-left: 0;
+}
+.image-content .container .content ul .coming-soon {
+  position: relative;
+  opacity: 0.5; /* Dim the list item */
+  pointer-events: none; /* Prevent interaction */
+  margin-left: 0;
+}
+.image-content .container .content ul .coming-soon .coming-soon-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(128, 128, 128, 0.7); /* Semi-transparent grey background */
+  color: white;
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
 }
 .image-content .container .content ul li {
   display: flex;
@@ -14066,39 +14147,6 @@ textarea.form-control-lg {
   width: auto; /* Width will adjust to maintain aspect ratio */
   -o-object-fit: contain;
      object-fit: contain; /* Maintain aspect ratio and fit the image within the slide */
-}
-
-.banner-two-buttons {
-  margin-top: 7rem;
-  background: linear-gradient(to right, #93E100, #00A6FF);
-}
-.banner-two-buttons .banner-two-buttons-wrapper {
-  display: flex;
-  gap: 40px;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content {
-  padding-right: 100px;
-  flex: 0 0 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  align-items: flex-start;
-  color: #FFFFFF;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content span {
-  font-size: 18px;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content .cta {
-  display: flex;
-  gap: 20px;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .images {
-  padding-top: 7rem;
-  display: flex;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .images img {
-  height: 700px;
 }
 
 .hero-new {

@@ -66,10 +66,19 @@
             <?php if( have_rows('list_item')):?>
                 <ul>
                     <?php while( have_rows('list_item') ): the_row();
-                    $list_item_icon = get_sub_field('list_item_icon');
-                    $list_item_text = get_sub_field('list_item_text');
-                    $list_item_color = get_sub_field('list_item_color');?>
-                        <li><i <?php if($list_item_color):?> style="color: <?= $list_item_color; ?>;"<?php endif;?> class="bi bi-<?= $list_item_icon; ?>"></i><span><?= $list_item_text; ?></span></li>
+                        $list_item_icon = get_sub_field('list_item_icon');
+                        $list_item_text = get_sub_field('list_item_text');
+                        $list_item_color = get_sub_field('list_item_color');
+                        $listItemComingSoon = get_sub_field('list_item_coming_soon'); ?>
+                        
+                        <li class="<?php if($listItemComingSoon == 'Yes'):?>coming-soon<?php endif;?>">
+                            <i <?php if($list_item_color):?> style="color: <?= $list_item_color; ?>;"<?php endif;?> class="bi bi-<?= $list_item_icon; ?>"></i>
+                            <span><?= $list_item_text; ?></span>
+                            
+                            <?php if($listItemComingSoon == 'Yes'):?>
+                                <span class="coming-soon-text"><?= __('Coming Soon', 'your-text-domain'); ?></span>
+                            <?php endif;?>
+                        </li>
                     <?php endwhile;?>
                 </ul>
             <?php endif;?>

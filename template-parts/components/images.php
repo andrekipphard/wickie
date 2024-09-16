@@ -1,5 +1,8 @@
+<?php
+    $backgroundColor = get_sub_field('background_color');
+?>
 <?php if(have_rows('image')):?>
-<div class="row me-0">
+<div class="row me-0"  style="<?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>">
     <div class="col">
         <div class="swiper mySwiper py-4 py-lg-5">
             <div class="swiper-wrapper">
