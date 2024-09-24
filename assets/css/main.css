@@ -12420,6 +12420,108 @@ textarea.form-control-lg {
   margin-top: -3px;
 }
 
+.header-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #FFFFFF;
+  position: relative;
+  z-index: 1000;
+}
+@media (min-width: 992px) {
+  .header-mobile {
+    display: none !important;
+  }
+}
+
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mobile-logo img {
+  width: 120px;
+  height: auto;
+}
+
+.burger-icon {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.mobile-nav-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 80%;
+  background-color: #002A3F;
+  padding: 20px;
+  z-index: 2000;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav-menu.show {
+  display: flex;
+  transform: translateX(0);
+}
+
+.mobile-nav-menu .close-menu {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.mobile-menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-menu-item a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.mobile-menu-item a:hover {
+  color: #FFD700; /* Optional: highlight color on hover */
+}
+
+/* Overlay to darken background when menu is open */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
+}
+
+.mobile-menu-overlay.show {
+  display: block;
+}
+
 .site-footer {
   background-color: #002A3F;
 }
