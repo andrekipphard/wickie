@@ -20,6 +20,7 @@ $video = get_sub_field('video');
 $youtube = get_sub_field('youtube');
 $lottie = get_sub_field('lottie');
 $image = get_sub_field('image');
+$fullHeight = get_sub_field('full_height');
 
 // Position Fields
 $positionFields = [
@@ -79,13 +80,14 @@ if (have_rows('margin')) {
 
 <section class="hero-new" style="
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
-    <?php if ($backgroundColor): ?> background-color: <?= $backgroundColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
     <?php if ($layout === 'Kein Background Video' && $backgroundImageUrl): ?>
         background-image: url('<?= $backgroundImageUrl; ?>');
         background-size: <?= $backgroundImageSize ?: 'cover'; ?>;
         background-repeat: <?= $backgroundImageRepeat ?: 'no-repeat'; ?>;
         background-position: <?= $backgroundImagePosition ?: 'center center'; ?>;
     <?php endif; ?>
+    <?php if($fullHeight === 'Yes'):?> <?php if(is_front_page()):?> margin-top: -116px;height: calc(100vh - 32px);<?php else:?>height: calc(100vh - 148px);<?php endif;?>display: flex; align-items: center; padding-top:0; padding-bottom:0;<?php endif;?>
 ">
 
     <?php if ($layout === 'Background Video'): ?>

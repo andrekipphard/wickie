@@ -43,6 +43,12 @@
                 .list-group-numbered {
                     margin-top: 40px;
                     padding-left: 0;
+                    .coming-soon {
+                        position: relative;
+                        opacity: 0.5; /* Gray out the text */
+                        pointer-events: none; /* Disable interaction */
+                        margin-left: 0;
+                    }
                     .list-group-item {
                         display: flex;
                         align-items: flex-start;

@@ -5,8 +5,13 @@
     $image = get_sub_field('image');
     $floatingImage = get_sub_field('floating_image');
     $text = get_sub_field('text');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
 ?>
-<section class="banner-boxed">
+<section class="banner-boxed" style="
+    <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
+    ">
     <div class="container">
         <div class="container-wrapper" style="background-image: url('<?= wp_get_attachment_image_url($image, 'large');?>;">
             <div class="subline">

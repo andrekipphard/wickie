@@ -12986,6 +12986,12 @@ textarea.form-control-lg {
   margin-top: 40px;
   padding-left: 0;
 }
+.pricing .pricing-wrapper .pricing-boxes .pricing-box .list-group-numbered .coming-soon {
+  position: relative;
+  opacity: 0.5; /* Gray out the text */
+  pointer-events: none; /* Disable interaction */
+  margin-left: 0;
+}
 .pricing .pricing-wrapper .pricing-boxes .pricing-box .list-group-numbered .list-group-item {
   display: flex;
   align-items: flex-start;
@@ -13520,7 +13526,6 @@ textarea.form-control-lg {
   flex: 1 0 auto;
 }
 .hero-single .container .cta.multiple-buttons a .btn-white {
-  width: 100%;
   justify-content: center;
 }
 .hero-single .container .cta.multiple-buttons a:hover .btn-white {
@@ -13647,6 +13652,39 @@ textarea.form-control-lg {
   left: -100px;
 }
 
+.banner-two-buttons {
+  margin-top: 7rem;
+  background: linear-gradient(to right, #93E100, #00A6FF);
+}
+.banner-two-buttons .banner-two-buttons-wrapper {
+  display: flex;
+  gap: 40px;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content {
+  padding-right: 100px;
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start;
+  color: #FFFFFF;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content span {
+  font-size: 18px;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .content .cta {
+  display: flex;
+  gap: 20px;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .images {
+  padding-top: 7rem;
+  display: flex;
+}
+.banner-two-buttons .banner-two-buttons-wrapper .images img {
+  height: 700px;
+}
+
 .image-content {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -13681,11 +13719,13 @@ textarea.form-control-lg {
 .image-content .container .content ul {
   list-style: none;
   padding-left: 0;
+  /* Grayed-out coming-soon items */
 }
 .image-content .container .content ul li {
   display: flex;
   flex-direction: row;
   align-items: center;
+  opacity: 1; /* Reset opacity by default */
 }
 .image-content .container .content ul li:not(:last-child) {
   margin-bottom: 10px;
@@ -13695,6 +13735,12 @@ textarea.form-control-lg {
   color: #93E100;
   font-size: 24px;
   display: flex;
+}
+.image-content .container .content ul .coming-soon {
+  position: relative;
+  opacity: 0.5; /* Gray out the text */
+  pointer-events: none; /* Disable interaction */
+  margin-left: 0;
 }
 
 .icon-boxes {
@@ -14066,39 +14112,6 @@ textarea.form-control-lg {
   width: auto; /* Width will adjust to maintain aspect ratio */
   -o-object-fit: contain;
      object-fit: contain; /* Maintain aspect ratio and fit the image within the slide */
-}
-
-.banner-two-buttons {
-  margin-top: 7rem;
-  background: linear-gradient(to right, #93E100, #00A6FF);
-}
-.banner-two-buttons .banner-two-buttons-wrapper {
-  display: flex;
-  gap: 40px;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content {
-  padding-right: 100px;
-  flex: 0 0 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  align-items: flex-start;
-  color: #FFFFFF;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content span {
-  font-size: 18px;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content .cta {
-  display: flex;
-  gap: 20px;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .images {
-  padding-top: 7rem;
-  display: flex;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .images img {
-  height: 700px;
 }
 
 .hero-new {

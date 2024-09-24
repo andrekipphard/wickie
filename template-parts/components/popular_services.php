@@ -2,8 +2,13 @@
     $headline = get_sub_field('headline');
     $buttonText = get_sub_field('button_text');
     $buttonUrl = get_sub_field('button_url');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
 ?>
-<section class="popular-services">
+<section class="popular-services" style="
+    <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
+    ">
     <div class="container">
         <div class="title">
             <h2><?= $headline; ?></h2>

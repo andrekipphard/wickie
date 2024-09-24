@@ -12,8 +12,13 @@
     $labelButton = get_sub_field('label_button');
     $emailRecipient = get_sub_field('email_recipient');
     $successMessage = get_sub_field('success_message');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
 ?>
-<section class="contact-form">
+<section class="contact-form" style="
+    <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
+    ">
     <div class="container">
         <div class="contact-form-img">
             <?php if($mediaType === 'Image'):?>

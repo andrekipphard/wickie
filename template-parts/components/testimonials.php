@@ -2,8 +2,13 @@
     $highlightText = get_sub_field('highlight_text');
     $subline = get_sub_field('subline');
     $headline = get_sub_field('headline');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
 ?>
-<section class="testimonials">
+<section class="testimonials" style="
+    <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
+    ">
     <div class="container">
         <div class="text">
             <div class="subline">

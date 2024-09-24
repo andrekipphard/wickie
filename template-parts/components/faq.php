@@ -23,7 +23,7 @@
         color: <?= $textColor; ?>;
     <?php endif; ?>
     <?php if ($backgroundColor): ?>
-        background-color: <?= $backgroundColor; ?>;
+        background: <?= $backgroundColor; ?>;
     <?php endif; ?>
     <?php if ($backgroundImageUrl): ?>
         background-image: url('<?= $backgroundImageUrl; ?>');

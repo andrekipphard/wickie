@@ -1,8 +1,13 @@
 <?php
     $headline = get_sub_field('headline');
     $subline = get_sub_field('subline');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
 ?>
-<section class="pricing">
+<section class="pricing" style="
+    <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
+    ">
     <div class="container">
         <div class="pricing-wrapper">
             <div class="title">
@@ -29,8 +34,9 @@
                                 <ul class="list-group-numbered">
                                     <?php while(have_rows('list_item')): the_row();
                                     $listItemHeadline = get_sub_field('list_item_headline');
-                                    $listItemText = get_sub_field('list_item_text');?>
-                                        <li class="list-group-item">
+                                    $listItemText = get_sub_field('list_item_text');
+                                    $listItemComingSoon = get_sub_field('list_item_coming_soon'); ?>
+                                        <li class="list-group-item<?php if($listItemComingSoon == 'Yes'):?> coming-soon<?php endif;?>">
                                             <div class="list-group-item-content">
                                                 <h5><?= $listItemHeadline; ?></h5>
                                                 <span><?= $listItemText; ?></span>

@@ -2,6 +2,7 @@
     $headline = get_sub_field('headline');
     $subline = get_sub_field('subline');
     $image = get_sub_field('image');
+    $imageWidth = get_sub_field('image_width');
     $mediaType = get_sub_field('media_type');
     $video = get_sub_field('video');
     $youtube = get_sub_field('youtube');
@@ -75,7 +76,7 @@
                 <?php endif; ?>
             </div>
             <?php if($mediaType === 'Image'):?><div class="image">
-                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>">
+                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>"<?php if($imageWidth !== ''):?> style="max-width: <?= $imageWidth; ?>px"<?php endif;?>>
                 </div>
                 <?php endif;?>
                 <?php if($mediaType === 'Video'):?><div class="image video">

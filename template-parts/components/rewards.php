@@ -14,8 +14,13 @@
     $videoRight = get_sub_field('video_right');
     $youtubeRight = get_sub_field('youtube_right');
     $lottieRight = get_sub_field('lottie_right');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
 ?>
-<section class="rewards">
+<section class="rewards" style="
+    <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
+    ">
     <div class="container">
         <a class="content-wrapper cryptoback" href="<?= $buttonUrlLeft; ?>">
             <div class="content">

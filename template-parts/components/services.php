@@ -1,7 +1,12 @@
 <?php
     $headline = get_sub_field('headline');
+    $backgroundColor = get_sub_field('background_color');
+    $textColor = get_sub_field('text_color');
 ?>
-<section class="services">
+<section class="services" style="
+    <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
+    <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
+    ">
     <div class="container">
         <h2><?= $headline; ?></h2>
         <?php if( have_rows('service')):?>

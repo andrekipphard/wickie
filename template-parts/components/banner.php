@@ -4,14 +4,16 @@
     $layout = get_sub_field('layout');
     $padding = get_sub_field('padding');
     $marginTop = get_sub_field('margin_top');
+    $marginBottom = get_sub_field('margin_bottom');
     $video = get_sub_field('video');
     $youtube = get_sub_field('youtube');
     $lottie = get_sub_field('lottie');
+    $paddingFromTextToImageColumn = get_sub_field('padding_from_text_to_image_column');
 ?>
-<section class="<?= $layout == 'Single Image' ? 'banner-two-buttons' : 'banner'; ?>"style="<?php if($padding == 'Yes'):?> padding-top: 7rem; padding-bottom: 7rem;<?php endif;?><?php if($marginTop == 'No'):?> margin-top:0px;<?php endif;?>">
+<section class="<?= $layout == 'Single Image' ? 'banner-two-buttons' : 'banner'; ?>"style="<?php if($padding == 'Yes'):?> padding-top: 7rem; padding-bottom: 7rem;<?php endif;?><?php if($padding == 'No'):?> padding-top: 0px; padding-bottom: 0px;<?php endif;?><?php if($marginTop == 'Yes'):?> margin-top:7rem;<?php endif;?><?php if($marginBottom == 'Yes'):?> margin-bottom:7rem;<?php endif;?><?php if($marginTop == 'No'):?> margin-top:0px;<?php endif;?><?php if($marginBottom == 'No'):?> margin-bottom:0px;<?php endif;?>">
     <div class="container">
         <div class="<?= $layout == 'Single Image' ? 'banner-two-buttons-wrapper' : 'banner-wrapper'; ?>">
-            <div class="content">
+            <div class="content"<?php if($paddingFromTextToImageColumn !== ''):?> style="padding-right: <?=$paddingFromTextToImageColumn;?>px;"<?php endif;?>>
                 <h2><?=$headline;?></h2>
                 <span><?=$text;?></span>
                 <?php if( have_rows('cta')):?>

@@ -30,11 +30,13 @@
             ul {
                 list-style: none;
                 padding-left: 0;
+                
                 li {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
-                    
+                    opacity: 1; /* Reset opacity by default */
+
                     &:not(:last-child) {
                         margin-bottom: 10px;
                     }
@@ -47,6 +49,13 @@
                     }
                 }
 
+                /* Grayed-out coming-soon items */
+                .coming-soon {
+                    position: relative;
+                    opacity: 0.5; /* Gray out the text */
+                    pointer-events: none; /* Disable interaction */
+                    margin-left: 0;
+                }
             }
         }
     }
