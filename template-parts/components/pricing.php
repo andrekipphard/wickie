@@ -41,6 +41,9 @@
                                                 <h5><?= $listItemHeadline; ?></h5>
                                                 <span><?= $listItemText; ?></span>
                                             </div>
+                                            <?php if($listItemComingSoon == 'Yes'):?>
+                                                <span class="coming-soon-text"><?= __('Coming Soon', 'your-text-domain'); ?></span>
+                                            <?php endif;?>
                                         </li>
                                     <?php endwhile; ?>
                                 </ul>
