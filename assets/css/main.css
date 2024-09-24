@@ -11974,6 +11974,11 @@ textarea.form-control-lg {
 .header-mobile {
   display: block;
 }
+@media (min-width: 992px) {
+  .header-mobile {
+    display: none !important;
+  }
+}
 
 .header-desktop {
   width: 100%;
@@ -12539,52 +12544,62 @@ textarea.form-control-lg {
   border-top: none;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #93E100, #00A6FF);
-  z-index: -1;
+@media (min-width: 992px) {
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #93E100, #00A6FF);
+    z-index: -1;
+  }
 }
-@media (min-height: 1000px) {
+@media (min-width: 992px) and (min-height: 1000px) {
   .hero::before {
     height: 80%;
   }
 }
-@media (min-height: 1200px) {
+@media (min-width: 992px) and (min-height: 1200px) {
   .hero::before {
     height: 85%;
   }
 }
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  background-color: #f5f5f7;
-  z-index: -1;
+@media (min-width: 992px) {
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #f5f5f7;
+    z-index: -1;
+  }
 }
-@media (min-height: 1000px) {
+@media (min-width: 992px) and (min-height: 1000px) {
   .hero::after {
     top: 80%;
   }
 }
-@media (min-height: 1200px) {
+@media (min-width: 992px) and (min-height: 1200px) {
   .hero::after {
     top: 85%;
   }
 }
-
 .hero {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   color: #FFFFFF;
+  background: linear-gradient(to right, #93E100, #00A6FF);
+}
+@media (min-width: 992px) {
+  .hero {
+    background: none;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
 }
 .hero .container {
   display: flex;
@@ -12604,9 +12619,17 @@ textarea.form-control-lg {
   font-size: 22px;
 }
 .hero .container .cta {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   display: flex;
   gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .hero .container .cta {
+    flex-direction: row;
+    margin-bottom: 100px;
+  }
 }
 .hero .container .cta a {
   display: flex;
@@ -12628,8 +12651,19 @@ textarea.form-control-lg {
   background-color: #93E100;
   color: #FFFFFF;
 }
+@media (min-width: 992px) {
+  .hero .container .image {
+    display: none;
+  }
+}
 .hero .container .images {
   position: relative;
+  display: none !important;
+}
+@media (min-width: 992px) {
+  .hero .container .images {
+    display: flex !important;
+  }
 }
 .hero .container .images .top-left {
   position: absolute;
@@ -14212,6 +14246,43 @@ textarea.form-control-lg {
   border-radius: 50px;
 }
 
+.image-content {
+  position: relative;
+  overflow: hidden; /* Ensures that the overlay does not extend outside the section */
+}
+
+.overlay-coming-soon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20; /* Ensure it appears on top of other elements */
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  transform-origin: center; /* Center the rotation around the center of the overlay */
+  pointer-events: none; /* Allow clicks to pass through the overlay */
+}
+
+.overlay-text {
+  position: absolute;
+  color: #ffffff;
+  font-size: 3rem;
+  transform: translate(-50%, -50%) rotate(0deg); /* Center and rotate the text */
+  transform: rotate(350deg); /* Rotate the overlay text */
+}
+
+#page {
+  overflow: hidden;
+}
+
 body {
   background-color: #f5f5f7;
   font-family: "Inter", sans-serif;
@@ -14250,8 +14321,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
-  letter-spacing: -3px;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 600;
 }
 
@@ -14307,15 +14377,23 @@ h3, .h3 {
 }
 
 .btn-white {
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 14px;
+  box-shadow: none;
   background-color: #FFFFFF;
-  border-radius: 50px;
-  padding: 20px 40px;
-  font-size: 16px;
   font-weight: 600;
   display: flex;
   align-items: center;
-  box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
   text-transform: capitalize;
+}
+@media (min-width: 992px) {
+  .btn-white {
+    border-radius: 50px;
+    padding: 20px 40px;
+    font-size: 16px;
+    box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
+  }
 }
 .btn-white i {
   margin-right: 10px;
@@ -14327,8 +14405,8 @@ h3, .h3 {
 }
 
 .btn-link {
+  font-size: 14px;
   text-decoration: none;
-  font-size: 16px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -14336,6 +14414,11 @@ h3, .h3 {
   padding-right: 0;
   color: #002A3F;
   text-transform: capitalize;
+}
+@media (min-width: 992px) {
+  .btn-link {
+    font-size: 16px;
+  }
 }
 .btn-link i {
   margin-left: 10px;
@@ -14355,16 +14438,24 @@ h3, .h3 {
 }
 
 .btn-outline {
+  border-radius: 30px;
+  padding: 15px 30px;
+  font-size: 14px;
   background-color: transparent;
-  border-radius: 50px;
-  padding: 20px 40px;
-  font-size: 16px;
   font-weight: 600;
   display: flex;
   align-items: center;
   text-transform: capitalize;
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
+}
+@media (min-width: 992px) {
+  .btn-outline {
+    font-size: 16px;
+    border-radius: 50px;
+    padding: 20px 40px;
+    font-size: 16px;
+  }
 }
 .btn-outline i {
   margin-right: 10px;
@@ -14513,6 +14604,7 @@ h3, .h3 {
   h1, .h1 {
     font-size: 88px;
     font-weight: 600;
+    letter-spacing: -3px;
   }
   h2, .h2 {
     font-size: 56px;

@@ -42,6 +42,12 @@ $secondary: #93E100;
 @import "./components/headline-subline-text";
 @import "./components/images";
 @import "./components/hero-new";
+@import "./components/coming-soon-overlay";
+
+//TODO remove the following when done mobile
+#page {
+    overflow: hidden;
+}
 
 body {
     background-color: #f5f5f7;
@@ -83,9 +89,9 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', sans-serif;
 }
+
 h1 {
-    letter-spacing: -3px;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 600;
 }
 
@@ -143,15 +149,21 @@ h3 {
 }
 
 .btn-white {
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 14px;
+    box-shadow: none;  
     background-color: #FFFFFF;
-    border-radius: 50px;
-    padding: 20px 40px;
-    font-size: 16px;
     font-weight: 600;
     display: flex;
     align-items: center;
-    box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
     text-transform: capitalize;
+    @include media-breakpoint-up(lg) {
+        border-radius: 50px;
+        padding: 20px 40px;
+        font-size: 16px;
+        box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
+    }
 
     i {
         margin-right: 10px;
@@ -164,8 +176,8 @@ h3 {
 }
 
 .btn-link {
+    font-size: 14px;
     text-decoration: none;
-    font-size: 16px;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -173,6 +185,9 @@ h3 {
     padding-right: 0;
     color: $primary;
     text-transform: capitalize;
+    @include media-breakpoint-up(lg) {
+        font-size: 16px;
+    }
 
     i {
         margin-left: 10px;
@@ -194,16 +209,22 @@ h3 {
 }
 
 .btn-outline {
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 14px;
     background-color: transparent;
-    border-radius: 50px;
-    padding: 20px 40px;
-    font-size: 16px;
     font-weight: 600;
     display: flex;
     align-items: center;
     text-transform: capitalize;
     border: 1px solid #FFFFFF;
     color: #FFFFFF;
+    @include media-breakpoint-up(lg) {
+        font-size: 16px;
+        border-radius: 50px;
+        padding: 20px 40px;
+        font-size: 16px;
+    }
 
     i {
         margin-right: 10px;
@@ -353,6 +374,7 @@ h3 {
     h1 {
         font-size: 88px;
         font-weight: 600;
+        letter-spacing: -3px;
     }
     
     h2 {

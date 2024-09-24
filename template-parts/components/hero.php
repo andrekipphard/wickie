@@ -8,6 +8,7 @@
     $imageCenter = get_sub_field('image_center');
     $backgroundColor = get_sub_field('background_color');
     $textColor = get_sub_field('text_color');
+    $imageMobile = get_sub_field('image_mobile');
 ?>
 <section class="hero" style="
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
@@ -56,6 +57,9 @@
             <div class="center">
             <?php if($imageCenter):?><img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageCenter, 'large');?>"><?php endif;?>
             </div>
+        </div>
+        <div class="image">
+            <?php if($imageMobile):?><img class="w-100" loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imageMobile, 'large');?>"><?php endif;?>
         </div>
     </div>
 </section>

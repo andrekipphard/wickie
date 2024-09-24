@@ -4,6 +4,9 @@
 
 .header-mobile{
     display:block;
+    @include media-breakpoint-up(lg) {
+        display: none!important;
+    }
 }
 
 .header-desktop {

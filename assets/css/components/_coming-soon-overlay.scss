@@ -1,4 +1,4 @@
-.market {
+.image-content {
     position: relative;
     overflow: hidden; /* Ensures that the overlay does not extend outside the section */
 }
@@ -26,8 +26,8 @@
 
 .overlay-text {
     position: absolute;
-    color: $secondary;
-    font-size: 10rem;
+    color: #ffffff;
+    font-size: 3rem;
     transform: translate(-50%, -50%) rotate(0deg); /* Center and rotate the text */
     transform: rotate(350deg); /* Rotate the overlay text */
 }

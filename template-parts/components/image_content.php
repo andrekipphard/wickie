@@ -24,6 +24,7 @@
     $backgroundImagePosition = get_sub_field('background_image_position');
     $backgroundImageRepeat = get_sub_field('background_image_repeat');
     $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
+    $comingSoon = get_sub_field('coming_soon');
 ?>
 <section class="image-content"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>; <?php endif;?>
     <?php if ($textColor): ?>
@@ -36,6 +37,11 @@
         background-position: <?= $backgroundImagePosition ? $backgroundImagePosition : 'center center'; ?>;
     <?php endif; ?>
 ">
+    <?php if ($comingSoon == 'Yes'): ?>
+        <div class="overlay-coming-soon">
+            <div class="overlay-text">COMING SOON</div>
+        </div>
+    <?php endif;?>
     <div class="container">
         <div class="image" <?php if($layout == 'Image Left'):?>style="order:0"<?php endif;?><?php if($layout == 'Image Right'):?>style="order:1"<?php endif;?>>
                 <?php if($mediaType === 'Image'):?>
