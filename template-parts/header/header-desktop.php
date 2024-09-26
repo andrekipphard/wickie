@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateHeaderState() {
         var isSticky = window.scrollY > scrollOffset;
         var isFrontPage = body.classList.contains('home'); // WordPress adds 'home' class for the front page
+        var isPage2189 = body.classList.contains('page-id-2189');
 
         // Determine logo source based on page type and sticky state
         if (isSticky) {
@@ -141,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             header.classList.remove('sticky');
             header.style.backgroundColor = 'transparent';
-            logo.src = isFrontPage ? lightLogoSrc : darkLogoSrc; // Light logo for front page, dark for others
+            logo.src = (isFrontPage || isPage2189) ? lightLogoSrc : darkLogoSrc; // Light logo for front page, dark for others
         }
     }
 

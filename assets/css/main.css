@@ -11969,6 +11969,8 @@ textarea.form-control-lg {
 }
 .site-header {
   background-color: #FFFFFF;
+  position: relative;
+  z-index: 999;
 }
 
 .header-mobile {
@@ -12187,33 +12189,33 @@ textarea.form-control-lg {
   width: fit-content;
 }
 
-.home .site-header {
+.home .site-header, .page-id-2189 .site-header {
   background-color: transparent;
 }
-.home .header-desktop .nav-item .nav-link {
+.home .header-desktop .nav-item .nav-link, .page-id-2189 .header-desktop .nav-item .nav-link {
   color: #FFFFFF;
   border-radius: 20px;
   font-size: 1.3rem;
   display: flex;
   align-items: center;
 }
-.home .header-desktop .nav-item .nav-link i {
+.home .header-desktop .nav-item .nav-link i, .page-id-2189 .header-desktop .nav-item .nav-link i {
   margin-right: 5px;
   font-size: 2.5rem;
 }
-.home .header-desktop .nav-item:hover .nav-link {
+.home .header-desktop .nav-item:hover .nav-link, .page-id-2189 .header-desktop .nav-item:hover .nav-link {
   color: #93E100;
 }
-.home .header-desktop .btn {
+.home .header-desktop .btn, .page-id-2189 .header-desktop .btn {
   color: #FFFFFF;
 }
-.home .header-desktop .btn i {
+.home .header-desktop .btn i, .page-id-2189 .header-desktop .btn i {
   color: #FFFFFF;
 }
-.home .header-desktop .btn:hover {
+.home .header-desktop .btn:hover, .page-id-2189 .header-desktop .btn:hover {
   color: #93E100;
 }
-.home .header-desktop .btn:hover i {
+.home .header-desktop .btn:hover i, .page-id-2189 .header-desktop .btn:hover i {
   color: #93E100;
 }
 
@@ -13196,7 +13198,7 @@ textarea.form-control-lg {
 }
 .banner .banner-wrapper .content {
   padding-right: 100px;
-  flex: 0 0 50%;
+  flex-basis: calc(50% - 20px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13222,19 +13224,21 @@ textarea.form-control-lg {
   display: flex;
   gap: 20px;
 }
-.banner .banner-wrapper .images {
-  flex: 0 0 50%;
+.banner .banner-wrapper .image {
+  flex-basis: calc(50% - 20px);
+}
+.banner .banner-wrapper .image .images {
   display: flex;
   gap: 20px;
   position: relative;
 }
-.banner .banner-wrapper .images img {
+.banner .banner-wrapper .image .images img {
   align-items: center;
   -o-object-fit: contain;
      object-fit: contain;
-  max-height: 450px;
+  width: calc(33% - 11px);
 }
-.banner .banner-wrapper .images .overlay {
+.banner .banner-wrapper .image .images .overlay {
   position: absolute;
   top: -100px;
   left: -100px;
@@ -14255,6 +14259,7 @@ textarea.form-control-lg {
   padding-bottom: 7rem;
   position: relative; /* Make the section relative to position its children correctly */
   overflow: hidden; /* Hide any overflowing content */
+  justify-content: center;
 }
 .hero-new .video-wrapper {
   position: absolute; /* Position video absolutely to allow layering */
@@ -14288,62 +14293,68 @@ textarea.form-control-lg {
   background: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
   z-index: 2; /* Ensure overlay is above the video */
 }
-.hero-new .container .content-image {
+.hero-new .container-wrapper {
+  height: calc(100% - 116px);
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+}
+.hero-new .container-wrapper .container .content-image {
   display: flex;
   gap: 60px;
   position: relative;
   z-index: 2; /* Make sure content appears above the video */
 }
-.hero-new .container .content-image .content {
+.hero-new .container-wrapper .container .content-image .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
   flex-basis: calc(45% - 30px);
 }
-.hero-new .container .content-image .content .cta.images {
+.hero-new .container-wrapper .container .content-image .content .cta.images {
   display: flex;
   flex-direction: row;
   gap: 40px;
   flex-wrap: wrap;
 }
-.hero-new .container .content-image .content .cta.images .image {
+.hero-new .container-wrapper .container .content-image .content .cta.images .image {
   flex-basis: calc(25% - 30px);
 }
-.hero-new .container .content-image .content .cta.multiple-buttons {
+.hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons {
   display: flex;
   flex-direction: row;
   gap: 20px;
   flex-wrap: wrap;
 }
-.hero-new .container .content-image .content .cta.multiple-buttons a .round {
+.hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .round {
   padding: 20px;
 }
-.hero-new .container .content-image .content .cta.multiple-buttons a .btn i {
+.hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .btn i {
   margin-right: 0px;
 }
-.hero-new .container .content-image .content .cta.multiple-buttons a .btn .margin-right {
+.hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .btn .margin-right {
   margin-right: 10px;
 }
-.hero-new .container .content-image .content .cta.multiple-buttons a .btn .margin-left {
+.hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .btn .margin-left {
   margin-left: 10px;
 }
-.hero-new .container .content-image .content .cta.multiple-buttons a .btn-white {
+.hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .btn-white {
   justify-content: center;
 }
-.hero-new .container .content-image .content .cta.multiple-buttons a:hover .btn-white {
+.hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a:hover .btn-white {
   color: #ffffff;
   background-color: #93E100;
   border-color: #93E100;
 }
-.hero-new .container .content-image .image {
+.hero-new .container-wrapper .container .content-image .image {
   flex-basis: calc(55% - 30px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.hero-new .container .content-image .image img {
+.hero-new .container-wrapper .container .content-image .image img {
   width: 100%;
   border-radius: 50px;
 }

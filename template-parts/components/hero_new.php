@@ -1,4 +1,9 @@
 <?php
+// Define a variable to track if this is the first section
+global $isFirstSection;
+if (!isset($isFirstSection)) {
+    $isFirstSection = true; // First time running
+}
 // General Fields
 $headline = get_sub_field('headline');
 $subline = get_sub_field('subline');
@@ -21,6 +26,7 @@ $youtube = get_sub_field('youtube');
 $lottie = get_sub_field('lottie');
 $image = get_sub_field('image');
 $fullHeight = get_sub_field('full_height');
+$isHero = get_sub_field('is_hero');
 
 // Position Fields
 $positionFields = [
@@ -87,7 +93,17 @@ if (have_rows('margin')) {
         background-repeat: <?= $backgroundImageRepeat ?: 'no-repeat'; ?>;
         background-position: <?= $backgroundImagePosition ?: 'center center'; ?>;
     <?php endif; ?>
-    <?php if($fullHeight === 'Yes'):?> <?php if(is_front_page()):?> margin-top: -116px;height: calc(100vh - 32px);<?php else:?>height: calc(100vh - 148px);<?php endif;?>display: flex; align-items: center; padding-top:0; padding-bottom:0;<?php endif;?>
+    <?php if ($fullHeight === 'Yes'): ?>
+        <?php if (is_front_page() || is_page(2189)): ?>
+            <?php if ($isHero == 'Yes'): ?>
+                margin-top: -116px;
+            <?php endif;?>
+            height: calc(100vh - 32px);
+        <?php else: ?>
+            height: calc(100vh - 148px);
+        <?php endif; ?>
+        display: flex; align-items: center; padding-top:0; padding-bottom:0;
+    <?php endif; ?>
 ">
 
     <?php if ($layout === 'Background Video'): ?>
@@ -109,8 +125,7 @@ if (have_rows('margin')) {
         <?php endif; ?>
     </div>
     <?php endif; ?>
-
-    <div class="container">
+    <div class="container-wrapper">    <div class="container">
         <div class="content-image" style="
             <?php if ($textLayout === 'Right'): ?> flex-direction: row-reverse; <?php endif; ?>
         ">
@@ -218,7 +233,7 @@ if (have_rows('margin')) {
             </div>
 
             <?php if ($textLayout === 'With Image' || $textLayout === ''): ?>
-                <?php if ($mediaType === 'Image'): ?>
+                <?php if ($mediaType === 'Image' && $layout === 'Kein Background Video'): ?>
                     <div class="image" style="background-image: url('<?= wp_get_attachment_image_url($image, 'large'); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                 <?php elseif ($mediaType === 'Video'): ?>
                     <div class="image"<?php if ($positionImages): ?> style="order: <?= $positionImages ?>"<?php endif; ?>>
@@ -226,18 +241,19 @@ if (have_rows('margin')) {
                             <source src="<?= $video; ?>" type="video/mp4">
                         </video>
                     </div>
-                <?php elseif ($mediaType === 'Youtube'): ?>
+                <?php elseif ($mediaType === 'Youtube' && $layout === 'Kein Background Video'): ?>
                     <div class="image"<?php if ($positionImages): ?> style="order: <?= $positionImages ?>"<?php endif; ?>>
                         <div class="iframe-container">
                             <iframe src="<?= $youtube; ?>?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
-                <?php elseif ($mediaType === 'Lottie'): ?>
+                <?php elseif ($mediaType === 'Lottie' && $layout === 'Kein Background Video'): ?>
                     <div class="image"<?php if ($positionImages): ?> style="order: <?= $positionImages ?>"<?php endif; ?>>
                         <?= $lottie; ?>
                     </div>
                 <?php endif; ?>
             <?php endif; ?>
         </div>
-    </div>
+    </div></div>
+
 </section>

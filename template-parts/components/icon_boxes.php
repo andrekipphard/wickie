@@ -14,7 +14,7 @@
     $backgroundImageRepeat = get_sub_field('background_image_repeat');
     $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
 ?>
-<section class="icon-boxes"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>;<?php endif;?>    <?php if ($textColor): ?>
+<section class="icon-boxes" style="<?php if($backgroundColor):?>background: <?= $backgroundColor; ?>;<?php endif;?>    <?php if ($textColor): ?>
         color: <?= $textColor; ?>;
     <?php endif; ?>
     <?php if ($backgroundImageUrl): ?>

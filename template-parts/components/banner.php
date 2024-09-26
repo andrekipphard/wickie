@@ -9,11 +9,12 @@
     $youtube = get_sub_field('youtube');
     $lottie = get_sub_field('lottie');
     $paddingFromTextToImageColumn = get_sub_field('padding_from_text_to_image_column');
+    $gap = get_sub_field('gap');
 ?>
 <section class="<?= $layout == 'Single Image' ? 'banner-two-buttons' : 'banner'; ?>"style="<?php if($padding == 'Yes'):?> padding-top: 7rem; padding-bottom: 7rem;<?php endif;?><?php if($padding == 'No'):?> padding-top: 0px; padding-bottom: 0px;<?php endif;?><?php if($marginTop == 'Yes'):?> margin-top:7rem;<?php endif;?><?php if($marginBottom == 'Yes'):?> margin-bottom:7rem;<?php endif;?><?php if($marginTop == 'No'):?> margin-top:0px;<?php endif;?><?php if($marginBottom == 'No'):?> margin-bottom:0px;<?php endif;?>">
     <div class="container">
-        <div class="<?= $layout == 'Single Image' ? 'banner-two-buttons-wrapper' : 'banner-wrapper'; ?>">
-            <div class="content"<?php if($paddingFromTextToImageColumn !== ''):?> style="padding-right: <?=$paddingFromTextToImageColumn;?>px;"<?php endif;?>>
+        <div class="<?= $layout == 'Single Image' ? 'banner-two-buttons-wrapper' : 'banner-wrapper'; ?>"<?php if($gap !== ''):?> style="gap: <?=$gap;?>px;"<?php endif;?>>
+            <div class="content" style="<?php if($gap !== ''):?>flex-basis: calc(50% - (<?= $gap;?>px/2));<?php endif;?><?php if($paddingFromTextToImageColumn !== ''):?>padding-right: <?=$paddingFromTextToImageColumn;?>px;<?php endif;?>">
                 <h2><?=$headline;?></h2>
                 <span><?=$text;?></span>
                 <?php if( have_rows('cta')):?>
@@ -32,7 +33,7 @@
                     </div>
                 <?php endif;?>
             </div>
-            <?php if($layout === 'Single Image' || $layout === 'Multiple Images'):?><div class="image">
+            <?php if($layout === 'Single Image' || $layout === 'Multiple Images'):?><div class="image"<?php if($gap !== ''):?> style="flex-basis: calc(50% - (<?= $gap;?>px/2));"<?php endif;?>>
                 <?php if( have_rows('image')):?>
                     <div class="images">
                         <?php while( have_rows('image') ): the_row();
@@ -44,19 +45,19 @@
                 <?php endif;?>
             
             <?php endif;?>
-                <?php if($layout === 'Video'):?><div class="image">
+                <?php if($layout === 'Video'):?><div class="image"<?php if($gap !== ''):?> style="flex-basis: calc(50% - (<?= $gap;?>px/2));"<?php endif;?>>
                     <video controls autoplay muted preload="metadata" class="video">
                         <source src="<?= $video; ?>" type="video/mp4">
                     </video>
                 </div>
                 <?php endif;?>
-                <?php if($layout === 'Youtube'):?><div class="image">
+                <?php if($layout === 'Youtube'):?><div class="image"<?php if($gap !== ''):?> style="flex-basis: calc(50% - (<?= $gap;?>px/2));"<?php endif;?>>
                     <div class="iframe-container">
                         <iframe src="<?= $youtube; ?>?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
                 <?php endif;?>
-                <?php if($layout === 'Lottie'):?><div class="image">
+                <?php if($layout === 'Lottie'):?><div class="image"<?php if($gap !== ''):?> style="flex-basis: calc(50% - (<?= $gap;?>px/2));"<?php endif;?>>
                     <?= $lottie; ?>
                 </div>
             <?php endif;?>

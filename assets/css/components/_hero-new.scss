@@ -3,6 +3,7 @@
     padding-bottom: 7rem;
     position: relative; /* Make the section relative to position its children correctly */
     overflow: hidden; /* Hide any overflowing content */
+    justify-content: center;
     .video-wrapper {
         position: absolute; /* Position video absolutely to allow layering */
         top: 0;
@@ -36,76 +37,83 @@
         }
         
     }
-    .container {
-        .content-image {
-            display: flex;
-            gap: 60px;
-            position: relative;
-            z-index: 2; /* Make sure content appears above the video */
-            .content {
+    .container-wrapper {
+        height: calc(100% - 116px);
+        display: flex;
+        align-items: center;
+        align-self: flex-end;
+        .container {
+            .content-image {
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                gap: 20px;
-                flex-basis: calc(45% - 30px);
-                .cta.images {
+                gap: 60px;
+                position: relative;
+                z-index: 2; /* Make sure content appears above the video */
+                .content {
                     display: flex;
-                    flex-direction: row;
-                    gap: 40px;
-                    flex-wrap: wrap;
-
-                    .image {
-                        flex-basis: calc(25% - 30px);
-                    }
-                }   
-                .cta.multiple-buttons {
-                    display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
+                    justify-content: center;
                     gap: 20px;
-                    flex-wrap: wrap;
-                    a {
-                        .round {
-                            padding: 20px;
+                    flex-basis: calc(45% - 30px);
+                    .cta.images {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 40px;
+                        flex-wrap: wrap;
+    
+                        .image {
+                            flex-basis: calc(25% - 30px);
                         }
-                        .btn {
-                            i {
-                                margin-right: 0px;
+                    }   
+                    .cta.multiple-buttons {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 20px;
+                        flex-wrap: wrap;
+                        a {
+                            .round {
+                                padding: 20px;
                             }
-                            .margin-right {
-                                margin-right: 10px;
+                            .btn {
+                                i {
+                                    margin-right: 0px;
+                                }
+                                .margin-right {
+                                    margin-right: 10px;
+                                }
+                                .margin-left {
+                                    margin-left: 10px;
+                                }
+    
                             }
-                            .margin-left {
-                                margin-left: 10px;
-                            }
-
-                        }
-                        .btn-white {
-                            justify-content: center;
-                        }
-                        &:hover {
                             .btn-white {
-                                color:#ffffff;
-                                background-color: $secondary;
-                                border-color: $secondary;
+                                justify-content: center;
+                            }
+                            &:hover {
+                                .btn-white {
+                                    color:#ffffff;
+                                    background-color: $secondary;
+                                    border-color: $secondary;
+                                }
                             }
                         }
                     }
                 }
-            }
-    
-            .image {
-                flex-basis: calc(55% - 30px);
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-    
-                img {
-                    width: 100%;
-                    border-radius: 50px;
+        
+                .image {
+                    flex-basis: calc(55% - 30px);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+        
+                    img {
+                        width: 100%;
+                        border-radius: 50px;
+                    }
                 }
             }
+         
         }
-     
     }
+
 }

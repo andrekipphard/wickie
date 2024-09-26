@@ -1,5 +1,7 @@
 .site-header{
     background-color: #FFFFFF;
+    position: relative;
+    z-index: 999;
 }
 
 .header-mobile{
@@ -231,7 +233,7 @@
 .normal-menu {
     width: fit-content;
 }
-.home {
+.home, .page-id-2189 {
     .site-header{
         background-color: transparent;
     }
