@@ -2,8 +2,14 @@
     $headline = get_sub_field('headline');
     $map = get_sub_field('map');
     $subline = get_sub_field('subline');
+    $fullHeight = get_sub_field('full_height');
 ?>
-<section class="contact-info">
+<section class="contact-info" style="
+    <?php if ($fullHeight === 'Yes'): ?>
+        height: 100vh;
+        display: flex; align-items: center; padding-top:0; padding-bottom:0;
+    <?php endif; ?>
+    ">
     <div class="container">
         <div class="contact-info-map">
         <?php if ($map): ?>

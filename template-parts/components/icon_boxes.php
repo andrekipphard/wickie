@@ -13,6 +13,8 @@
     $backgroundImagePosition = get_sub_field('background_image_position');
     $backgroundImageRepeat = get_sub_field('background_image_repeat');
     $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
+    $text = get_sub_field('text');
+    $fullHeight = get_sub_field('full_height');
 ?>
 <section class="icon-boxes" style="<?php if($backgroundColor):?>background: <?= $backgroundColor; ?>;<?php endif;?>    <?php if ($textColor): ?>
         color: <?= $textColor; ?>;
@@ -22,6 +24,10 @@
         background-size: <?= $backgroundImageSize ? $backgroundImageSize : 'cover'; ?>;
         background-repeat: <?= $backgroundImageRepeat ? $backgroundImageRepeat : 'no-repeat'; ?>;
         background-position: <?= $backgroundImagePosition ? $backgroundImagePosition : 'center center'; ?>;
+    <?php endif; ?>
+    <?php if ($fullHeight === 'Yes'): ?>
+        height: 100vh;
+        display: flex; align-items: center; padding-top:0; padding-bottom:0;
     <?php endif; ?>">
     <div class="container">
         <div class="title" <?php if($alignHeadline == 'Center'):?>style="align-items: center;"<?php endif;?><?php if($alignHeadline == 'Right'):?>style="align-items: end;"<?php endif;?>>
@@ -32,6 +38,7 @@
             <?php endif;?>
             <?php if($headline):?><h2 <?php if($textColor):?> style="color: <?= $textColor; ?>;"<?php endif;?>><?= $headline; ?></h2><?php endif;?>
             <?php if($subline):?><span class="subline"<?php if($textColor):?> style="color: <?= $textColor; ?>;"<?php endif;?>><?= $subline; ?></span><?php endif;?>
+            <?php if($text != null):?><span><?= $text; ?></span><?php endif;?>
         </div>
         <?php if( have_rows('icon_box')):?>
             <div class="icon-boxes-wrapper<?php if($subline):?> has-subline<?php endif;?>" <?php if($textColor):?> style="color: <?= $textColor; ?>;"<?php endif;?>>

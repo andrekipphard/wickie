@@ -1,10 +1,4 @@
 <?php
-// Define a variable to track if this is the first section
-global $isFirstSection;
-if (!isset($isFirstSection)) {
-    $isFirstSection = true; // First time running
-}
-// General Fields
 $headline = get_sub_field('headline');
 $subline = get_sub_field('subline');
 $highlightText = get_sub_field('highlight_text');
@@ -27,6 +21,7 @@ $lottie = get_sub_field('lottie');
 $image = get_sub_field('image');
 $fullHeight = get_sub_field('full_height');
 $isHero = get_sub_field('is_hero');
+$overlayColor = get_sub_field('overlay_color');
 
 // Position Fields
 $positionFields = [
@@ -85,6 +80,7 @@ if (have_rows('margin')) {
 ?>
 
 <section class="hero-new" style="
+    <?php if ($overlayColor): ?>--overlay-color: <?= $overlayColor; ?>;<?php endif; ?>
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
     <?php if ($layout === 'Kein Background Video' && $backgroundImageUrl): ?>

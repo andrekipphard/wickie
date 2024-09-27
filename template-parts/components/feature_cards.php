@@ -1,19 +1,24 @@
 <?php
-    $hightlightText = get_sub_field('highlight_text');
+    $highlightText = get_sub_field('highlight_text');
     $subline = get_sub_field('subline');
     $headline = get_sub_field('headline');
     $backgroundColor = get_sub_field('background_color');
     $textColor = get_sub_field('text_color');
+    $fullHeight = get_sub_field('full_height');
 ?>
 <section class="feature-cards" style="
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
+    <?php if ($fullHeight === 'Yes'): ?>
+        height: 100vh;
+        display: flex; align-items: center; padding-top:0; padding-bottom:0;
+    <?php endif; ?>
     ">
     <div class="container">
         <div class="text">
             <div class="subline">
                 <span class="highlight">
-                    <?= $hightlightText; ?>
+                    <?= $highlightText; ?>
                 </span>
                 <span><?= $subline; ?></span>
             </div>

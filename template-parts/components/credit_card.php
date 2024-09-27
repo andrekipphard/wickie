@@ -5,8 +5,14 @@
     $text = get_sub_field('text');
     $buttonText = get_sub_field('button_text');
     $buttonUrl = get_sub_field('button_url');
+    $fullHeight = get_sub_field('full_height');
 ?>
-<section class="credit-card">
+<section class="credit-card" style="
+    <?php if ($fullHeight === 'Yes'): ?>
+        height: 100vh;
+        display: flex; align-items: center; padding-top:0; padding-bottom:0;
+    <?php endif; ?>
+    "    >
     <div class="container">
         <a class="content-wrapper" href="<?= $buttonUrl; ?>">
             <?php if($image):?><div class="image" style="background-image: url('<?= wp_get_attachment_image_url($image, 'large');?>;">

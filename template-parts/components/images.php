@@ -1,8 +1,12 @@
 <?php
     $backgroundColor = get_sub_field('background_color');
+    $fullHeight = get_sub_field('full_height');
 ?>
 <?php if(have_rows('image')):?>
-<div class="row me-0"  style="<?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>">
+<div class="row me-0"  style="<?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>    <?php if ($fullHeight === 'Yes'): ?>
+        height: 100vh;
+        display: flex; align-items: center; padding-top:0; padding-bottom:0;
+    <?php endif; ?>">
     <div class="col">
         <div class="swiper mySwiper py-4 py-lg-5">
             <div class="swiper-wrapper">

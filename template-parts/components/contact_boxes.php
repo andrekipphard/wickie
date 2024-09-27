@@ -1,7 +1,13 @@
 <?php
     $headline = get_sub_field('headline');
+    $fullHeight = get_sub_field('full_height');
 ?>
-<section class="contact-boxes">
+<section class="contact-boxes" style="
+    <?php if ($fullHeight === 'Yes'): ?>
+        height: 100vh;
+        display: flex; align-items: center; padding-top:0; padding-bottom:0;
+    <?php endif; ?>
+    ">
     <div class="container">
         <h2><?= $headline; ?></h2>
         <?php if( have_rows('contact_box')):?>

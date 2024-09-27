@@ -8,6 +8,7 @@
     $backgroundImageSize = get_sub_field('background_image_size');
     $backgroundImagePosition = get_sub_field('background_image_position');
     $backgroundImageRepeat = get_sub_field('background_image_repeat');
+    $fullHeight = get_sub_field('full_height');
 
     // Convert headline to a valid ID for the section
     $headlineId = strtolower(trim(preg_replace('/[^a-zA-Z0-9]+/', '-', $headline), '-'));
@@ -19,6 +20,10 @@
     $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
 ?>
 <section class="faq" id="faq-<?= $headlineId; ?>-<?= $uniqueId; ?>" style="
+    <?php if ($fullHeight === 'Yes'): ?>
+        height: 100vh;
+        display: flex; align-items: center; padding-top:0; padding-bottom:0;
+    <?php endif; ?>
     <?php if ($textColor): ?>
         color: <?= $textColor; ?>;
     <?php endif; ?>

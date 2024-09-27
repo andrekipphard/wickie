@@ -10,8 +10,13 @@
     $rightButtonUrl = get_sub_field('right_button_url');
     $backgroundColor = get_sub_field('background_color');
     $textColor = get_sub_field('text_color');
+    $fullHeight = get_sub_field('full_height');
 ?>
 <section class="get-started" style="
+    <?php if ($fullHeight === 'Yes'): ?>
+        height: 100vh;
+        display: flex; align-items: center; padding-top:0; padding-bottom:0;
+    <?php endif; ?>
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
     ">

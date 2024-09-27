@@ -16,8 +16,13 @@
     $backgroundImagePosition = get_sub_field('background_image_position');
     $backgroundImageRepeat = get_sub_field('background_image_repeat');
     $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
+    $fullHeight = get_sub_field('full_height');
 ?>
 <section class="content-card <?= $layout == 'List' ? 'content-card-list' : ''; ?>" style="
+    <?php if ($fullHeight === 'Yes'): ?>
+        height: 100vh;
+        display: flex; align-items: center; padding-top:0; padding-bottom:0;
+    <?php endif; ?>
     <?php if ($textColor): ?>
         color: <?= $textColor; ?>;
     <?php endif; ?>

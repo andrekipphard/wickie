@@ -25,6 +25,7 @@
     $backgroundImageRepeat = get_sub_field('background_image_repeat');
     $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
     $comingSoon = get_sub_field('coming_soon');
+    $fullHeight = get_sub_field('full_height');
 ?>
 <section class="image-content"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>; <?php endif;?>
     <?php if ($textColor): ?>
@@ -35,6 +36,10 @@
         background-size: <?= $backgroundImageSize ? $backgroundImageSize : 'cover'; ?>;
         background-repeat: <?= $backgroundImageRepeat ? $backgroundImageRepeat : 'no-repeat'; ?>;
         background-position: <?= $backgroundImagePosition ? $backgroundImagePosition : 'center center'; ?>;
+    <?php endif; ?>
+    <?php if ($fullHeight === 'Yes'): ?>
+        height: 100vh;
+        display: flex; align-items: center; padding-top:0; padding-bottom:0;
     <?php endif; ?>
 ">
     <?php if ($comingSoon == 'Yes'): ?>
