@@ -34,7 +34,7 @@ $fullHeight = get_sub_field('full_height');
                 <?php endif;?>
             </div>
             <?php if($headline != null):?><h2><?= $headline; ?></h2><?php endif;?>
-            <?php if($subline != null):?><span class="subline"><?= $subline; ?></span><?php endif;?>
+            <?php if($subline != null):?><h3><?= $subline; ?></h3><?php endif;?>
             <?php if($text != null):?><span><?= $text; ?></span><?php endif;?>
         </div>
         <?php if( have_rows('teammember')):?>

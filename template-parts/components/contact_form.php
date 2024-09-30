@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="cf-message"><?= $labelButton; ?></label>
+                    <label for="cf-message"><?= $labelMessageField; ?></label>
                     <textarea id="cf-message" name="cf-message" rows="5" required></textarea>
                 </div>
                 <div class="form-group">
