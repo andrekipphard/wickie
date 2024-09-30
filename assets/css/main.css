@@ -12731,7 +12731,7 @@ textarea.form-control-lg {
   border-top: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .site-footer .footer {
     padding-top: 3rem;
     flex-direction: column;
@@ -12775,7 +12775,7 @@ textarea.form-control-lg {
     font-size: 12px;
   }
 }
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li {
     text-align: center;
     flex-basis: calc(25% - 15px);
@@ -12972,7 +12972,7 @@ textarea.form-control-lg {
   background-color: #FFFFFF;
   border-radius: 20px;
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
-  flex-basis: calc(33.333% - 20px);
+  flex-basis: calc(33.333% - 20px); /* Desktop */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12988,6 +12988,38 @@ textarea.form-control-lg {
   justify-content: center;
 }
 
+/* Tablet - Anpassung */
+@media (max-width: 1023px) {
+  .feature-cards {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .feature-cards .container .content-boxes .content-box {
+    flex-basis: 100%; /* Eine Spalte */
+  }
+  .feature-cards .container .content-boxes .content-box .content .title {
+    font-size: 25px; /* Kleinere Schriftgröße auf Tablets */
+  }
+}
+/* Mobile - Anpassung */
+@media (max-width: 767px) {
+  .feature-cards {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .feature-cards .container .text {
+    margin-bottom: 20px;
+  }
+  .feature-cards .container .content-boxes .content-box {
+    flex-basis: 100%; /* Eine Spalte */
+  }
+  .feature-cards .container .content-boxes .content-box .content {
+    padding: 20px; /* Weniger Padding */
+  }
+  .feature-cards .container .content-boxes .content-box .content .title {
+    font-size: 20px; /* Noch kleinere Schriftgröße auf Mobilgeräten */
+  }
+}
 .popular-services {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -14657,9 +14689,8 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 16px;
+  font-size: 26px;
   font-weight: 600;
-  letter-spacing: -2px;
 }
 
 h3, .h3 {
@@ -14891,13 +14922,17 @@ h3, .h3 {
   font-size: 15px;
 }
 
+img {
+  max-width: 100%;
+}
+
 @media (min-width: 576px) {
   h1, .h1 {
     font-size: 36px;
     font-weight: 600;
   }
   h2, .h2 {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: 600;
   }
 }
@@ -14919,6 +14954,7 @@ h3, .h3 {
   h2, .h2 {
     font-size: 40px;
     font-weight: 600;
+    letter-spacing: -2px;
   }
 }
 @media (min-width: 1200px) {

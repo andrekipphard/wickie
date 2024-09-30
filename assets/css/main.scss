@@ -97,9 +97,8 @@ h1 {
 }
 
 h2 {
-    font-size: 16px;
+    font-size: 26px;
     font-weight: 600; 
-    letter-spacing: -2px;
 }
 
 h3 {
@@ -327,6 +326,9 @@ h3 {
     margin-right: 4px; /* Space between icon and text */
     font-size: 15px;
 }
+img {
+    max-width: 100%;
+}
 @include media-breakpoint-up(sm) {
     h1 {
         font-size: 36px;
@@ -334,7 +336,7 @@ h3 {
     }
     
     h2 {
-        font-size: 24px;
+        font-size: 36px;
         font-weight: 600; 
     }
 }
@@ -358,6 +360,7 @@ h3 {
     h2 {
         font-size: 40px;
         font-weight: 600; 
+        letter-spacing: -2px;
     }
 }
 @include media-breakpoint-up(xl) {
