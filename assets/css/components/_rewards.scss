@@ -96,11 +96,8 @@
             flex-direction: column;
         }
 
-
         .content-wrapper:hover {
-
             .subline {
-
                 .btn-link {
                     color: $secondary;
 
@@ -108,6 +105,61 @@
                         background-color: $secondary;
                         color: #FFFFFF;
                     }
+                }
+            }
+        }
+    }
+
+    // Tablet View (768px - 1024px)
+    @media (max-width: 1023px) and (min-width: 768px) {
+        .container {
+            flex-direction: column;
+            gap: 30px;
+
+            .content-wrapper {
+                flex-direction: column;
+                flex-basis: 100%;
+                padding: 30px;
+
+                .content {
+                    flex: 100%;
+                    text-align: center;
+                    align-items: center;
+                }
+
+                .image {
+                    flex: 100%;
+                    background-position: center;
+                    margin-top: 20px;
+                    height: 250px;
+                }
+            }
+        }
+    }
+
+    // Mobile View (max-width: 768px)
+    @media (max-width: 768px) {
+        padding-bottom: 30px;
+
+        .container {
+            flex-direction: column;
+            gap: 30px;
+
+            .content-wrapper {
+                flex-direction: column;
+                flex-basis: 100%;
+                padding: 20px;
+
+                .content {
+                    flex: 100%;
+                    text-align: center;
+                    align-items: center;
+                }
+
+                .image {
+                    flex: 100%;
+                    margin-top: 20px;
+                    height: 200px;
                 }
             }
         }

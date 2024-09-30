@@ -60,19 +60,18 @@
 }
 
 
-@media (max-width: 1023px) {
-    .credit-cart {
+@media (max-width: 1023px) and (min-width: 768px) {
+    .credit-card {
         padding-top: 5rem;
-        padding-bottom: 40px;
+        padding-bottom: 30px;
         .container {
             .content-wrapper {
-                flex-direction: column;
 
+                .image {
+                    background-position: bottom left;
+                }
             }
         }
-    }
-    .credit-card .container .content-wrapper .image {
-        background-position: bottom;
     }
 }
 @media (max-width: 767px) {
