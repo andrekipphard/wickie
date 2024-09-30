@@ -103,7 +103,7 @@
                 $headerButtonText = get_sub_field('header_button_text');
             ?>
                 <a href="<?= $headerButtonUrl; ?>">
-                    <button type="button" class="btn btn-link">
+                    <button type="button" class="btn btn-link weglot-button">
                         <i class="bi bi-<?= $headerButtonIcon; ?>"></i>
                         <?= $headerButtonText; ?>
                     </button>
