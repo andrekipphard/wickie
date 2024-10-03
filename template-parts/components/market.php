@@ -89,7 +89,6 @@ const cryptos = [
 const itemsPerPage = 6;
 let currentPage = 0;
 let currentCurrency = "USD";  // Default currency
-
 function generateMarketValuesHTML() {
     const container = document.getElementById('market-values-container');
     container.innerHTML = '';  // Clear previous content
@@ -97,7 +96,7 @@ function generateMarketValuesHTML() {
     cryptos.forEach((crypto, index) => {
         const cryptoRow = `
             <tr class="market-value ${index >= itemsPerPage ? 'hidden' : ''}">
-            <td id="${crypto.symbol.toLowerCase()}-name" class="currency">
+                <td id="${crypto.symbol.toLowerCase()}-name" class="currency">
                     <div class="image">
                         <img id="${crypto.symbol.toLowerCase()}-icon" src="${crypto.imageUrl}" alt="${crypto.name}" style="width: 24px; height: 24px; vertical-align: middle;"> 
                     </div>
@@ -116,7 +115,8 @@ function generateMarketValuesHTML() {
 }
 
 // Fetch historical data for the selected timeframe
-function fetchHistoricalData(symbol, currency, timeframe) {
+// Fetch historical data for the selected timeframe with retries
+async function fetchHistoricalData(symbol, currency, timeframe, retries = 3) {
     let url;
 
     switch (timeframe) {
@@ -139,10 +139,27 @@ function fetchHistoricalData(symbol, currency, timeframe) {
             url = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${symbol}&tsym=${currency}&limit=1`;
     }
 
-    return fetch(url)
-        .then(response => response.json())
-        .then(data => data.Data.Data[0].close);  // Returns the closing price for the earliest date in the timeframe
+    for (let attempt = 0; attempt < retries; attempt++) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error('Network response was not ok');
+
+            const data = await response.json();
+            if (data && data.Data && data.Data.Data.length > 0) {
+                return data.Data.Data[0].close;  // Returns the closing price for the earliest date in the timeframe
+            } else {
+                console.warn(`No historical data available for ${symbol} on attempt ${attempt + 1}`);
+                return null;  // Return null if no data
+            }
+        } catch (error) {
+            console.error(`Error fetching historical data for ${symbol} on attempt ${attempt + 1}:`, error);
+            await new Promise(res => setTimeout(res, 1000)); // Wait before retrying
+        }
+    }
+
+    return null; // Return null if all attempts fail
 }
+
 
 // Fetch data from CryptoCompare API
 function fetchMarketData(currency, timeframe) {
@@ -158,51 +175,57 @@ function fetchMarketData(currency, timeframe) {
 }
 
 // Update crypto data in the DOM with price change based on timeframe
-function updateCryptoData(data, currency, timeframe) {
-    cryptos.forEach(crypto => {
+async function updateCryptoData(data, currency, timeframe) {
+    for (const crypto of cryptos) {
         const cryptoData = data[crypto.symbol][currency];
         const price = cryptoData.PRICE;
         const volume = cryptoData.TOTALVOLUME24HTO;
         const marketCap = cryptoData.MKTCAP;
 
-        fetchHistoricalData(crypto.symbol, currency, timeframe)
-            .then(previousPrice => {
-                if (previousPrice !== 0 && previousPrice !== undefined) { // Check if previousPrice is valid
-                    const priceChange = price - previousPrice;
-                    const priceChangePercentage = ((priceChange / previousPrice) * 100).toFixed(2);
-                    
-                    const changeSymbol = priceChange > 0 ? '▲' : '▼';
-                    const changeColor = priceChange > 0 ? 'green' : 'red';
+        // Show "..." while fetching historical data
+        document.getElementById(`${crypto.symbol.toLowerCase()}-price`).textContent = "...";
+        document.getElementById(`${crypto.symbol.toLowerCase()}-volume`).textContent = "...";
+        document.getElementById(`${crypto.symbol.toLowerCase()}-marketcap`).textContent = "...";
 
-                    document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
-                        ${formatCurrency(price, currency)}
-                        <span style="color: ${changeColor}; font-size: 0.9rem; margin-left: 8px;">
-                            ${changeSymbol} ${priceChangePercentage}%
-                        </span>
-                    `;
-                } else {
-                    // Handle cases where previousPrice is zero or undefined
-                    document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
-                        ${formatCurrency(price, currency)}
-                        <span style="color: red; font-size: 0.9rem; margin-left: 8px;">
-                            No historical data available
-                        </span>
-                    `;
-                }
-                document.getElementById(`${crypto.symbol.toLowerCase()}-volume`).textContent = abbreviateNumber(volume);
-                document.getElementById(`${crypto.symbol.toLowerCase()}-marketcap`).textContent = abbreviateNumber(marketCap);
-            })
-            .catch(error => {
-                console.error(`Error fetching historical data for ${crypto.symbol}:`, error);
+        try {
+            const previousPrice = await fetchHistoricalData(crypto.symbol, currency, timeframe);
+            if (previousPrice !== 0 && previousPrice !== undefined) {
+                const priceChange = price - previousPrice;
+                const priceChangePercentage = ((priceChange / previousPrice) * 100).toFixed(2);
+                
+                const changeSymbol = priceChange > 0 ? '▲' : '▼';
+                const changeColor = priceChange > 0 ? 'green' : 'red';
+
+                document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
+                    ${formatCurrency(price, currency)}
+                    <span style="color: ${changeColor}; font-size: 0.9rem; margin-left: 8px;">
+                        ${changeSymbol} ${priceChangePercentage}%
+                    </span>
+                `;
+            } else {
                 document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
                     ${formatCurrency(price, currency)}
                     <span style="color: red; font-size: 0.9rem; margin-left: 8px;">
-                        Error fetching data
+                        No historical data available
                     </span>
                 `;
-            });
-    });
+            }
+        } catch (error) {
+            console.error(`Error fetching historical data for ${crypto.symbol}:`, error);
+            document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
+                ${formatCurrency(price, currency)}
+                <span style="color: red; font-size: 0.9rem; margin-left: 8px;">
+                    Error fetching data. Please try again.
+                </span>
+            `;
+        }
+
+        // Set the volume and market cap after fetching
+        document.getElementById(`${crypto.symbol.toLowerCase()}-volume`).textContent = abbreviateNumber(volume);
+        document.getElementById(`${crypto.symbol.toLowerCase()}-marketcap`).textContent = abbreviateNumber(marketCap);
+    }
 }
+
 
 
 // Format currency output
