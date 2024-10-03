@@ -196,7 +196,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateWeglotDisplay() {
         if (weglotDiv) {
-            console.log('Aktuelle Breite:', window.innerWidth); // Aktuelle Breite ausgeben
             
             if (window.innerWidth < 769) {
                 // Mobile Ansicht: Inline-Flaggen

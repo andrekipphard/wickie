@@ -61,10 +61,10 @@
 
 <script>
 const cryptos = [
-    { name: 'Bitcoin', symbol: 'XBT', imageUrl: 'https://www.cryptocompare.com/media/37746251/btc.png', circulatingSupply: 19000000 },
+    { name: 'Bitcoin', symbol: 'BTC', imageUrl: 'https://www.cryptocompare.com/media/37746251/btc.png', circulatingSupply: 19000000 },
     { name: 'Ethereum', symbol: 'ETH', imageUrl: 'https://www.cryptocompare.com/media/37746238/eth.png', circulatingSupply: 120000000 },
     { name: 'Solana', symbol: 'SOL', imageUrl: 'https://www.cryptocompare.com/media/37747734/sol.png', circulatingSupply: 550000000 },
-    { name: 'Dogecoin', symbol: 'XDG', imageUrl: 'https://www.cryptocompare.com/media/37746339/doge.png', circulatingSupply: 140000000000 },
+    { name: 'Dogecoin', symbol: 'DOGE', imageUrl: 'https://www.cryptocompare.com/media/37746339/doge.png', circulatingSupply: 140000000000 },
     { name: 'Ripple', symbol: 'XRP', imageUrl: 'https://www.cryptocompare.com/media/38553096/xrp.png', circulatingSupply: 50000000000 },
     { name: 'Cardano', symbol: 'ADA', imageUrl: 'https://www.cryptocompare.com/media/37746235/ada.png', circulatingSupply: 35000000000 },
     { name: 'ApeCoin', symbol: 'APE', imageUrl: 'https://www.cryptocompare.com/media/39838302/ape.png', circulatingSupply: 370000000 },
@@ -85,17 +85,19 @@ const cryptos = [
     { name: 'DAI', symbol: 'DAI', imageUrl: 'https://www.cryptocompare.com/media/37747610/dai.png', circulatingSupply: 8000000000 }
 ];
 
+
 const itemsPerPage = 6;
 let currentPage = 0;
 let currentCurrency = "USD";  // Default currency
 
 function generateMarketValuesHTML() {
     const container = document.getElementById('market-values-container');
+    container.innerHTML = '';  // Clear previous content
 
     cryptos.forEach((crypto, index) => {
         const cryptoRow = `
             <tr class="market-value ${index >= itemsPerPage ? 'hidden' : ''}">
-                <td id="${crypto.symbol.toLowerCase()}-name" class="currency">
+            <td id="${crypto.symbol.toLowerCase()}-name" class="currency">
                     <div class="image">
                         <img id="${crypto.symbol.toLowerCase()}-icon" src="${crypto.imageUrl}" alt="${crypto.name}" style="width: 24px; height: 24px; vertical-align: middle;"> 
                     </div>
@@ -106,86 +108,104 @@ function generateMarketValuesHTML() {
                 </td>
                 <td id="${crypto.symbol.toLowerCase()}-volume">...</td>
                 <td id="${crypto.symbol.toLowerCase()}-marketcap">...</td>
-                <td id="${crypto.symbol.toLowerCase()}-price" class="price">...</td>
+                <td id="${crypto.symbol.toLowerCase()}-price">...</td>
             </tr>
         `;
         container.innerHTML += cryptoRow;
     });
 }
 
-generateMarketValuesHTML();
+// Fetch historical data for the selected timeframe
+function fetchHistoricalData(symbol, currency, timeframe) {
+    let url;
 
-document.getElementById('show-more-button').addEventListener('click', function() {
-    const allMarketValues = document.querySelectorAll('.market-value');
-    currentPage++;
-    const startIndex = currentPage * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-
-    allMarketValues.forEach((element, index) => {
-        if (index >= startIndex && index < endIndex) {
-            element.classList.remove('hidden');
-        }
-    });
-
-    if (endIndex >= allMarketValues.length) {
-        this.style.display = 'none';
+    switch (timeframe) {
+        case "daily":
+            url = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${symbol}&tsym=${currency}&limit=1`;
+            break;
+        case "weekly":
+            url = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${symbol}&tsym=${currency}&limit=7`;
+            break;
+        case "monthly":
+            url = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${symbol}&tsym=${currency}&limit=30`;
+            break;
+        case "yearly":
+            url = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${symbol}&tsym=${currency}&limit=365`;
+            break;
+        case "all-time":
+            url = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${symbol}&tsym=${currency}&limit=2000`; // Example for a long history
+            break;
+        default:
+            url = `https://min-api.cryptocompare.com/data/v2/histoday?fsym=${symbol}&tsym=${currency}&limit=1`;
     }
-});
 
-const krakenSocket = new WebSocket('wss://ws.kraken.com');
-
-function subscribeToCryptoPrices(currency) {
-    const messages = getSubscribeMessages(currency);
-
-    Object.keys(messages).forEach(key => {
-        krakenSocket.send(JSON.stringify({ event: "unsubscribe", pair: [`${key}/${currentCurrency}`], subscription: { name: "ticker" } }));
-    });
-
-    Object.keys(messages).forEach(key => {
-        krakenSocket.send(JSON.stringify(messages[key]));
-    });
-
-    currentCurrency = currency;
+    return fetch(url)
+        .then(response => response.json())
+        .then(data => data.Data.Data[0].close);  // Returns the closing price for the earliest date in the timeframe
 }
 
-function getSubscribeMessages(currency) {
-    return cryptos.reduce((messages, crypto) => {
-        messages[crypto.symbol] = {
-            event: "subscribe",
-            pair: [`${crypto.symbol}/${currency}`],
-            subscription: { name: "ticker" }
-        };
-        return messages;
-    }, {});
+// Fetch data from CryptoCompare API
+function fetchMarketData(currency, timeframe) {
+    const symbols = cryptos.map(crypto => crypto.symbol).join(',');
+    const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${symbols}&tsyms=${currency}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            updateCryptoData(data.RAW, currency, timeframe);
+        })
+        .catch(error => console.error('Error fetching data:', error));
 }
 
-function updateCryptoData(data) {
-    if (data[1] && data[1].c) {
-        cryptos.forEach(crypto => {
-            if (data[3] === `${crypto.symbol}/${currentCurrency}`) {
-                const price = data[1].c[0];
-                const volume = data[1].v[1];
-                const marketCap = price * crypto.circulatingSupply;
+// Update crypto data in the DOM with price change based on timeframe
+function updateCryptoData(data, currency, timeframe) {
+    cryptos.forEach(crypto => {
+        const cryptoData = data[crypto.symbol][currency];
+        const price = cryptoData.PRICE;
+        const volume = cryptoData.TOTALVOLUME24HTO;
+        const marketCap = cryptoData.MKTCAP;
 
-                const priceChange = data[1].p[1] - data[1].p[0]; // 24h Price Change
-                const priceChangePercentage = ((priceChange / data[1].p[0]) * 100).toFixed(2);
+        fetchHistoricalData(crypto.symbol, currency, timeframe)
+            .then(previousPrice => {
+                if (previousPrice !== 0 && previousPrice !== undefined) { // Check if previousPrice is valid
+                    const priceChange = price - previousPrice;
+                    const priceChangePercentage = ((priceChange / previousPrice) * 100).toFixed(2);
+                    
+                    const changeSymbol = priceChange > 0 ? '▲' : '▼';
+                    const changeColor = priceChange > 0 ? 'green' : 'red';
 
-                const changeSymbol = priceChangePercentage > 0 ? '▲' : '▼'; // Price up or down indicator
-                const changeColor = priceChangePercentage > 0 ? 'green' : 'red';
-
-                // Hier werden die Werte für Preis, Volumen und Marktkapitalisierung abgekürzt
+                    document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
+                        ${formatCurrency(price, currency)}
+                        <span style="color: ${changeColor}; font-size: 0.9rem; margin-left: 8px;">
+                            ${changeSymbol} ${priceChangePercentage}%
+                        </span>
+                    `;
+                } else {
+                    // Handle cases where previousPrice is zero or undefined
+                    document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
+                        ${formatCurrency(price, currency)}
+                        <span style="color: red; font-size: 0.9rem; margin-left: 8px;">
+                            No historical data available
+                        </span>
+                    `;
+                }
+                document.getElementById(`${crypto.symbol.toLowerCase()}-volume`).textContent = abbreviateNumber(volume);
+                document.getElementById(`${crypto.symbol.toLowerCase()}-marketcap`).textContent = abbreviateNumber(marketCap);
+            })
+            .catch(error => {
+                console.error(`Error fetching historical data for ${crypto.symbol}:`, error);
                 document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
-                    ${formatCurrency(price, currentCurrency)}
-                    <span style="color: ${changeColor}; font-size: 0.9rem; margin-left: 8px;">${changeSymbol} ${priceChangePercentage}%</span>
+                    ${formatCurrency(price, currency)}
+                    <span style="color: red; font-size: 0.9rem; margin-left: 8px;">
+                        Error fetching data
+                    </span>
                 `;
-                document.getElementById(`${crypto.symbol.toLowerCase()}-volume`).innerText = abbreviateNumber(volume);
-                document.getElementById(`${crypto.symbol.toLowerCase()}-marketcap`).innerText = abbreviateNumber(marketCap);
-            }
-        });
-    }
+            });
+    });
 }
 
 
+// Format currency output
 function formatCurrency(value, currency) {
     let formattedValue;
 
@@ -202,34 +222,51 @@ function formatCurrency(value, currency) {
     }
 }
 
-krakenSocket.onopen = function() {
-    subscribeToCryptoPrices(currentCurrency);
-};
-
-krakenSocket.onmessage = function(event) {
-    try {
-        const data = JSON.parse(event.data);
-        updateCryptoData(data);
-    } catch (error) {
-        // Handle error (e.g., log it to an external monitoring service)
-    }
-};
-
-document.getElementById('currency').addEventListener('change', function() {
-    const selectedCurrency = this.value;
-    subscribeToCryptoPrices(selectedCurrency);
-});
+// Abbreviate large numbers
 function abbreviateNumber(value) {
     if (value >= 1e12) {
-        return (value / 1e12).toFixed(2) + 'T'; // Trillion (Billion in German)
+        return (value / 1e12).toFixed(2) + 'T'; // Trillion
     } else if (value >= 1e9) {
-        return (value / 1e9).toFixed(2) + 'B'; // Billion (Milliarde in German)
+        return (value / 1e9).toFixed(2) + 'B'; // Billion
     } else if (value >= 1e6) {
         return (value / 1e6).toFixed(2) + 'M'; // Million
     } else {
-        return parseFloat(value.toFixed(2)).toLocaleString(); // Auf 2 Nachkommastellen runden und formatieren
+        return value.toFixed(2);
     }
 }
 
+// Pagination logic for 'Show More' button
+document.getElementById('show-more-button').addEventListener('click', function() {
+    currentPage++;
+    const allMarketValues = document.querySelectorAll('.market-value');
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    allMarketValues.forEach((element, index) => {
+        if (index >= startIndex && index < endIndex) {
+            element.classList.remove('hidden');
+        }
+    });
+
+    if (endIndex >= allMarketValues.length) {
+        this.style.display = 'none';  // Hide button when all items are shown
+    }
+});
+
+// Timeframe change event listener
+document.getElementById('timeframe').addEventListener('change', function () {
+    currentTimeframe = this.value;
+    fetchMarketData(currentCurrency, currentTimeframe);
+});
+
+// Change currency event listener
+document.getElementById('currency').addEventListener('change', function() {
+    currentCurrency = this.value;
+    fetchMarketData(currentCurrency);
+});
+
+// Initialize
+generateMarketValuesHTML();
+fetchMarketData(currentCurrency);
 
 </script>
