@@ -25,6 +25,13 @@
                 display: flex;
                 gap: 40px;
                 align-items: center;
+                flex-wrap: wrap;
+                a:hover {
+                    .btn-white {
+                        background-color: $secondary;
+                        border: 1px solid $secondary;
+                    }
+                }
             }
 
             ul {

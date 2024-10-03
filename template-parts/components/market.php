@@ -106,7 +106,7 @@ function generateMarketValuesHTML() {
                 </td>
                 <td id="${crypto.symbol.toLowerCase()}-volume">...</td>
                 <td id="${crypto.symbol.toLowerCase()}-marketcap">...</td>
-                <td id="${crypto.symbol.toLowerCase()}-price">...</td>
+                <td id="${crypto.symbol.toLowerCase()}-price" class="price">...</td>
             </tr>
         `;
         container.innerHTML += cryptoRow;
@@ -165,28 +165,26 @@ function updateCryptoData(data) {
             if (data[3] === `${crypto.symbol}/${currentCurrency}`) {
                 const price = data[1].c[0];
                 const volume = data[1].v[1];
-                const marketCap = (price * crypto.circulatingSupply).toFixed(2);
+                const marketCap = price * crypto.circulatingSupply;
+
                 const priceChange = data[1].p[1] - data[1].p[0]; // 24h Price Change
                 const priceChangePercentage = ((priceChange / data[1].p[0]) * 100).toFixed(2);
 
-                const changeSymbol = priceChangePercentage > 0 
-                    ? `▲`  // Upward triangle
-                    : `▼`; // Downward triangle
+                const changeSymbol = priceChangePercentage > 0 ? '▲' : '▼'; // Price up or down indicator
+                const changeColor = priceChangePercentage > 0 ? 'green' : 'red';
 
-                const changeColor = priceChangePercentage > 0
-                    ? 'green'
-                    : 'red';
-
+                // Hier werden die Werte für Preis, Volumen und Marktkapitalisierung abgekürzt
                 document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
                     ${formatCurrency(price, currentCurrency)}
                     <span style="color: ${changeColor}; font-size: 0.9rem; margin-left: 8px;">${changeSymbol} ${priceChangePercentage}%</span>
                 `;
-                document.getElementById(`${crypto.symbol.toLowerCase()}-volume`).innerText = formatCurrency(volume, currentCurrency);
-                document.getElementById(`${crypto.symbol.toLowerCase()}-marketcap`).innerText = formatCurrency(marketCap, currentCurrency);
+                document.getElementById(`${crypto.symbol.toLowerCase()}-volume`).innerText = abbreviateNumber(volume);
+                document.getElementById(`${crypto.symbol.toLowerCase()}-marketcap`).innerText = abbreviateNumber(marketCap);
             }
         });
     }
 }
+
 
 function formatCurrency(value, currency) {
     let formattedValue;
@@ -221,4 +219,17 @@ document.getElementById('currency').addEventListener('change', function() {
     const selectedCurrency = this.value;
     subscribeToCryptoPrices(selectedCurrency);
 });
+function abbreviateNumber(value) {
+    if (value >= 1e12) {
+        return (value / 1e12).toFixed(2) + 'T'; // Trillion (Billion in German)
+    } else if (value >= 1e9) {
+        return (value / 1e9).toFixed(2) + 'B'; // Billion (Milliarde in German)
+    } else if (value >= 1e6) {
+        return (value / 1e6).toFixed(2) + 'M'; // Million
+    } else {
+        return parseFloat(value.toFixed(2)).toLocaleString(); // Auf 2 Nachkommastellen runden und formatieren
+    }
+}
+
+
 </script>

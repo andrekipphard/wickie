@@ -26,6 +26,7 @@
     $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
     $comingSoon = get_sub_field('coming_soon');
     $fullHeight = get_sub_field('full_height');
+    $headlineFontSize = get_sub_field('headline_font_size');
 ?>
 <section class="image-content"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>; <?php endif;?>
     <?php if ($textColor): ?>
@@ -72,7 +73,7 @@
                     <?= $highlightText; ?>
                 </span>
             <?php endif;?>
-            <h2><?= $headline; ?></h2>
+            <h2 <?php if($headlineFontSize):?>style="font-size: <?= $headlineFontSize;?>px"<?php endif;?>><?= $headline; ?></h2>
             <span><?= $text; ?></span>
             <?php if( have_rows('list_item')):?>
                 <ul>
@@ -89,28 +90,26 @@
                     <?php endwhile;?>
                 </ul>
             <?php endif;?>
-            <?php if( have_rows('button')):?>
+            <?php if( have_rows('buttons')):?>
                 <div class="cta">
-                    <?php while( have_rows('button') ): the_row();
-                    $buttonStyle = get_sub_field('button_style');
-                    $buttonText = get_sub_field('button_text');
-                    $buttonUrl = get_sub_field('button_url');
-                    $buttonIcon = get_sub_field('button_icon');?>
-                        <a href="<?=$buttonUrl;?>">
-                            <?php if($buttonStyle == 'Link'):?>
-                                <button type="button" class="btn btn-link">
-                                    <?= $buttonText; ?>
-                                    <i class="bi bi-chevron-right"></i>
-                                </button>
-                            <?php else:?>
-                                <button type="button" class="btn btn-primary">
-                                    <?php if($buttonStyle == 'Icon Left'):?><i class="bi bi-<?= $buttonIcon; ?>" style="margin-right:10px;"></i><?php endif;?>
-                                    <?= $buttonText; ?>
-                                    <?php if($buttonStyle == 'Icon Right'):?><i class="bi bi-<?= $buttonIcon; ?>"></i><?php endif;?>
-                                </button>
-                            <?php endif;?>
+                    <?php while (have_rows('buttons')): the_row();
+                        $buttonText = get_sub_field('button_text');
+                        $buttonUrl = get_sub_field('button_url');
+                        $buttonIcon = get_sub_field('button_icon');
+                        $buttonIconPosition = get_sub_field('button_icon_position');
+                        $buttonStyle = get_sub_field('button_style'); ?>
+                        <a href="<?= $buttonUrl; ?>">
+                            <button type="button" class="btn btn-<?= $buttonStyle; ?><?php if (!$buttonText): ?> round<?php endif; ?>">
+                                <?php if ($buttonIconPosition === 'Left'): ?>
+                                    <i class="bi bi-<?= $buttonIcon; ?><?php if ($buttonText): ?> margin-right<?php endif; ?>"></i>
+                                <?php endif; ?>
+                                <?= $buttonText; ?>
+                                <?php if ($buttonIconPosition === 'Right'): ?>
+                                    <i class="bi bi-<?= $buttonIcon; ?><?php if ($buttonText): ?> margin-left<?php endif; ?>"></i>
+                                <?php endif; ?>
+                            </button>
                         </a>
-                    <?php endwhile;?>
+                    <?php endwhile; ?>
                 </div>
             <?php endif;?>
         </div>

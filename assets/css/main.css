@@ -13873,21 +13873,102 @@ textarea.form-control-lg {
 .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
+@media (max-width: 1023px) {
+  .market {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+@media (max-width: 768px) {
+  .market {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .market .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency img {
+    height: 65px !important;
+    width: auto !important;
+  }
+  .market .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .market .container .content-wrapper {
+    padding: 20px;
+  }
+  .market .container .content-wrapper .market-table #market-values-table {
+    margin-top: 20px;
+  }
+  .market .container .content-wrapper .market-table #market-values-table th {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1rem;
+  }
+  .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value td {
+    padding: 10px;
+  }
+  .market .container .content-wrapper .market-table #market-values-table #market-values-container .price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .market .container .content-wrapper .market-table #market-values-table #market-values-container .image {
+    min-width: 50px;
+  }
+  .market .container .content-wrapper .market-table #market-values-table td {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .market .container .content-wrapper .market-table #market-values-table img {
+    height: 50px !important;
+  }
+  .market .container .content-wrapper .controls {
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .market .container .content-wrapper .controls .selectors {
+    gap: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency {
+    gap: 10px;
+  }
+  .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value td {
+    padding: 5px;
+  }
+  .market .container .content-wrapper .market-table #market-values-table #market-values-container .image {
+    min-width: 40px;
+  }
+  .market .container .content-wrapper .market-table #market-values-table th {
+    font-size: 0.875rem;
+  }
+  .market .container .content-wrapper .market-table #market-values-table td {
+    font-size: 0.875rem;
+  }
+  .market .container .content-wrapper .controls .selectors #currency, .market .container .content-wrapper .controls .selectors #timeframe {
+    padding: 2px 4px;
+  }
+}
 
 .hidden {
   display: none !important;
 }
 
-/* Style for the change indicator */
-#market-values-container .market-value td:nth-child(4) {
-  font-size: 1.25rem; /* Adjust font size for price and change value */
-  text-align: left; /* Align to the left */
+@media (max-width: 768px) {
+  .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency img {
+    height: auto !important;
+    width: 50px !important;
+  }
+  .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value td, .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency h3, .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency .h3 {
+    font-size: 1rem;
+  }
 }
-
-#market-values-container .market-value td:nth-child(4) span {
-  font-size: 0.9rem; /* Adjust font size for the change percentage */
+@media (max-width: 480px) {
+  .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency img {
+    height: auto !important;
+    width: 40px !important;
+  }
 }
-
 .hero-single {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -14115,6 +14196,11 @@ textarea.form-control-lg {
   display: flex;
   gap: 40px;
   align-items: center;
+  flex-wrap: wrap;
+}
+.image-content .container .content .cta a:hover .btn-white {
+  background-color: #93E100;
+  border: 1px solid #93E100;
 }
 .image-content .container .content ul {
   list-style: none;
