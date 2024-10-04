@@ -17,7 +17,7 @@
     <div class="container">
         <div class="title">
             <h2><?= $headline; ?></h2>
-            <a href="<?= $buttonUrl; ?>">
+            <a href="<?= $buttonUrl; ?>" class="desktop-button">
                 <button type="button" class="btn btn-primary">
                     <?= $buttonText; ?>
                     <i class="bi bi-arrow-right"></i>
@@ -74,5 +74,11 @@
                 <?php endwhile;?>
             </div>
         <?php endif;?>
+        <a href="<?= $buttonUrl; ?>" class="mobile-button">
+                <button type="button" class="btn btn-primary">
+                    <?= $buttonText; ?>
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+            </a>
     </div>
 </section>

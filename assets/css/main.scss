@@ -101,10 +101,6 @@ h2 {
     font-weight: 600; 
 }
 
-h3 {
-    letter-spacing: -1px;
-}
-
 .btn-primary {
     border-radius: 50px;
     padding: 20px 40px;
@@ -384,5 +380,8 @@ img {
     h2 {
         font-size: 56px;
         font-weight: 600; 
+    }
+    h3 {
+        letter-spacing: -1px;
     }
 }
