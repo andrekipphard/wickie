@@ -2,6 +2,10 @@
     padding-top: 7rem;
     padding-bottom: 7rem;
 
+    .change-indicator {
+        font-size: 0.9rem; 
+        margin-left: 8px
+    }
     .container {
         display: flex;
         gap: 50px;
@@ -187,15 +191,15 @@
                                 }
                             }
                             .image {
-                                min-width: 40px;
+                                min-width: 30px;
                             }
                         }
                         th {
-                            font-size: 0.875rem;
+                            font-size: 0.8rem;
                         }
     
                         td {
-                            font-size: 0.875rem;
+                            font-size: 0.8rem;
                         }
                     }
                 }
@@ -226,8 +230,27 @@
     }
 }
 @media (max-width: 480px) {
+    .market {
+        .price {
+            display: flex;
+            flex-direction: column;
+        }
+        h3 {
+            letter-spacing: 0;
+        }
+        .change-indicator {
+            font-size: 0.8rem;
+            margin-left: 0;
+        }
+    }
+    .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value td, .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency h3, .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency .h3 {
+        font-size: 0.8rem;
+
+    }
     .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency img {
         height: auto!important;
-        width: 40px!important;
+        width: 30px!important;
     }
+
+
 }

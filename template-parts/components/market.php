@@ -96,18 +96,20 @@ function generateMarketValuesHTML() {
     cryptos.forEach((crypto, index) => {
         const cryptoRow = `
             <tr class="market-value ${index >= itemsPerPage ? 'hidden' : ''}">
-                <td id="${crypto.symbol.toLowerCase()}-name" class="currency">
-                    <div class="image">
-                        <img id="${crypto.symbol.toLowerCase()}-icon" src="${crypto.imageUrl}" alt="${crypto.name}" style="width: 24px; height: 24px; vertical-align: middle;"> 
-                    </div>
-                    <div class="name">
-                        <h3>${crypto.name}</h3> 
-                        <span>${crypto.symbol}</span>
+                <td id="${crypto.symbol.toLowerCase()}-name">
+                    <div class="currency">
+                        <div class="image">
+                            <img id="${crypto.symbol.toLowerCase()}-icon" src="${crypto.imageUrl}" alt="${crypto.name}" style="width: 24px; height: 24px; vertical-align: middle;"> 
+                        </div>
+                        <div class="name">
+                            <h3>${crypto.name}</h3> 
+                            <span>${crypto.symbol}</span>
+                        </div>
                     </div>
                 </td>
                 <td id="${crypto.symbol.toLowerCase()}-volume">...</td>
                 <td id="${crypto.symbol.toLowerCase()}-marketcap">...</td>
-                <td id="${crypto.symbol.toLowerCase()}-price">...</td>
+                <td><div id="${crypto.symbol.toLowerCase()}-price" class="price">...</div></td>
             </tr>
         `;
         container.innerHTML += cryptoRow;
@@ -198,14 +200,14 @@ async function updateCryptoData(data, currency, timeframe) {
 
                 document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
                     ${formatCurrency(price, currency)}
-                    <span style="color: ${changeColor}; font-size: 0.9rem; margin-left: 8px;">
+                    <span class="change-indicator" style="color: ${changeColor};">
                         ${changeSymbol} ${priceChangePercentage}%
                     </span>
                 `;
             } else {
                 document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
                     ${formatCurrency(price, currency)}
-                    <span style="color: red; font-size: 0.9rem; margin-left: 8px;">
+                    <span class="change-indicator" style="color: red;">
                         No historical data available
                     </span>
                 `;
@@ -214,7 +216,7 @@ async function updateCryptoData(data, currency, timeframe) {
             console.error(`Error fetching historical data for ${crypto.symbol}:`, error);
             document.getElementById(`${crypto.symbol.toLowerCase()}-price`).innerHTML = `
                 ${formatCurrency(price, currency)}
-                <span style="color: red; font-size: 0.9rem; margin-left: 8px;">
+                <span  class="change-indicator" style="color: red;">
                     Error fetching data. Please try again.
                 </span>
             `;
