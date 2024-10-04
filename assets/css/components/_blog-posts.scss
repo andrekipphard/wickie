@@ -1,11 +1,21 @@
 .blog-posts {
     padding-top: 7rem;
     padding-bottom: 7rem;
+    .mobile-button {
+        display:none;
+    }
+    .desktop-button {
+        display:block;
+    }
 
     .title {
         display: flex;
         justify-content: space-between;
         margin-bottom: 50px;
+
+        h2 {
+            font-size: 36px; // Überschrift für Desktop
+        }
     }
 
     .blog-posts-wrapper {
@@ -18,7 +28,7 @@
             background-color: #FFFFFF;
             border-radius: 20px;
             box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
-            flex-basis: calc(33.333% - 13.33px);
+            flex-basis: calc(33.333% - 13.33px); // 3 Spalten
 
             .blog-post-info {
                 display: flex;
@@ -29,23 +39,128 @@
                 border-top-left-radius: 20px;
                 border-top-right-radius: 20px;
             }
-    
+
             .content {
                 padding: 30px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
-                
+
                 .text {
                     .title {
                         margin-top: 10px;
-                        font-size: 30px;
+                        font-size: 30px; // Schriftgröße für Desktop
                         font-weight: 600;
                         margin-bottom: 10px;
+                    }
+                    .highlight {
+                        display: flex;
+                        align-items: center;
                     }
                 }
                 .btn-link {
                     margin-top: 50px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1024px) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        .mobile-button {
+            margin-top: 30px;
+            display:block;
+            display: flex;
+            justify-content: center;
+        }
+        .desktop-button {
+            display:none;
+        }
+
+        .title {
+            h2 {
+                font-size: 30px; // Überschrift für Tablets
+            }
+            margin-bottom: 30px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-posts-wrapper {
+            .blog-post {
+                flex-basis: calc(50% - 10px); // 2 Spalten
+
+                .content {
+                    .text {
+                        .title {
+                            font-size: 24px; // Schriftgröße für Tablets
+                            align-items: flex-start;
+                        }
+                    }
+                    .btn-link {
+                        margin-top: 30px; // Reduzierter Abstand
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+
+        .title {
+            flex-direction: column; // Titel untereinander
+
+
+            h2 {
+                font-size: 24px; // Noch kleinere Schriftgröße für Mobilgeräte
+            }
+        }
+
+        .blog-posts-wrapper {
+            flex-direction: column; // Eine Spalte
+
+            .blog-post {
+                flex-basis: 100%; // Volle Breite
+
+                .content {
+                    padding: 20px; // Weniger Polsterung
+                    .text {
+                        .title {
+                            font-size: 20px; // Noch kleinere Schriftgröße
+
+                        }
+                    }
+                    .btn-link {
+                        margin-top: 20px; // Noch kleinerer Abstand
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        .title {
+            h2 {
+                font-size: 20px; // Kleinere Schriftgröße
+            }
+        }
+
+        .blog-posts-wrapper {
+            .blog-post {
+                .content {
+                    padding: 15px; // Minimale Polsterung
+                    .text {
+                        .title {
+                            font-size: 18px; // Kleinste Schriftgröße
+                        }
+                    }
+                    .btn-link {
+                        margin-top: 10px; // Minimale Abstände
+                    }
                 }
             }
         }

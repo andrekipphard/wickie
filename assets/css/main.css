@@ -14116,10 +14116,19 @@ textarea.form-control-lg {
   padding-top: 7rem;
   padding-bottom: 7rem;
 }
+.blog-posts .mobile-button {
+  display: none;
+}
+.blog-posts .desktop-button {
+  display: block;
+}
 .blog-posts .title {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
+}
+.blog-posts .title h2, .blog-posts .title .h2 {
+  font-size: 36px;
 }
 .blog-posts .blog-posts-wrapper {
   display: flex;
@@ -14153,8 +14162,86 @@ textarea.form-control-lg {
   font-weight: 600;
   margin-bottom: 10px;
 }
+.blog-posts .blog-posts-wrapper .blog-post .content .text .highlight {
+  display: flex;
+  align-items: center;
+}
 .blog-posts .blog-posts-wrapper .blog-post .content .btn-link {
   margin-top: 50px;
+}
+@media (max-width: 1024px) {
+  .blog-posts {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .blog-posts .mobile-button {
+    margin-top: 30px;
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+  .blog-posts .desktop-button {
+    display: none;
+  }
+  .blog-posts .title {
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+  .blog-posts .title h2, .blog-posts .title .h2 {
+    font-size: 30px;
+  }
+  .blog-posts .blog-posts-wrapper .blog-post {
+    flex-basis: calc(50% - 10px);
+  }
+  .blog-posts .blog-posts-wrapper .blog-post .content .text .title {
+    font-size: 24px;
+    align-items: flex-start;
+  }
+  .blog-posts .blog-posts-wrapper .blog-post .content .btn-link {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .blog-posts {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .blog-posts .title {
+    flex-direction: column;
+  }
+  .blog-posts .title h2, .blog-posts .title .h2 {
+    font-size: 24px;
+  }
+  .blog-posts .blog-posts-wrapper {
+    flex-direction: column;
+  }
+  .blog-posts .blog-posts-wrapper .blog-post {
+    flex-basis: 100%;
+  }
+  .blog-posts .blog-posts-wrapper .blog-post .content {
+    padding: 20px;
+  }
+  .blog-posts .blog-posts-wrapper .blog-post .content .text .title {
+    font-size: 20px;
+  }
+  .blog-posts .blog-posts-wrapper .blog-post .content .btn-link {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .blog-posts .title h2, .blog-posts .title .h2 {
+    font-size: 20px;
+  }
+  .blog-posts .blog-posts-wrapper .blog-post .content {
+    padding: 15px;
+  }
+  .blog-posts .blog-posts-wrapper .blog-post .content .text .title {
+    font-size: 18px;
+  }
+  .blog-posts .blog-posts-wrapper .blog-post .content .btn-link {
+    margin-top: 10px;
+  }
 }
 
 .credit-card {

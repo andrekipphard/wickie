@@ -75,10 +75,10 @@
             </div>
         <?php endif;?>
         <a href="<?= $buttonUrl; ?>" class="mobile-button">
-                <button type="button" class="btn btn-primary">
-                    <?= $buttonText; ?>
-                    <i class="bi bi-arrow-right"></i>
-                </button>
-            </a>
+            <button type="button" class="btn btn-primary">
+                <?= $buttonText; ?>
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </a>
     </div>
 </section>

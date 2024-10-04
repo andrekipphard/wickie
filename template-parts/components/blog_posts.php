@@ -17,7 +17,7 @@
     <div class="container">
         <div class="title">
             <h2><?= esc_html($headline); ?></h2>
-            <a href="<?= esc_url($buttonUrl); ?>" target="_blank">
+            <a href="<?= esc_url($buttonUrl); ?>" target="_blank" class="desktop-button">
                 <button type="button" class="btn btn-primary">
                     <?= esc_html($buttonText); ?>
                     <i class="bi bi-arrow-right"></i>
@@ -57,5 +57,11 @@
             endif;
             ?>
         </div>
+        <a href="<?= $buttonUrl; ?>" class="mobile-button">
+            <button type="button" class="btn btn-primary">
+                <?= $buttonText; ?>
+                <i class="bi bi-arrow-right"></i>
+            </button>
+        </a>
     </div>
 </section>
