@@ -13628,6 +13628,8 @@ textarea.form-control-lg {
 }
 .banner .banner-wrapper .image {
   flex-basis: calc(50% - 20px);
+  display: flex;
+  align-items: center;
 }
 .banner .banner-wrapper .image .images {
   display: flex;
@@ -13640,10 +13642,102 @@ textarea.form-control-lg {
      object-fit: contain;
   width: calc(33% - 11px);
 }
-.banner .banner-wrapper .image .images .overlay {
+.banner .banner-wrapper .image .images .overlay-image {
   position: absolute;
   top: -100px;
   left: -100px;
+}
+@media (max-width: 1024px) {
+  .banner {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  .banner .banner-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .banner .banner-wrapper .content {
+    padding-right: 0;
+    flex-basis: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .banner .banner-wrapper .content span {
+    font-size: 16px;
+  }
+  .banner .banner-wrapper .content .cta {
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .banner .banner-wrapper .image {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .banner .banner-wrapper .image .images {
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+  }
+  .banner .banner-wrapper .image .images .overlay-image {
+    width: 30%;
+    top: -100px;
+    left: -100px;
+  }
+  .banner .banner-wrapper .image .images img {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .banner {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .banner .banner-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .banner .banner-wrapper .content {
+    padding-right: 0;
+    flex-basis: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .banner .banner-wrapper .content h2, .banner .banner-wrapper .content .h2 {
+    font-size: 28px;
+  }
+  .banner .banner-wrapper .content span {
+    font-size: 14px;
+  }
+  .banner .banner-wrapper .content .cta {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .banner .banner-wrapper .content .cta button {
+    width: 100%; /* Buttons füllen die Breite */
+  }
+  .banner .banner-wrapper .image {
+    flex-basis: 100%;
+  }
+  .banner .banner-wrapper .image .images {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .banner .banner-wrapper .image .images .overlay-image {
+    width: 50%;
+    top: -100px;
+    left: -100px;
+  }
+  .banner .banner-wrapper .image .images img {
+    width: 100%;
+  }
 }
 
 .banner-two-buttons {
@@ -13672,7 +13766,71 @@ textarea.form-control-lg {
   display: flex;
   gap: 20px;
 }
+@media (max-width: 1024px) {
+  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content {
+    padding-right: 0;
+    flex-basis: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content span {
+    font-size: 16px;
+  }
+  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content .cta {
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content {
+    padding-right: 0;
+    flex-basis: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content h2, .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content .h2 {
+    font-size: 28px;
+  }
+  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content span {
+    font-size: 14px;
+  }
+  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content .cta {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content .cta button {
+    width: 100%; /* Buttons füllen die Breite */
+  }
+}
 
+@media (max-width: 1024px) {
+  /* Tablet-Ansicht */
+  .banner, .banner-two-buttons {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+    margin-top: 5rem !important;
+    margin-bottom: 5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  /* Mobilansicht */
+  .banner, .banner-two-buttons {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+  }
+}
 .testimonials {
   padding-top: 7rem;
   padding-bottom: 7rem;
