@@ -13273,6 +13273,7 @@ textarea.form-control-lg {
   box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
   background: linear-gradient(to right, #93E100, #00A6FF);
   display: flex;
+  flex-direction: row;
   border-radius: 20px;
 }
 .content-card .container .content-wrapper .content {
@@ -13365,6 +13366,82 @@ textarea.form-control-lg {
   background-color: transparent;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
+}
+@media (max-width: 1024px) {
+  .content-card .container .content-wrapper {
+    flex-direction: column;
+  }
+  .content-card .container .content-wrapper .content {
+    padding: 30px;
+    flex: 0 0 100%;
+  }
+  .content-card .container .content-wrapper .content .cta {
+    gap: 15px;
+    width: 100%;
+  }
+  .content-card .container .content-wrapper .content .cta a {
+    flex-basis: calc(50% - 7.5px);
+  }
+  .content-card .container .content-wrapper .content .cta a .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .content-card .container .content-wrapper .image {
+    flex: 0 0 100%;
+    padding: 0 20px;
+  }
+  .content-card .container .content-wrapper .image img {
+    height: auto !important;
+  }
+}
+@media (max-width: 768px) {
+  .content-card .container .content-wrapper {
+    box-shadow: none;
+    padding-bottom: 0;
+  }
+  .content-card .container .content-wrapper .content {
+    padding: 20px;
+  }
+  .content-card .container .content-wrapper .content .cta {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .content-card .container .content-wrapper .content .cta a {
+    flex-basis: 100%;
+  }
+  .content-card .container .content-wrapper .content .cta a .btn-white {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .content-card .container .content-wrapper .image {
+    padding: 20px;
+    padding-bottom: 0px;
+  }
+}
+@media (max-width: 576px) {
+  .content-card .container .content-wrapper {
+    box-shadow: none;
+  }
+  .content-card .container .content-wrapper .content {
+    padding: 20px;
+    gap: 15px;
+  }
+  .content-card .container .content-wrapper .content .cta {
+    flex-direction: column;
+  }
+  .content-card .container .content-wrapper .content .list-items .list-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .content-card .container .content-wrapper .content span {
+    font-size: 16px;
+  }
+  .content-card .container .content-wrapper .image {
+    padding: 10px;
+    padding-bottom: 0;
+  }
 }
 
 .feature-boxes {
