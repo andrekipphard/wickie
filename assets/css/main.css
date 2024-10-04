@@ -13178,6 +13178,86 @@ textarea.form-control-lg {
 .steps .content-boxes .content-box:nth-child(4) {
   flex: 1 0 40%;
 }
+@media (max-width: 1024px) {
+  .steps {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .steps h2, .steps .h2 {
+    margin-bottom: 30px;
+  }
+  .steps .content-boxes {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .steps .content-boxes .content-box {
+    flex: 1 0 100%;
+    padding: 30px;
+  }
+  .steps .content-boxes .content-box .icon i {
+    font-size: 25px;
+    padding: 12px 14px;
+  }
+  .steps .content-boxes .content-box .content span {
+    font-size: 18px;
+  }
+  .steps .content-boxes .content-box .content .cta {
+    margin-top: 15px;
+    gap: 15px;
+  }
+  .steps .content-boxes .content-box .content .cta a {
+    flex-basis: calc(50% - 7.5px);
+  }
+  .steps .content-boxes .content-box .content .cta a .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .steps .content-boxes .content-box.highlighted {
+    flex: 1 0 100%;
+    background: linear-gradient(to right, #93E100, #00A6FF);
+  }
+}
+@media (max-width: 768px) {
+  .steps {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .steps .content-boxes {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .steps .content-boxes .content-box {
+    flex: 1 0 100%;
+    padding: 20px;
+  }
+  .steps .content-boxes .content-box .icon i {
+    font-size: 20px;
+    padding: 10px 12px;
+  }
+  .steps .content-boxes .content-box .content span {
+    font-size: 16px;
+  }
+  .steps .content-boxes .content-box .content .cta {
+    margin-top: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .steps .content-boxes .content-box .content .cta a {
+    flex-basis: 100%;
+  }
+  .steps .content-boxes .content-box .content .cta a .btn-white {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .steps .content-boxes .content-box.highlighted {
+    flex: 1 0 100%;
+    padding: 25px;
+    border-radius: 15px;
+    background: linear-gradient(to right, #93E100, #00A6FF);
+  }
+}
 
 .content-card {
   padding-top: 7rem;

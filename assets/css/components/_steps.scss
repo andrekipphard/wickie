@@ -6,6 +6,7 @@
         text-align: center;
         margin-bottom: 50px;
     }
+
     .content-boxes {
         display: flex;
         flex-direction: row;
@@ -29,7 +30,7 @@
                     color: #FFFFFF;
                 }
             }
-    
+
             .content {
                 .cta {
                     margin-top: 20px;
@@ -46,6 +47,7 @@
                 }
             }
         }
+
         .content-box.highlighted {
             background: linear-gradient(to right, #93E100, #00A6FF);
             flex: 1 0 50%;
@@ -66,13 +68,113 @@
                 }
             }
         }
+
         .content-box:nth-child(2) {
             flex: 1 0 30%;
         }
+
         .content-box:nth-child(3),
         .content-box:nth-child(4) {
             flex: 1 0 40%;
         }
     }
 
+    // Media Queries für Tablets
+    @media (max-width: 1024px) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+
+        h2 {
+            margin-bottom: 30px;
+        }
+        .content-boxes {
+            flex-direction: column;
+            gap: 20px;
+
+            .content-box {
+                flex: 1 0 100%; // 1 Spalte für Tablet
+                padding: 30px;
+
+                .icon i {
+                    font-size: 25px;
+                    padding: 12px 14px;
+                }
+
+                .content {
+                    span {
+                        font-size: 18px;
+                    }
+
+                    .cta {
+                        margin-top: 15px;
+                        gap: 15px;
+                        a {
+                            flex-basis: calc(50% - 7.5px);
+                            .btn {
+                                width:100%;
+                                display: flex;
+                                justify-content: center;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .content-box.highlighted {
+                flex: 1 0 100%;
+                background: linear-gradient(to right, #93E100, #00A6FF);
+            }
+        }
+    }
+
+    // Media Queries für Mobilgeräte
+    @media (max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        .content-boxes {
+            flex-direction: column;
+            gap: 15px;
+
+            .content-box {
+                flex: 1 0 100%; // Volle Breite für Mobil
+                padding: 20px;
+
+                .icon i {
+                    font-size: 20px;
+                    padding: 10px 12px;
+                }
+
+                .content {
+                    span {
+                        font-size: 16px;
+                    }
+
+                    .cta {
+                        margin-top: 10px;
+                        gap: 10px;
+                        flex-wrap: wrap;
+                        a {
+                            flex-basis: 100%;
+                            .btn-white {
+                                width: 100%;
+                                display: flex;
+                                justify-content: center;
+                            }
+                        }
+
+
+                    }
+                }
+            }
+
+            .content-box.highlighted {
+                flex: 1 0 100%;
+                padding: 25px;
+                border-radius: 15px;
+                background: linear-gradient(to right, #93E100, #00A6FF);
+            }
+        }
+    }
 }
