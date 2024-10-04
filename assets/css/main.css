@@ -13393,6 +13393,7 @@ textarea.form-control-lg {
   }
   .content-card .container .content-wrapper .image img {
     height: auto !important;
+    max-width: 100% !important;
   }
 }
 @media (max-width: 768px) {
