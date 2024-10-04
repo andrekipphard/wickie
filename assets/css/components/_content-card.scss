@@ -146,6 +146,10 @@
     }
 
     @media (max-width: 1024px) {
+        &.content-card-list {
+            padding-bottom: 5rem;
+        }
+        padding-top: 5rem;
         .container {
             .content-wrapper {
                 flex-direction: column;
@@ -178,6 +182,10 @@
     }
 
     @media (max-width: 768px) {
+        &.content-card-list {
+            padding-bottom: 3rem;
+        }
+        padding-top: 3rem;
         .container {
             .content-wrapper {
                 box-shadow: none;

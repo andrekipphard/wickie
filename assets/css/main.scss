@@ -325,6 +325,47 @@ h2 {
 img {
     max-width: 100%;
 }
+.padding-top {
+    padding-top: 7rem !important;
+}
+.padding-bottom {
+    padding-bottom: 7rem !important;
+}
+.margin-top {
+    margin-top: 7rem !important;
+}
+.margin-bottom {
+    margin-bottom: 7rem !important;
+}
+@media (max-width: 1024px) {
+    .padding-top {
+        padding-top: 5rem !important;
+    }
+    .padding-bottom {
+        padding-bottom: 5rem !important;
+    }
+    .margin-top {
+        margin-top: 5rem !important;
+    }
+    .margin-bottom {
+        margin-bottom: 5rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .padding-top {
+        padding-top: 3rem !important;
+    }
+    .padding-bottom {
+        padding-bottom: 3rem !important;
+    }
+    .margin-top {
+        margin-top: 3rem !important;
+    }
+    .margin-bottom {
+        margin-bottom: 3rem !important;
+    }
+}
 @include media-breakpoint-up(sm) {
     h1 {
         font-size: 36px;

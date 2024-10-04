@@ -13368,6 +13368,12 @@ textarea.form-control-lg {
   border: 1px solid #FFFFFF;
 }
 @media (max-width: 1024px) {
+  .content-card {
+    padding-top: 5rem;
+  }
+  .content-card.content-card-list {
+    padding-bottom: 5rem;
+  }
   .content-card .container .content-wrapper {
     flex-direction: column;
   }
@@ -13397,6 +13403,12 @@ textarea.form-control-lg {
   }
 }
 @media (max-width: 768px) {
+  .content-card {
+    padding-top: 3rem;
+  }
+  .content-card.content-card-list {
+    padding-bottom: 3rem;
+  }
   .content-card .container .content-wrapper {
     box-shadow: none;
     padding-bottom: 0;
@@ -13477,6 +13489,9 @@ textarea.form-control-lg {
   font-size: 20px;
 }
 @media (max-width: 1024px) {
+  .feature-boxes {
+    padding-bottom: 5rem;
+  }
   .feature-boxes .container .feature-box-wrapper {
     gap: 30px;
   }
@@ -13493,6 +13508,9 @@ textarea.form-control-lg {
   }
 }
 @media (max-width: 768px) {
+  .feature-boxes {
+    padding-bottom: 3rem;
+  }
   .feature-boxes .container .feature-box-wrapper {
     gap: 30px;
   }
@@ -13718,10 +13736,6 @@ textarea.form-control-lg {
 }
 
 .banner {
-  margin-top: 7rem;
-  margin-bottom: 7rem;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
   background: linear-gradient(to right, #93E100, #00A6FF);
 }
 .banner .banner-wrapper {
@@ -13778,12 +13792,6 @@ textarea.form-control-lg {
   left: -100px;
 }
 @media (max-width: 1024px) {
-  .banner {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-  }
   .banner .banner-wrapper {
     flex-direction: column;
     gap: 30px;
@@ -13821,12 +13829,6 @@ textarea.form-control-lg {
   }
 }
 @media (max-width: 768px) {
-  .banner {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
   .banner .banner-wrapper {
     flex-direction: column;
     gap: 20px;
@@ -13871,7 +13873,6 @@ textarea.form-control-lg {
 }
 
 .banner-two-buttons {
-  margin-top: 7rem;
   background: linear-gradient(to right, #93E100, #00A6FF);
 }
 .banner-two-buttons .banner-two-buttons-wrapper {
@@ -13943,24 +13944,6 @@ textarea.form-control-lg {
   }
 }
 
-@media (max-width: 1024px) {
-  /* Tablet-Ansicht */
-  .banner, .banner-two-buttons {
-    padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
-    margin-top: 5rem !important;
-    margin-bottom: 5rem !important;
-  }
-}
-@media (max-width: 768px) {
-  /* Mobilansicht */
-  .banner, .banner-two-buttons {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-    margin-top: 3rem !important;
-    margin-bottom: 3rem !important;
-  }
-}
 .testimonials {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -14670,7 +14653,6 @@ textarea.form-control-lg {
 }
 
 .banner-two-buttons {
-  margin-top: 7rem;
   background: linear-gradient(to right, #93E100, #00A6FF);
 }
 .banner-two-buttons .banner-two-buttons-wrapper {
@@ -15628,6 +15610,50 @@ img {
   max-width: 100%;
 }
 
+.padding-top {
+  padding-top: 7rem !important;
+}
+
+.padding-bottom {
+  padding-bottom: 7rem !important;
+}
+
+.margin-top {
+  margin-top: 7rem !important;
+}
+
+.margin-bottom {
+  margin-bottom: 7rem !important;
+}
+
+@media (max-width: 1024px) {
+  .padding-top {
+    padding-top: 5rem !important;
+  }
+  .padding-bottom {
+    padding-bottom: 5rem !important;
+  }
+  .margin-top {
+    margin-top: 5rem !important;
+  }
+  .margin-bottom {
+    margin-bottom: 5rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .padding-top {
+    padding-top: 3rem !important;
+  }
+  .padding-bottom {
+    padding-bottom: 3rem !important;
+  }
+  .margin-top {
+    margin-top: 3rem !important;
+  }
+  .margin-bottom {
+    margin-bottom: 3rem !important;
+  }
+}
 @media (min-width: 576px) {
   h1, .h1 {
     font-size: 36px;

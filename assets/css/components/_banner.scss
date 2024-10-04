@@ -1,8 +1,4 @@
 .banner {
-    margin-top: 7rem;
-    margin-bottom: 7rem;
-    padding-top: 7rem;
-    padding-bottom: 7rem;
     background: linear-gradient(to right, #93E100, #00A6FF);
 
     .banner-wrapper {
@@ -69,10 +65,6 @@
 
     // Media Queries für Tablets
     @media (max-width: 1024px) {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-        margin-top: 5rem;
-        margin-bottom: 5rem;
 
         .banner-wrapper {
             flex-direction: column;
@@ -118,10 +110,6 @@
 
     // Media Queries für Mobilgeräte
     @media (max-width: 768px) {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
 
         .banner-wrapper {
             flex-direction: column;
@@ -175,7 +163,6 @@
 }
 
 .banner-two-buttons {
-    margin-top: 7rem;
     background: linear-gradient(to right, #93E100, #00A6FF);
 
     .banner-two-buttons-wrapper {
@@ -260,24 +247,5 @@
                 }
             }
         }
-    }
-}
-@media (max-width: 1024px) {
-    /* Tablet-Ansicht */
-    .banner, .banner-two-buttons {
-        padding-top: 5rem !important;
-        padding-bottom: 5rem !important;
-        margin-top: 5rem !important;
-        margin-bottom: 5rem !important;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Mobilansicht */
-    .banner, .banner-two-buttons {
-        padding-top: 3rem !important;
-        padding-bottom: 3rem !important;
-        margin-top: 3rem !important;
-        margin-bottom: 3rem !important;
     }
 }

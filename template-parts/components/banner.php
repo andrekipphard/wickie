@@ -12,10 +12,10 @@
     $gap = get_sub_field('gap');
     $fullHeight = get_sub_field('full_height');
 ?>
-<section class="<?= $layout == 'Single Image' ? 'banner-two-buttons' : 'banner'; ?>"style="    <?php if ($fullHeight === 'Yes'): ?>
+<section class="<?php if($marginBottom == 'Yes'):?> margin-bottom <?php endif;?><?php if($marginTop == 'Yes'):?>margin-top <?php endif;?><?php if($padding == 'Yes'):?>padding-top padding-bottom <?php endif;?><?= $layout == 'Single Image' ? 'banner-two-buttons' : 'banner'; ?>"style="    <?php if ($fullHeight === 'Yes'): ?>
         height: 100vh;
         display: flex; align-items: center; padding-top:0; padding-bottom:0;
-    <?php endif; ?><?php if($padding == 'Yes'):?> padding-top: 7rem; padding-bottom: 7rem;<?php endif;?><?php if($padding == 'No'):?> padding-top: 0px; padding-bottom: 0px;<?php endif;?><?php if($marginTop == 'Yes'):?> margin-top:7rem;<?php endif;?><?php if($marginBottom == 'Yes'):?> margin-bottom:7rem;<?php endif;?><?php if($marginTop == 'No'):?> margin-top:0px;<?php endif;?><?php if($marginBottom == 'No'):?> margin-bottom:0px;<?php endif;?>">
+    <?php endif; ?>">
     <div class="container">
         <div class="<?= $layout == 'Single Image' ? 'banner-two-buttons-wrapper' : 'banner-wrapper'; ?>"<?php if($gap !== ''):?> style="gap: <?=$gap;?>px;"<?php endif;?>>
             <div class="content" style="<?php if($gap !== ''):?>flex-basis: calc(50% - (<?= $gap;?>px/2));<?php endif;?><?php if($paddingFromTextToImageColumn !== ''):?>padding-right: <?=$paddingFromTextToImageColumn;?>px;<?php endif;?>">

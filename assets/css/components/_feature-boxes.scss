@@ -36,6 +36,7 @@
     }
 
     @media (max-width: 1024px) {  // Für Tablets
+        padding-bottom: 5rem;
         .container {
             .feature-box-wrapper {
                 gap: 30px;
@@ -58,6 +59,7 @@
     }
 
     @media (max-width: 768px) {  // Für kleinere Tablets und größere Smartphones
+        padding-bottom: 3rem;
         .container {
             .feature-box-wrapper {
                 gap: 30px;
