@@ -11,6 +11,7 @@
     $buttonTwoIcon = get_sub_field('button_two_icon');
     $highlightText = get_sub_field('highlight_text');
     $headline = get_sub_field('headline');
+    $subline = get_sub_field('subline');
     $text = get_sub_field('text');
     $mediaType = get_sub_field('media_type');
     $video = get_sub_field('video');
@@ -27,6 +28,7 @@
     $comingSoon = get_sub_field('coming_soon');
     $fullHeight = get_sub_field('full_height');
     $headlineFontSize = get_sub_field('headline_font_size');
+    $sublineFontSize = get_sub_field('subline_font_size');
 ?>
 <section class="image-content"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>; <?php endif;?>
     <?php if ($textColor): ?>
@@ -74,6 +76,11 @@
                 </span>
             <?php endif;?>
             <h2 <?php if($headlineFontSize):?>style="font-size: <?= $headlineFontSize;?>px"<?php endif;?>><?= $headline; ?></h2>
+            <?php if ($subline): ?>
+                <h3 <?php if($sublineFontSize):?>style="font-size: <?= $sublineFontSize;?>px"<?php endif;?>>
+                    <?= $subline; ?>
+                </h3>
+            <?php endif; ?>
             <span><?= $text; ?></span>
             <?php if( have_rows('list_item')):?>
                 <ul>
