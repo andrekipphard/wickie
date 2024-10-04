@@ -110,6 +110,65 @@
     @media (max-width: 1023px) {
         padding-top: 5rem;
         padding-bottom: 5rem;
+        .market .container .content-wrapper .market-table #market-values-table #market-values-container .market-value .currency img {
+            height: 65px !important;
+            width: auto !important;
+        }
+
+        .container {
+            flex-direction: column;
+            gap: 20px;
+
+            .content-wrapper {
+                padding: 20px;
+
+                .market-table {
+                    #market-values-table {
+                        margin-top: 20px;
+                        th {
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            font-size: 1rem;
+                        }
+                        #market-values-container {
+                            .market-value {
+                                td {
+                                    padding: 10px;
+                                }
+                            }
+                            
+                            .price {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+                            .image {
+                                min-width: 50px;
+                            }
+                        }
+
+                        td {
+                            font-size: 1rem;
+                            padding: 10px;
+
+                        }
+
+                        img {
+                            height: 50px !important;
+                        }
+                    }
+                }
+
+                .controls {
+                    gap: 10px;
+                    margin-top: 20px;
+
+                    .selectors {
+                        gap: 10px;
+                    }
+                }
+            }
+        }
     }
 
     @media (max-width: 768px) {
