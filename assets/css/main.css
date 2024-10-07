@@ -15341,10 +15341,10 @@ textarea.form-control-lg {
   margin-bottom: 20px;
 }
 .icon-boxes .container .icon-boxes-wrapper .icon-box img {
-  height: 50px; /* Set the image height to fill the slide */
-  width: auto; /* Width will adjust to maintain aspect ratio */
+  height: 50px; /* Höhe der Icons */
+  width: auto;
   -o-object-fit: contain;
-     object-fit: contain; /* Maintain aspect ratio and fit the image within the slide */
+     object-fit: contain;
 }
 .icon-boxes .container .icon-boxes-wrapper .icon-box i {
   color: #93E100;
@@ -15352,6 +15352,43 @@ textarea.form-control-lg {
 }
 .icon-boxes .container .has-subline {
   margin-top: 50px;
+}
+@media (max-width: 1024px) {
+  .icon-boxes {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .icon-boxes .container .title {
+    text-align: center;
+  }
+  .icon-boxes .icon-boxes-wrapper .icon-box {
+    flex-basis: calc(50% - 20px) !important;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .icon-boxes {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .icon-boxes .icon-boxes-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .icon-boxes .icon-boxes-wrapper .icon-box {
+    flex-basis: 100% !important;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .icon-boxes .icon-boxes-wrapper .icon-box i {
+    font-size: 2.5rem;
+  }
+  .icon-boxes .icon-boxes-wrapper .icon-box h3, .icon-boxes .icon-boxes-wrapper .icon-box .h3 {
+    font-size: 18px;
+  }
+  .icon-boxes .icon-boxes-wrapper .icon-box span {
+    font-size: 16px;
+  }
 }
 
 .faq {

@@ -1,16 +1,17 @@
 .icon-boxes {
     padding-top: 7rem;
     padding-bottom: 7rem;
+
     .container {
         .title {
-            gap:20px;
+            gap: 20px;
             display: flex;
             flex-direction: column;
             .subline {
                 text-align: center;
             }
         }
-        
+
         .icon-boxes-wrapper {
             display: flex;
             flex-direction: row;
@@ -22,13 +23,13 @@
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                flex-basis: calc(33.333% - 26.66px);
+                flex-basis: calc(33.333% - 26.66px); // Standard für Desktop (3 Boxen pro Zeile)
                 margin-bottom: 20px;
 
                 img {
-                    height: 50px; /* Set the image height to fill the slide */
-                    width: auto;  /* Width will adjust to maintain aspect ratio */
-                    object-fit: contain; /* Maintain aspect ratio and fit the image within the slide */
+                    height: 50px; /* Höhe der Icons */
+                    width: auto;
+                    object-fit: contain;
                 }
 
                 i {
@@ -37,8 +38,56 @@
                 }
             }
         }
+
         .has-subline {
             margin-top: 50px;
+        }
+    }
+
+    // Responsive für Tablets (max-width: 1024px)
+    @media (max-width: 1024px) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        .container {
+            .title {
+                text-align: center;
+            }
+        }
+
+        .icon-boxes-wrapper {
+            .icon-box {
+                flex-basis: calc(50% - 20px)!important; // 2 Boxen pro Zeile
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    // Responsive für Mobilgeräte (max-width: 768px)
+    @media (max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        .icon-boxes-wrapper {
+            flex-direction: column; // Boxen untereinander stapeln
+            align-items: center;    // Zentrieren auf kleineren Bildschirmen
+
+            .icon-box {
+                flex-basis: 100%!important;    // Eine Box pro Zeile
+                text-align: center;  // Text und Icons zentrieren
+                margin-bottom: 20px;
+
+                i {
+                    font-size: 2.5rem; // Kleinere Icons für Mobilgeräte
+                }
+
+                h3 {
+                    font-size: 18px; // Kleinere Schrift für die Headline
+                }
+
+                span {
+                    font-size: 16px; // Kleinere Schrift für den Text
+                }
+            }
         }
     }
 }
