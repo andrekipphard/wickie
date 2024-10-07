@@ -197,8 +197,10 @@
                         flex-wrap: wrap;
                         a {
                             flex-basis: 100%;
+                            display: flex;
+                            justify-content: center;
                             .btn-white {
-                                width: 100%;
+                                width: auto;
                                 display: flex;
                                 justify-content: center;
                             }

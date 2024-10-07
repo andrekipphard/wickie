@@ -13422,9 +13422,11 @@ textarea.form-control-lg {
   }
   .content-card .container .content-wrapper .content .cta a {
     flex-basis: 100%;
+    display: flex;
+    justify-content: center;
   }
   .content-card .container .content-wrapper .content .cta a .btn-white {
-    width: 100%;
+    width: auto;
     display: flex;
     justify-content: center;
   }
