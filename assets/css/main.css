@@ -15219,7 +15219,7 @@ textarea.form-control-lg {
   display: flex;
   align-items: center;
 }
-.image-content .container .image img {
+.image-content .container .image img, .image-content .container .image .video, .image-content .container .image .iframe-container {
   border-radius: 50px;
   width: 100%;
 }
@@ -15244,13 +15244,11 @@ textarea.form-control-lg {
 .image-content .container .content ul {
   list-style: none;
   padding-left: 0;
-  /* Grayed-out coming-soon items */
 }
 .image-content .container .content ul li {
   display: flex;
   flex-direction: row;
   align-items: center;
-  opacity: 1; /* Reset opacity by default */
 }
 .image-content .container .content ul li:not(:last-child) {
   margin-bottom: 10px;
@@ -15263,9 +15261,57 @@ textarea.form-control-lg {
 }
 .image-content .container .content ul .coming-soon {
   position: relative;
-  opacity: 0.5; /* Gray out the text */
-  pointer-events: none; /* Disable interaction */
+  opacity: 0.5;
+  pointer-events: none;
   margin-left: 0;
+}
+@media (max-width: 1024px) {
+  .image-content {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .image-content .container {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+  .image-content .container .image, .image-content .container .content {
+    width: 100%;
+  }
+  .image-content .container .image img, .image-content .container .image .video, .image-content .container .image .iframe-container {
+    border-radius: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .image-content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .image-content .container {
+    gap: 30px;
+    flex-direction: column-reverse;
+  }
+  .image-content .container .image img, .image-content .container .image .video, .image-content .container .image .iframe-container {
+    border-radius: 20px;
+  }
+  .image-content .container .content {
+    gap: 15px;
+  }
+  .image-content .container .content h2, .image-content .container .content .h2 {
+    font-size: 24px;
+  }
+  .image-content .container .content h3, .image-content .container .content .h3 {
+    font-size: 18px;
+  }
+  .image-content .container .content .cta {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .image-content .container .content ul li {
+    font-size: 16px;
+  }
+  .image-content .container .content ul li i {
+    font-size: 20px;
+  }
 }
 
 .icon-boxes {
