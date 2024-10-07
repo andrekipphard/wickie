@@ -5,4 +5,47 @@
     h2 {
         margin-bottom: 50px;
     }
+    @media (max-width: 1024px) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+
+        .container {
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+
+            .highlight {
+                font-size: 1.1rem;
+            }
+
+            span {
+                font-size: 0.9rem;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        .container {
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+            .highlight {
+                font-size: 1rem;
+            }
+
+            span {
+                font-size: 0.85rem;
+            }
+        }
+    }
 }
+
+
+
+
+

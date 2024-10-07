@@ -15935,6 +15935,38 @@ textarea.form-control-lg {
 .headline-subline-text h2, .headline-subline-text .h2 {
   margin-bottom: 50px;
 }
+@media (max-width: 1024px) {
+  .headline-subline-text {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .headline-subline-text .container h2, .headline-subline-text .container .h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .headline-subline-text .container .highlight {
+    font-size: 1.1rem;
+  }
+  .headline-subline-text .container span {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .headline-subline-text {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .headline-subline-text .container h2, .headline-subline-text .container .h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  .headline-subline-text .container .highlight {
+    font-size: 1rem;
+  }
+  .headline-subline-text .container span {
+    font-size: 0.85rem;
+  }
+}
 
 .swiper-slide {
   height: 150px; /* Fixed height for all slides */
