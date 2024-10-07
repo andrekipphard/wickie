@@ -22,6 +22,8 @@ $image = get_sub_field('image');
 $fullHeight = get_sub_field('full_height');
 $isHero = get_sub_field('is_hero');
 $overlayColor = get_sub_field('overlay_color');
+$mobileBackgroundImage = get_sub_field('mobile_background_image');
+$mobileBackgroundImageUrl = $mobileBackgroundImage ? wp_get_attachment_image_url($mobileBackgroundImage, 'large') : '';
 
 // Position Fields
 $positionFields = [
@@ -89,6 +91,12 @@ if (have_rows('margin')) {
         background-repeat: <?= $backgroundImageRepeat ?: 'no-repeat'; ?>;
         background-position: <?= $backgroundImagePosition ?: 'center center'; ?>;
     <?php endif; ?>
+    <?php if ($layout === 'Background Video' && $mobileBackgroundImageUrl): ?>
+        background-image: url('<?= $mobileBackgroundImageUrl; ?>');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    <?php endif;?>
     <?php if ($fullHeight === 'Yes'): ?>
         <?php if (is_front_page() || is_page(2189)): ?>
             <?php if ($isHero == 'Yes'): ?>
@@ -101,8 +109,10 @@ if (have_rows('margin')) {
         display: flex; align-items: center; padding-top:0; padding-bottom:0;
     <?php endif; ?>
 ">
+<div class="video-overlay hide-desktop"></div>
 
     <?php if ($layout === 'Background Video'): ?>
+    
     <div class="video-wrapper">
         <?php if ($videoType === 'Youtube' && $backgroundVideo): ?>
             <iframe class="background-video"
@@ -117,7 +127,7 @@ if (have_rows('margin')) {
             </video>
         <?php endif; ?>
         <?php if ($textLayout === 'Center' || $textLayout === 'With Image'): ?>
-            <div class="video-overlay"></div>
+            <div class="video-overlay hide-mobile"></div>
         <?php endif; ?>
     </div>
     <?php endif; ?>
@@ -195,7 +205,7 @@ if (have_rows('margin')) {
                             $buttonIcon = get_sub_field('button_icon');
                             $buttonIconPosition = get_sub_field('button_icon_position');
                             $buttonStyle = get_sub_field('button_style'); ?>
-                            <a href="<?= $buttonUrl; ?>">
+                            <a href="<?= $buttonUrl; ?>"<?php if ($buttonText): ?> class="has-text"<?php endif; ?>>
                                 <button type="button" class="btn btn-<?= $buttonStyle; ?><?php if (!$buttonText): ?> round<?php endif; ?>">
                                     <?php if ($buttonIconPosition === 'Left'): ?>
                                         <i class="bi bi-<?= $buttonIcon; ?><?php if ($buttonText): ?> margin-right<?php endif; ?>"></i>

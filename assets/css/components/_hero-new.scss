@@ -4,6 +4,18 @@
     position: relative; /* Make the section relative to position its children correctly */
     overflow: hidden; /* Hide any overflowing content */
     justify-content: center;
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--overlay-color, rgba(0, 0, 0, 0.5)); /* Dark overlay with 50% opacity */
+        z-index: 2; /* Ensure overlay is above the video */
+    }
+    .hide-desktop {
+        display:none;
+    }
     .video-wrapper {
         position: absolute; /* Position video absolutely to allow layering */
         top: 0;
@@ -113,6 +125,73 @@
                 }
             }
          
+        }
+    }
+    @media (max-width: 1200px) {
+        .video-wrapper {
+            display: none;
+        }
+        .video-overlay .hide-mobile {
+            display:none;
+        }
+        .hide-desktop {
+            display:block!important;
+        }
+        .container-wrapper {
+            .container {
+                .content-image {
+                    .content {
+                        flex-basis: 100%!important;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        height: auto!important;
+        margin-top: 0px!important;
+        padding-top: 5rem!important;
+        padding-bottom: 5rem!important;
+        .container-wrapper {
+            .container {
+                .content-image {
+                    .content {
+                        flex-basis: 100%!important;
+                        .cta {
+                            .btn {
+                                border-radius: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        padding-top: 3rem!important;
+        padding-bottom: 3rem!important;
+        .container-wrapper {
+            .container {
+                .content-image {
+                    .content {
+                        .cta {
+                            .has-text {
+                                margin-right: 5rem;
+                            }
+                        }
+                        .images {
+                            .image {
+                                flex-basis: calc(50% - 20px)!important;
+                                img {
+                                    height: auto;
+                                    width: auto;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
         }
     }
 
