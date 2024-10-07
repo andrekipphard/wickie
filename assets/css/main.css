@@ -15817,6 +15817,9 @@ textarea.form-control-lg {
   flex-direction: column;
   flex-basis: calc(50% - 20px);
 }
+.contact-form .container .contact-form-form h2, .contact-form .container .contact-form-form .h2 {
+  margin-top: 10px;
+}
 .contact-form .container .contact-form-container {
   margin-top: 20px;
 }
@@ -15831,8 +15834,8 @@ textarea.form-control-lg {
   flex: 1;
   margin-right: 10px;
 }
-.contact-form .container .contact-form-container .form-group-inline .form-group:last-child {
-  margin-right: 0; /* Remove margin from the last item */
+.contact-form .container .contact-form-container .form-group-inline .form-group-inline .form-group:last-child {
+  margin-right: 0;
 }
 .contact-form .container .contact-form-container label {
   display: block;
@@ -15877,6 +15880,52 @@ textarea.form-control-lg {
   padding: 10px;
   border-radius: 20px;
   text-align: center;
+}
+@media (max-width: 1024px) {
+  .contact-form {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .contact-form .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .contact-form .container .contact-form-img {
+    flex-basis: 100%;
+  }
+  .contact-form .container .contact-form-form {
+    flex-basis: 100%;
+  }
+  .contact-form .container .contact-form-form .form-group-inline {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .contact-form {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .contact-form .container .contact-form-img img, .contact-form .container .contact-form-img video {
+    max-width: 100%;
+    height: auto;
+  }
+  .contact-form .container .contact-form-form h2, .contact-form .container .contact-form-form .h2 {
+    font-size: 1.5rem;
+  }
+  .contact-form .container .contact-form-form .highlight {
+    font-size: 1rem;
+  }
+  .contact-form .container .contact-form-form input[type=text],
+  .contact-form .container .contact-form-form input[type=email],
+  .contact-form .container .contact-form-form textarea {
+    font-size: 16px;
+  }
+  .contact-form .container .contact-form-form .submit-btn {
+    font-size: 14px;
+  }
+  .contact-form .container .contact-form-form .success-message {
+    font-size: 14px;
+  }
 }
 
 .headline-subline-text {
