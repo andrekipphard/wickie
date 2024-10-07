@@ -1,22 +1,36 @@
 .faq {
     padding-top: 7rem;
     padding-bottom: 7rem;
+
     .container {
         .title {
             text-align: center;
             margin-bottom: 50px;
+
+            h2 {
+                font-size: 2.5rem; // Standardgröße für die Headline
+            }
+
+            span {
+                font-size: 1.125rem;
+            }
         }
+
         .accordion {
-            .accordion-item, .accordion-button {
+            .accordion-item,
+            .accordion-button {
                 background-color: transparent;
                 border: 0;
             }
+
             .accordion-item {
                 border-bottom: 1px solid #E0E0E7;
             }
+
             .accordion-button:not(.collapsed) {
                 box-shadow: none;
             }
+
             .accordion-button::after {
                 background-color: $secondary;
                 border-radius: 50px;
@@ -28,10 +42,66 @@
                 padding-left: 3px;
                 padding-top: 1px;
             }
+
             .accordion-button {
-                font-size: 1.25rem;
+                font-size: 1.25rem; // Standard für größere Bildschirme
             }
         }
     }
 
+    // Responsive für Tablets (max-width: 1024px)
+    @media (max-width: 1024px) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+
+        .container {
+            .title {
+                h2 {
+                    font-size: 2rem; // Kleinere Headline für Tablets
+                }
+
+                span {
+                    font-size: 1rem; // Kleinere Schriftgröße für den Text
+                }
+            }
+
+            .accordion {
+                .accordion-button {
+                    font-size: 1.125rem; // Anpassung der Schriftgröße für Tablets
+                }
+
+                .accordion-button::after {
+                    font-size: 14px; // Kleinere Icon-Größe für Tablets
+                }
+            }
+        }
+    }
+
+    // Responsive für Mobilgeräte (max-width: 768px)
+    @media (max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        .container {
+            .title {
+                h2 {
+                    font-size: 1.75rem; // Noch kleinere Headline für Mobilgeräte
+                }
+
+                span {
+                    font-size: 0.875rem; // Kleinere Schriftgröße für Mobilgeräte
+                }
+            }
+
+            .accordion {
+                .accordion-button {
+                    font-size: 1rem; // Anpassung der Schriftgröße für Mobilgeräte
+                }
+
+                .accordion-button::after {
+                    font-size: 12px; // Kleinere Icon-Größe für Mobilgeräte
+                }
+            }
+        }
+    }
 }

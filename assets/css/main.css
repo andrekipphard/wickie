@@ -15399,7 +15399,14 @@ textarea.form-control-lg {
   text-align: center;
   margin-bottom: 50px;
 }
-.faq .container .accordion .accordion-item, .faq .container .accordion .accordion-button {
+.faq .container .title h2, .faq .container .title .h2 {
+  font-size: 2.5rem;
+}
+.faq .container .title span {
+  font-size: 1.125rem;
+}
+.faq .container .accordion .accordion-item,
+.faq .container .accordion .accordion-button {
   background-color: transparent;
   border: 0;
 }
@@ -15422,6 +15429,42 @@ textarea.form-control-lg {
 }
 .faq .container .accordion .accordion-button {
   font-size: 1.25rem;
+}
+@media (max-width: 1024px) {
+  .faq {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .faq .container .title h2, .faq .container .title .h2 {
+    font-size: 2rem;
+  }
+  .faq .container .title span {
+    font-size: 1rem;
+  }
+  .faq .container .accordion .accordion-button {
+    font-size: 1.125rem;
+  }
+  .faq .container .accordion .accordion-button::after {
+    font-size: 14px;
+  }
+}
+@media (max-width: 768px) {
+  .faq {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .faq .container .title h2, .faq .container .title .h2 {
+    font-size: 1.75rem;
+  }
+  .faq .container .title span {
+    font-size: 0.875rem;
+  }
+  .faq .container .accordion .accordion-button {
+    font-size: 1rem;
+  }
+  .faq .container .accordion .accordion-button::after {
+    font-size: 12px;
+  }
 }
 
 .get-started {
