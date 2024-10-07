@@ -338,7 +338,29 @@ img {
 .margin-bottom {
     margin-bottom: 7rem !important;
 }
+.full-height {
+    height: calc(100vh - 148px);
+    display: flex;
+    align-items: center;
+    padding-top:0;
+    padding-bottom:0;
+}
+.is-front-page {
+    margin-top: -116px;
+    height: calc(100vh - 32px);
+}
 @media (max-width: 1024px) {
+    .full-height {
+        height: calc(100vh);
+        display: flex;
+        align-items: center;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+    .is-front-page {
+        margin-top: -116px;
+        height: calc(100vh - 32px);
+    }
     .padding-top {
         padding-top: 5rem !important;
     }
@@ -354,6 +376,17 @@ img {
 }
 
 @media (max-width: 768px) {
+    .full-height {
+        height: calc(100vh);
+        display: flex;
+        align-items: center;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    .is-front-page {
+        margin-top: -116px;
+        height: calc(100vh - 32px);
+    }
     .padding-top {
         padding-top: 3rem !important;
     }
