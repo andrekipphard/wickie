@@ -15472,11 +15472,14 @@ textarea.form-control-lg {
   padding-bottom: 14rem;
   text-align: center;
 }
+.get-started .container h2, .get-started .container .h2 {
+  font-size: 2.5rem;
+}
 .get-started .container .get-started-wrapper {
   display: flex;
   margin-top: 50px;
   border-radius: 20px;
-  box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
+  box-shadow: 0px 0px 40px -15px rgba(45, 67, 117, 0.5);
 }
 .get-started .container .get-started-wrapper .left-box, .get-started .container .get-started-wrapper .right-box {
   flex: 0 0 50%;
@@ -15517,6 +15520,67 @@ textarea.form-control-lg {
 }
 .get-started .container .get-started-wrapper .btn {
   margin-top: 10px;
+}
+@media (max-width: 1024px) {
+  .get-started {
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+  }
+  .get-started .container h2, .get-started .container .h2 {
+    font-size: 2rem;
+  }
+  .get-started .container .get-started-wrapper .left-box, .get-started .container .get-started-wrapper .right-box {
+    flex: 0 0 50%;
+    padding: 30px;
+  }
+  .get-started .container .get-started-wrapper .left-box .left-box-icon, .get-started .container .get-started-wrapper .left-box .right-box-icon, .get-started .container .get-started-wrapper .right-box .left-box-icon, .get-started .container .get-started-wrapper .right-box .right-box-icon {
+    font-size: 2.5rem;
+  }
+  .get-started .container .get-started-wrapper .left-box h3, .get-started .container .get-started-wrapper .left-box .h3, .get-started .container .get-started-wrapper .right-box h3, .get-started .container .get-started-wrapper .right-box .h3 {
+    font-size: 1.5rem;
+  }
+  .get-started .container .get-started-wrapper .left-box .btn, .get-started .container .get-started-wrapper .right-box .btn {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .get-started {
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+  }
+  .get-started .container h2, .get-started .container .h2 {
+    font-size: 1.75rem;
+  }
+  .get-started .container .get-started-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .get-started .container .get-started-wrapper .left-box {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .get-started .container .get-started-wrapper .right-box {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  .get-started .container .get-started-wrapper .left-box, .get-started .container .get-started-wrapper .right-box {
+    width: 100%;
+    flex: 0 0 100%;
+    padding: 20px;
+  }
+  .get-started .container .get-started-wrapper .left-box .left-box-icon, .get-started .container .get-started-wrapper .left-box .right-box-icon, .get-started .container .get-started-wrapper .right-box .left-box-icon, .get-started .container .get-started-wrapper .right-box .right-box-icon {
+    font-size: 2rem;
+  }
+  .get-started .container .get-started-wrapper .left-box h3, .get-started .container .get-started-wrapper .left-box .h3, .get-started .container .get-started-wrapper .right-box h3, .get-started .container .get-started-wrapper .right-box .h3 {
+    font-size: 1.25rem;
+  }
+  .get-started .container .get-started-wrapper .left-box .btn, .get-started .container .get-started-wrapper .right-box .btn {
+    font-size: 0.875rem;
+  }
 }
 
 .credit-card-content {
