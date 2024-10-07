@@ -41,11 +41,14 @@ jQuery(document).ready(function() {
     // Toggle between different configurations for desktop and mobile
     function toggleSwiper() {
         if (window.innerWidth <= 767) {
-            swiper.params.slidesPerView = 2;
-            swiper.params.spaceBetween = 20;
+            swiper.params.slidesPerView = 2; // Anzahl der Slides für Handys
+            swiper.params.spaceBetween = 20;  // Abstand für Handys
+        } else if (window.innerWidth <= 1400) {
+            swiper.params.slidesPerView = 4; // Anzahl der Slides für Tablets
+            swiper.params.spaceBetween = 40;  // Abstand für Tablets
         } else {
-            swiper.params.slidesPerView = 6;
-            swiper.params.spaceBetween = 60;
+            swiper.params.slidesPerView = 6; // Anzahl der Slides für Desktops
+            swiper.params.spaceBetween = 60;  // Abstand für Desktops
         }
         swiper.update(); // Update swiper with new params
     }
