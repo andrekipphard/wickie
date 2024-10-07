@@ -14880,6 +14880,50 @@ textarea.form-control-lg {
   flex-basis: calc(33.333% - 13.33px);
   width: calc(33.333% - 13.33px);
 }
+@media (max-width: 1024px) {
+  .services {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .services .container .services-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .services .container .services-wrapper .service {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .services {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  .services .container .services-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .services .container .services-wrapper .service {
+    padding: 20px;
+    width: 100%;
+    flex-basis: 100%;
+  }
+  .services .container .services-wrapper .service h3, .services .container .services-wrapper .service .h3 {
+    font-size: 24px;
+  }
+  .services .container .services-wrapper .service .image img {
+    width: 100%;
+  }
+  .services .container .services-wrapper .service .image video {
+    width: 100%;
+  }
+  .services .container .services-wrapper .service .image iframe {
+    width: 100%;
+  }
+  .services .container .services-wrapper .service button.btn-link {
+    font-size: 16px;
+  }
+}
 
 .banner-boxed {
   padding-top: 7rem;
@@ -14893,6 +14937,7 @@ textarea.form-control-lg {
 }
 .banner-boxed .container .container-wrapper {
   color: #FFFFFF;
+  text-align: center;
   padding: 7rem;
   display: flex;
   flex-direction: column;
@@ -14902,11 +14947,6 @@ textarea.form-control-lg {
   background: no-repeat;
   background-position: right bottom;
   border-radius: 20px;
-}
-.banner-boxed .container .container-wrapper .text {
-  text-align: center;
-  padding-left: 5rem;
-  padding-right: 5rem;
 }
 .banner-boxed .container .container-wrapper .subline {
   display: flex;
@@ -14919,6 +14959,10 @@ textarea.form-control-lg {
 }
 .banner-boxed .container .container-wrapper h2, .banner-boxed .container .container-wrapper .h2 {
   text-align: center;
+}
+.banner-boxed .container .container-wrapper .text {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 .banner-boxed .container .container-wrapper .buttons {
   display: flex;
@@ -14950,37 +14994,61 @@ textarea.form-control-lg {
   top: 40px;
   left: -100px;
 }
-
-.banner-two-buttons {
-  background: linear-gradient(to right, #93E100, #00A6FF);
+@media (max-width: 1024px) {
+  .banner-boxed {
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+  }
+  .banner-boxed .container .container-wrapper {
+    padding: 5rem;
+    gap: 20px;
+  }
+  .banner-boxed .container .container-wrapper .subline {
+    flex-direction: column;
+    text-align: center;
+    font-size: 16px;
+  }
+  .banner-boxed .container .container-wrapper .text {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .banner-boxed .container .container-wrapper .floating {
+    left: -50px;
+    top: 20px;
+    width: 150px;
+  }
 }
-.banner-two-buttons .banner-two-buttons-wrapper {
-  display: flex;
-  gap: 40px;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content {
-  padding-right: 100px;
-  flex: 0 0 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  align-items: flex-start;
-  color: #FFFFFF;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content span {
-  font-size: 18px;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .content .cta {
-  display: flex;
-  gap: 20px;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .images {
-  padding-top: 7rem;
-  display: flex;
-}
-.banner-two-buttons .banner-two-buttons-wrapper .images img {
-  height: 700px;
+@media (max-width: 768px) {
+  .banner-boxed {
+    padding-top: 3rem;
+    padding-bottom: 8rem;
+  }
+  .banner-boxed .container .container-wrapper {
+    padding: 3rem;
+    gap: 15px;
+  }
+  .banner-boxed .container .container-wrapper h2, .banner-boxed .container .container-wrapper .h2 {
+    font-size: 24px;
+  }
+  .banner-boxed .container .container-wrapper .subline {
+    flex-direction: column;
+    text-align: center;
+    font-size: 14px;
+  }
+  .banner-boxed .container .container-wrapper .text {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 16px;
+  }
+  .banner-boxed .container .container-wrapper .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .banner-boxed .container .container-wrapper .floating {
+    left: 0;
+    top: 10px;
+    width: 120px;
+  }
 }
 
 .banner-two-buttons {

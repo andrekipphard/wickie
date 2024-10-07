@@ -1,28 +1,16 @@
 .banner-boxed {
     padding-top: 7rem;
     padding-bottom: 14rem;
+
     .container {
         background: linear-gradient(to right, #93E100, #00A6FF);
         border-radius: 20px;
-        padding:0;
-        box-shadow: 0px 0px 40px -15px rgba(45.99999999999999, 66.99999999999999, 117, 0.5);
-        .container-wrapper {
-            .text {
-                text-align: center;
-                padding-left: 5rem;
-                padding-right: 5rem;
-            }
-            color: #FFFFFF;
-            .subline {
-                display: flex;
-                gap: 10px;
-                font-size: 18px;
+        padding: 0;
+        box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
 
-                .highlight {
-                    display: flex;
-                    align-items: center;
-                }
-            }
+        .container-wrapper {
+            color: #FFFFFF;
+            text-align: center;
             padding: 7rem;
             display: flex;
             flex-direction: column;
@@ -33,37 +21,47 @@
             background-position: right bottom;
             border-radius: 20px;
 
+            .subline {
+                display: flex;
+                gap: 10px;
+                font-size: 18px;
+                .highlight {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
             h2 {
                 text-align: center;
+            }
+
+            .text {
+                padding-left: 5rem;
+                padding-right: 5rem;
             }
 
             .buttons {
                 display: flex;
                 gap: 20px;
                 margin-top: 20px;
-                
-    
+
                 a {
                     display: flex;
-    
-                    .btn-white {
-                        i {
-                            margin-left: 10px;
-                        }
+                    .btn-white i {
+                        margin-left: 10px;
                     }
-    
+
                     .btn-link {
                         color: #FFFFFF;
-    
                         i {
                             background-color: #FFFFFF;
                             color: $primary;
                         }
                     }
+
                     &:hover {
                         .btn-link {
                             color: $secondary;
-        
                             i {
                                 background-color: $secondary;
                                 color: #FFFFFF;
@@ -72,6 +70,7 @@
                     }
                 }
             }
+
             .floating {
                 position: absolute;
                 top: 40px;
@@ -79,38 +78,71 @@
             }
         }
     }
-}
-.banner-two-buttons {
-    background: linear-gradient(to right, #93E100, #00A6FF);
 
-    .banner-two-buttons-wrapper {
-        display: flex;
-        gap: 40px;
+    @media (max-width: 1024px) {
+        padding-top: 5rem;
+        padding-bottom: 10rem;
 
-        .content {
-            padding-right: 100px;
-            flex: 0 0 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 20px;
-            align-items: flex-start;
-            color: #FFFFFF;
-
-            span {
-                font-size: 18px;
-            }
-
-            .cta {
-                display: flex;
+        .container {
+            .container-wrapper {
+                padding: 5rem;
                 gap: 20px;
+
+                .subline {
+                    flex-direction: column;
+                    text-align: center;
+                    font-size: 16px;
+                }
+
+                .text {
+                    padding-left: 3rem;
+                    padding-right: 3rem;
+                }
+
+                .floating {
+                    left: -50px;
+                    top: 20px;
+                    width: 150px;
+                }
             }
         }
-        .images {
-            padding-top: 7rem;
-            display: flex;
-            img {
-                height: 700px;
+    }
+
+    @media (max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 8rem;
+
+        .container {
+            .container-wrapper {
+                padding: 3rem;
+                gap: 15px;
+
+                h2 {
+                    font-size: 24px;
+                }
+
+                .subline {
+                    flex-direction: column;
+                    text-align: center;
+                    font-size: 14px;
+                }
+
+                .text {
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                    font-size: 16px;
+                }
+
+                .buttons {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                .floating {
+                    left: 0;
+                    top: 10px;
+                    width: 120px;
+                }
             }
         }
     }
