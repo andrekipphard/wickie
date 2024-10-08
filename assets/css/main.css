@@ -13426,7 +13426,7 @@ textarea.form-control-lg {
     justify-content: center;
   }
   .content-card .container .content-wrapper .content .cta a .btn-white {
-    width: auto;
+    width: 100%;
     display: flex;
     justify-content: center;
   }
@@ -13851,12 +13851,6 @@ textarea.form-control-lg {
     align-items: center;
     text-align: center;
   }
-  .banner .banner-wrapper .content h2, .banner .banner-wrapper .content .h2 {
-    font-size: 28px;
-  }
-  .banner .banner-wrapper .content span {
-    font-size: 14px;
-  }
   .banner .banner-wrapper .content .cta {
     flex-direction: column;
     gap: 10px;
@@ -13920,9 +13914,6 @@ textarea.form-control-lg {
     align-items: center;
     text-align: center;
   }
-  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content span {
-    font-size: 16px;
-  }
   .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content .cta {
     justify-content: center;
     margin-top: 30px;
@@ -13938,12 +13929,6 @@ textarea.form-control-lg {
     flex-basis: 100%;
     align-items: center;
     text-align: center;
-  }
-  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content h2, .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content .h2 {
-    font-size: 28px;
-  }
-  .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content span {
-    font-size: 14px;
   }
   .banner-two-buttons .banner-two-buttons-wrapper .banner-two-buttons-wrapper .content .cta {
     flex-direction: column;
