@@ -16038,7 +16038,7 @@ textarea.form-control-lg {
 .hero-new .hide-desktop {
   display: none;
 }
-.hero-new .video-wrapper {
+.hero-new .video-wrapper, .hero-new .video-wrapper-mobile {
   position: absolute; /* Position video absolutely to allow layering */
   top: 0;
   left: 0;
@@ -16052,7 +16052,7 @@ textarea.form-control-lg {
   pointer-events: none;
   /* Dark overlay for video */
 }
-.hero-new .video-wrapper .background-video {
+.hero-new .video-wrapper .background-video, .hero-new .video-wrapper-mobile .background-video {
   position: absolute; /* Position video absolutely within its container */
   top: 50%;
   left: 50%;
@@ -16061,7 +16061,7 @@ textarea.form-control-lg {
   z-index: -1; /* Ensure video is behind content */
   width: 100vw;
 }
-.hero-new .video-wrapper .video-overlay {
+.hero-new .video-wrapper .video-overlay, .hero-new .video-wrapper-mobile .video-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -16070,11 +16070,14 @@ textarea.form-control-lg {
   background: var(--overlay-color, rgba(0, 0, 0, 0.5)); /* Dark overlay with 50% opacity */
   z-index: 2; /* Ensure overlay is above the video */
 }
+.hero-new .video-wrapper-mobile {
+  display: none;
+}
 .hero-new .container-wrapper {
+  width: 100%;
   height: calc(100% - 116px);
   display: flex;
   align-items: center;
-  align-self: flex-end;
 }
 .hero-new .container-wrapper .container .content-image {
   display: flex;
@@ -16136,8 +16139,14 @@ textarea.form-control-lg {
   border-radius: 50px;
 }
 @media (max-width: 1200px) {
+  .hero-new .video-wrapper .background-video, .hero-new .video-wrapper-mobile .background-video {
+    height: auto !important;
+  }
   .hero-new .video-wrapper {
     display: none;
+  }
+  .hero-new .video-wrapper-mobile {
+    display: block;
   }
   .hero-new .video-overlay .hide-mobile {
     display: none;
@@ -16151,10 +16160,10 @@ textarea.form-control-lg {
 }
 @media (max-width: 1024px) {
   .hero-new {
-    height: auto !important;
     margin-top: 0px !important;
     padding-top: 5rem !important;
     padding-bottom: 5rem !important;
+    height: auto !important;
   }
   .hero-new .container-wrapper .container .content-image .content {
     flex-basis: 100% !important;
@@ -16172,11 +16181,14 @@ textarea.form-control-lg {
     margin-right: 5rem;
   }
   .hero-new .container-wrapper .container .content-image .content .images .image {
-    flex-basis: calc(50% - 20px) !important;
+    flex-basis: calc(25% - 30px) !important;
   }
   .hero-new .container-wrapper .container .content-image .content .images .image img {
     height: auto;
     width: auto;
+  }
+  .hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .round {
+    padding: 15px;
   }
 }
 
@@ -16413,12 +16425,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: 600;
 }
 
 h2, .h2 {
-  font-size: 26px;
+  font-size: 2.6rem;
   font-weight: 600;
 }
 
@@ -16713,6 +16725,15 @@ img {
   }
 }
 @media (max-width: 768px) {
+  .btn-white, .btn-primary, .btn-secondary {
+    padding: 13px 20px;
+  }
+  .btn-white.round {
+    padding: 15px;
+  }
+  .btn-white.round i {
+    font-size: 20px;
+  }
   .hide-desktop {
     display: block;
   }
@@ -16742,53 +16763,53 @@ img {
 }
 @media (min-width: 576px) {
   h1, .h1 {
-    font-size: 36px;
+    font-size: 3.5rem;
     font-weight: 600;
   }
   h2, .h2 {
-    font-size: 36px;
+    font-size: 3rem;
     font-weight: 600;
   }
 }
 @media (min-width: 768px) {
   h1, .h1 {
-    font-size: 49px;
+    font-size: 4rem;
     font-weight: 600;
   }
   h2, .h2 {
-    font-size: 31px;
+    font-size: 3.5rem;
     font-weight: 600;
   }
 }
 @media (min-width: 992px) {
   h1, .h1 {
-    font-size: 63px;
+    font-size: 5rem;
     font-weight: 600;
   }
   h2, .h2 {
-    font-size: 40px;
+    font-size: 4rem;
     font-weight: 600;
     letter-spacing: -2px;
   }
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 75px;
+    font-size: 5rem;
     font-weight: 600;
   }
   h2, .h2 {
-    font-size: 48px;
+    font-size: 4rem;
     font-weight: 600;
   }
 }
 @media (min-width: 1400px) {
   h1, .h1 {
-    font-size: 88px;
+    font-size: 5.5rem;
     font-weight: 600;
     letter-spacing: -3px;
   }
   h2, .h2 {
-    font-size: 56px;
+    font-size: 4.5rem;
     font-weight: 600;
   }
   h3, .h3 {

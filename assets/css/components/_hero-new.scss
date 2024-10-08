@@ -16,7 +16,7 @@
     .hide-desktop {
         display:none;
     }
-    .video-wrapper {
+    .video-wrapper, .video-wrapper-mobile {
         position: absolute; /* Position video absolutely to allow layering */
         top: 0;
         left: 0;
@@ -49,11 +49,14 @@
         }
         
     }
+    .video-wrapper-mobile {
+        display:none;
+    }
     .container-wrapper {
+        width: 100%;
         height: calc(100% - 116px);
         display: flex;
         align-items: center;
-        align-self: flex-end;
         .container {
             .content-image {
                 display: flex;
@@ -128,8 +131,16 @@
         }
     }
     @media (max-width: 1200px) {
+        .video-wrapper, .video-wrapper-mobile {
+            .background-video {
+                height: auto!important;
+            }
+        }
         .video-wrapper {
             display: none;
+        }
+        .video-wrapper-mobile {
+            display:block;
         }
         .video-overlay .hide-mobile {
             display:none;
@@ -148,10 +159,10 @@
         }
     }
     @media (max-width: 1024px) {
-        height: auto!important;
         margin-top: 0px!important;
         padding-top: 5rem!important;
         padding-bottom: 5rem!important;
+        height: auto!important;
         .container-wrapper {
             .container {
                 .content-image {
@@ -181,10 +192,17 @@
                         }
                         .images {
                             .image {
-                                flex-basis: calc(50% - 20px)!important;
+                                flex-basis: calc(25% - 30px) !important;
                                 img {
                                     height: auto;
                                     width: auto;
+                                }
+                            }
+                        }
+                        .cta.multiple-buttons {
+                            a {
+                                .round {
+                                    padding: 15px;
                                 }
                             }
                         }

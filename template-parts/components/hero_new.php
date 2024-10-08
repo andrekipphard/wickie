@@ -14,6 +14,7 @@ $textLayout = get_sub_field('position_text');
 $layout = get_sub_field('layout');
 $backgroundVideo = get_sub_field('background_video');
 $videoType = get_sub_field('video_type');
+$videoTypeMobile = get_sub_field('video_type_mobile');
 $mediaType = get_sub_field('media_type');
 $video = get_sub_field('video');
 $youtube = get_sub_field('youtube');
@@ -23,6 +24,9 @@ $fullHeight = get_sub_field('full_height');
 $isHero = get_sub_field('is_hero');
 $overlayColor = get_sub_field('overlay_color');
 $mobileBackgroundImage = get_sub_field('mobile_background_image');
+$mobileBackgroundVideo = get_sub_field('mobile_background_video');
+$mobileBackgroundLottie = get_sub_field('mobile_background_lottie');
+$mobileBackgroundType = get_sub_field('mobile_background_type');
 $mobileBackgroundImageUrl = $mobileBackgroundImage ? wp_get_attachment_image_url($mobileBackgroundImage, 'large') : '';
 
 // Position Fields
@@ -81,7 +85,7 @@ if (have_rows('margin')) {
 }
 ?>
 
-<section class="hero-new" style="
+<section class="hero-new<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
     <?php if ($overlayColor): ?>--overlay-color: <?= $overlayColor; ?>;<?php endif; ?>
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
@@ -125,6 +129,25 @@ if (have_rows('margin')) {
             <video autoplay muted loop playsinline class="background-video">
                 <source src="<?= $backgroundVideo; ?>" type="video/mp4">
             </video>
+        <?php endif; ?>
+        <?php if ($textLayout === 'Center' || $textLayout === 'With Image'): ?>
+            <div class="video-overlay hide-mobile"></div>
+        <?php endif; ?>
+    </div>
+    <div class="video-wrapper-mobile">
+        <?php if ($mobileBackgroundType === 'Video' && $videoTypeMobile === 'Youtube' && $mobileBackgroundVideo): ?>
+            <iframe class="background-video"
+                    src="<?= $mobileBackgroundVideo; ?>?autoplay=1&mute=1&loop=1&playlist=<?= basename($mobileBackgroundVideo); ?>&controls=0&modestbranding=1&rel=0&showinfo=0"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen>
+            </iframe>
+        <?php elseif ($mobileBackgroundType === 'Video' && $videoTypeMobile === 'Video' && $mobileBackgroundVideo): ?>
+            <video autoplay muted loop playsinline class="background-video">
+                <source src="<?= $mobileBackgroundVideo; ?>" type="video/mp4">
+            </video>
+        <?php elseif ($mobileBackgroundType === 'Lottie' && $mobileBackgroundLottie): ?>
+            <?= $mobileBackgroundLottie; ?>
         <?php endif; ?>
         <?php if ($textLayout === 'Center' || $textLayout === 'With Image'): ?>
             <div class="video-overlay hide-mobile"></div>
@@ -180,7 +203,7 @@ if (have_rows('margin')) {
                         <?= $subline; ?>
                     </h3>
                 <?php endif; ?>
-
+                <?php if ($text): ?>  
                 <span style="
                     <?php if ($positionText): ?> order: <?= $positionText; ?>; <?php endif; ?>
                     <?php if ($marginTop['text'] || $marginBottom['text']): ?>
@@ -190,7 +213,7 @@ if (have_rows('margin')) {
                 ">
                     <?= $text; ?>
                 </span>
-
+                <?php endif; ?>
                 <?php if (have_rows('buttons')): ?>
                     <div class="cta multiple-buttons" style="
                         <?php if ($positionButtons): ?> order: <?= $positionButtons; ?>; <?php endif; ?>
@@ -205,7 +228,7 @@ if (have_rows('margin')) {
                             $buttonIcon = get_sub_field('button_icon');
                             $buttonIconPosition = get_sub_field('button_icon_position');
                             $buttonStyle = get_sub_field('button_style'); ?>
-                            <a href="<?= $buttonUrl; ?>"<?php if ($buttonText): ?> class="has-text"<?php endif; ?>>
+                            <a href="<?= $buttonUrl; ?>">
                                 <button type="button" class="btn btn-<?= $buttonStyle; ?><?php if (!$buttonText): ?> round<?php endif; ?>">
                                     <?php if ($buttonIconPosition === 'Left'): ?>
                                         <i class="bi bi-<?= $buttonIcon; ?><?php if ($buttonText): ?> margin-right<?php endif; ?>"></i>

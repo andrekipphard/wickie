@@ -93,12 +93,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: 600;
 }
 
 h2 {
-    font-size: 26px;
+    font-size: 2.6rem;
     font-weight: 600; 
 }
 
@@ -382,6 +382,15 @@ img {
 }
 
 @media (max-width: 768px) {
+    .btn-white, .btn-primary, .btn-secondary {
+        padding: 13px 20px;
+    }
+    .btn-white.round {
+        padding: 15px;
+        i {
+            font-size: 20px;
+        }
+    }
 
     .hide-desktop {
         display: block;
@@ -412,58 +421,58 @@ img {
 }
 @include media-breakpoint-up(sm) {
     h1 {
-        font-size: 36px;
+        font-size: 3.5rem;
         font-weight: 600;
     }
     
     h2 {
-        font-size: 36px;
+        font-size: 3rem;
         font-weight: 600; 
     }
 }
 @include media-breakpoint-up(md) {
     h1 {
-        font-size: 49px;
+        font-size: 4rem;
         font-weight: 600;
     }
     
     h2 {
-        font-size: 31px;
+        font-size: 3.5rem;
         font-weight: 600; 
     }
 }
 @include media-breakpoint-up(lg) {
     h1 {
-        font-size: 63px;
+        font-size: 5rem;
         font-weight: 600;
     }
     
     h2 {
-        font-size: 40px;
+        font-size: 4rem;
         font-weight: 600; 
         letter-spacing: -2px;
     }
 }
 @include media-breakpoint-up(xl) {
     h1 {
-        font-size: 75px;
+        font-size: 5rem;
         font-weight: 600;
     }
     
     h2 {
-        font-size: 48px;
+        font-size: 4rem;
         font-weight: 600; 
     }
 }
 @include media-breakpoint-up(xxl) {
     h1 {
-        font-size: 88px;
+        font-size: 5.5rem;
         font-weight: 600;
         letter-spacing: -3px;
     }
     
     h2 {
-        font-size: 56px;
+        font-size: 4.5rem;
         font-weight: 600; 
     }
     h3 {
