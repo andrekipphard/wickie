@@ -63,6 +63,11 @@
         }
     }
 
+    @media (max-width: 1400px) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
     // Media Queries für Tablets
     @media (max-width: 1024px) {
 
@@ -110,6 +115,8 @@
 
     // Media Queries für Mobilgeräte
     @media (max-width: 768px) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
 
         .banner-wrapper {
             flex-direction: column;

@@ -13793,6 +13793,12 @@ textarea.form-control-lg {
   top: -100px;
   left: -100px;
 }
+@media (max-width: 1400px) {
+  .banner {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
 @media (max-width: 1024px) {
   .banner .banner-wrapper {
     flex-direction: column;
@@ -13831,6 +13837,10 @@ textarea.form-control-lg {
   }
 }
 @media (max-width: 768px) {
+  .banner {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
   .banner .banner-wrapper {
     flex-direction: column;
     gap: 20px;
