@@ -76,17 +76,18 @@
         .container {
             flex-direction: column-reverse;
             gap: 50px;
-            .content {
-                h2 {
-                    font-size: 36px!important;
-                }
-            }
 
             .image, .content {
                 width: 100%;
             }
-
+            .content {
+                text-align: center;
+                h2 {
+                    font-size: 2.5rem!important;
+                }
+            }
             .image {
+                
                 img, .video, .iframe-container {
                     border-radius: 30px;
                 }
@@ -111,14 +112,6 @@
             .content {
                 gap: 15px;
 
-                h2 {
-                    font-size: 24px!important;
-                }
-
-                h3 {
-                    font-size: 18px;
-                }
-
                 .cta {
                     flex-direction: column;
                     gap: 20px;
@@ -134,5 +127,14 @@
                 }
             }
         }
+    }
+}
+.image-left {
+    order: 0;
+}
+.image-right {
+    order: 1;
+    @media (max-width: 1024px) {
+        order: 0;
     }
 }
