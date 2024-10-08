@@ -83,10 +83,6 @@
                 text-align: center;
                 padding-bottom: 0rem;
 
-                span {
-                    font-size: 16px;
-                }
-
                 .cta {
                     justify-content: center;
                     margin-top: 30px;
@@ -132,14 +128,6 @@
                 align-items: center;
                 text-align: center;
 
-                h2 {
-                    font-size: 28px; // Schriftgröße für Mobilgeräte
-                }
-
-                span {
-                    font-size: 14px; // Schriftgröße für Mobilgeräte
-                }
-
                 .cta {
                     flex-direction: column;
                     gap: 10px;
@@ -149,7 +137,7 @@
                     width: 100%;
                         button {
                             flex-basis: 100%;
-                            width: 100%; // Buttons füllen die Breite
+                            width: 100%;
                             display: flex;
                                 justify-content: center;
                         }
@@ -169,7 +157,7 @@
                     padding-top: 0;
 
                     img {
-                        width: 100%; // Vollständige Breite
+                        width: 100%;
                     }
                 }
             }

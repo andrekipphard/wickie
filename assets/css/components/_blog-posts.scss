@@ -79,9 +79,6 @@
         }
 
         .title {
-            h2 {
-                font-size: 30px; // Überschrift für Tablets
-            }
             margin-bottom: 30px;
             align-items: center;
             justify-content: center;
@@ -89,17 +86,17 @@
 
         .blog-posts-wrapper {
             .blog-post {
-                flex-basis: calc(50% - 10px); // 2 Spalten
+                flex-basis: calc(50% - 10px);
 
                 .content {
                     .text {
                         .title {
-                            font-size: 24px; // Schriftgröße für Tablets
+                            font-size: 24px;
                             align-items: flex-start;
                         }
                     }
                     .btn-link {
-                        margin-top: 30px; // Reduzierter Abstand
+                        margin-top: 30px;
                     }
                 }
             }
@@ -112,30 +109,27 @@
 
 
         .title {
-            flex-direction: column; // Titel untereinander
+            flex-direction: column;
+            text-align: center;
 
-
-            h2 {
-                font-size: 24px; // Noch kleinere Schriftgröße für Mobilgeräte
-            }
         }
 
         .blog-posts-wrapper {
-            flex-direction: column; // Eine Spalte
+            flex-direction: column;
 
             .blog-post {
-                flex-basis: 100%; // Volle Breite
+                flex-basis: 100%;
 
                 .content {
-                    padding: 20px; // Weniger Polsterung
+                    padding: 20px;
                     .text {
                         .title {
-                            font-size: 20px; // Noch kleinere Schriftgröße
+                            font-size: 20px;
 
                         }
                     }
                     .btn-link {
-                        margin-top: 20px; // Noch kleinerer Abstand
+                        margin-top: 20px;
                     }
                 }
             }
@@ -143,23 +137,17 @@
     }
 
     @media (max-width: 576px) {
-        .title {
-            h2 {
-                font-size: 20px; // Kleinere Schriftgröße
-            }
-        }
-
         .blog-posts-wrapper {
             .blog-post {
                 .content {
-                    padding: 15px; // Minimale Polsterung
+                    padding: 15px;
                     .text {
                         .title {
-                            font-size: 18px; // Kleinste Schriftgröße
+                            font-size: 18px;
                         }
                     }
                     .btn-link {
-                        margin-top: 10px; // Minimale Abstände
+                        margin-top: 10px;
                     }
                 }
             }
