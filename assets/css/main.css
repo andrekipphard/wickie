@@ -14785,15 +14785,6 @@ textarea.form-control-lg {
     flex-basis: 100%;
     align-items: center;
   }
-  .hero-single .container .content-image .content h1, .hero-single .container .content-image .content .h1 {
-    font-size: 32px;
-  }
-  .hero-single .container .content-image .content h3, .hero-single .container .content-image .content .h3 {
-    font-size: 18px;
-  }
-  .hero-single .container .content-image .content span {
-    font-size: 14px;
-  }
   .hero-single .container .content-image .image {
     flex-basis: 100%;
   }
