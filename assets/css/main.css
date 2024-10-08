@@ -12943,6 +12943,8 @@ textarea.form-control-lg {
 .feature-cards {
   padding-top: 7rem;
   padding-bottom: 7rem;
+  /* Tablet - Anpassung */
+  /* Mobile - Anpassung */
 }
 .feature-cards .container .text {
   display: flex;
@@ -12987,8 +12989,6 @@ textarea.form-control-lg {
   display: flex;
   justify-content: center;
 }
-
-/* Tablet - Anpassung */
 @media (max-width: 1023px) {
   .feature-cards {
     padding-top: 5rem;
@@ -13001,7 +13001,6 @@ textarea.form-control-lg {
     font-size: 25px; /* Kleinere Schriftgröße auf Tablets */
   }
 }
-/* Mobile - Anpassung */
 @media (max-width: 767px) {
   .feature-cards {
     padding-top: 3rem;
@@ -13019,7 +13018,11 @@ textarea.form-control-lg {
   .feature-cards .container .content-boxes .content-box .content .title {
     font-size: 20px; /* Noch kleinere Schriftgröße auf Mobilgeräten */
   }
+  .feature-cards .container .content-boxes .content-box .image img {
+    width: 200px;
+  }
 }
+
 .popular-services {
   padding-top: 7rem;
   padding-bottom: 7rem;
@@ -13104,6 +13107,10 @@ textarea.form-control-lg {
   .popular-services .content-boxes {
     flex-direction: column;
     gap: 20px;
+  }
+  .popular-services .content-boxes .image {
+    height: 200px;
+    overflow: hidden;
   }
   .popular-services .content-boxes .content-box {
     flex-basis: 100%;
@@ -15378,6 +15385,8 @@ textarea.form-control-lg {
   padding-top: 2px;
 }
 .faq .container .accordion .accordion-button {
+  padding-left: 0px;
+  padding-right: 0px;
   font-size: 1.25rem;
 }
 @media (max-width: 1024px) {
@@ -16611,6 +16620,11 @@ img {
 
 .accordion-button:not(.collapsed)::after {
   padding-left: 2.5px !important;
+}
+
+.accordion-item:last-of-type {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 @media (max-width: 1024px) {

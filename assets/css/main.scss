@@ -355,6 +355,10 @@ img {
 .accordion-button:not(.collapsed)::after {
     padding-left: 2.5px!important;
 }
+.accordion-item:last-of-type {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
 @media (max-width: 1024px) {
     .full-height {
         height: auto;

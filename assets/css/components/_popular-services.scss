@@ -99,6 +99,11 @@
             flex-direction: column;
             gap: 20px;
 
+            .image {
+                height: 200px;
+                overflow: hidden;
+            }
+
             .content-box {
                 flex-basis: 100%; // 1 Spalte
             }

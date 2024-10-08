@@ -54,10 +54,8 @@
             }
         }
     }
-}
-/* Tablet - Anpassung */
-@media (max-width: 1023px) {
-    .feature-cards {
+    /* Tablet - Anpassung */
+    @media (max-width: 1023px) {
         padding-top: 5rem;
         padding-bottom: 5rem;
         .container {
@@ -72,12 +70,10 @@
                 }
             }
         }
-    }
 
-}
-/* Mobile - Anpassung */
-@media (max-width: 767px) {
-    .feature-cards {
+    }
+    /* Mobile - Anpassung */
+    @media (max-width: 767px) {
         padding-top: 3rem;
         padding-bottom: 3rem;
         .container {
@@ -93,11 +89,17 @@
                             font-size: 20px; /* Noch kleinere Schriftgröße auf Mobilgeräten */
                         }
                     }
+                    .image {
+                        img {
+                            width: 200px;
+                        }
+                    }
                 }
             }
         }
+
+
+
     }
-
-
-
 }
+
