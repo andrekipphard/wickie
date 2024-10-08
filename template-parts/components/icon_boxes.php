@@ -16,7 +16,7 @@
     $text = get_sub_field('text');
     $fullHeight = get_sub_field('full_height');
 ?>
-<section class="icon-boxes" style="<?php if($backgroundColor):?>background: <?= $backgroundColor; ?>;<?php endif;?>    <?php if ($textColor): ?>
+<section class="icon-boxes<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="<?php if($backgroundColor):?>background: <?= $backgroundColor; ?>;<?php endif;?>    <?php if ($textColor): ?>
         color: <?= $textColor; ?>;
     <?php endif; ?>
     <?php if ($backgroundImageUrl): ?>
@@ -24,10 +24,6 @@
         background-size: <?= $backgroundImageSize ? $backgroundImageSize : 'cover'; ?>;
         background-repeat: <?= $backgroundImageRepeat ? $backgroundImageRepeat : 'no-repeat'; ?>;
         background-position: <?= $backgroundImagePosition ? $backgroundImagePosition : 'center center'; ?>;
-    <?php endif; ?>
-    <?php if ($fullHeight === 'Yes'): ?>
-        height: 100vh;
-        display: flex; align-items: center; padding-top:0; padding-bottom:0;
     <?php endif; ?>">
     <div class="container">
         <div class="title" <?php if($alignHeadline == 'Center'):?>style="align-items: center;"<?php endif;?><?php if($alignHeadline == 'Right'):?>style="align-items: end;"<?php endif;?>>

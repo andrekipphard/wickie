@@ -4,12 +4,7 @@
     $subline = get_sub_field('subline');
     $fullHeight = get_sub_field('full_height');
 ?>
-<section class="contact-info" style="
-    <?php if ($fullHeight === 'Yes'): ?>
-        height: 100vh;
-        display: flex; align-items: center; padding-top:0; padding-bottom:0;
-    <?php endif; ?>
-    ">
+<section class="contact-info<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>">
     <div class="container">
         <div class="contact-info-map">
         <?php if ($map): ?>

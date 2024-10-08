@@ -18,11 +18,7 @@
     $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
     $fullHeight = get_sub_field('full_height');
 ?>
-<section class="content-card <?= $layout == 'List' ? 'content-card-list' : ''; ?>" style="
-    <?php if ($fullHeight === 'Yes'): ?>
-        height: 100vh;
-        display: flex; align-items: center; padding-top:0; padding-bottom:0;
-    <?php endif; ?>
+<section class="content-card <?= $layout == 'List' ? 'content-card-list' : ''; ?><?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
     <?php if ($textColor): ?>
         color: <?= $textColor; ?>;
     <?php endif; ?>

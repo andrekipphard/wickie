@@ -9,13 +9,9 @@
     $textColor = get_sub_field('text_color');
     $fullHeight = get_sub_field('full_height');
 ?>
-<section class="banner-boxed" style="
+<section class="banner-boxed<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
-    <?php if ($fullHeight === 'Yes'): ?>
-        height: 100vh;
-        display: flex; align-items: center; padding-top:0; padding-bottom:0;
-    <?php endif; ?>
     ">
     <div class="container">
         <div class="container-wrapper" style="background-image: url('<?= wp_get_attachment_image_url($image, 'large');?>;">

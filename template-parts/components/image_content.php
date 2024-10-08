@@ -30,7 +30,7 @@
     $headlineFontSize = get_sub_field('headline_font_size');
     $sublineFontSize = get_sub_field('subline_font_size');
 ?>
-<section class="image-content"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>; <?php endif;?>
+<section class="image-content<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>; <?php endif;?>
     <?php if ($textColor): ?>
         color: <?= $textColor; ?>;
     <?php endif; ?>
@@ -39,10 +39,6 @@
         background-size: <?= $backgroundImageSize ? $backgroundImageSize : 'cover'; ?>;
         background-repeat: <?= $backgroundImageRepeat ? $backgroundImageRepeat : 'no-repeat'; ?>;
         background-position: <?= $backgroundImagePosition ? $backgroundImagePosition : 'center center'; ?>;
-    <?php endif; ?>
-    <?php if ($fullHeight === 'Yes'): ?>
-        height: 100vh;
-        display: flex; align-items: center; padding-top:0; padding-bottom:0;
     <?php endif; ?>
 ">
     <?php if ($comingSoon == 'Yes'): ?>

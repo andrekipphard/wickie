@@ -19,11 +19,7 @@
     // Get the URL of the background image
     $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
 ?>
-<section class="faq" id="faq-<?= $headlineId; ?>-<?= $uniqueId; ?>" style="
-    <?php if ($fullHeight === 'Yes'): ?>
-        height: 100vh;
-        display: flex; align-items: center; padding-top:0; padding-bottom:0;
-    <?php endif; ?>
+<section class="faq<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" id="faq-<?= $headlineId; ?>-<?= $uniqueId; ?>" style="
     <?php if ($textColor): ?>
         color: <?= $textColor; ?>;
     <?php endif; ?>

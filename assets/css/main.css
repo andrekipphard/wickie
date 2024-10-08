@@ -15284,6 +15284,9 @@ textarea.form-control-lg {
     flex-direction: column-reverse;
     gap: 50px;
   }
+  .image-content .container .content h2, .image-content .container .content .h2 {
+    font-size: 36px !important;
+  }
   .image-content .container .image, .image-content .container .content {
     width: 100%;
   }
@@ -15307,7 +15310,7 @@ textarea.form-control-lg {
     gap: 15px;
   }
   .image-content .container .content h2, .image-content .container .content .h2 {
-    font-size: 24px;
+    font-size: 24px !important;
   }
   .image-content .container .content h3, .image-content .container .content .h3 {
     font-size: 18px;
@@ -16259,7 +16262,7 @@ textarea.form-control-lg {
   align-items: center;
   width: 150px;
   height: 150px;
-  /* The circle background using ::before */
+  flex-basis: calc(30% - 30px);
 }
 .team .team-members .team-member .team-member-image img {
   border-radius: 50%;
@@ -16280,8 +16283,92 @@ textarea.form-control-lg {
   border-radius: 50%;
   background-color: var(--team-member-color);
   z-index: 0;
-  transform: translate(var(--x-position, 0), var(--y-position, 0)); /* Fallback for transform */
+  transform: translate(var(--x-position, 0), var(--y-position, 0));
   transition: transform 0.3s ease;
+}
+.team .team-members .team-member .team-member-information {
+  flex-basis: calc(70% - 30px);
+}
+@media (max-width: 1400px) {
+  .team .team-members .team-member .team-member-image img {
+    width: 125px;
+    height: 125px;
+  }
+}
+@media (max-width: 1200px) {
+  .team .team-members .team-member .team-member-image::before {
+    transform: translate(min(var(--x-position, 0), 50px), var(--y-position, 0));
+  }
+  .team .team-members .team-member .team-member-image img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 1024px) {
+  .team {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .team .team-members {
+    gap: 60px;
+  }
+  .team .team-members .team-member {
+    flex-basis: calc(50% - 30px);
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+  .team .team-members .team-member .team-member-image {
+    width: 120px;
+    height: 120px;
+  }
+  .team .team-members .team-member .team-member-image::before {
+    transform: translate(var(--x-position, 0), min(var(--y-position, 0), 50px));
+  }
+  .team .team-members .team-member .team-member-image img {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (max-width: 768px) {
+  .team {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .team .text {
+    margin-bottom: 40px;
+  }
+  .team .text .subline {
+    font-size: 16px;
+  }
+  .team .text h2, .team .text .h2 {
+    font-size: 1.75rem;
+  }
+  .team .team-members {
+    gap: 40px;
+  }
+  .team .team-members .team-member {
+    gap: 30px;
+  }
+  .team .team-members .team-member .team-member-image {
+    width: 100px;
+    height: 100px;
+  }
+  .team .team-members .team-member .team-member-image::before {
+    transform: translate(var(--x-position, 0), min(var(--y-position, 0), 20px));
+  }
+  .team .team-members .team-member .team-member-image img {
+    width: 100px;
+    height: 100px;
+  }
+  .team .team-members .team-member h4, .team .team-members .team-member .h4 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .team .team-members .team-member {
+    flex-basis: 100%;
+  }
 }
 
 #page {

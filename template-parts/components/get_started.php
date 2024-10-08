@@ -12,11 +12,7 @@
     $textColor = get_sub_field('text_color');
     $fullHeight = get_sub_field('full_height');
 ?>
-<section class="get-started" style="
-    <?php if ($fullHeight === 'Yes'): ?>
-        height: 100vh;
-        display: flex; align-items: center; padding-top:0; padding-bottom:0;
-    <?php endif; ?>
+<section class="get-started<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
     ">

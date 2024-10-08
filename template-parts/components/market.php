@@ -6,13 +6,9 @@
     $textColor = get_sub_field('text_color');
     $fullHeight = get_sub_field('full_height');
 ?>
-<section class="market" style="
+<section class="market<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
-    <?php if ($fullHeight === 'Yes'): ?>
-        height: 100vh;
-        display: flex; align-items: center; padding-top:0; padding-bottom:0;
-    <?php endif; ?>
     ">
     <div class="container">
         <div class="content-wrapper">
