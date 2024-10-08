@@ -8,6 +8,7 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 50px;
+            text-align: center;
 
             .subline {
                 display: flex;
@@ -92,13 +93,6 @@
         .container {
             .text {
                 margin-bottom: 30px;
-                .subline {
-                    font-size: 16px;
-                }
-
-                h2 {
-                    font-size: 28px; // Optional: für Tablets anpassen
-                }
             }
 
             #testimonial-slider {
@@ -108,9 +102,9 @@
                         padding-left: 30px;
 
                         .carousel-content {
-                            padding: 70px; // Reduzierte Polsterung
+                            padding: 70px;
                             span {
-                                font-size: 24px; // Reduzierte Schriftgröße
+                                font-size: 24px;
                             }
                         }
                     }
@@ -124,16 +118,6 @@
         padding-bottom: 3rem;
 
         .container {
-            .text {
-                .subline {
-                    font-size: 14px; // Kleinere Schriftgröße
-                }
-
-                h2 {
-                    font-size: 24px; // Kleinere Überschrift
-                }
-            }
-
             #testimonial-slider {
                 .carousel-inner {
                     .carousel-item {
@@ -141,19 +125,16 @@
                         padding-left: 20px;
 
                         .carousel-content {
-                            padding: 50px; // Weiter reduzierte Polsterung
+                            padding: 50px;
                             span {
-                                font-size: 22px; // Kleinere Schriftgröße
+                                font-size: 22px;
                             }
 
                             .testimonial-author {
-                                margin-top: 30px; // Reduzierter Abstand
-                                span {
-                                    font-size: 14px; // Kleinere Schriftgröße
-                                }
+                                margin-top: 30px;
                                 img {
-                                    width: 40px; // Kleinere Bildgröße
-                                    height: 40px; // Kleinere Bildgröße
+                                    width: 40px;
+                                    height: 40px;
                                 }
                             }
                         }
@@ -173,16 +154,6 @@
     @media (max-width: 576px) {
 
         .container {
-            .text {
-                .subline {
-                    font-size: 12px; // Noch kleinere Schriftgröße
-                }
-
-                h2 {
-                    font-size: 20px; // Noch kleinere Überschrift
-                }
-            }
-
             #testimonial-slider {
                 .carousel-inner {
                     .carousel-item {
@@ -190,19 +161,13 @@
                         padding-left: 10px;
 
                         .carousel-content {
-                            padding: 30px; // Minimale Polsterung
-                            span {
-                                font-size: 20px; // Minimale Schriftgröße
-                            }
+                            padding: 30px;
 
                             .testimonial-author {
-                                margin-top: 20px; // Minimale Abstand
-                                span {
-                                    font-size: 12px; // Minimale Schriftgröße
-                                }
+                                margin-top: 20px;
                                 img {
-                                    width: 30px; // Noch kleinere Bildgröße
-                                    height: 30px; // Noch kleinere Bildgröße
+                                    width: 30px; 
+                                    height: 30px; 
                                 }
                             }
                         }

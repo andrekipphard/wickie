@@ -13950,6 +13950,7 @@ textarea.form-control-lg {
   flex-direction: column;
   align-items: center;
   margin-bottom: 50px;
+  text-align: center;
 }
 .testimonials .container .text .subline {
   display: flex;
@@ -14019,12 +14020,6 @@ textarea.form-control-lg {
   .testimonials .container .text {
     margin-bottom: 30px;
   }
-  .testimonials .container .text .subline {
-    font-size: 16px;
-  }
-  .testimonials .container .text h2, .testimonials .container .text .h2 {
-    font-size: 28px;
-  }
   .testimonials .container #testimonial-slider .carousel-inner .carousel-item {
     padding-right: 30px;
     padding-left: 30px;
@@ -14041,12 +14036,6 @@ textarea.form-control-lg {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
-  .testimonials .container .text .subline {
-    font-size: 14px;
-  }
-  .testimonials .container .text h2, .testimonials .container .text .h2 {
-    font-size: 24px;
-  }
   .testimonials .container #testimonial-slider .carousel-inner .carousel-item {
     padding-right: 20px;
     padding-left: 20px;
@@ -14060,9 +14049,6 @@ textarea.form-control-lg {
   .testimonials .container #testimonial-slider .carousel-inner .carousel-item .carousel-content .testimonial-author {
     margin-top: 30px;
   }
-  .testimonials .container #testimonial-slider .carousel-inner .carousel-item .carousel-content .testimonial-author span {
-    font-size: 14px;
-  }
   .testimonials .container #testimonial-slider .carousel-inner .carousel-item .carousel-content .testimonial-author img {
     width: 40px;
     height: 40px;
@@ -14075,12 +14061,6 @@ textarea.form-control-lg {
   }
 }
 @media (max-width: 576px) {
-  .testimonials .container .text .subline {
-    font-size: 12px;
-  }
-  .testimonials .container .text h2, .testimonials .container .text .h2 {
-    font-size: 20px;
-  }
   .testimonials .container #testimonial-slider .carousel-inner .carousel-item {
     padding-right: 10px;
     padding-left: 10px;
@@ -14088,14 +14068,8 @@ textarea.form-control-lg {
   .testimonials .container #testimonial-slider .carousel-inner .carousel-item .carousel-content {
     padding: 30px;
   }
-  .testimonials .container #testimonial-slider .carousel-inner .carousel-item .carousel-content span {
-    font-size: 20px;
-  }
   .testimonials .container #testimonial-slider .carousel-inner .carousel-item .carousel-content .testimonial-author {
     margin-top: 20px;
-  }
-  .testimonials .container #testimonial-slider .carousel-inner .carousel-item .carousel-content .testimonial-author span {
-    font-size: 12px;
   }
   .testimonials .container #testimonial-slider .carousel-inner .carousel-item .carousel-content .testimonial-author img {
     width: 30px;
