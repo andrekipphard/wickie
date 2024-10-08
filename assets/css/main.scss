@@ -354,7 +354,7 @@ img {
 }
 @media (max-width: 1024px) {
     .full-height {
-        height: calc(100vh);
+        height: auto;
         display: flex;
         align-items: center;
         padding-top: 5rem;
@@ -387,7 +387,7 @@ img {
         display: block;
     }
     .full-height {
-        height: calc(100vh);
+        height: auto;
         display: flex;
         align-items: center;
         padding-top: 3rem;
