@@ -59,7 +59,6 @@
                                         ?>
                                             <?php if ($subSubMenuItemComingSoon === 'Nein'): ?><li>
                                                 <a href="<?= $subSubMenuItemUrl; ?>" <?php if ($subSubMenuItemNewTab === 'Ja'): ?> target="_blank"<?php endif; ?>>
-                                                    <i class="bi bi-chevron-right"></i>
                                                     <?= $subSubMenuItemName; ?>
                                                     
                                                     <?php if ($subSubMenuItemComingSoon === 'Ja'): ?>

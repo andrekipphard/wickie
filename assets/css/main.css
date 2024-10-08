@@ -12547,6 +12547,9 @@ textarea.form-control-lg {
   font-size: 30px;
   color: #FFFFFF;
   cursor: pointer;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: -9px;
 }
 .header-mobile .mobile-nav-menu .mobile-nav-menu-body {
   height: 100%;
