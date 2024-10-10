@@ -1,9 +1,18 @@
 .headline-subline-text {
     padding-top: 7rem;
     padding-bottom: 7rem;
+    text-align: var(--text-position);
+    .cta {
+        margin-top: 20px;
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        flex-wrap: wrap;
 
-    h2 {
-        margin-bottom: 50px;
+        a:hover .btn-white {
+            background-color: $secondary;
+            border: 1px solid $secondary;
+        }
     }
     @media (max-width: 1024px) {
         padding-top: 5rem;
@@ -12,7 +21,7 @@
         .container {
             h2 {
                 font-size: 2rem;
-                margin-bottom: 30px;
+                
             }
 
             .highlight {
@@ -21,6 +30,9 @@
 
             span {
                 font-size: 0.9rem;
+            }
+            .cta {
+                justify-content: center;
             }
         }
     }
@@ -31,7 +43,7 @@
         .container {
             h2 {
                 font-size: 1.5rem;
-                margin-bottom: 20px;
+                
             }
 
             .highlight {
@@ -40,6 +52,10 @@
 
             span {
                 font-size: 0.85rem;
+            }
+            .cta {
+                flex-direction: column;
+                gap: 20px;
             }
         }
     }

@@ -15910,9 +15910,18 @@ textarea.form-control-lg {
 .headline-subline-text {
   padding-top: 7rem;
   padding-bottom: 7rem;
+  text-align: var(--text-position);
 }
-.headline-subline-text h2, .headline-subline-text .h2 {
-  margin-bottom: 50px;
+.headline-subline-text .cta {
+  margin-top: 20px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.headline-subline-text .cta a:hover .btn-white {
+  background-color: #93E100;
+  border: 1px solid #93E100;
 }
 @media (max-width: 1024px) {
   .headline-subline-text {
@@ -15921,13 +15930,15 @@ textarea.form-control-lg {
   }
   .headline-subline-text .container h2, .headline-subline-text .container .h2 {
     font-size: 2rem;
-    margin-bottom: 30px;
   }
   .headline-subline-text .container .highlight {
     font-size: 1.1rem;
   }
   .headline-subline-text .container span {
     font-size: 0.9rem;
+  }
+  .headline-subline-text .container .cta {
+    justify-content: center;
   }
 }
 @media (max-width: 768px) {
@@ -15937,13 +15948,16 @@ textarea.form-control-lg {
   }
   .headline-subline-text .container h2, .headline-subline-text .container .h2 {
     font-size: 1.5rem;
-    margin-bottom: 20px;
   }
   .headline-subline-text .container .highlight {
     font-size: 1rem;
   }
   .headline-subline-text .container span {
     font-size: 0.85rem;
+  }
+  .headline-subline-text .container .cta {
+    flex-direction: column;
+    gap: 20px;
   }
 }
 
