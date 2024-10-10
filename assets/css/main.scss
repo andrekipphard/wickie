@@ -368,7 +368,15 @@ img {
 .padding-right-zero {
     padding-right: 0px;
 }
+.padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
 @media (max-width: 1024px) {
+    .padding {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
     .full-height {
         height: auto;
         display: flex;
@@ -398,6 +406,10 @@ img {
 }
 
 @media (max-width: 768px) {
+    .padding {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
     .btn-white, .btn-primary, .btn-secondary {
         padding: 13px 20px;
     }

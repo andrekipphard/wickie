@@ -30,8 +30,9 @@
     $headlineFontSize = get_sub_field('headline_font_size');
     $sublineFontSize = get_sub_field('subline_font_size');
     $stretchedImage = get_sub_field('stretched_image');
+    $padding = get_sub_field('padding');
 ?>
-<section class="image-content<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>; <?php endif;?>
+<section class="image-content<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?><?php if($padding === 'Yes'):?> padding<?php endif;?>"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>; <?php endif;?>
     <?php if ($textColor): ?>
         color: <?= $textColor; ?>;
     <?php endif; ?>

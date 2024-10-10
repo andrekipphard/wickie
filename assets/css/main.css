@@ -15164,10 +15164,6 @@ textarea.form-control-lg {
   }
 }
 
-.image-content {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-}
 .image-content .container, .image-content .container.image-content-wrapper {
   display: flex;
   flex-direction: row;
@@ -16691,7 +16687,16 @@ img {
   padding-right: 0px;
 }
 
+.padding {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
 @media (max-width: 1024px) {
+  .padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
   .full-height {
     height: auto;
     display: flex;
@@ -16720,6 +16725,10 @@ img {
   }
 }
 @media (max-width: 768px) {
+  .padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
   .btn-white, .btn-primary, .btn-secondary {
     padding: 13px 20px;
   }
