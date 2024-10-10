@@ -18,13 +18,14 @@
     $subline = get_sub_field('subline');
     $text = get_sub_field('text');
     $imageWidth = get_sub_field('image_width');
+    $imagePosition = get_sub_field('image_position');
 ?>
 <section class="contact-form<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
     ">
     <div class="container">
-        <div class="contact-form-img"<?php if ($imageWidth): ?> style="--image-width: <?= $imageWidth; ?>;"<?php endif; ?>>
+        <div class="contact-form-img"<?php if ($imageWidth || $imagePosition): ?> style="<?php if($imageWidth):?>--image-width: <?= $imageWidth; ?>;<?php endif;?><?php if($imagePosition):?>--image-position:<?php if($imagePosition === 'Top'):?> flex-start;<?php endif; ?><?php if($imagePosition === 'Center'):?> center;<?php endif; ?><?php if($imagePosition === 'Bottom'):?> flex-end;<?php endif; ?><?php endif;?>"<?php endif; ?>>
             <?php if($mediaType === 'Image'):?>
                 <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>">
             <?php endif;?>

@@ -15778,7 +15778,7 @@ textarea.form-control-lg {
   flex-basis: calc(50% - 20px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: var(--image-position);
 }
 .contact-form .container .contact-form-img img {
   width: var(--image-width);
@@ -15866,6 +15866,11 @@ textarea.form-control-lg {
   }
   .contact-form .container .contact-form-img {
     flex-basis: 100%;
+    align-items: center;
+  }
+  .contact-form .container .contact-form-img img {
+    width: 100%;
+    height: auto;
   }
   .contact-form .container .contact-form-form {
     flex-basis: 100%;
