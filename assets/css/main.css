@@ -15231,6 +15231,9 @@ textarea.form-control-lg {
     max-width: 100%;
     flex-wrap: nowrap;
   }
+  .image-content .container.image-content-wrapper .image img {
+    border-radius: 0px;
+  }
   .image-content .container.image-content-wrapper .content {
     max-width: 550px;
   }
@@ -15255,6 +15258,9 @@ textarea.form-control-lg {
   }
   .image-content .container .content h2, .image-content .container .content .h2, .image-content .container.image-content-wrapper .content h2 {
     font-size: 2.5rem !important;
+  }
+  .image-content .container .content .cta, .image-content .container.image-content-wrapper .content .cta {
+    justify-content: center;
   }
   .image-content .container .image img, .image-content .container .image .video, .image-content .container .image .iframe-container, .image-content .container.image-content-wrapper .image img, .image-content .container.image-content-wrapper .image .video, .image-content .container.image-content-wrapper .image .iframe-container {
     border-radius: 30px;
@@ -16652,6 +16658,14 @@ img {
 
 .margin-left-auto {
   margin-left: auto;
+}
+
+.padding-left-zero {
+  padding-left: 0px;
+}
+
+.padding-right-zero {
+  padding-right: 0px;
 }
 
 @media (max-width: 1024px) {

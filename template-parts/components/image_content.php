@@ -47,7 +47,7 @@
             <div class="overlay-text">COMING SOON</div>
         </div>
     <?php endif;?>
-    <div class="<?php if ($stretchedImage == 'Yes'): ?>image-content-wrapper <?php endif;?>container">
+    <div class="<?php if ($stretchedImage == 'Yes'): ?>image-content-wrapper <?php endif;?><?php if ($layout == 'Image Left' && $stretchedImage == 'Yes'): ?>padding-left-zero <?php endif;?><?php if ($layout == 'Image Right' && $stretchedImage == 'Yes'): ?>padding-right-zero <?php endif;?>container">
         <div class="image<?php if($layout == 'Image Left'):?> image-left<?php endif;?><?php if($layout == 'Image Right'):?> image-right<?php endif;?>">
                 <?php if($mediaType === 'Image'):?>
                     <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>">

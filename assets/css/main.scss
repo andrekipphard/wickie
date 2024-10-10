@@ -362,6 +362,12 @@ img {
 .margin-left-auto {
     margin-left: auto;
 }
+.padding-left-zero {
+    padding-left: 0px;
+}
+.padding-right-zero {
+    padding-right: 0px;
+}
 @media (max-width: 1024px) {
     .full-height {
         height: auto;

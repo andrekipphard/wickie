@@ -76,6 +76,11 @@
             margin-left: 0;
             max-width: 100%;
             flex-wrap: nowrap;
+            .image {
+                img {
+                    border-radius: 0px;
+                }
+            }
     
             .content {
                 max-width: 550px;
@@ -103,6 +108,9 @@
                 }
                 h2 {
                     font-size: 2.5rem!important;
+                }
+                .cta {
+                    justify-content: center;
                 }
             }
             .image {

@@ -19,10 +19,12 @@
                 </span>
                 <h2><?= $headline; ?></h2>
                 <span><?= $text; ?></span>
+                <?php if($buttonText):?>
                 <button type="button" class="btn btn-white">
                     <?= $buttonText; ?>
                     <i class="bi bi-arrow-right"></i>
                 </button>
+                <?php endif;?>
             </div>
         </a>
     </div>
