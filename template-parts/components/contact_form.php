@@ -15,35 +15,48 @@
     $backgroundColor = get_sub_field('background_color');
     $textColor = get_sub_field('text_color');
     $fullHeight = get_sub_field('full_height');
+    $subline = get_sub_field('subline');
+    $text = get_sub_field('text');
+    $imageWidth = get_sub_field('image_width');
 ?>
 <section class="contact-form<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
     ">
     <div class="container">
-        <div class="contact-form-img">
+        <div class="contact-form-img"<?php if ($imageWidth): ?> style="--image-width: <?= $imageWidth; ?>;"<?php endif; ?>>
             <?php if($mediaType === 'Image'):?>
                 <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>">
-                <?php endif;?>
-                <?php if($mediaType === 'Video'):?>
-                    <video controls autoplay muted preload="metadata" class="video">
-                        <source src="<?= $video; ?>" type="video/mp4">
-                    </video>
-                <?php endif;?>
-                <?php if($mediaType === 'Youtube'):?>
-                    <div class="iframe-container">
-                        <iframe src="<?= $youtube; ?>?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                <?php endif;?>
-                <?php if($mediaType === 'Lottie'):?>
-                    <?= $lottie; ?>
+            <?php endif;?>
+            <?php if($mediaType === 'Video'):?>
+                <video controls autoplay muted preload="metadata" class="video">
+                    <source src="<?= $video; ?>" type="video/mp4">
+                </video>
+            <?php endif;?>
+            <?php if($mediaType === 'Youtube'):?>
+                <div class="iframe-container">
+                    <iframe src="<?= $youtube; ?>?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            <?php endif;?>
+            <?php if($mediaType === 'Lottie'):?>
+                <?= $lottie; ?>
             <?php endif;?>
         </div>
         <div class="contact-form-form">
-            <span class="highlight"><?= $highlightText; ?></span>
+        <?php if ($highlightText): ?><span class="highlight"><?= $highlightText; ?></span><?php endif; ?>
             <h2><?= $headline; ?></h2>
+            <?php if ($subline): ?>
+                <h3>
+                    <?= $subline; ?>
+                </h3>
+            <?php endif; ?>
+            <?php if ($text): ?>  
+                <span>
+                    <?= $text; ?>
+                </span>
+                <?php endif; ?>
             <form action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post" class="contact-form-container">
-                <div class="form-group-inline">
+                <div class="form-group">
                     <div class="form-group">
                         <label for="cf-name"><?= $labelNameField; ?></label>
                         <input type="text" id="cf-name" name="cf-name" required>

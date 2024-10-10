@@ -15770,7 +15770,6 @@ textarea.form-control-lg {
 .contact-form .container {
   border-radius: 20px;
   padding: 40px;
-  box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
   background-color: #FFFFFF;
   display: flex;
   gap: 40px;
@@ -15780,6 +15779,10 @@ textarea.form-control-lg {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.contact-form .container .contact-form-img img {
+  width: var(--image-width);
+  height: auto;
 }
 .contact-form .container .contact-form-form {
   justify-content: center;
@@ -15811,6 +15814,7 @@ textarea.form-control-lg {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  font-size: 15px;
 }
 .contact-form .container .contact-form-container input[type=text],
 .contact-form .container .contact-form-container input[type=email],
