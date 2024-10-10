@@ -29,6 +29,7 @@
     $fullHeight = get_sub_field('full_height');
     $headlineFontSize = get_sub_field('headline_font_size');
     $sublineFontSize = get_sub_field('subline_font_size');
+    $stretchedImage = get_sub_field('stretched_image');
 ?>
 <section class="image-content<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>"<?php if($backgroundColor):?> style="background: <?= $backgroundColor; ?>; <?php endif;?>
     <?php if ($textColor): ?>
@@ -46,7 +47,7 @@
             <div class="overlay-text">COMING SOON</div>
         </div>
     <?php endif;?>
-    <div class="container">
+    <div class="<?php if ($stretchedImage == 'Yes'): ?>image-content-wrapper <?php endif;?>container">
         <div class="image<?php if($layout == 'Image Left'):?> image-left<?php endif;?><?php if($layout == 'Image Right'):?> image-right<?php endif;?>">
                 <?php if($mediaType === 'Image'):?>
                     <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($image, 'large'); ?>">
@@ -65,7 +66,7 @@
                     <?= $lottie; ?>
             <?php endif;?>
         </div>
-        <div class="content">
+        <div class="content<?php if ($stretchedImage == 'Yes' && $layout == 'Image Right'): ?> margin-left-auto<?php endif;?>">
             <?php if($highlightText):?>
                 <span class="highlight">
                     <?= $highlightText; ?>
