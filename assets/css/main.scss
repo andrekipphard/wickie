@@ -406,6 +406,10 @@ img {
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding-right: calc(var(--bs-gutter-x) * 0.75);
+        padding-left: calc(var(--bs-gutter-x) * 0.75);
+      }
     .padding {
         padding-top: 3rem;
         padding-bottom: 3rem;
