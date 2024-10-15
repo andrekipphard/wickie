@@ -15,6 +15,7 @@
 ?>
 <section class="headline-subline-text<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
     <?php if($textPosition):?>--text-position:<?php if($textPosition === 'Left'):?> start;<?php endif; ?><?php if($textPosition === 'Center'):?> center;<?php endif; ?><?php if($textPosition === 'Right'):?> end;<?php endif; ?><?php endif;?>
+    <?php if($textPosition):?>--text-position-flex:<?php if($textPosition === 'Left'):?> flex-start;<?php endif; ?><?php if($textPosition === 'Center'):?> center;<?php endif; ?><?php if($textPosition === 'Right'):?> flex-end;<?php endif; ?><?php endif;?>
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
     <?php if ($backgroundImageUrl): ?>

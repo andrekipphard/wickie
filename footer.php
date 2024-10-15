@@ -66,7 +66,7 @@
                 <?php endif; ?>
 
                 <?php if (have_rows('footer_app_link', 'options')): ?>
-                    <div class="app-links">
+                    <div class="app-links mobile-hide">
                         <?php while (have_rows('footer_app_link', 'options')): the_row(); 
                             $appLinkUrl = get_sub_field('footer_app_link_url');
                             $appLinkImage = get_sub_field('footer_app_link_image');
@@ -125,7 +125,24 @@
                         </ul>
                     </div>
                 <?php endif; ?>
-            </div>	
+            </div>
+            <div class="company-info desktop-hide">
+            <?php if (have_rows('footer_app_link', 'options')): ?>
+                    <div class="app-links">
+                        <?php while (have_rows('footer_app_link', 'options')): the_row(); 
+                            $appLinkUrl = get_sub_field('footer_app_link_url');
+                            $appLinkImage = get_sub_field('footer_app_link_image');
+                        ?>
+                            <?php if ($appLinkUrl && $appLinkImage): ?>
+                                <a href="<?= esc_url($appLinkUrl); ?>">
+                                    <img loading="lazy" decoding="async" src="<?= esc_url(wp_get_attachment_image_url($appLinkImage, 'large')); ?>" alt="App Link">
+                                </a>
+                            <?php endif; ?>
+                        <?php endwhile; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
         </div>
         <span class="info-text"><?= esc_html($infoText); ?></span>
 

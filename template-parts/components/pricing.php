@@ -9,8 +9,10 @@
     $backgroundImagePosition = get_sub_field('background_image_position');
     $backgroundImageRepeat = get_sub_field('background_image_repeat');
     $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
+    $textPosition = get_sub_field('text_position');
 ?>
 <section class="pricing<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
+    <?php if($textPosition):?>--text-position:<?php if($textPosition === 'Left'):?> start;<?php endif; ?><?php if($textPosition === 'Center'):?> center;<?php endif; ?><?php if($textPosition === 'Right'):?> end;<?php endif; ?><?php endif;?>
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
     background-image: url('<?= $backgroundImageUrl; ?>');

@@ -21,7 +21,7 @@
             border-radius: 20px;
 
             .content {
-                flex: 0 0 40%;
+                flex: 0 0 var(--text-column-size, 40%);
                 padding: 40px;
                 display: flex;
                 flex-direction: column;
@@ -130,7 +130,7 @@
             }
 
             .image {
-                flex: 0 0 60%;
+                flex: 0 0 calc(100% - var(--text-column-size, 60%));
                 display: flex;
                 justify-content: center;
             }

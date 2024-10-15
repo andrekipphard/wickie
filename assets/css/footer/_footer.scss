@@ -1,4 +1,10 @@
 .site-footer {
+    .desktop-hide {
+        display:none!important;
+    }
+    .mobile-hide {
+        display:block;
+    }
     background-color: $primary;
     .info-text {
         color: #FFFFFF99;
@@ -145,29 +151,73 @@
 // Responsive Styles
 @media (max-width: 991px) {
     .site-footer {
+        .mobile-hide {
+            display:none!important;
+        }
+        .desktop-hide {
+            display: flex!important;
+        }
         .footer {
             padding-top: 3rem;
             flex-direction: column;
-            gap:40px;
+            gap: 20px;
 
             .company-info, .navigation-links {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-
+            }
+            .company-info {
                 img {
-                    margin-bottom: 1rem;
+                    width: 50px;
+                }
+                .app-links {
+                    a {
+                        img {
+                            width: 125px;
+                        }
+                    }
+                }
+
+                span {
+                    font-size: 14px;
+                }
+            }
+            .app-links {
+                margin-bottom: 20px;
+                a {
+                    img {
+                        width: 125px;
+                    }
                 }
             }
             .navigation-links {
+                ul {
+                    li {
+                        margin-bottom: 0;
+                    }
+                }
                 .navigation-links-menu {
                     width: 100%;
                     .navigation-links-menu-ul {
                         flex-wrap: wrap;
-                        justify-content: center;
                         .navigation-links-menu-ul-li {
                             text-align: center;
-                            flex-basis: calc(50% - 10px);
+                            flex-basis: calc(33% - 13px);
+                        }
+                    }
+                }
+                .navigation-group {
+                    ul {
+                        .navigation-item {
+                            span {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                    .navigation-item {
+                        a {
+                            font-size: 16px;
                         }
                     }
                 }
@@ -178,13 +228,16 @@
             }
 
 
-
+            .company-info {
+                .social-icons {
+                    gap: 30px;
+                }
+            }
             .navigation-links-menu-ul {
                 flex-direction: column;
                 width: 100%;
             }
             .social-icons, .app-links {
-                margin-top:20px;
                 flex-wrap: wrap;
                 justify-content: center;
             }

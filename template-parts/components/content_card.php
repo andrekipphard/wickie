@@ -17,8 +17,11 @@
     $backgroundImageRepeat = get_sub_field('background_image_repeat');
     $backgroundImageUrl = $backgroundImage ? wp_get_attachment_image_url($backgroundImage, 'large') : '';
     $fullHeight = get_sub_field('full_height');
+    $textColumnSize = get_sub_field('text_column_size');
 ?>
+
 <section class="content-card <?= $layout == 'List' ? 'content-card-list' : ''; ?><?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
+    <?php if ($textColumnSize): ?>--text-column-size: <?= $textColumnSize; ?>;<?php endif; ?>
     <?php if ($textColor): ?>
         color: <?= $textColor; ?>;
     <?php endif; ?>
