@@ -13909,17 +13909,14 @@ textarea.form-control-lg {
     flex-basis: 100%;
   }
   .banner .banner-wrapper .image .images {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     align-items: center;
   }
   .banner .banner-wrapper .image .images .overlay-image {
-    width: 50%;
-    top: -100px;
-    left: -100px;
-  }
-  .banner .banner-wrapper .image .images img {
-    width: 100%;
+    width: 30%;
+    top: -70px;
+    left: -7px;
   }
 }
 

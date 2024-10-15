@@ -144,16 +144,13 @@
                 flex-basis: 100%;
 
                 .images {
-                    flex-direction: column;
+                    flex-direction: row;
                     gap: 10px;
                     align-items: center;
                     .overlay-image {
-                        width: 50%;
-                        top: -100px;
-                        left:-100px;
-                    }
-                    img {
-                        width: 100%;
+                        width: 30%;
+                        top: -70px;
+                        left: -7px;
                     }
                 }
             }
