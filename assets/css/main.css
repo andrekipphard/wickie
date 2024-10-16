@@ -15461,7 +15461,7 @@ textarea.form-control-lg {
   background-color: transparent;
   border: 0;
 }
-.faq .container .accordion .accordion-item {
+.faq .container .accordion .accordion-item:not(:last-child) {
   border-bottom: 1px solid #E0E0E7;
 }
 .faq .container .accordion .accordion-button:not(.collapsed) {

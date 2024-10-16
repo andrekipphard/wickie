@@ -100,6 +100,9 @@
                 width: 100%;
             }
             .content {
+                ul {
+                    text-align: left;
+                }
                 text-align: center;
                 .highlight {
                     align-self: center;
@@ -112,7 +115,11 @@
                 }
             }
             .image {
-                
+                justify-content: center;
+                img {
+                    height: 200px;
+                    align-self: center;
+                }
                 img, .video, .iframe-container {
                     border-radius: 30px;
                 }

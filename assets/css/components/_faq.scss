@@ -15,7 +15,7 @@
                 border: 0;
             }
 
-            .accordion-item {
+            .accordion-item:not(:last-child) {
                 border-bottom: 1px solid #E0E0E7;
             }
 
