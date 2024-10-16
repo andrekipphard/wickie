@@ -14233,6 +14233,9 @@ textarea.form-control-lg {
   .blog-posts .blog-posts-wrapper .blog-post .content .btn-link {
     margin-top: 30px;
   }
+  .blog-posts .blog-posts-wrapper .blog-post img {
+    height: 200px;
+  }
 }
 @media (max-width: 768px) {
   .blog-posts {
@@ -15297,6 +15300,9 @@ textarea.form-control-lg {
   .image-content .container .content, .image-content .container.image-content-wrapper .content {
     text-align: center;
   }
+  .image-content .container .content ul, .image-content .container.image-content-wrapper .content ul {
+    text-align: left;
+  }
   .image-content .container .content .highlight, .image-content .container.image-content-wrapper .content .highlight {
     align-self: center;
   }
@@ -15305,6 +15311,13 @@ textarea.form-control-lg {
   }
   .image-content .container .content .cta, .image-content .container.image-content-wrapper .content .cta {
     justify-content: center;
+  }
+  .image-content .container .image, .image-content .container.image-content-wrapper .image {
+    justify-content: center;
+  }
+  .image-content .container .image img, .image-content .container.image-content-wrapper .image img {
+    height: 200px;
+    align-self: center;
   }
   .image-content .container .image img, .image-content .container .image .video, .image-content .container .image .iframe-container, .image-content .container.image-content-wrapper .image img, .image-content .container.image-content-wrapper .image .video, .image-content .container.image-content-wrapper .image .iframe-container {
     border-radius: 30px;
@@ -15369,6 +15382,7 @@ textarea.form-control-lg {
   margin-top: 20px;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 20px;
 }
 .icon-boxes .container .icon-boxes-wrapper .icon-box {
   display: flex;
@@ -15427,6 +15441,7 @@ textarea.form-control-lg {
   }
   .icon-boxes .icon-boxes-wrapper .icon-box h3, .icon-boxes .icon-boxes-wrapper .icon-box .h3 {
     font-size: 18px;
+    margin-bottom: 0px;
   }
   .icon-boxes .icon-boxes-wrapper .icon-box span {
     font-size: 16px;

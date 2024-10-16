@@ -19,6 +19,7 @@
             margin-top: 20px;
             justify-content: space-between;
             align-items: flex-start;
+            gap: 20px;
 
             .icon-box {
                 display: flex;
@@ -89,6 +90,7 @@
 
                 h3 {
                     font-size: 18px; // Kleinere Schrift für die Headline
+                    margin-bottom: 0px;
                 }
 
                 span {
