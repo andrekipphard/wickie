@@ -16381,6 +16381,9 @@ textarea.form-control-lg {
     height: auto;
     width: auto;
   }
+  .hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons {
+    gap: 10px;
+  }
   .hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .round {
     padding: 15px;
   }

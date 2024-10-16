@@ -266,22 +266,36 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function () {
     var closeButton = document.querySelector('.app-modal-close');
     var bannerModal = document.getElementById('getApp');
+    
+    // Funktion, um zu überprüfen, ob der Banner in dieser Sitzung bereits angezeigt wurde
+    function isBannerClosed() {
+        return sessionStorage.getItem('bannerClosed') === 'true';
+    }
 
-    // Scroll die Seite nach ganz oben beim Laden
-    window.scrollTo({
-        top: 0,
-        behavior: 'auto' // Sofort nach oben scrollen ohne Animation
-    });
+    // Banner nur anzeigen, wenn er in dieser Sitzung noch nicht geschlossen wurde
+    if (!isBannerClosed()) {
+        bannerModal.style.display = 'block'; // Zeige das Modal an
+
+        // Scroll die Seite nach ganz oben beim Laden
+        window.scrollTo({
+            top: 0,
+            behavior: 'auto' // Sofort nach oben scrollen ohne Animation
+        });
+
+        // Füge Padding zum Body hinzu, damit der Header nicht überlappt
+        document.body.style.paddingTop = bannerModal.offsetHeight + 'px';
+    } else {
+        bannerModal.style.display = 'none'; // Verstecke das Modal
+    }
 
     // Schließt das Modal beim Klick auf den Close-Button
     closeButton.addEventListener('click', function() {
         bannerModal.style.display = 'none';
         document.body.style.paddingTop = '0'; // Entfernt das zusätzliche Padding
+        sessionStorage.setItem('bannerClosed', 'true'); // Setze den Status, dass der Banner geschlossen wurde
     });
-
-    // Füge Padding zum Body hinzu, damit der Header nicht überlappt
-    document.body.style.paddingTop = bannerModal.offsetHeight + 'px';
 });
+
 
 
 </script>
