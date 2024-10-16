@@ -150,6 +150,29 @@
 
 // Responsive Styles
 @media (max-width: 991px) {
+    .modal {
+        .modal-dialog {
+            .modal-content {
+                height: 75vh;
+                .modal-header {
+                    padding: 0px;
+                    margin-bottom: 10px;
+                    .modal-title {
+                        font-size: 18px;;
+                    }
+                }
+                .modal-body {
+                    overflow: scroll;
+                    padding: 0px;
+                    font-size: 16px;
+                }
+                .modal-footer {
+                    margin-top: 20px;
+                    padding: 0px;
+                }
+            }
+        }
+    }
     .site-footer {
         .mobile-hide {
             display:none!important;
