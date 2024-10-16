@@ -15365,6 +15365,7 @@ textarea.form-control-lg {
   flex-wrap: wrap;
   margin-top: 20px;
   justify-content: space-between;
+  align-items: flex-start;
 }
 .icon-boxes .container .icon-boxes-wrapper .icon-box {
   display: flex;
@@ -15394,9 +15395,14 @@ textarea.form-control-lg {
   .icon-boxes .container .title {
     text-align: center;
   }
-  .icon-boxes .icon-boxes-wrapper .icon-box {
+  .icon-boxes .container .icon-boxes-wrapper .icon-box {
     flex-basis: calc(50% - 20px) !important;
     margin-bottom: 20px;
+  }
+  .icon-boxes .container .icon-boxes-wrapper .icon-box img {
+    align-self: center !important;
+    width: 200px !important;
+    margin-bottom: 0px !important;
   }
 }
 @media (max-width: 768px) {

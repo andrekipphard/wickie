@@ -18,6 +18,7 @@
             flex-wrap: wrap;
             margin-top: 20px;
             justify-content: space-between;
+            align-items: flex-start;
 
             .icon-box {
                 display: flex;
@@ -52,14 +53,20 @@
             .title {
                 text-align: center;
             }
-        }
-
-        .icon-boxes-wrapper {
-            .icon-box {
-                flex-basis: calc(50% - 20px)!important; // 2 Boxen pro Zeile
-                margin-bottom: 20px;
+            .icon-boxes-wrapper {
+                .icon-box {
+                    flex-basis: calc(50% - 20px)!important; // 2 Boxen pro Zeile
+                    margin-bottom: 20px;
+                    img {
+                        align-self: center!important;
+                        width: 200px!important;
+                        margin-bottom: 0px!important;
+                    }
+                }
             }
         }
+
+
     }
 
     // Responsive für Mobilgeräte (max-width: 768px)
