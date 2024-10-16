@@ -13042,6 +13042,9 @@ textarea.form-control-lg {
   font-size: 30px;
 }
 .feature-cards .container .content-boxes .content-box .image {
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
   display: flex;
   justify-content: center;
 }
