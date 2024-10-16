@@ -24,11 +24,6 @@
             $output .= '<span class="star half">&#9733;</span>';
         }
 
-        // Leere Sterne hinzufügen
-        for ($i = 0; $i < $emptyStars; $i++) {
-            $output .= '<span class="star">&#9734;</span>';
-        }
-
         return $output;
     }
 ?>

@@ -753,22 +753,44 @@
 
 .stars {
     display: flex;
+    align-items: center;
 }
 
 .star {
-    font-size: 18px;
+    font-size: 20px;
     color: #FFD700; /* Gold color for stars */
+    margin-right: 2px;
+}
+
+.star.half {
+    position: relative;
+    color: transparent; /* Farbe des halben Sterns */
 }
 
 .star.half:before {
-    content: "\2605"; /* Unicode for half star */
-    color: #FFD700;
+    content: "\2605"; /* Unicode für vollen Stern */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #FFD700; /* Gold color */
 }
+
+.star.half:after {
+    content: "\2605"; /* Unicode für leeren Stern */
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #FFD700; /* Farbe für leeren Teil */
+}
+
 
 .rating-number {
     font-size: 14px;
     font-weight: bold;
     margin-left: 8px;
+    color: #FFFFFF;
 }
 
 .download-btn {
@@ -785,4 +807,10 @@
 
 .download-btn:hover {
     background-color: #0056b3;
+}
+@media (max-width: 480px) {
+    .rating-number {
+        display:none;
+    }
+
 }
