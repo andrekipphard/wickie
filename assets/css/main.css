@@ -12610,6 +12610,115 @@ textarea.form-control-lg {
   border: none;
 }
 
+/* Modal (Banner) Styling */
+@media (min-width: 1024px) {
+  #getApp {
+    display: none;
+  }
+}
+#getApp .app-infos {
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#getApp .btn-white {
+  padding: 13px 50px;
+}
+
+.app-banner-modal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #002A3F;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 9999; /* Above the header */
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.app-modal-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.app-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  opacity: 1;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-modal-logo {
+  width: 60px; /* Adjust size if needed */
+  margin-right: 15px;
+}
+
+.review-section {
+  text-align: left;
+}
+
+.app-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #FFFFFF;
+}
+
+.reviews {
+  display: flex;
+  align-items: center;
+}
+
+.stars {
+  display: flex;
+}
+
+.star {
+  font-size: 18px;
+  color: #FFD700; /* Gold color for stars */
+}
+
+.star.half:before {
+  content: "★"; /* Unicode for half star */
+  color: #FFD700;
+}
+
+.rating-number {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.download-btn {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: #000000;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
+
 .site-footer {
   background-color: #002A3F;
 }
@@ -14803,8 +14912,8 @@ textarea.form-control-lg {
 }
 .hero-single .container .cta.contact-button a .btn-link i {
   background-color: #93E100;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-size: 36px;
   margin-right: 20px;
 }
@@ -14837,6 +14946,13 @@ textarea.form-control-lg {
   .hero-single .container .cta.multiple-buttons {
     justify-content: center;
   }
+  .hero-single .container .cta.contact-button {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+  .hero-single .container .cta.contact-button a .btn-link i {
+    font-size: 24px;
+  }
 }
 @media (max-width: 768px) {
   .hero-single {
@@ -14856,7 +14972,8 @@ textarea.form-control-lg {
     flex-basis: 100%;
   }
   .hero-single .container .content-image .image img {
-    width: 100%;
+    height: 200px;
+    width: auto;
   }
   .hero-single .container .cta.multiple-buttons {
     flex-direction: column;

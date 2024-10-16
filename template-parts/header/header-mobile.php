@@ -1,8 +1,56 @@
 <?php
     $headerLogoMobile = get_field('header_logo', 'options');
     $headerLogoTransparentBackground = get_field('header_logo_transparent_background', 'options');
-?>
+    $mobileModalImage = get_field('mobile_modal_image', 'options');
+    $mobileModalAppName = get_field('mobile_modal_app_name', 'options');
+    $mobileModalAppRating = get_field('mobile_modal_app_rating', 'options');
+    $mobileModalButtonText = get_field('mobile_modal_button_text', 'options');
+    $mobileModalButtonUrl = get_field('mobile_modal_button_url', 'options');
 
+    // Funktion zum Generieren der Sterne basierend auf dem Rating
+    function generate_stars($rating) {
+        $output = '';
+        $fullStars = floor($rating); // Ganze Sterne
+        $halfStar = $rating - $fullStars >= 0.5 ? true : false; // Halber Stern wenn notwendig
+        $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0); // Leere Sterne
+
+        // Ganze Sterne hinzufügen
+        for ($i = 0; $i < $fullStars; $i++) {
+            $output .= '<span class="star filled">&#9733;</span>';
+        }
+
+        // Halben Stern hinzufügen wenn notwendig
+        if ($halfStar) {
+            $output .= '<span class="star half">&#9733;</span>';
+        }
+
+        // Leere Sterne hinzufügen
+        for ($i = 0; $i < $emptyStars; $i++) {
+            $output .= '<span class="star">&#9734;</span>';
+        }
+
+        return $output;
+    }
+?>
+<!-- Banner Modal -->
+<div id="getApp" class="app-banner-modal">
+    <div class="app-modal-content">
+        <div class="app-infos">
+            <button type="button" class="btn-close app-modal-close" aria-label="Close">X</button>
+            <img class="app-modal-logo" src="<?= wp_get_attachment_image_url($mobileModalImage, 'medium'); ?>" alt="App Logo" />
+            <div class="review-section">
+                <h2 class="app-name"><?= $mobileModalAppName; ?></h2>
+                <div class="reviews">
+                    <div class="stars">
+                        <?= generate_stars($mobileModalAppRating); ?>
+                    </div>
+                    <span class="rating-number"><?= $mobileModalAppRating; ?></span>
+                </div>
+            </div>
+        </div>
+        <a href="<?= $mobileModalButtonUrl; ?>"><button type="button" class="btn btn-white download-btn"><?= $mobileModalButtonText; ?></button></a>
+    </div>
+</div>
 <div class="header-mobile">
     <div class="mobile-header">
         <div class="mobile-logo">
@@ -220,11 +268,25 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(updateWeglotDisplay, 1000); // Warte einen Moment, um sicherzustellen, dass Weglot geladen ist
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    var closeButton = document.querySelector('.app-modal-close');
+    var bannerModal = document.getElementById('getApp');
+
+    // Scroll die Seite nach ganz oben beim Laden
+    window.scrollTo({
+        top: 0,
+        behavior: 'auto' // Sofort nach oben scrollen ohne Animation
+    });
+
+    // Schließt das Modal beim Klick auf den Close-Button
+    closeButton.addEventListener('click', function() {
+        bannerModal.style.display = 'none';
+        document.body.style.paddingTop = '0'; // Entfernt das zusätzliche Padding
+    });
+
+    // Füge Padding zum Body hinzu, damit der Header nicht überlappt
+    document.body.style.paddingTop = bannerModal.offsetHeight + 'px';
+});
 
 
 </script>
-
-<style>
-
-
-</style>
