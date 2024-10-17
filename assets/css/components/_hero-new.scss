@@ -215,3 +215,12 @@
     }
 
 }
+.hero-new.minus-margin-top {
+    margin-top: -116px;
+}
+@media (max-width: 1024px) {
+    .hero-new.minus-margin-top {
+        margin-top: -77px!important;
+        padding-top: 77px!important;
+    }
+}

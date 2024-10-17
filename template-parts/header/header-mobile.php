@@ -50,7 +50,7 @@
     <div class="mobile-header">
         <div class="mobile-logo">
             <a href="/">
-                <img src="<?= wp_get_attachment_image_url($headerLogoMobile, 'medium'); ?>" alt="Logo" />
+                <img src="<?php if (is_front_page()): ?><?= wp_get_attachment_image_url($headerLogoTransparentBackground, 'medium'); ?><?php else:?><?= wp_get_attachment_image_url($headerLogoMobile, 'medium'); ?><?php endif;?>" alt="Logo" />
             </a>
         </div>
         <div class="mobile-burger-menu">
@@ -300,7 +300,25 @@ document.addEventListener('DOMContentLoaded', function () {
         sessionStorage.setItem('bannerClosed', 'true'); // Setze den Status, dass der Banner geschlossen wurde
     });
 });
-
+document.addEventListener('DOMContentLoaded', function() {
+    var headerMobile = document.querySelector('.header-mobile');
+    var lightLogoSrc = "<?= wp_get_attachment_image_url($headerLogoTransparentBackground, 'large'); ?>";
+    var darkLogoSrc = "<?= wp_get_attachment_image_url($headerLogoMobile, 'large'); ?>";
+    var logo = document.querySelector('.header-mobile .mobile-logo img');
+    var body = document.body; // Access the body element to check the page type
+    var isFrontPage = body.classList.contains('home'); // WordPress adds 'home' class for the front page
+    var isPage2189 = body.classList.contains('page-id-2189');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            headerMobile.classList.add('sticky');
+            logo.src = darkLogoSrc;
+        } else {
+            headerMobile.classList.remove('sticky');
+            logo.src = (isFrontPage || isPage2189) ? lightLogoSrc : darkLogoSrc; // Light logo for front page, dark for others
+        }
+    });
+});
 
 
 

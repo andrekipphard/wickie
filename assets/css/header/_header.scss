@@ -823,3 +823,46 @@
     }
 
 }
+// Mobiler Header transparent auf der Startseite
+.home, .page-id-2189 {
+    .header-mobile {
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+        
+        // Falls du die Texte auch in Weiß auf der Startseite möchtest
+        .mobile-menu-item a {
+            color: #FFFFFF;
+        }
+
+        .burger-icon {
+            color: #FFFFFF;
+        }
+    }
+}
+    // Wenn gescrollt wird, wird der Header weiß und sticky
+    .header-mobile.sticky {
+        background-color: #FFFFFF;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+        .burger-icon {
+            color: #000000;
+        }
+    }
+
+// Sticky header beim Scrollen für Mobil und Desktop
+.header-sticky {
+    .header-desktop.sticky,
+    .header-mobile.sticky {
+        background-color: #FFFFFF; // Hintergrundfarbe beim Scrollen
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+}

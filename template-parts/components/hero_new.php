@@ -85,7 +85,7 @@ if (have_rows('margin')) {
 }
 ?>
 
-<section class="hero-new<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
+<section class="hero-new<?php if (is_front_page() || is_page(2189)): ?><?php if ($isHero == 'Yes'): ?> minus-margin-top<?php endif;?><?php endif;?><?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>" style="
     <?php if ($overlayColor): ?>--overlay-color: <?= $overlayColor; ?>;<?php endif; ?>
     <?php if ($textColor): ?> color: <?= $textColor; ?>; <?php endif; ?>
     <?php if ($backgroundColor): ?> background: <?= $backgroundColor; ?>; <?php endif; ?>
@@ -103,9 +103,6 @@ if (have_rows('margin')) {
     <?php endif;?>
     <?php if ($fullHeight === 'Yes'): ?>
         <?php if (is_front_page() || is_page(2189)): ?>
-            <?php if ($isHero == 'Yes'): ?>
-                margin-top: -116px;
-            <?php endif;?>
             height: calc(100vh - 32px);
         <?php else: ?>
             height: calc(100vh - 148px);

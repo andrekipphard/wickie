@@ -12752,6 +12752,40 @@ textarea.form-control-lg {
     display: none;
   }
 }
+.home .header-mobile, .page-id-2189 .header-mobile {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+.home .header-mobile .mobile-menu-item a, .page-id-2189 .header-mobile .mobile-menu-item a {
+  color: #FFFFFF;
+}
+.home .header-mobile .burger-icon, .page-id-2189 .header-mobile .burger-icon {
+  color: #FFFFFF;
+}
+
+.header-mobile.sticky {
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.header-mobile.sticky .burger-icon {
+  color: #000000;
+}
+
+.header-sticky .header-desktop.sticky,
+.header-sticky .header-mobile.sticky {
+  background-color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .site-footer {
   background-color: #002A3F;
 }
@@ -16419,6 +16453,16 @@ textarea.form-control-lg {
   }
 }
 
+.hero-new.minus-margin-top {
+  margin-top: -116px;
+}
+
+@media (max-width: 1024px) {
+  .hero-new.minus-margin-top {
+    margin-top: -77px !important;
+    padding-top: 77px !important;
+  }
+}
 .image-content {
   position: relative;
   overflow: hidden;
