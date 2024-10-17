@@ -120,8 +120,8 @@
                 flex-basis: 100%; // Bild nimmt volle Breite ein
                 align-items: center;
                 img {
-                    width: 100%;
-                    height: auto;
+                    height: 400px;
+                    width: auto;
                 }
             }
 
@@ -145,6 +145,10 @@
                 img, video {
                     max-width: 100%; // Medien nicht über die Containerbreite hinaus
                     height: auto; // Höhe automatisch anpassen
+                }
+                img {
+                    height: 200px;
+                    width: auto;
                 }
             }
 
@@ -173,4 +177,5 @@
             }
         }
     }
+
 }

@@ -12664,9 +12664,16 @@ textarea.form-control-lg {
 
 .app-modal-logo {
   width: 60px; /* Adjust size if needed */
-  margin-right: 15px;
 }
 
+@media (max-width: 768px) {
+  .app-modal-logo {
+    width: 40px; /* Adjust size if needed */
+  }
+  #getApp .btn-white {
+    padding: 13px 30px;
+  }
+}
 .review-section {
   text-align: left;
 }
@@ -12863,6 +12870,7 @@ textarea.form-control-lg {
 }
 .modal .modal-dialog .modal-content .modal-header {
   border-bottom: none;
+  padding-bottom: 0px;
 }
 .modal .modal-dialog .modal-content .modal-header button {
   display: none;
@@ -12873,6 +12881,9 @@ textarea.form-control-lg {
 }
 .modal .modal-dialog .modal-content .modal-footer {
   border-top: none;
+}
+.modal .modal-dialog .modal-content .modal-body {
+  font-size: 16px;
 }
 
 @media (max-width: 991px) {
@@ -13585,6 +13596,7 @@ textarea.form-control-lg {
   .content-card .container .content-wrapper .content .cta {
     gap: 15px;
     width: 100%;
+    justify-content: center;
   }
   .content-card .container .content-wrapper .content .cta a {
     flex-basis: calc(50% - 7.5px);
@@ -15358,6 +15370,14 @@ textarea.form-control-lg {
   }
 }
 
+.image-content .margin-left {
+  margin-left: 10px;
+  margin-right: 0px;
+}
+.image-content .margin-right {
+  margin-left: 0px;
+  margin-right: 10px;
+}
 .image-content .container, .image-content .container.image-content-wrapper {
   display: flex;
   flex-direction: row;
@@ -15414,7 +15434,7 @@ textarea.form-control-lg {
   pointer-events: none;
   margin-left: 0;
 }
-@media (min-width: 1400px) {
+@media (min-width: 1024px) {
   .image-content .container.image-content-wrapper {
     margin-right: 0;
     margin-left: 0;
@@ -15459,8 +15479,9 @@ textarea.form-control-lg {
     justify-content: center;
   }
   .image-content .container .image img, .image-content .container.image-content-wrapper .image img {
-    height: 200px;
+    height: 400px;
     align-self: center;
+    width: auto;
   }
   .image-content .container .image img, .image-content .container .image .video, .image-content .container .image .iframe-container, .image-content .container.image-content-wrapper .image img, .image-content .container.image-content-wrapper .image .video, .image-content .container.image-content-wrapper .image .iframe-container {
     border-radius: 30px;
@@ -15490,6 +15511,11 @@ textarea.form-control-lg {
   }
   .image-content .container .content ul li i, .image-content .container.image-content-wrapper .content ul li i {
     font-size: 20px;
+  }
+  .image-content .container .image img, .image-content .container.image-content-wrapper .image img {
+    height: 200px;
+    align-self: center;
+    width: auto;
   }
 }
 
@@ -16077,8 +16103,8 @@ textarea.form-control-lg {
     align-items: center;
   }
   .contact-form .container .contact-form-img img {
-    width: 100%;
-    height: auto;
+    height: 400px;
+    width: auto;
   }
   .contact-form .container .contact-form-form {
     flex-basis: 100%;
@@ -16095,6 +16121,10 @@ textarea.form-control-lg {
   .contact-form .container .contact-form-img img, .contact-form .container .contact-form-img video {
     max-width: 100%;
     height: auto;
+  }
+  .contact-form .container .contact-form-img img {
+    height: 200px;
+    width: auto;
   }
   .contact-form .container .contact-form-form h2, .contact-form .container .contact-form-form .h2 {
     font-size: 1.5rem;

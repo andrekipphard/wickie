@@ -32,7 +32,7 @@
                     <?= $highlightText; ?>
                 </span>
             <?php endif;?>
-            <?php if($headline):?><h2 <?php if($textColor):?> style="color: <?= $textColor; ?>;"<?php endif;?>><?= $headline; ?></h2><?php endif;?>
+            <?php if($headline):?><h2 <?php if($textColor || $alignHeadline):?> style="<?php if($alignHeadline == 'Center'):?>text-align: center;<?php endif;?><?php if($alignHeadline == 'Right'):?>text-align: right;<?php endif;?><?php if($alignHeadline == 'Left'):?>text-align: left;<?php endif;?><?php if($textColor):?>color: <?= $textColor; ?>;<?php endif;?>"<?php endif;?>><?= $headline; ?></h2><?php endif;?>
             <?php if($subline):?><span class="subline"<?php if($textColor):?> style="color: <?= $textColor; ?>;"<?php endif;?>><?= $subline; ?></span><?php endif;?>
             <?php if($text != null):?><span><?= $text; ?></span><?php endif;?>
         </div>

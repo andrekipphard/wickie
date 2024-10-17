@@ -167,7 +167,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <?= esc_html($modalText); ?>
+        <span><?= $modalText; ?><span>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-white" data-bs-dismiss="modal"><?= esc_html($modalButtonText); ?></button>

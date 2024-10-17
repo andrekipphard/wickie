@@ -159,6 +159,7 @@
                     .cta {
                         gap: 15px;
                         width: 100%;
+                        justify-content: center;
                         a {
                             flex-basis: calc(50% - 7.5px);
                             .btn {

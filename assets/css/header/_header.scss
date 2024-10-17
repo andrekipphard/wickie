@@ -732,7 +732,16 @@
 
 .app-modal-logo {
     width: 60px; /* Adjust size if needed */
-    margin-right: 15px;
+}
+@media (max-width: 768px) {
+    .app-modal-logo {
+        width: 40px; /* Adjust size if needed */
+    }
+    #getApp {
+        .btn-white {
+            padding: 13px 30px;
+        }
+    }
 }
 
 .review-section {

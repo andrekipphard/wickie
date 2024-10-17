@@ -1,4 +1,12 @@
 .image-content {
+    .margin-left {
+        margin-left: 10px;
+        margin-right: 0px;
+    }
+    .margin-right {
+        margin-left: 0px;
+        margin-right: 10px;
+    }
 
     .container, .container.image-content-wrapper {
         display: flex;
@@ -68,7 +76,7 @@
     }
 
 
-    @media (min-width: 1400px) {
+    @media (min-width: 1024px) {
         .container.image-content-wrapper {
             margin-right: 0;
             margin-left: 0;
@@ -117,9 +125,11 @@
             .image {
                 justify-content: center;
                 img {
-                    height: 200px;
+                    height: 400px;
                     align-self: center;
+                    width: auto;
                 }
+
                 img, .video, .iframe-container {
                     border-radius: 30px;
                 }
@@ -156,6 +166,13 @@
                             font-size: 20px;
                         }
                     }
+                }
+            }
+            .image {
+                img {
+                    height: 200px;
+                    align-self: center;
+                    width: auto;
                 }
             }
         }

@@ -272,8 +272,13 @@ document.addEventListener('DOMContentLoaded', function () {
         return sessionStorage.getItem('bannerClosed') === 'true';
     }
 
-    // Banner nur anzeigen, wenn er in dieser Sitzung noch nicht geschlossen wurde
-    if (!isBannerClosed()) {
+    // Funktion, um zu überprüfen, ob das Gerät ein Tablet oder Handy ist (kleiner als 1024px)
+    function isMobileOrTablet() {
+        return window.innerWidth < 1024;
+    }
+
+    // Banner nur anzeigen, wenn es nicht geschlossen wurde und die Bildschirmbreite < 1024px ist
+    if (!isBannerClosed() && isMobileOrTablet()) {
         bannerModal.style.display = 'block'; // Zeige das Modal an
 
         // Scroll die Seite nach ganz oben beim Laden
@@ -295,6 +300,7 @@ document.addEventListener('DOMContentLoaded', function () {
         sessionStorage.setItem('bannerClosed', 'true'); // Setze den Status, dass der Banner geschlossen wurde
     });
 });
+
 
 
 
