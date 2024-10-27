@@ -171,8 +171,14 @@
             .image {
                 img {
                     height: 200px;
-                    align-self: center;
                     width: auto;
+                    align-self: center;
+                }
+            }
+            @media (max-aspect-ratio: 3/4) {
+                .image img {
+                    height: auto;
+                    width: 300px;
                 }
             }
         }

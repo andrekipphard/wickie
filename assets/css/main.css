@@ -15588,8 +15588,14 @@ textarea.form-control-lg {
   }
   .image-content .container .image img, .image-content .container.image-content-wrapper .image img {
     height: 200px;
-    align-self: center;
     width: auto;
+    align-self: center;
+  }
+}
+@media (max-width: 768px) and (max-aspect-ratio: 3/4) {
+  .image-content .container .image img, .image-content .container.image-content-wrapper .image img {
+    height: auto;
+    width: 300px;
   }
 }
 
