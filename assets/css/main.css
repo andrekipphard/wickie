@@ -16494,6 +16494,9 @@ textarea.form-control-lg {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
   }
+  .hero-new h3, .hero-new .h3 {
+    font-size: 20px;
+  }
   .hero-new .container-wrapper .container .content-image .content .cta .has-text {
     margin-right: 5rem;
   }
@@ -16507,8 +16510,11 @@ textarea.form-control-lg {
   .hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons {
     gap: 10px;
   }
+  .hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .btn-white, .hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .btn-primary, .hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .btn-secondary {
+    padding: 10px 15px;
+  }
   .hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .round {
-    padding: 15px;
+    padding: 12px;
   }
 }
 

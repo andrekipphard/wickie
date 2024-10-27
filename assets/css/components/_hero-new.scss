@@ -194,6 +194,9 @@
     @media (max-width: 768px) {
         padding-top: 3rem!important;
         padding-bottom: 3rem!important;
+        h3 {
+            font-size: 20px;
+        }
         .container-wrapper {
             .container {
                 .content-image {
@@ -215,8 +218,11 @@
                         .cta.multiple-buttons {
                             gap: 10px;
                             a {
+                                .btn-white, .btn-primary, .btn-secondary {
+                                    padding: 10px 15px;
+                                }
                                 .round {
-                                    padding: 15px;
+                                    padding: 12px;
                                 }
                             }
                         }
