@@ -12984,17 +12984,6 @@ textarea.form-control-lg {
     text-align: center;
     flex-basis: calc(33% - 13px);
   }
-  .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li:last-child {
-    flex-basis: 100%;
-  }
-  .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li:last-child .navigation-group {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li:last-child .navigation-group .navigation-item {
-    flex-basis: 33%;
-  }
   .site-footer .footer .navigation-links .navigation-group ul .navigation-item span {
     font-size: 15px;
   }
@@ -13020,6 +13009,27 @@ textarea.form-control-lg {
   }
   .site-footer .copyright {
     font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li:last-child {
+    flex-basis: 100%;
+  }
+  .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li:last-child a {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+  }
+  .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li:last-child .navigation-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li:last-child .navigation-group a {
+    display: inline;
+  }
+  .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li:last-child .navigation-group .navigation-item {
+    flex-basis: 50%;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -16767,7 +16777,7 @@ h2, .h2 {
 .btn-primary {
   border-radius: 50px;
   padding: 20px 40px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -16787,7 +16797,7 @@ h2, .h2 {
 .btn-secondary {
   border-radius: 50px;
   padding: 20px 40px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -16808,7 +16818,7 @@ h2, .h2 {
 .btn-white {
   border-radius: 30px;
   padding: 15px 30px;
-  font-size: 16px;
+  font-size: 15px;
   box-shadow: none;
   background-color: #FFFFFF;
   font-weight: 600;
@@ -16834,7 +16844,7 @@ h2, .h2 {
 }
 
 .btn-link {
-  font-size: 16px;
+  font-size: 15px;
   text-decoration: none;
   font-weight: 600;
   display: flex;
@@ -16869,7 +16879,7 @@ h2, .h2 {
 .btn-outline {
   border-radius: 30px;
   padding: 15px 30px;
-  font-size: 16px;
+  font-size: 15px;
   background-color: transparent;
   font-weight: 600;
   display: flex;
@@ -16883,7 +16893,6 @@ h2, .h2 {
     font-size: 16px;
     border-radius: 50px;
     padding: 20px 40px;
-    font-size: 16px;
   }
 }
 .btn-outline i {
