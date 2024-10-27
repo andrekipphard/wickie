@@ -12445,7 +12445,7 @@ textarea.form-control-lg {
 }
 
 .mobile-logo img {
-  width: 80px;
+  width: 125px;
   height: auto;
 }
 
@@ -13935,7 +13935,7 @@ textarea.form-control-lg {
     font-size: 18px;
   }
   .pricing .pricing-wrapper .pricing-boxes .pricing-box .highlight {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
   .pricing .pricing-wrapper .pricing-boxes .pricing-box .list-group-numbered {
     margin-top: 30px;
@@ -14532,7 +14532,7 @@ textarea.form-control-lg {
 
 @media (max-width: 1024px) {
   .credit-card .container .content-wrapper .content .highlight {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
 }
 @media (max-width: 1023px) and (min-width: 768px) {
@@ -14668,7 +14668,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 1024px) {
   .rewards .container .content-wrapper .content .highlight {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
 }
 @media (max-width: 1023px) and (min-width: 768px) {
@@ -16442,6 +16442,19 @@ textarea.form-control-lg {
   width: 100%;
   border-radius: 50px;
 }
+@media (min-width: 1025px) {
+  .hero-new .text-layout-center {
+    text-align: center;
+    align-items: center;
+    flex-basis: 100% !important;
+  }
+  .hero-new .text-layout-right-or-left {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    flex-basis: 60% !important;
+    border-radius: 20px;
+  }
+}
 @media (max-width: 1200px) {
   .hero-new .video-wrapper .background-video, .hero-new .video-wrapper-mobile .background-video {
     height: auto !important;
@@ -17035,7 +17048,7 @@ img {
 
 @media (max-width: 1024px) {
   .highlight {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
   .padding {
     padding-top: 5rem;

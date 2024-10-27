@@ -130,6 +130,19 @@
          
         }
     }
+    @media (min-width: 1025px) {
+        .text-layout-center {
+            text-align: center;
+            align-items: center;
+            flex-basis: 100%!important;
+        }
+        .text-layout-right-or-left {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            flex-basis: 60%!important;
+            border-radius: 20px;
+        }
+    }
     @media (max-width: 1200px) {
         .video-wrapper, .video-wrapper-mobile {
             .background-video {

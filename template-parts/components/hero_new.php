@@ -155,18 +155,7 @@ if (have_rows('margin')) {
         <div class="content-image" style="
             <?php if ($textLayout === 'Right'): ?> flex-direction: row-reverse; <?php endif; ?>
         ">
-            <div class="content" style="
-                <?php if ($textLayout === 'Center'): ?>
-                    text-align: center;
-                    align-items: center;
-                    flex-basis: 100%;
-                <?php elseif ($textLayout === 'Left' || $textLayout === 'Right'): ?>
-                    background: rgba(0, 0, 0, 0.5);
-                    padding: 40px;
-                    flex-basis: 60%;
-                    border-radius: 20px;
-                <?php endif; ?>
-            ">
+            <div class="content<?php if ($textLayout === 'Center'): ?> text-layout-center<?php endif;?><?php if ($textLayout === 'Left' || $textLayout === 'Right'): ?> text-layout-right-or-left<?php endif;?>">
                 <?php if ($highlightText): ?>
                     <span class="highlight" style="
                         <?php if ($positionHighlightText): ?> order: <?= $positionHighlightText; ?>; <?php endif; ?>
