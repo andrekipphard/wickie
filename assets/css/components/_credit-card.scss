@@ -58,7 +58,20 @@
         }
     }
 }
-
+@media (max-width: 1024px) {
+    .credit-card {
+    
+        .container {
+            .content-wrapper {
+                .content {
+                    .highlight {
+                        font-size: .7rem;
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media (max-width: 1023px) and (min-width: 768px) {
     .credit-card {

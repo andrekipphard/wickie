@@ -5,7 +5,8 @@
     $mobileModalAppName = get_field('mobile_modal_app_name', 'options');
     $mobileModalAppRating = get_field('mobile_modal_app_rating', 'options');
     $mobileModalButtonText = get_field('mobile_modal_button_text', 'options');
-    $mobileModalButtonUrl = get_field('mobile_modal_button_url', 'options');
+    $mobileModalButtonUrlAndroid = get_field('mobile_modal_button_url_android', 'options');
+    $mobileModalButtonUrlApple = get_field('mobile_modal_button_url_apple', 'options');
 
     // Funktion zum Generieren der Sterne basierend auf dem Rating
     function generate_stars($rating) {
@@ -26,6 +27,23 @@
 
         return $output;
     }
+
+    // Funktion zum Überprüfen des Betriebssystems
+    function get_device_os() {
+        $user_agent = $_SERVER['HTTP_USER_AGENT'];
+        if (preg_match('/android/i', $user_agent)) {
+            return 'android';
+        } elseif (preg_match('/iphone|ipad|ipod/i', $user_agent)) {
+            return 'ios';
+        } else {
+            return 'other';
+        }
+    }
+
+    // Je nach Gerät den richtigen URL festlegen
+    $device_os = get_device_os();
+    $app_url = ($device_os === 'android') ? $mobileModalButtonUrlAndroid : $mobileModalButtonUrlApple;
+
 ?>
 <!-- Banner Modal -->
 <div id="getApp" class="app-banner-modal">
@@ -43,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <a href="<?= $mobileModalButtonUrl; ?>"><button type="button" class="btn btn-white download-btn"><?= $mobileModalButtonText; ?></button></a>
+        <a href="<?= $app_url; ?>"><button type="button" class="btn btn-white download-btn"><?= $mobileModalButtonText; ?></button></a>
     </div>
 </div>
 <div class="header-mobile">

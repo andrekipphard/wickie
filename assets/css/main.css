@@ -12445,7 +12445,7 @@ textarea.form-control-lg {
 }
 
 .mobile-logo img {
-  width: 120px;
+  width: 80px;
   height: auto;
 }
 
@@ -13923,6 +13923,9 @@ textarea.form-control-lg {
   .pricing .pricing-wrapper .pricing-boxes .pricing-box span {
     font-size: 18px;
   }
+  .pricing .pricing-wrapper .pricing-boxes .pricing-box .highlight {
+    font-size: 0.7rem;
+  }
   .pricing .pricing-wrapper .pricing-boxes .pricing-box .list-group-numbered {
     margin-top: 30px;
   }
@@ -14503,6 +14506,11 @@ textarea.form-control-lg {
   border: 1px solid #FFFFFF;
 }
 
+@media (max-width: 1024px) {
+  .credit-card .container .content-wrapper .content .highlight {
+    font-size: 0.7rem;
+  }
+}
 @media (max-width: 1023px) and (min-width: 768px) {
   .credit-card {
     padding-top: 5rem;
@@ -14630,6 +14638,11 @@ textarea.form-control-lg {
 .rewards .container .content-wrapper:hover .subline .btn-link i {
   background-color: #93E100;
   color: #FFFFFF;
+}
+@media (max-width: 1024px) {
+  .rewards .container .content-wrapper .content .highlight {
+    font-size: 0.7rem;
+  }
 }
 @media (max-width: 1023px) and (min-width: 768px) {
   .rewards {
@@ -16988,6 +17001,9 @@ img {
 }
 
 @media (max-width: 1024px) {
+  .highlight {
+    font-size: 0.7rem;
+  }
   .padding {
     padding-top: 5rem;
     padding-bottom: 5rem;
