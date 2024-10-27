@@ -14218,7 +14218,6 @@ textarea.form-control-lg {
   background: linear-gradient(to right, #93E100, #00A6FF);
   border-radius: 20px;
   padding: 100px;
-  box-shadow: 0px 0px 40px -15px rgba(46, 67, 117, 0.5);
   color: #FFFFFF;
   text-align: center;
 }
@@ -14292,7 +14291,7 @@ textarea.form-control-lg {
     padding: 50px;
   }
   .testimonials .container #testimonial-slider .carousel-inner .carousel-item .carousel-content span {
-    font-size: 22px;
+    font-size: 16px;
   }
   .testimonials .container #testimonial-slider .carousel-inner .carousel-item .carousel-content .testimonial-author {
     margin-top: 30px;
