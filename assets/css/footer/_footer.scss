@@ -231,6 +231,18 @@
                         .navigation-links-menu-ul-li {
                             text-align: center;
                             flex-basis: calc(33% - 13px);
+                            &:last-child {
+                                flex-basis: 100%;
+                                .navigation-group {
+                                    display: flex;
+                                    flex-direction: row;
+                                    flex-wrap: wrap;
+                                    .navigation-item {
+                                        flex-basis: 33%;
+                                    }
+                                }
+
+                            }
                         }
                     }
                 }

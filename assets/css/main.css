@@ -12984,6 +12984,17 @@ textarea.form-control-lg {
     text-align: center;
     flex-basis: calc(33% - 13px);
   }
+  .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li:last-child {
+    flex-basis: 100%;
+  }
+  .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li:last-child .navigation-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .site-footer .footer .navigation-links .navigation-links-menu .navigation-links-menu-ul .navigation-links-menu-ul-li:last-child .navigation-group .navigation-item {
+    flex-basis: 33%;
+  }
   .site-footer .footer .navigation-links .navigation-group ul .navigation-item span {
     font-size: 15px;
   }
