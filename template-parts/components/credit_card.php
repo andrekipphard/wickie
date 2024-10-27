@@ -13,6 +13,7 @@
             <?php if($image):?><div class="image" style="background-image: url('<?= wp_get_attachment_image_url($image, 'large');?>;">
             </div>
             <?php endif;?>
+            <div class="overlay"></div>
             <div class="content"<?php if(!$image):?> style="flex:100%;"<?php endif;?>>
                 <span class="highlight">
                     <?= $highlightText; ?>
