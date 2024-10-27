@@ -13935,7 +13935,7 @@ textarea.form-control-lg {
     font-size: 18px;
   }
   .pricing .pricing-wrapper .pricing-boxes .pricing-box .highlight {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
   .pricing .pricing-wrapper .pricing-boxes .pricing-box .list-group-numbered {
     margin-top: 30px;
@@ -14532,7 +14532,7 @@ textarea.form-control-lg {
 
 @media (max-width: 1024px) {
   .credit-card .container .content-wrapper .content .highlight {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
 }
 @media (max-width: 1023px) and (min-width: 768px) {
@@ -14668,7 +14668,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 1024px) {
   .rewards .container .content-wrapper .content .highlight {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
 }
 @media (max-width: 1023px) and (min-width: 768px) {
@@ -16755,7 +16755,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
-  font-size: 3rem;
+  font-size: 2.75rem;
   font-weight: 600;
 }
 
@@ -17054,7 +17054,7 @@ img {
 
 @media (max-width: 1024px) {
   .highlight {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
   .padding {
     padding-top: 5rem;
