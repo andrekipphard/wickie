@@ -703,10 +703,11 @@
     background-color: $primary;
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 9999; /* Above the header */
+    z-index: 10000; /* Above the header */
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #ddd;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
 }
 
 .app-modal-content {

@@ -284,40 +284,49 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function () {
     var closeButton = document.querySelector('.app-modal-close');
     var bannerModal = document.getElementById('getApp');
-    
-    // Funktion, um zu überprüfen, ob der Banner in dieser Sitzung bereits angezeigt wurde
+    var pageContainer = document.getElementById('page'); // Select the #page element
+
+    // Function to check if the banner has already been closed in this session
     function isBannerClosed() {
         return sessionStorage.getItem('bannerClosed') === 'true';
     }
 
-    // Funktion, um zu überprüfen, ob das Gerät ein Tablet oder Handy ist (kleiner als 1024px)
+    // Function to check if the device is a tablet or mobile (width less than 1024px)
     function isMobileOrTablet() {
         return window.innerWidth < 1024;
     }
 
-    // Banner nur anzeigen, wenn es nicht geschlossen wurde und die Bildschirmbreite < 1024px ist
+    // Only show the banner if it hasn't been closed and the screen width is < 1024px
     if (!isBannerClosed() && isMobileOrTablet()) {
-        bannerModal.style.display = 'block'; // Zeige das Modal an
+        bannerModal.style.display = 'block'; // Show the modal
 
-        // Scroll die Seite nach ganz oben beim Laden
+        // Scroll the page to the top upon loading
         window.scrollTo({
             top: 0,
-            behavior: 'auto' // Sofort nach oben scrollen ohne Animation
+            behavior: 'auto' // Instantly scroll to the top without animation
         });
 
-        // Füge Padding zum Body hinzu, damit der Header nicht überlappt
-        document.body.style.paddingTop = bannerModal.offsetHeight + 'px';
+        // Add padding to the #page element to prevent header overlap
+        if (pageContainer) {
+            pageContainer.style.paddingTop = bannerModal.offsetHeight + 'px';
+        }
     } else {
-        bannerModal.style.display = 'none'; // Verstecke das Modal
+        bannerModal.style.display = 'none'; // Hide the modal
     }
 
-    // Schließt das Modal beim Klick auf den Close-Button
+    // Close the modal when clicking on the close button
     closeButton.addEventListener('click', function() {
         bannerModal.style.display = 'none';
-        document.body.style.paddingTop = '0'; // Entfernt das zusätzliche Padding
-        sessionStorage.setItem('bannerClosed', 'true'); // Setze den Status, dass der Banner geschlossen wurde
+        
+        // Remove the extra padding from the #page element
+        if (pageContainer) {
+            pageContainer.style.paddingTop = '0';
+        }
+        
+        sessionStorage.setItem('bannerClosed', 'true'); // Set the status indicating the banner was closed
     });
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     var headerMobile = document.querySelector('.header-mobile');
     var lightLogoSrc = "<?= wp_get_attachment_image_url($headerLogoTransparentBackground, 'large'); ?>";

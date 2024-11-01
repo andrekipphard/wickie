@@ -12635,10 +12635,11 @@ textarea.form-control-lg {
   background-color: #002A3F;
   padding: 10px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 9999; /* Above the header */
+  z-index: 10000; /* Above the header */
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #ddd;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
 }
 
 .app-modal-content {
@@ -16490,7 +16491,10 @@ textarea.form-control-lg {
     margin-top: 0px !important;
     padding-top: 5rem !important;
     padding-bottom: 5rem !important;
+  }
+  .hero-new .video-wrapper .background-video, .hero-new .video-wrapper-mobile .background-video {
     height: auto !important;
+    width: 100vw !important;
   }
   .hero-new .container-wrapper .container .content-image .content {
     flex-basis: 100% !important;
@@ -16503,6 +16507,10 @@ textarea.form-control-lg {
   .hero-new {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
+  }
+  .hero-new .video-wrapper .background-video, .hero-new .video-wrapper-mobile .background-video {
+    height: 100vh !important;
+    width: auto !important;
   }
   .hero-new h3, .hero-new .h3 {
     font-size: 20px;
@@ -16525,6 +16533,16 @@ textarea.form-control-lg {
   }
   .hero-new .container-wrapper .container .content-image .content .cta.multiple-buttons a .round {
     padding: 12px;
+  }
+}
+@media (max-width: 1024px) and (min-width: 381px) {
+  .hero-new {
+    height: calc(100vh - 32px) !important;
+  }
+}
+@media (max-width: 380px) {
+  .hero-new {
+    height: auto !important;
   }
 }
 
