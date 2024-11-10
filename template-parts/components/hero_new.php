@@ -28,6 +28,7 @@ $mobileBackgroundVideo = get_sub_field('mobile_background_video');
 $mobileBackgroundLottie = get_sub_field('mobile_background_lottie');
 $mobileBackgroundType = get_sub_field('mobile_background_type');
 $mobileBackgroundImageUrl = $mobileBackgroundImage ? wp_get_attachment_image_url($mobileBackgroundImage, 'large') : '';
+$textColumnWidth = get_sub_field('text_column_width');
 
 // Position Fields
 $positionFields = [
@@ -155,7 +156,7 @@ if (have_rows('margin')) {
         <div class="content-image" style="
             <?php if ($textLayout === 'Right'): ?> flex-direction: row-reverse; <?php endif; ?>
         ">
-            <div class="content<?php if ($textLayout === 'Center'): ?> text-layout-center<?php endif;?><?php if ($textLayout === 'Left' || $textLayout === 'Right'): ?> text-layout-right-or-left<?php endif;?>">
+            <div class="content<?php if ($textLayout === 'Center'): ?> text-layout-center<?php endif;?><?php if ($textLayout === 'Left' || $textLayout === 'Right'): ?> text-layout-right-or-left<?php endif;?>"<?php if($textColumnWidth):?> style="flex-basis: <?= $textColumnWidth;?>"<?php endif;?>>
                 <?php if ($highlightText): ?>
                     <span class="highlight" style="
                         <?php if ($positionHighlightText): ?> order: <?= $positionHighlightText; ?>; <?php endif; ?>
@@ -238,9 +239,10 @@ if (have_rows('margin')) {
                         <?php endif; ?>
                     ">
                         <?php while (have_rows('images')): the_row();
-                            $imagesImage = get_sub_field('images_image'); ?>
+                            $imagesImage = get_sub_field('images_image');
+                            $imagesWidth = get_sub_field('width'); ?>
                             <div class="image">
-                                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imagesImage, 'large'); ?>">
+                                <img loading="lazy" decoding="async" src="<?= wp_get_attachment_image_url($imagesImage, 'large'); ?>"<?php if($imagesWidth):?> style="width: <?= $imagesWidth?>"<?php endif;?>>
                             </div>
                         <?php endwhile; ?>
                     </div>
@@ -248,22 +250,22 @@ if (have_rows('margin')) {
             </div>
 
             <?php if ($textLayout === 'With Image' || $textLayout === ''): ?>
-                <?php if ($mediaType === 'Image' && $layout === 'Kein Background Video'): ?>
-                    <div class="image" style="background-image: url('<?= wp_get_attachment_image_url($image, 'large'); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                <?php if ($mediaType === 'Image'): ?>
+                    <div class="image image-text" style="background-image: url('<?= wp_get_attachment_image_url($image, 'large'); ?>'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
                 <?php elseif ($mediaType === 'Video'): ?>
-                    <div class="image"<?php if ($positionImages): ?> style="order: <?= $positionImages ?>"<?php endif; ?>>
+                    <div class="image image-text"<?php if ($positionImages): ?> style="order: <?= $positionImages ?>"<?php endif; ?>>
                         <video controls autoplay muted preload="metadata" class="video">
                             <source src="<?= $video; ?>" type="video/mp4">
                         </video>
                     </div>
-                <?php elseif ($mediaType === 'Youtube' && $layout === 'Kein Background Video'): ?>
-                    <div class="image"<?php if ($positionImages): ?> style="order: <?= $positionImages ?>"<?php endif; ?>>
+                <?php elseif ($mediaType === 'Youtube'): ?>
+                    <div class="image image-text"<?php if ($positionImages): ?> style="order: <?= $positionImages ?>"<?php endif; ?>>
                         <div class="iframe-container">
                             <iframe src="<?= $youtube; ?>?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
-                <?php elseif ($mediaType === 'Lottie' && $layout === 'Kein Background Video'): ?>
-                    <div class="image"<?php if ($positionImages): ?> style="order: <?= $positionImages ?>"<?php endif; ?>>
+                <?php elseif ($mediaType === 'Lottie'): ?>
+                    <div class="image image-text"<?php if ($positionImages): ?> style="order: <?= $positionImages ?>"<?php endif; ?>>
                         <?= $lottie; ?>
                     </div>
                 <?php endif; ?>

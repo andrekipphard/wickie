@@ -83,17 +83,25 @@
                     $email = sanitize_email($_POST['cf-email']);
                     $message = esc_textarea($_POST['cf-message']);
                     
-                    // Prepare email
+                    // Email to admin
                     $to = $emailRecipient; // Sends the email to the admin
                     $subject = 'Contact Form Submission from ' . $name;
                     $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
                     $headers = array('Content-Type: text/plain; charset=UTF-8');
                     
-                    // Send email
+                    // Send email to admin
                     wp_mail($to, $subject, $body, $headers);
-
+                
+                    // Email to customer
+                    $customer_subject = 'Thank you for contacting us!';
+                    $customer_body = "Hello $name,\n\nThank you for reaching out! We have received your message and will get back to you shortly.\n\nBest regards,\nwickie";
+                    $customer_headers = array('Content-Type: text/plain; charset=UTF-8');
+                
+                    // Send email to customer
+                    wp_mail($email, $customer_subject, $customer_body, $customer_headers);
+                
                     // Confirmation message
-                    echo '<div class="success-message">'. $successMessage;'</div>';
+                    echo '<div class="success-message">' . $successMessage . '</div>';
                 }
             ?>
         </div>

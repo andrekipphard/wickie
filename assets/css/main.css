@@ -15640,7 +15640,7 @@ textarea.form-control-lg {
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 20px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
   gap: 20px;
 }
@@ -16502,6 +16502,9 @@ textarea.form-control-lg {
   .hero-new .container-wrapper .container .content-image .content .cta .btn {
     border-radius: 50px;
   }
+  .hero-new .container-wrapper .container .content-image .image-text {
+    display: none;
+  }
 }
 @media (max-width: 768px) {
   .hero-new {
@@ -16551,6 +16554,11 @@ textarea.form-control-lg {
 }
 
 @media (max-width: 1024px) {
+  .hero-new.minus-margin-top {
+    margin-top: -116px !important;
+  }
+}
+@media (max-width: 768px) {
   .hero-new.minus-margin-top {
     margin-top: -77px !important;
     padding-top: 77px !important;
@@ -17181,7 +17189,7 @@ img {
 }
 @media (min-width: 992px) {
   h1, .h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 600;
   }
   h2, .h2 {
@@ -17201,6 +17209,20 @@ img {
   }
 }
 @media (min-width: 1400px) {
+  h1, .h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: -3px;
+  }
+  h2, .h2 {
+    font-size: 3.5rem;
+    font-weight: 600;
+  }
+  h3, .h3 {
+    letter-spacing: -1px;
+  }
+}
+@media (min-width: 1600px) {
   h1, .h1 {
     font-size: 5.5rem;
     font-weight: 600;

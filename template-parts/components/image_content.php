@@ -73,7 +73,13 @@
                     <?= $highlightText; ?>
                 </span>
             <?php endif;?>
-            <h2 <?php if($headlineFontSize):?>style="font-size: <?= $headlineFontSize;?>px"<?php endif;?>><?= $headline; ?></h2>
+            <h2 
+                <?php if($headlineFontSize): ?>
+                    style="@media (min-width: 1600px) { font-size: <?= $headlineFontSize; ?>px; }"
+                <?php endif; ?>
+            >
+                <?= $headline; ?>
+            </h2>
             <?php if ($subline): ?>
                 <h3 <?php if($sublineFontSize):?>style="font-size: <?= $sublineFontSize;?>px"<?php endif;?>>
                     <?= $subline; ?>

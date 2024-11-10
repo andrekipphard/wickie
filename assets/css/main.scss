@@ -477,7 +477,7 @@ img {
 }
 @include media-breakpoint-up(lg) {
     h1 {
-        font-size: 5rem;
+        font-size: 4rem;
         font-weight: 600;
     }
     
@@ -499,6 +499,21 @@ img {
     }
 }
 @include media-breakpoint-up(xxl) {
+    h1 {
+        font-size: 4rem;
+        font-weight: 600;
+        letter-spacing: -3px;
+    }
+    
+    h2 {
+        font-size: 3.5rem;
+        font-weight: 600; 
+    }
+    h3 {
+        letter-spacing: -1px;
+    }
+}
+@media (min-width: 1600px) {
     h1 {
         font-size: 5.5rem;
         font-weight: 600;

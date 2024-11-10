@@ -192,6 +192,9 @@
                             }
                         }
                     }
+                    .image-text {
+                        display:none;
+                    }
                 }
             }
         }
@@ -255,6 +258,11 @@
     margin-top: -116px;
 }
 @media (max-width: 1024px) {
+    .hero-new.minus-margin-top {
+        margin-top: -116px!important;
+    }
+}
+@media (max-width: 768px) {
     .hero-new.minus-margin-top {
         margin-top: -77px!important;
         padding-top: 77px!important;
