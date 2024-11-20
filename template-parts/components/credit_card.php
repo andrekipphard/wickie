@@ -9,7 +9,7 @@
 ?>
 <section class="credit-card<?php if($fullHeight === 'Yes'):?> full-height<?php endif;?>">
     <div class="container">
-        <a class="content-wrapper" href="<?= $buttonUrl; ?>">
+        <a class="content-wrapper"<?php if($buttonUrl):?> href="<?= $buttonUrl; ?>"<?php endif;?>>
             <?php if($image):?><div class="image" style="background-image: url('<?= wp_get_attachment_image_url($image, 'large');?>;">
             </div>
             <?php endif;?>
