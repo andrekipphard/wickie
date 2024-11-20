@@ -446,14 +446,32 @@
 .country-selector.weglot-dropdown a, .country-selector.weglot-dropdown span {
     font-size: 1.3rem;
 }
-.country-selector.weglot-dropdown .wgcurrent:after {
+.mobile-nav-menu .country-selector.weglot-dropdown .wgcurrent:after {
     display:none;
 }
-
-.country-selector.weglot-dropdown input:checked ~ .wgcurrent:after {
-    transform: rotate(223deg);
-    top: 17px;
+.header-desktop .country-selector.weglot-dropdown .wgcurrent:after {
+    background: none;
+    content: "›";
+    font-size: 1.5rem;
+    color: #ffffff;
+    position: absolute;
+    right: 0px;
+    pointer-events: none;
+    transform: rotate(90deg);
+    transition: none; /* Deaktiviert die Animation */
 }
+
+.header-desktop .country-selector.weglot-dropdown input:checked ~ .wgcurrent:after {
+    transform: rotate(-90deg);
+    right: 30px;
+    top: 14px;
+    transition: none; /* Deaktiviert die Animation */
+}
+
+.country-selector.weglot-dropdown .wgcurrent a, .country-selector.weglot-dropdown .wgcurrent span{
+	padding-right:0px;
+}
+
 
 .country-selector.weglot-dropdown .wgcurrent a, .country-selector.weglot-dropdown .wgcurrent span{
     padding-right: 40px;
