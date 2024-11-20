@@ -12013,7 +12013,7 @@ textarea.form-control-lg {
   color: #93E100;
 }
 .header-desktop .middle {
-  flex: 0 0 50%;
+  flex: 0 0 20%;
   display: flex;
 }
 .header-desktop .nav-item:hover .nav-link {
@@ -12058,7 +12058,7 @@ textarea.form-control-lg {
   justify-content: flex-end;
   align-items: center;
   gap: 20px;
-  flex: 0 0 40%;
+  flex: 0 0 70%;
 }
 .header-desktop .right img {
   width: 125px;
@@ -12067,7 +12067,7 @@ textarea.form-control-lg {
   font-size: 0px;
   font-weight: normal;
 }
-@media (min-width: 1950px) {
+@media (min-width: 1200px) {
   .header-desktop .right .btn-link {
     font-size: 1.3rem;
   }
