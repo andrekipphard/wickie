@@ -92,11 +92,11 @@
                         $result = json_decode($response_body, true);
 
                         if (!$result['success']) {
-                            echo '<div class="error-message">Bitte bestätige, dass du kein Roboter bist.</div>';
+                            echo '<div class="error-message">Please confirm that you are not a robot.</div>';
                             return;
                         }
                     } else {
-                        echo '<div class="error-message">reCAPTCHA ist erforderlich.</div>';
+                        echo '<div class="error-message">reCAPTCHA is required.</div>';
                         return;
                     }
 
