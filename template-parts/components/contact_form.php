@@ -55,22 +55,23 @@
                 <span>
                     <?= $text; ?>
                 </span>
-                <?php endif; ?>
+            <?php endif; ?>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
             <form action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post" class="contact-form-container">
                 <div class="form-group">
-                    <div class="form-group">
-                        <label for="cf-name"><?= $labelNameField; ?></label>
-                        <input type="text" id="cf-name" name="cf-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cf-email"><?= $labelEmailField; ?></label>
-                        <input type="email" id="cf-email" name="cf-email" required>
-                    </div>
+                    <label for="cf-name"><?= $labelNameField; ?></label>
+                    <input type="text" id="cf-name" name="cf-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="cf-email"><?= $labelEmailField; ?></label>
+                    <input type="email" id="cf-email" name="cf-email" required>
                 </div>
                 <div class="form-group">
                     <label for="cf-message"><?= $labelMessageField; ?></label>
                     <textarea id="cf-message" name="cf-message" rows="5" required></textarea>
                 </div>
+                <!-- reCAPTCHA Widget -->
+                <div class="g-recaptcha" data-sitekey="6LfOdooqAAAAALYhZvkkBFSd43d5up7ArGqva85q"></div>
                 <div class="form-group">
                     <input type="submit" name="cf-submitted" value="<?= $labelButton; ?>" class="btn btn-primary">
                 </div>
@@ -78,6 +79,27 @@
             <?php
                 // Check if the form is submitted
                 if (isset($_POST['cf-submitted'])) {
+                    // Verify reCAPTCHA response
+                    if (isset($_POST['g-recaptcha-response'])) {
+                        $recaptcha_secret = '6LfOdooqAAAAANqLjwaOyvTir7cTTMFko6zRgSR-';
+                        $response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', [
+                            'body' => [
+                                'secret' => $recaptcha_secret,
+                                'response' => sanitize_text_field($_POST['g-recaptcha-response']),
+                            ],
+                        ]);
+                        $response_body = wp_remote_retrieve_body($response);
+                        $result = json_decode($response_body, true);
+
+                        if (!$result['success']) {
+                            echo '<div class="error-message">Bitte bestätige, dass du kein Roboter bist.</div>';
+                            return;
+                        }
+                    } else {
+                        echo '<div class="error-message">reCAPTCHA ist erforderlich.</div>';
+                        return;
+                    }
+
                     // Sanitize input fields
                     $name = sanitize_text_field($_POST['cf-name']);
                     $email = sanitize_email($_POST['cf-email']);
@@ -87,7 +109,12 @@
                     $to = $emailRecipient; // Sends the email to the admin
                     $subject = 'Contact Form Submission from ' . $name;
                     $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
-                    $headers = array('Content-Type: text/plain; charset=UTF-8');
+                    $headers = array(
+                        'Content-Type: text/plain; charset=UTF-8',
+                        'From: ' . $name . ' <' . $email . '>',
+                        'Reply-To: ' . $email 
+                    );
+                    
                     
                     // Send email to admin
                     wp_mail($to, $subject, $body, $headers);
