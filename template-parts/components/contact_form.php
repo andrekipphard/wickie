@@ -56,7 +56,6 @@
                     <?= $text; ?>
                 </span>
             <?php endif; ?>
-            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
             <form action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" method="post" class="contact-form-container">
                 <div class="form-group">
                     <label for="cf-name"><?= $labelNameField; ?></label>
@@ -70,67 +69,70 @@
                     <label for="cf-message"><?= $labelMessageField; ?></label>
                     <textarea id="cf-message" name="cf-message" rows="5" required></textarea>
                 </div>
-                <!-- reCAPTCHA Widget -->
-                <div class="g-recaptcha" data-sitekey="6LfOdooqAAAAALYhZvkkBFSd43d5up7ArGqva85q"></div>
+                <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
                 <div class="form-group">
                     <input type="submit" name="cf-submitted" value="<?= $labelButton; ?>" class="btn btn-primary">
                 </div>
             </form>
             <?php
-                // Check if the form is submitted
                 if (isset($_POST['cf-submitted'])) {
-                    // Verify reCAPTCHA response
-                    if (isset($_POST['g-recaptcha-response'])) {
-                        $recaptcha_secret = '6LfOdooqAAAAANqLjwaOyvTir7cTTMFko6zRgSR-';
-                        $response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', [
-                            'body' => [
-                                'secret' => $recaptcha_secret,
-                                'response' => sanitize_text_field($_POST['g-recaptcha-response']),
-                            ],
-                        ]);
-                        $response_body = wp_remote_retrieve_body($response);
-                        $result = json_decode($response_body, true);
+                    // reCAPTCHA v3 Überprüfung
+                    $recaptcha_secret = '6Leoh40qAAAAAKA6KFGhe9VYym7d7Eutvpdl1Y4c';
+                    $recaptcha_response = sanitize_text_field($_POST['g-recaptcha-response']);
+                    
+                    $response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', [
+                        'body' => [
+                            'secret' => $recaptcha_secret,
+                            'response' => $recaptcha_response,
+                        ],
+                    ]);
 
-                        if (!$result['success']) {
-                            echo '<div class="error-message">Please confirm that you are not a robot.</div>';
-                            return;
-                        }
-                    } else {
-                        echo '<div class="error-message">reCAPTCHA is required.</div>';
+                    $response_body = wp_remote_retrieve_body($response);
+                    $result = json_decode($response_body, true);
+
+                    // Mindestsicherheitswert festlegen (z.B. 0.5)
+                    if (!$result['success'] || $result['score'] < 0.5) {
+                        echo '<div class="error-message">Failed reCAPTCHA verification. Please try again.</div>';
                         return;
                     }
 
-                    // Sanitize input fields
+                    // Eingaben bereinigen
                     $name = sanitize_text_field($_POST['cf-name']);
                     $email = sanitize_email($_POST['cf-email']);
                     $message = esc_textarea($_POST['cf-message']);
-                    
-                    // Email to admin
-                    $to = $emailRecipient; // Sends the email to the admin
+
+                    // Admin-E-Mail konfigurieren
+                    $to = $emailRecipient; // Admin-E-Mail-Adresse
                     $subject = 'Contact Form Submission from ' . $name;
                     $body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
                     $headers = array(
                         'Content-Type: text/plain; charset=UTF-8',
-                        'From: ' . $name . ' <' . $email . '>',
-                        'Reply-To: ' . $email 
+                        'From: Your Website <info@wickie.io>', // Standard-Absender
+                        'Reply-To: ' . $email, // Kunde als Antwortadresse
                     );
-                    
-                    
-                    // Send email to admin
+
+                    // E-Mail an Admin senden
                     wp_mail($to, $subject, $body, $headers);
-                
-                    // Email to customer
+
+                    // E-Mail an Kunden (optional)
                     $customer_subject = 'Thank you for contacting us!';
                     $customer_body = "Hello $name,\n\nThank you for reaching out! We have received your message and will get back to you shortly.\n\nBest regards,\nwickie";
                     $customer_headers = array('Content-Type: text/plain; charset=UTF-8');
-                
-                    // Send email to customer
+
                     wp_mail($email, $customer_subject, $customer_body, $customer_headers);
-                
-                    // Confirmation message
+
+                    // Erfolgsmeldung anzeigen
                     echo '<div class="success-message">' . $successMessage . '</div>';
                 }
             ?>
         </div>
     </div>
 </section>
+<script src="https://www.google.com/recaptcha/api.js?render=6Leoh40qAAAAANkcI0yWKx4Pg1oxiISQ9t6Rs-me"></script>
+<script>
+    grecaptcha.ready(function () {
+        grecaptcha.execute('6Leoh40qAAAAANkcI0yWKx4Pg1oxiISQ9t6Rs-me', { action: 'submit' }).then(function (token) {
+            document.getElementById('g-recaptcha-response').value = token;
+        });
+    });
+</script>
